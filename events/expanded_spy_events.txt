@@ -1,0 +1,66 @@
+############################
+#
+# Expanded spy Events
+#
+############################
+
+namespace = popspyexpanded
+
+#############################
+# Vanilla Events			#
+# Reserved: 1 - 100			#
+#############################
+
+### Mistaken for Food
+# drone hunted
+# fromfrom = operation
+country_event = {
+    id = popspyexpanded.1
+    title = popspyexpanded.1.name
+    desc = popspyexpanded.1.desc
+    picture = GFX_evt_aggressive_flora
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+
+    option = {
+        name = EXCELLENT
+    }
+}
+
+country_event = {
+    id = popspyexpanded.2
+    title = popspyexpanded.2.name
+    desc = popspyexpanded.2.desc
+    picture = GFX_evt_aggressive_flora
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+
+    option = {
+        name = UNFORTUNATE
+		fromfrom.spynetwork = {
+            add_modifier = {
+                modifier = spynetwork_drones_hunted
+                days = 280
+            }
+        }
+    }
+}
+
+country_event = {
+    id = popspyexpanded.3
+    title = popspyexpanded.3.name
+    desc = popspyexpanded.3.desc
+    picture = GFX_evt_aggressive_flora
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+
+    option = {
+        name = UNFORTUNATE
+		fromfrom.spynetwork = {
+            add_modifier = {
+                modifier = spynetwork_laying_low
+                days = 280
+            }
+        }
+    }
+}

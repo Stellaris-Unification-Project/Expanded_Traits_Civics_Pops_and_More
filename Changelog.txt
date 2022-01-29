@@ -1,0 +1,2383 @@
+1.5.1.5
+Adaptations:
+- Penal colonies have unique capital buildings and ruler jobs
+- Penal colonies have +100% habitability, but -33% pop growth
+
+Tweaks:
+- Master Control Program jobs only give +3 stability and +10 admin cap
+- Stability loss from slaves and purged pops reduced
+- Tweaked weights for default advisor voice
+- Increased weight of the Aquatic trait to be more in line with other traits
+
+Bug Fixes:
+- Players are no longer limited in the number of commercial zones they can build
+
+1.5.1.4
+Additions:
+- New Origin: Arborial Harmony
+- New Origin: Master Computer
+- New Civic: Rapid Deployment
+- New Civic: Meticulous Fabrication
+- New Edict: National Hyperlane Registry
+- Farming, Mining, and Research Subsidies increases consumer good upkeep instead of energy (non-gestalts only)
+- Dictatorial, Imperial, and Private authorities give +5% ruler happiness (effect moved from pop categories)
+- Dictatorial, Imperial, and Private authorities give -5% worker happiness (removed triggered happiness from pop categories)
+- Living Standards now signpost how they effect crime
+- The Tree of Life gives farmer jobs on planets that can't build farming districts, but also has double food upkeep
+- Living standards and traits that effect base crime now have proper tooltips
+
+Tweaks:
+- Imperial Cult gives +25% spiritualist ethics attraction, no longer effects edict costs
+- Master Computers renamed Directorial Override, gives -10% edict and campaign costs, no longer gives +1 ruler level, lowers chance of leaders gaining negative traits, or gives master computer jobs
+- Subterranean Idyll renamed Mountain Home
+- Starvation Fearing once again gives +1 food from farmers
+- Starvation Fearing is no longer available to lithoids
+- Economic Subsidies gives +25% trade value (from +20%)
+- New origin image for Delicate Ecosystem
+- Crime from living standards and traits added back into pop categories (the previous setup didn't work)
+- No union rights give +1 ruler political power
+- Replicators provide 2 unity, coordinators no longer provide unity
+- Master Control Program jobs only provide 2 unity (from 4), only +2$ simple drone production (from +5%)
+- With Aquatics DLC, the Scyldari are slow breeders instead of weak
+
+Bug Fixes:
+- Nerve Stapled pops cannot take Mortal Initiate jobs
+- Fixed tooltip for Extant Creators
+- Criminals will now ignore favorites and not contribute to diplomatic weight, as per vanilla
+- Fungal Colonies won't start with unemployed pops
+- Synthetic Servants perk will allow you to talk to Hrozgar of the Endless Flames
+- Fixed Organic Construction not being available to megacorps
+- Fixed tooltip for Master Control Program jobs
+- Fixed tooltip for the Cyberocracy origin
+- Master Control Program jobs now benefit from traditions, governor traits, ext
+- Natural Hunters will earn unity and influence from killing Hrozgar, Star-Eaters
+- Fixed plantoid and fungoid plantoid empires not having indeterminate gender
+- Fixed Scyldari not showing up with Aquatics DLC
+
+Removals:
+- Base Crime returned to 2
+- Living standards and traits no longer effect crime directly (didn't work)
+- Fixed not being able to work duelist jobs
+
+1.5.1.3
+Additions:
+- New icon for the Crusader civic
+- New icon for the Chrysalic Young civic
+
+Tweaks:
+- Extant Creators give +10% pop assembly speed
+
+Removals:
+- Extant Creators no longer gives the mechanist trait to secondary species
+
+1.5.1.2
+Additions:
+- Replicators provide +2 amenities
+- Coordinator provide +1 unity
+
+Tweaks:
+- Outsiders will have a slight preference for mining drone jobs if lithoid, agri-drone jobs if not
+
+Bug Fixes:
+- Normal machine empires won't start with 3 unemployed pops
+- Improved compatibility with Real Space, New Frontiers
+
+Removals:
+- Machine maintenance drones no longer give an additional +0.5 amenities
+
+1.5.1.1
+Tweaks:
+- Secluded Roosts give +2 housing on hive worlds
+
+Removals:
+- Certain faction demands no longer effect happiness directly (lack of tooltips, no way for user to know why pops are unhappy)
+
+1.5.1
+Updated to 3.2
+
+Additions:
+- New Civics: Aerial Construction / Secluded Roosts
+- New Trait: Gregarious
+- Aquatics require the Marine trait
+- The Marine trait unlocks the Hydrocentric perk if your species homeworld is wet
+- Aquatic trait also gets benefits on Gaia Worlds
+- Aquatic trait no longer gives penalties on artificial worlds
+- Shattered Ring, clearing rubble gives progress on a tier 1 or 2 technology
+- Anglers Civic: Hydroponic farms on wet worlds also gives a pearl farmer job
+- Anglers Civic: Food Processing Facilities give anglers on wet worlds
+- Anglers also give unlimited farming districts on gaia worlds and appropriate worlds from planetary diversity
+- Anglers can be taken with Agrarian Idyll
+- Anglers give +9 food (from +8)
+- Pearl Divers produce 3 food, and have an upkeep of 3 minerals
+- Most slaves cannot be telepaths (same restriction as enforcers)
+- With the Aquatics DLC, the Scyldari are both Aquatic and Sedentary
+- AI can create penal and thrall worlds under certain circumstances
+- Base crime increased to 3 (from 2)
+- Living standards can increase or decrease crime
+- Unemployed pops give +25% pops (except with high living standards)
+- Docile and Conformist give -5% crime
+- Unruly and Deviant give +5% crime
+- Obedient gives -10% crime
+
+Tweaks:
+- Avian Empires no longer get more housing from city districts, nor are they more expensive
+- Avian Admirals give +10% sublight speed
+- Reptilians get -10% happiness and +10% amenities usage on cold worlds, instead of -10% habitability
+- Reptilians also gets a boost to maintenance drones
+- Reptilian bonus to artisans / maintenance drones now determined by species of the pop working the job
+- Plantoid pops, not empires, make consumer goods partially out of food
+- Adjusted traits to use triggered pop modifiers where applicable
+- Remnants: Clearing ruined arcologies on colonial remnants also give techs
+- Remnants: Clearing ruined arcologies can sometimes give progress on tier 2 or even tier 3 techs
+- Functional Architecture and equivalents, gives +1 building slot (from +2), +15% building speed (+10% for integrated bio-architecture)
+- Agrarian Idyll gives +1 building from every 4 farming district, other rural districts no longer contribute to building slots
+- Subterranean Idyll, building slots from mining instead of farming districts
+- Shared Burdens, under utopian abundance pops demote 30% faster (75% faster in total)
+- Environmentalist can be taken by non fanatic xenophobes
+- Gene Warriors have 3 morale (from 3.5)
+- No longer gives crime from pop category
+- AI won't take deals with crime lords unless they have at least one precinct house (they need to at least try to fight crime first)
+- Hive Caretakers policy, unemployed pops will produce 2 amenities (up from 1)
+
+Bug Fixes:
+- Improved compatibility with New Frontiers
+- Improved compatibility with Plentiful Traditions
+- Fixed Broken Localization
+- Fixed underground clubs not giving extra energy from pleasure palaces (from Expanded Events)
+- AI is less aggressive with funding underground railroads
+- Underground Railroads can be randomly removed even if you do not have any abolitionists
+- Anglers benefit from food production buildings
+- Anglers + Agrarian Idyll: Farms on ocean worlds will give building slots
+- Fixed Agrarian Idyll not properly getting extra housing from rural districts
+- Fixed Scraper jobs being added twice
+- Cleaned up transition between robot and android armies
+- Unemployed pops no longer produce an excessive amount of crime
+- Fixed typo in the description of lithoid Agribusiness
+- Fixed Enhanced Memory having no effect
+- Fixed logic error when ai is choosing negative traits to add to robot pops
+- Cleaned up some tooltips for civic and origin ethics requirements
+- Improved the way negative habitability from the aquatic trait is applied
+
+Removals:
+- Removed changes to ai weighting on districts (may slowly add them back in later)
+
+1.5.0.1
+Additions:
+- Plantoid Empires gain access to the Planetary Landscaping decision
+
+Tweaks:
+- Some new technologies are more likely to be drawn if you have certain traditions
+
+Bug Fixes:
+- On game start, will add an additional city district if there is not enough room to build a precinct house / sentinel post (for civs that start with one)
+- Fixed bug with Synthetic Livestocks being available to only lithoids
+
+1.5.0
+Updated to 3.1.1
+Additions:
+- New Civic: Organic Construction
+- New Wargoal: Open Markets
+- Suppressing a faction will make its members very unhappy
+- Pops will be less happy if certain faction demands are not met
+- Expropriation wars give corps 2000 energy per branch office on a status quo peace
+- Expropriation wars statue quo peace against criminal syndicates only closes branch offices on planets with less than 50 crime, remaining branch offices give -50 crime on their planets for 10 years.
+- Organic Housing districts give +1 caretaker drones and housing
+- Restoring the shattered ring requires the prerequisites for mega-engineering, instead of mega-engineering itself
+- Spiritualists look down on pleasure seekers (unless they are one themselves)
+- AI Pleasure Seekers can, under the right circumstances, become decadent hierarchies or decadent technocracies
+- Masterful Crafters and Mastercraft Inc, industrial subsidies edict costs less influence
+- Corporate AI empires will be slightly more common
+- Private Shipyards built by Catalytic Processing empires give catalytic technician jobs
+
+Tweaks:
+- Trading Posts gives -25% border friction, instead of +20 opinion with neighbors
+- Territorial gives +100% border friction
+- Increased cooldown for Fund and Underground Railroad to 2 years
+- Plantoids only give -10% food and energy upkeep, no longer increase housing requirements
+- Rogue Servitors cannot build coordination districts on city worlds (gets bio-trophies instead)
+- Merchant Guilds, trade buildings provide +1 manager jobs, instead of +1 merchant jobs
+- Health Maintenance Organization, healthcare workers give +8 trade value (since there are less healthcare worker jobs)
+- All sacrifices give +25% spiritualist ethics attraction
+- New army types will inherit an appropriate vanilla name list
+- Adjusted jobs given per pop from certain modifiers and buildings
+- Synthetic Mastery unlocks the Decadent living standard for full citizens
+- Crusader civic can be added and removed
+- Infestation pools give fewer infested pop jobs
+
+Bug Fixes:
+- Cave Cleaner and Gas Plant Engineer Drones now have the correct job category
+- Mastercraft Inc. gives artisan jobs on city and ring worlds
+- Fixed new jobs not benefiting from processing and manufacturing buildigns
+- Fixed turtle miner job not benefiting from mining guild and rockbreaker civics
+- Decadent living standard gives additional political power to rulers and specialists (same as Decent Conditions living standard)
+- Fixed Self-Modification event chain not firing
+- Hive Mind Reanimators will get undead defensive armies
+- AI will usually restore their shattered rings
+- Fixed logic error in influence cost of Universal Prosperity edict
+- Lithoids cannot prospect resort worlds
+- Syncretic Crystals now also requires the host to have the Lithoid DLC
+- Democratic Crusaders won't hate royal trading companies more than other types of oligarchies
+- AI can build mercenary undead armies
+- Game Dev / Underground Chemist branch office buildings increase production of local artisans
+- Some unique criminal branch office buildings produce less crime
+- Fixed broken localiation
+- Fixed a few typos
+
+Removals:
+- Replaced old undead army spawn event (now redundant)
+- Removed planet capacity housing code (now redundant)
+- Removed void dweller anti-cheese code (now redundant)
+- Removed Church of Greed (now redundant)
+- Removed science communicator jobs, researchers under technocracy give unity again
+- Removed Clonal Colony (replaced with Budding)
+- Technocracy no longer affects death chronicler jobs
+- Reanimators no longer start with Centralized Command half researched (now redundant)
+- Removed changes to the Interloper and the Shattered Ring (now redundant)
+- Lithoid shattered rings no longer get extra mineral deposit (now redundant)
+- Plantoids no longer build districts out of food (effect moved to new civic)
+- Redo how species class traits work, in light of 3.1.1 changes
+- Sacrifice: Harmony no longer effects governing ethics attraction
+
+1.4.9.7
+Additions:
+- Purging and enslaved pops reduce stability
+
+Tweaks:
+- Beacon of Liberty gives -15% empire size from pops, no longer gives +20% diplo weight from pops
+- Imperial Cult, Managerial Synergy, Hardened Synapses, and Master Computer give +2 Edict Capacity
+- Imperial Cult gives +25% authoritarian ethics attraction instead of governing ethics attraction
+- Managerial Synergy, executives no longer give unity
+- Hardened Synapses, -20% edict and campaign costs, synapse drones no longer produce stability
+- Idealistic Foundation gives +10% happiness, no longer gives +0.5 influence
+- Environmentalist gives -20% consumer goods consumption (from -10%)
+- Megastore gives +20% consumer goods production (from +15%)
+- Parliamentary System and Chamber of Commerce gives +40% influence from factions (was +25%)
+- Efficient Bureaucracy, Divided Attention, and Efficient Administrative Protocols gives +20% admin cap (from +10%), no longer reduces bureaucrat or synapse drone upkeep
+- Nationalistic Zeal gives -20% war exhaustion, -15% claim costs (from -10% each)
+- Media Conglomerate gives -20% war exhaustion (from -5%)
+- Reanimated Armies and equivalents gives -10% war exhaustion (from -5%)
+- Functional Architecture, Construction Company, and Constructobot gives +2 building slots, -15% building cost, no longer reduces building maintenance
+- Integrated Bioarchitecture gives +2 building slots
+- Subspace Ephapse gives +20% sublight speed instead of +10 fleet command limit
+- Slaver Guilds / Indentured Assets only give 35% enslavement ratio
+- Ancient Palace deposit gives +8 amenities instead of admin capacity
+
+Bug Fixes:
+- Fixed bug in how Idealistic Foundation calculates happiness
+- Fixed workers not promoting to specialists
+- Servant and equivalent jobs should now work as intended
+
+1.4.9.6
+Additions:
+- New Civic: Territorial
+
+Tweaks:
+- Opened up more labor policies for corporate authorities
+- Dictatorial and imperial authorities cannot use full labor rights
+- Artisan, Foundry, and Refinery jobs now produce more waste with Ecology Mod
+
+Bug Fixes:
+- The Encourage Growth faction demand now requires Gene Crops
+- Improved compatibility with Real Space: New Frontiers
+- Hive and plantoid AI empires should now build districts
+
+1.4.9.5
+Additions:
+- New Labor Policy: Worker-Owned, requires fanatic egalitarian
+- Distant colonies have lower governing ethics attraction
+
+Tweaks:
+- Clerks only give +2 amenities, but get +1 amenities with Galactic Administration
+- With Agrarian Idyll, Farmers/Miners only give +2 amenities, but get +1 amenities with Agrarian Utopias
+- Food rationing edict only costs 50 influence
+- The extreme labor policies give +25% egalitarian or authoritarian ethics attraction
+- All labor policies except none also give specialist political power
+- Distribute Luxury Goods now costs influence to cancel
+- Remote colony penalties start at 20 jumps from the capital
+- Mastery of Nature spawns new deposits slightly less often
+- Baol life seeding only has a 50% of adding a deposit
+- Necroids no longer get an opinion malus with gestalts
+
+Bug Fixes:
+- Better compatibility with Real Space: New Frontiers
+
+Removals:
+- Empire Sprawl no longer lowers governing ethics attractions
+
+
+1.4.9.4
+Additions:
+- New origin icons, by Pawjwp
+- New Decision: Maintenance Subsidies
+- Rulers and Specialists require more amenities
+- Synthetic Empires cannot build healthcare buildings
+- Healthcare buildings give only +1/+2 jobs
+- Medical Workers give +5% habitability (from +2.5%)
+- Medical Workers give +10 amenities (from +5)
+- Medical Workers give extra amenities or trade value, depending on healthcare policy
+- Spawning Drones give extra amenities or lower upkeep, depending on healthcare policy
+- HMO branch office buildings are now planet uniques, give +5% organic pop assembly
+- HMO, Mechanist, and Reanimated Armies branch office buildings give slightly more energy and research
+- Media Conglomerate, Entertainment Studios / Syndicate Outreach branch office produces extra trade value
+- PR Specialists, PR branch office produces extra trade value
+- Military Companies, Military Contractor branch office produces extra trade value
+- Trading Posts and Free Traders, Commercial Forum branch office produces extra trade value
+- Imperial Concession Ports give +10% trade value
+- New Healthcare policy for spiritualists
+
+Tweaks:
+- Mammalian trait gives -10% cold habitability, no longer gives -5% dry habitability
+- Pops flee starvation slightly more often
+- Amenities always increase pop growth (up to +25%)
+- Clerks give +3 amenities
+- Machine Maintenance Drones give an extra +0.5 amenities
+- Agrarian Idyll, farmers / miners give +3 amenities
+- Spawning and Caretaker jobs give +8 amenities
+- Cooperative and Private authorities given less restrictive requirements
+- Prosperous Unification / Ancien Régime, starting deposit gives less unity, but increases admin capacity
+- Tempestuous Unification, starting modifier gives less unity, but increases naval capacity, and has been given a different icon
+- Shared Burdens and Worker Coop, rulers and specialists use less amenities
+- Agrarian Idyll, +1 building slot per 8 rural districts (was per 10)
+- Naval Contractors give extra trade value from private shipyards instead of military contractors branch office buildings (pirate haven unchanged)
+- HMO, medical workers give +6 trade value (from +4)
+- Drone Healthcare also effects organic pop assembly
+- Criminal Syndicates can only build branch offices within other megacorps if the planet has at least 25 crime
+
+Bug Fixes:
+- Fixed artisan drones not producing consumer goods
+- Fixed bug that prevented shroud being ultimatum if you switch to incompatible ethics or authority
+- Fixed some weirdness with specialist job weights
+- Re-wrote ai budget for greater compatibility with other mods
+- Fixed bugged agrarian idyll tooltip
+- Fixed human preset empires not showing up
+
+
+1.4.9.3
+Additions:
+- New Campaign: Mentorship / Autonomous Drone
+- Added additional ai weights to first contact policy
+
+Tweaks:
+- Removed subterranean decision from Mastery of Nature. Instead, Mastery of Nature gives +3 districts and +10% habitability
+- Mastery of Nature now costs 2000 energy and minerals, 75 influence (from 2500 energy, 50 influence)
+- Cyberocracy, Replaces one administrator job with a high programmer job, which gives stability and research
+- Cyberocracy cannot be taken with Aristocratic Elite
+- Garrison Bot and Delicate can be used with robots, as they can work soldier jobs
+- Entertainers and duelists no longer give a nominal amount of trade value. Instead, holo theaters give +1% trade value per level, arenas give +1% happiness per level
+- Culture workers no longer give a token amount of trade value
+- With Ecology Mod, buildings that increase resources from jobs (Energy Grids, Alloy Foundries, ext) also increase waste from jobs
+- Tweaked some job weights
+
+Bug Fixes:
+- With Synthetic Mastery, robots won't take servant jobs if there are any non-robotic workers (unless they have the Domestic Protocols trait)
+- Fixed Broken Manifesti faction demand
+
+1.4.9.2
+Tweaks:
+- Under Idealistic Foundation, most pops suffer a happiness penalty if the progressive faction falls below 45% approval
+- With both Merchants Guild and Exalted Priesthood, High Priests and Merchants give +1 amenities
+- With both Merchants Guild and Aristocratic Elite, Nobles and Merchants give +1 amenities
+
+Bug Fixes:
+- Fixed bug with Manifesti faction
+
+1.4.9.1
+Tweaks:
+- For performance reasons, Idealistic Foundation now always gives +0.5 influence
+- Reorder traits so that they appear in logical places in the empire designer
+- Cannot use Criminal Heritage with Fanatic Xenophile or Fanatic Egalitarian
+- With Ecology Mod, capital production tech increases waste from miner and industrial jobs
+
+1.4.9.0
+Additions:
+- New Civic: Reanimated Military Companies
+- New Civic: Necrophagic Armies
+- New Edict: Dark Matter Explosives
+- New Edict: Extradimensional Research
+- New Edict: Nanite Cloud
+- New Government types
+- Converted to Origin: Cyberocracy and Heavenly Choir
+- Converted to Origin: Natural Hunter, now available to corps and to hive minds, only gives +25% army morale (from +33%)
+- Converted to Origin: Fanatical Befrienders
+- Shattered Ring, the Interloper and the Shattered Ring each give +15 minerals (up from +10)
+- Shattered Ring, Non-Hive Lithoids start with a temple or commercial building, to prevent unemployment
+- Shattered Ring, Lithoids get a mineral deposit on the main ring, which will run out in about 100 years
+- Void Dweller, Non-Hive Lithoids get an extra building on the capital habitat, to prevent unemployment
+- Galactic Doorstep gives greater progress on gateway techs
+- Galactic Doorstep gives -15% gateway construction cost
+- Those without the Calamitous Birth origin can remove craters with the Ecological Adaptation tech
+- Cannot use Meritocracy with Xenophobe
+- Nationalistic Zeal, +1 max rivalry, liked less by peaceful empires
+- Idealistic Foundation, +2 diplomacy operation skill, only +25% egalitarian ethics attraction
+- Technocracy / Tech Startup gives +25% materialist ethics attraction
+- Franchising, -15% branch office cost, empire size from branch offices returned to vanilla value
+- With Criminal Heritage, Temple of Prosperity is replaced with the Church of Greed
+- Criminal Heritage, +1 max rivalry
+- Media Conglomerate, +2 skill at manipulation operations
+- Subsumed Will / OTA Updates, +50% automatic resettlement chance
+- Parasitic Hive, Guaranteed worlds home to primitive civilizations (same as Necrophage)
+- Starvation Fearing gives +1 agri/mining drone per 25 pops (from per 20 pops)
+- Natural Neural Network, -20% researcher upkeep
+- Hive Minds also gets +25% pop assembly
+- Hive Mind, farmers produce +1 food (if Lithoid, miners produce +1 minerals instead)
+- Crime Lord Deal removed if crime goes below 10 (checked yearly)
+- Clearing city ruins give artifacts (requires Ancient Relics)
+- Open Markets give +10% diplo weight from economy
+- Secure Shipping trade protection increased to 10 (up from 5)
+- Deviancy Protocols / Divergence Suppression gives -20 deviance (from -10)
+- Enhanced Recycling gives 25% refund per demolished building (up from 15%)
+- Latent Psionic gives +5% happiness, Psionic gives +10%
+- Warrior Drones get +2 defensive armies under Deploy Hunter-Killer Drones / Activate Compliance Protocols  (same as soldiers under martial law)
+- Necromancers get +5 stability when under martial law
+- Maintenance Drones give +6 amenities, cut down most job sources by about a third
+- Leisure district (Ecumenopolis) will give priest or manager jobs when appropriate
+- New Coordination Districts for Gestalts Ecumenopolis, give +5 synapse drone/evaluator and +5 brain drone/calculator jobs
+- Nanite Transmuter provides 4 rare resources each (up form 2)
+- Did another pass to reduce jobs from corporate branch offices
+- Kel-Azaan Republic use the Natural Hunters origin
+- Glebsig Foundation uses On the Shoulders of Giants origin (without Federations, uses the Galactic Doorstep origin instead)
+- The Blorg use the Fanatical Befriender origin, restored civics to vanilla
+- XT-489 Eliminators uses the Resource Consolidation origin
+
+Tweaks:
+- Byzantine Bureaucracy, administrative buildings give -2% housing and amenities usage per level (up from +1%)
+- Security Company gives +20 base intel (from +10)
+- Worker Coop gives -20% empire size from pops (from -15%)
+- Static Research Analysis, reduced upkeep of maintenance drones to 0.25 energy, fixed civic tooltip
+- Public Works decision no longer gives laborer jobs, instead unemployed worker and specialist pops produce +1 minerals and +2 amenities
+- Hunting preserve no longer gives a clerk job
+- Hunting preserve gives +2 housing (from +3) and +5 society research (from +3)
+- Natural Hunter jobs give -5 crime each
+- Serf jobs provide 2 food/minerals (up from +1)
+- Criminal modifiers give less jobs per crime
+- Fortress buildings no longer give housing, as per vanilla
+
+Bug Fixes:
+- Lithoid Colony Ships won't apply craters to artificial planets (ring worlds, habitats, ext)
+- Lithoid Colony Ships won't apply craters if the planet already has one
+- Fix bug with Heavenly Choir if you switch to democratic or megacorp
+- Heavenly Choir, if a non-shroud being is elected, they are immediately turned into a shroud being
+- Fixed bugs with hive armies
+- Fixed broken tooltip for Factory Overclocking civic
+- Hive Minds won't start at a food deficit
+- Fixed bug in Megachurch government trigger
+- Temporary work around so solitary, ext, give less planet capacity
+
+1.4.8.9
+Additions:
+- Organic Slurry gives 20 food
+- Rogue Servators give +1 envoys, +20% diplo weight from pops, -20% diplo weight from fleets
+- Conformist, Docile, Communal, and Obedient bio-trophies give less crime, Deviant, Unruly, Solitary, and Quarrelsome bio-trophies give more
+- Decadent bio-trophies are happier
+- Bio-Trophies give minor bonuses based on their traits
+
+Tweaks:
+- Syndicate Bribery only reduces crime from enforces by 5 (was 10), costs reduced to 300 consumer goods (was 500)
+- Megacorps are significantly more willing to sign commercial pacts
+
+Bug Fixes:
+- Fixed some weirdness with the union and healthcare policies
+- Unemployed bio-trophies produce less crime
+
+1.4.8.8
+Additions:
+- Merchant Guilds can be used with Exalted Priesthood (uses Megachurch government) 
+- Merchant Guilds can be used with Aristocrat Elite (uses Merchant Republic government) 
+
+Bug Fixes:
+- Fixed Hydroponic Farms not giving jobs to regular empires
+
+1.4.8.7
+Additions:
+- With Ecology Mod, some jobs produce extra waste (mostly industrial jobs)
+
+Tweaks:
+- Pops give less crime (especially unemployed pops)
+- Tweaked some job weights
+
+Bug Fixes:
+- Fixed the Finders Keepers event so you shouldn't find your own encryption key
+
+1.4.8.6
+Tweaks:
+- Mammalians get +10% physics research, but -5% dry habitability
+- Avians get +50% automatic migration chance instead of -25% resettlement costs
+- Arthropoid, rulers and synapse drones give +1% pop growth and assembly, but consume +1 more food
+- Avians can use burrowing
+- Refugee events now happen less frequently
+- Bio-Reactors no longer give extra jobs, instead techs provide extra energy
+- Can now use the Sol System with Little Sister, with Mars as the second planet
+- Tweaked bonuses from media policies
+
+Bug-Fixes:
+- Some mod-added civics and origins cannot take the Become the Crisis perk
+- Fixed Beacon of Liberty tooltip
+- Cleaned up tooltip of slavery and purge policies
+
+Bug Fixes:
+- Noble Estates no longer give too much housing
+- Fixed some broken localizations
+
+1.4.8.5
+Additions:
+- Servants, Grunts, and Toilers count as unemployed for the purpose of automatic migration
+
+Tweaks:
+- Pop sprawl gives a less harsh penalty to governing ethics attraction
+
+Bug Fixes:
+- Pops can automatically migrate from Void-Dweller habitats
+
+1.4.8.4
+Additions:
+- Synthetic Empires get modifiers similar to those given by the Machine Intelligence authority
+- Synthetic Mastery perk now fires a flavor event when taken, similar to the other big ascension perks
+
+1.4.8.3
+Updated for compatibility with future diplomacy mod
+Additions:
+- New Perk: Synthetic Mastery
+- Manager jobs give +4 trade value (up from +3)
+- Servitor Caretaker jobs give +5% habitability
+- Agrarian Idyll, rural districts give +0.1 building slots
+- Mechanist Agrarian Idyll start with an extra city district so that their robot assembly plant doesn't start ruined
+
+Tweaks:
+- With Agribusiness, farmers produce +4 trade value (+6 with Criminal Heritage)
+
+Removals:
+- Removed changes to pop growth ceiling and scale, since they are now adjustable via slider
+
+1.4.8.2
+Updated for Ecology Mod compatibility
+Additions:
+- Organic pop growth has a higher ceiling
+- Pop assembly has a base cost of 80 (from 100)
+- Pop growth will stop due to overcrowding earlier
+
+1.4.8.1
+Updated for 3.0.3
+
+Additions:.
+- New Civic: Adaptive Security Protocols
+- Housing modifiers also adds or subtracts from planet capacity
+- GALPOL gives enforcers and telepaths +5% happiness and +1 political power
+- Humanoids have mild opinion boost with other humanoids
+- Xenophobes are unhappy about living under an empire not of their species
+
+Tweaks:
+- One Mind gives +1 stability from hunter-seeker drones, instead of +15% diplomatic weight from pops
+- Edicts that increase medical worker pop growth also increase organic pop assembly, spawning drones give +0.2 assembly
+- Spawning drones now give +5% habitability
+- Self-Evolving Antivirus edict now also gives -15% deviance
+
+Bug Fixes:
+- Machine Empires cannot take the Economical trait
+- Fixed reanimated army spawning
+- Corporate Sovereign now counts as a megacorp in the is_megacorp trigger, fixing issues with their capital buildings
+
+1.4.8
+Updated for 3.0
+Integrated kuyan-judith's Trait Upgrader and Better AI Trait-Modding
+
+Addition:
+- Reduced the effect of number of empire pops on pop growth, especially for pop assembly
+- New Policy: Matrix Utilization
+- New Edict: Self-Evolving Antivirus
+- New Trait: Engineered Byproducts
+- Added required traits for all species classes
+- New species-specific traits
+- Decadent has +25% pop demotion time
+- If 75% of your pops have the brain slug trait, the slugs may offer to turn you into a hive mind
+- New government type for private royal trading companies
+- New random name formats for Media Conglomerates
+- Buffed Tree of Life deposit
+- Beacon of Liberty gives +20% diplo weight from pops, no longer gives extra unity
+- Slavers Guild and Indentured Assets can build industrial districts on Thrall Worlds
+- Police State gives +1 encryption, no longer gives extra trade protection
+- Security Company gives +10 base intel, no longer gives extra trade protection
+- Police State / Security Company / One Mind / Static Research Analysis get cheaper espionage edicts
+- Exalted Priesthood, priest jobs only give +1 unity and amenities, but also give +1 stability, gets cheaper Veneration of Saints edict
+- Death Cult sacrifices increases pop growth by 10% and monthly influence by +0.5
+- Sacrifice: Harmony also gives governing ethics attraction
+- Mortal Initiate jobs require less housing, consumer goods, and amenities
+- Efficient Bureaucracy gives -10% bureaucrat upkeep
+- Reanimated Armies, Centralized Command starts half researched
+- Reanimated Armies now spawn undead armies when armies are killed, instead of after the battle
+- Zealous Crusaders can harm relations 50% faster, but improves them 50% more slowly
+- Company Housing, Resettlement does not cost influence, no longer reduces resettlement energy cost
+- Shell Corporation gives +1 Encryption
+- Family-Owned gives -10% Leader Upkeep
+- Construction Company / Constructobots / Integrated Bioarchitecture now all give +1 building slots
+- Megastore gains access to the Sales Campaign
+- Integrated Bioarchitecture no longer gives -10% building and district upkeep
+- One Mind gives +15% diplo weight from pops instead of -10 deviance
+- Self Experimentation gives +1 codebreaking
+- Pooled Resources, all leaders start one level higher, no longer gives +10% complex drone production
+- Harmonious Hive Mind / Cooperative Network give +10% diplomatic weight, but -1 encryption
+- Factory Overclocking, leaders never malfunction, but leaders are 25% more expensive to recruit
+- Factory Overclocking, Self-Preservation Protocols tradition swapped to give -10% assembly cost instead
+- Master Computer, Leaders half as likely to gain negative traits
+- Unitary Cohesion also give +10% diplomatic weight from economy
+- Synaptic Reinforcement upkeep increase split between energy and food (minerals if lithoid)
+- Placed limits on when the ai will integrate vassals
+- Seat of Consciousness, synapse drones also give +1 admin cap
+- Droids cannot take researcher jobs without the Positronic AI tech
+- Synths cannot take priest and similar jobs without full ai rights
+- Spawning Drones give +2% habitability
+- If the Universal Prosperity Mandate is active, non-authoritarian empires gain access to a new edict that unlocks the Utopian Abundance living standard
+- Pop migration is always available to robot pops in machine empires
+- The Slave Proccessing Center allows automatic pop migration for slaves
+- The Droid technology allows automatic pop migration for robots
+- Thrall Capital can benefits from all capital production techs, as long as the habitat is populated enough
+- Upgraded Habitats can benefit from all capital production techs
+- Upgraded Habitats give +1 building slot per level
+- Capital production techs also increases trade value
+- Thought Enforcement edict gives less crime reduction from telepaths (because in this mod telepaths replace enforcers, so you have more of them)
+- Added several niche faction demands
+- Machine Fallen Empire now gets a Matter Decompresser
+- Yondar have the Flighted and Non-Adaptive traits
+- New government types have been accounted for in the first tutorial event
+
+Tweaks:
+- Resource edicts adjusted in light of 3.0 balance changes
+- Unique resource edicts for hives, lithoids, ext, removed, get cheaper edicts instead
+- Economic Subsidies now give +20% trade value
+- Information Quarantine / Encourage Free Thought are now cheaper if you have authoritarian / egalitarian ethics
+- Delicate gives -20% army health instead of army damage
+- Clever cannot be taken with Nerve Stapled
+- Lithoid pop growth traits also give + pop assembly speed
+- Genetic Memory cannot be taken with Slow Learner
+- Ancient and Seasonal can now be gene modded
+- Amphibious and Arid Adaptations can now be taken with Extremely Adaptable
+- Eternal now gives +400 leader lifespan
+- Clever now shares a trait icon with Spark of Genius (was Maniacal)
+- Regenerative Tissue can no longer be taken by Humanoids, Mammalians, and Avians
+- Trait selection for synthetic evolution now takes most advanced traits into account
+- Increased the enactment time for building hunting and nature preserves
+- Closed Corporation renamed Private Corporation
+- Changed ruler and heir titles for Family-Owned Corporations
+- Prosperous Unification modifier lasts for 20 years, instead of 10
+- Militaristic Unification modifier lasts for 50 years
+- Subterranean Evolution, starts with the burrowing trait for free (Power Drill if machine)
+- Subterranean Evolution no longer get the cheap second expansion with Mastery of Nature (gets the normal, more costly expansion instead)
+- Technocracy and Tech Startup no longer gets research subsidies at game start, get cheaper research subsidies instead
+- Agrarian Idyll techs now modify jobs instead of districts
+- Feudal Society get serf jobs instead of servant jobs
+- Many branch office building have had their jobs reduced, give a production bonus instead
+- Patrol drones only give +1 stability
+- Criminal Jobs only give -3 trade value, but also gives -1 stability
+- Game Dev and Apothecary Jobs had their bonuses doubled (as their branch office buildings now only gives 1 job)
+- Entropic Recursion, energy hubs give extra energy from technician jobs, but no extra jobs
+
+Bug Fix:
+- Fixed hive worlds not getting extra farmer or miner jobs
+- Fixed Void Dweller habitat graphics
+- Mercenary Liaison Office won't give extra energy if the planet's owner is at war with you (Pirate Free Haven has retained this as a feature)
+- Fixed bugged job weight for enslaved technicians
+- Maintenance drones have had their job weight adjusted
+- Fixed Templar jobs giving too much unity
+- Cooperative and Private megacorps can no longer take the Imperial Prerogative and Shared Destiny perk
+- Lithoid Tree of Life won't start with just one mining district
+- Fixed Machine Hegemons using the wrong start screen message
+- AI should be a little smarter about selling slaves on the market
+
+Removals:
+- No longer modifies the discovery tree
+- No longer modifies the Transcendance perk
+- No longer modifies the space mining and research techs (now redundant)
+- No longer modifies the Ministry of Production / Production Center building
+- Synthetic Empires now get the vanilla number of roboticist jobs
+- Slavers Guild Alloy Forges removed (gets industrial districts instead)
+- Machine World industrial districts removed (now redundant)
+- Preventative Maintenance edict removed (now redundant)
+- Robot version of Adaptable removed (too similar to Efficient Processors)
+- Slaving empires will no longer steal pops (a similar feature will be included in an upcoming diplomacy mod)
+- Changes to Expropriation wars have been moved to an upcoming diplomacy mod
+- Democratic and Cooperative Authority no longer gives pop happiness and lower pop demotion time
+- Functional Architecture / Construction Company / Constructobots no longer give +2 housing to housing buildings
+- Cut-Throat Politics no longer gives +1 leader level
+- Meritocracy and Ruthless Competition no longer gives -25% demotion time
+- Brand Loyalty no longer gives bonus to governing ethics attraction
+- Subsumed Will no longer gives diplomatic weight from pops
+- OTA Updates no longer reduce pop demotion time
+- Prosperity Adoption effects reduced to vanilla values
+- Job's no longer have increased trade value from higher living standards
+- Clerk, manager, and executive jobs no longer give extra trade value based on planet population
+- Being over edict capacity no longer gives an influence penalty
+
+1.4.7.3
+Additions:
+- New Origin: Little Sister
+- New Authority: Private
+- New Civic: Economic Algorithms
+- New Civic: Family-Owned
+- New Civic: Nostalgia Peddlers
+- New Edict: Preventative Maintenance
+- Shadow Council / Shell Corporation, can remove leader for 100 influence and -5 stability for 10 years
+- With both Inward Perfection and Feudal Society civics, tributaries give +0.25 influence
+- New Scion task
+- Charismatic gives +1 edict capacity instead of edict length
+- Pops on low-habitability worlds will sometimes move to better worlds
+- Xeno Tourism and Questionable Charity branch office buildings will move an unemployed pop to one of the branch office owner's planets every 5 years
+- Orbis Customer Synergies is now a private corporation
+
+Tweaks:
+- Scion taxes have been lowered
+- Scions to Materialist and Spiritualist FE now get an initial boost, to make up for the taxes
+- Environmentalists start with more pops
+- Shell Corporation can be used with the Cooperative authority
+- Starvation Fearing suffers a stability penalty when running a food/mineral deficit
+- Cooperative and Private authorities will count as Democratic and Imperial for the purpose of pop faction demands
+- Upon synth ascension, livestock pops will become matrix pops
+- Normal defensive armies give slightly 0.25 war exhaustion (was 0.5)
+- Clerks, Merchants, and Executives give half as much extra trade value from additional pops
+- Clerks, Merchants, and Executives give slightly less value from high living standards, and require at least 50% of the planet's pops have a high living standard
+
+Bug Fixes:
+- Machine Scions can now get the Ancient Caretakers as an overlord, as intended
+- Machine Scions shouldn't get Spiritualist FE as overlord, unless they're the only option
+- Scions under the Ancient Caretakers cannot enslave, as intended
+- Democratic Crusaders now treat Cooperatives as democracies in terms of opinion
+- Fixed strong and weak being twice as effective for worker drones
+
+1.4.7.2
+Additions:
+- Scion Origin now available to gestalts
+- New Scion events
+- You might find a primitive civilizations with the Remnants origin
+- Slaves give slightly more empire sprawl (except on thrall and penal worlds)
+- Slaves can work specialist jobs on thrall worlds
+
+Tweaks:
+- Livestock jobs give a small  malus to stability
+- Criminal jobs gives +1 crime
+- Abolitionists will come back if slavery does
+
+Bug Fixes:
+- The Remnants origin starts with mining deposits
+- Fixed Holy Mountain's missing origin image
+
+1.4.7.1
+Tweaks:
+- Dictatorial authority gives -10% empire size, -20% edict cost
+- Xenophobe pops get unhappy when there are recent alien refugees
+
+Bug Fixes:
+- Fixed CTD when selecting the Underground Railroad edict
+
+1.4.7
+Additions:
+- New Civic: Administrative Privileges
+- New Policy: Labor Rights
+- New Tech: Necrotizing Reagents (for Reanimated Armies only)
+- New Bombardment: Death Curse, requires Necrotizing Reagents
+- Added faction demands related to the new Labor Rights policy
+- Memorial buildings no longer give stability directly
+- Death Chronicler jobs give +2 stability
+- Chronicle Drones benefit from relevant traditions
+- Necromancers benefit from the Domination opener
+
+Tweaks:
+- Authoritarian, Xenophobe, and Militarist enforces give -1 stability
+- Authority effects brought in line with those shown in Dev Diary #191
+- Democratic and Cooperative Authorities also give +5 happiness
+- Dictatorial Authority also gives -25% campaign cost
+- Imperial Authority effects standardized with other Authorities
+- Hive and Machine Authorities no longer give edict-related bonuses
+- Cut-Throat Politics and Imperial Cult also reduce campaign costs
+- Hardened Synapse, Synapse Drones give +1 stability
+- Coordinator jobs give +12 admin cap (was 15)
+- Some jobs have had their effects edited to reflect changes made by this mod
+- Evaluators have their own job description, rather than stealing theirs from Coordinators
+
+Bug Fixes:
+- Socialization Protocols tooltip no longer mentions Hive Minds
+- Fixed  egalitarian slaves from dragging happiness of the entire  planet down
+
+Removals:
+- Ad-hoc armageddon bombardment fix removed (should be fixed in Vanilla)
+- Synthetic Empires no longer gain +1 pop on new colonies, due to the authority rebalancing
+
+1.4.6.1
+Additions
+- Memorialists will be annoyed if you terraform a tomb or relic world (including turning a relic into a city world)
+- Death Cults mildly disliked, especially by egalitarians and materialists
+- Death Cults like eath other
+- Necrophages distrusted by non-robot empires
+
+Tweaks:
+- Plantoids make consumer goods partially out of food
+
+Bug Fixes:
+- Updated District AI weights
+- Fixed Hive and Plantoid ai not building districts
+- Lithoid Hives won't need food to build normal armies
+
+1.4.6
+Updated to 1.8.1
+Additions:
+- Compatibility with Machine Consciousness
+- New Origin: Holy Mountain
+- New Edict: Economic Subsidies
+- New Tech: Undead Naval Doctrine
+- Reanimated Armies, starts with a Dread Encampment already built
+- Reanimated Armies, -5% war exhaustion
+- Reanimated Armies, necromancers give unique undead defensive armies
+- Reanimated Armies, Spawns undead armies after a successful army battle
+- Undead armies incure almost no war exhaustion when killed, has higher health and moral damage, and lower upkeep
+- Dread Encampment gives +1 necromancer job per 40 pops, +50% army recruitment speed
+- Memorialist, cannot be fanatic xenophobe, closed collective/network, or living hosts
+- Memorialist, One-time decision to excavate 6-10 minor artifacts from tomb and relic worlds
+- Death Chronicler jobs give 4 society research (up from 2)
+- With Technocracy, Death Chronicler jobs give +2 research (instead of +4 society)
+- Death Cults cannot be Fanatical Egalitarian
+- Death Cults give +5% pop growth
+- With Death Cults, Citadel of Faith gives +1 High Priest, +3 Death Priest, and Mortal Initiate jobs
+- Mortal Initiate jobs give +1 unity
+- With most militarist civics, Mortal Initiates give +1 defensive army
+- With Crusaders or Private Military Companies, Death Preachers give +2 naval capacity and +1 defensive army
+- Infestors get Unity of Self instead of Cloned Organs, giving unity when infesting pops
+- Infested Pop jobs given by new infestation pool building
+- Keepers of Ave'brenn starts with the Holy Mountain origin
+- Martial law causes pop unhappiness
+- Peace Festivals, Entertainers give +1 amenities and trade value, +1 energy upkeep
+- Factions will have OPINIONS about various edicts
+- Homicidal diplo policies will have benefits similar to Belligerent
+
+Tweaks:
+- Exploited Homeworld origin, homeworld starts with -2% amenities
+- Common Ground origin, Xenophile Authoritarian empires will start with a Hive Mind as one of their federation members
+- Biological Engineers and Health Maintenance Organization now require not being Xenophobic
+- Technocracy / Tech Startup, starts with the Research Subsidies edict, Database Uplinks gives them +33% research from orbital stations
+- Infestors infest pops once every 10 years, in line with the Necrophage origin
+- Infested pop jobs give 2 unity, has upkeep of 1 food/minerals
+- Xenophobic Protectionists made less aggressive
+- Oracle gives +10% diplomatic weight from technology
+- Lithoids no longer need to spend food to build clone or gene armies
+- With Exalted Priesthood, Prosperity Preacher jobs only get +1 unity and amenities (was +2)
+- Adjusted health and damage of robot and android armies
+
+Bug Fixes:
+- Encourage Growth demand now works properly
+- Delicate Ecosystem origin now works properly with Ecology Mod
+- Gestalt slaves should never take grunt jobs
+- Fixed some dialogue for Sneering Technocrats
+- Worker Coop gives -15% empire size from pops, as intended
+- Mastery of Nature subteranean expansion now has a tech requirement, as intended
+- Fixed Primitive Cyborgs sometimes not starting with an extra blocker
+- Terraforming won't clear the Tree of Life and other starting deposits
+- Fixed various broken scopes
+- Fixed some broken localiation
+
+Removals:
+- Changes to federation acceptance moved to upcoming diplomacy mod
+- Synthetic Age can no longer be taken by synthetic empires (Synthetic Evolution already does basically the same thing)
+- Rolled back changes to opinion malus from genociding pops
+
+1.4.5
+Additions:
+- New Authority: Cooperative
+- New effects for Authorities
+- New Civic: Chamber of Commerce
+- New Civic: Multicultural Workplace
+- Adjusted civics to take new authority into account
+- New government type
+- Galactic Doorstep: +15% particles and voidcraft research speed
+- Symbiotes have a special reaction to the brain slugs
+- Gestalts are much less likely to be host to the galactic market
+- Purged pops give -0.25 stability each
+- Colony ships require more food
+- AI smarter about chosing diplomacy policy
+
+Tweaks:
+- Worker Coop gives -15% empire sprawl from pops instead of +15% influence from factions
+- Exploited homeworld deposit gives -4 farming deposits (down from -6)
+- Mob Boss job only gives +5 stability (from +10)
+- Food rationing edict only costs 100 influence
+- Mastery of Nature subteranean expansion now has a tech requirement
+
+Bug Fixes:
+- Supremacist faction won't be unhappy about being the leader of a hegemony
+- Bombardments can nuke planets as intended (now happens at 100 devastation and only 1 pop left)
+- Fixed influence penalty from being over edict cap
+
+1.4.4
+Additions:
+- New Civic: Cyberocracy
+- New Civic: Heavenly Choir
+- New Civic: Hardened Synapses
+- New governments for the above civics
+- Industrialist gives +5% mineral and alloy production (was +10% mineral production)
+- Doomsday ai empires should be smarter about colonizing new planets
+- Doomsday, if you haven't found a new colony, pops may start fleeing to a planet that's not going to explode
+
+Tweaks:
+- Philosopher King gets +10% diplomatic weight from pops and technology, but -20% from fleet power
+- Divided Attention gives -5% synapse drone upkeep, no longer give bonus to war exhaustion
+- Efficient Administrative Protocols gives -10% bureaucrat upkeep, no longer give bonus to war exhaustion
+- Static Research Analysis, maintenance drone upkeep reduced to +0.5
+- Warbot Subsidies now also available to Determined Exterminators
+- Empire Size now also increases synapse drone upkeep
+- Rulers are happy under autocratic authorities instead of unhappy
+- Specialists are less unhappy under autocratic authorities
+- Some pop factions will prefer a specific type of leader
+
+Bug Fixes:
+- Unemployment Happiness from Comfort the Fallen now applied correctly
+- Updated create_cybernetic_species_mod effect (should fix cyborg special project)
+- Hives getting wrong version of Integrated Preservation
+- Fixed and toned down crime from unemployed pops
+- Updated traits for better Planetary Diversity compatibility
+- Infest a species special project given a more appropriate picture
+- Lithoid rare resource miners now have mineral instead of food upkeep
+- Updated Opinion Files
+- Tempestuous Unification won't start with an extra unemployed pop
+
+1.4.5.2
+Additions:
+- Natural Hunters now benefit from hunting space whales
+- Purged pops can take some criminal jobs
+
+Bug Fix:
+- Symbiotes cannot assimilate, for real this time
+
+1.4.5.1
+Additions:
+- Integrated Rare Heir mod
+- Made more compatible with Ecology Mod
+
+1.4.5
+Updated to 2.7.1
+
+Additions:
+- New Origin: Private Colonization Initiative
+- New Edict: Refinery Subsidies
+- New Edict: Strict Rationing
+- New Campaign: Warbot Subsidies
+- Resource Consolidation, Consolidated Resources deposit gives additional resources
+- Life Seeded, homeworld gains +25% amenities and +100 immigration pull
+- Galactic Doorstep, building a gateway gives more progress on Gateway Activation, as well as some nanites
+- Scion, must pay taxes to your overlord
+- Scion, xenophiles and pacifists may end under the xenophile fe
+- Scion, less likely to be gifted a fleet before the midgame
+- Habitat capitals under gestalts give extra maintenance drones
+- Colonial and Galactic Bureaucracy gives +5% admin cap (instead of a flat +10), but also +5% bureaucrat upkeep
+- The Imperialist Faction will no longer punish you if no other normal countries are strong enough to rival
+- Reworked edicts for the new system
+- Being over edict capacity also gives influence penalty
+- Resource edicts also increases the political power and happiness of the effected job type (non-gestalt only)
+- Capacity Subsidies, technicians get consumer good / mineral upkeep, instead of energy
+- If materialist, research subsidies give an additional +5 happiness to researchers
+- Living metal pop growth edicts, reworked effects
+- Living Prosthesis and Zro Aphrodisiac now effect the pop growth from medical workers and spawning drones, increases their upkeep
+- Self-Assembling Machines now gives +25% replicator upkeep
+- Gestalts can turn relic worlds into city worlds
+
+Tweaks:
+- Shadow Council, rules now also give +10% amenities and trade value
+- Visionary Founder renamed Managerial Synergy: Now with 100% more buzzwords
+- Managerial Synergy (formally Visionary Founder) no longer requires authoritarian
+- Managerial Synergy and Master Computer give +1 edict capacity instead of edict duration
+- Closed Collective / Network, +1 edict capacity
+- Subsumed Will, +10% diplo weight from pops (from +5%)
+- OTA Updates, -66% pop demotion time (from -45%)
+- Rebels get lower war exhaustion
+- Infestation jobs are now provided by the capital rather than the spawning pools
+- Scaled back the effect of empire size on governing ethics attraction
+- Rare resource miners (not gestalt) consume 0.5 consumer goods, instead of +1 energy
+- Replicator Overclocking edict increases replicator upkeep by 25% (was 20%), +10% empire size from pops, increased influence cost
+- Machines gain access to the Infrastructure Campaign
+- Ministry of Production can only be built and sector capitals
+
+
+Bug Fixes:
+- Gestalt ai won't sometimes start with maintenance depots
+- Common Ground, won't spawn next to criminal syndicates
+- Federation Origins, will always spawn with more hyperlanes around your home system
+- Enforcers under ai give more crime reduction
+- Rebalanced ai weights for crime decisions
+- Harmony Finisher won't give gestalt residency penalties twice
+- Cleaned up ethics restriction on megastore
+- Can no longer turn machine and hive worlds into penal, thrall, or resort worlds
+- Subjects that are not vassals or duchies will not get the vassal tax modifier
+- Cleaned up what happens when a resort world changes hands
+- Fixed resort world capitals
+- Fixed broken building icon
+- Added missing localization
+
+Removals:
+- Gestalt diplomacy techs moved to an in-development diplomacy related mod
+- Hive Queen moved to Expanded Megastructures and Technologies
+- Advanced Drone Cloning moved to Expanded Megastructures and Technologies
+- Housing building restrictions on habitats restored to vanilla
+- Removed Encourage Planetary Spawning decision
+
+1.4.4
+Inbuilt compatibility with Pantheon of the Void
+Additions:
+- New Origin: Symbiote
+- New Civic: Parasitic Hive
+- New Civic: Infestation
+- New Civic: Socialization Protocols
+- New AI Personalities: Ambitious Unifiers
+- Common Ground can now be used by Hive Minds
+- Hegemon Origin can now be used by Gestalts
+- Common Ground, Hegemon, and Research Union all start out at Federation Level 2
+- Void Dweller now available to Machine Empires
+- Void Dweller trait now applied at game start, to make the above possible
+- Byzantine Bureaucracy gives extra political power and happiness to bureaucrats
+- Rogue Servators can research and create resort worlds
+- New generic government types for Hive Minds (similar to Intelligent Research Link and Industrial Production Core for Machines)
+- Lithoid Empires can hibernate up to 10 unemployed pops at a time
+
+Tweaks:
+- Delicate Ecosystem modifier now gives -2 max districts
+- Ecologist trait only gives 10% bonuses (down from 15%)
+- Front Corporation renamed Shell Corporation
+- Delegated Functions now gives -25% complex drone upkeep instead of +10% output
+- Closed Collective/Network can not be taken with Strength of Legions/Warbots or Subspace Ephapse/Deepspace Networking
+- Static Research Analysis, Maintenance Drones gives +1 research, but +1 energy upkeep, no longer gets +research from evaluators
+- New icon for Closed Collective
+- Enclaves no longer gives farmer jobs
+- Suppliers have both energy and mineral upkeep
+- Maintenance Drones give some research, instead of synapse drones and evaluators
+- Training telepaths now also costs 50 zro
+- Rebalanced hive void dweller start
+
+Bug Fixes:
+- Aristocratic Elite only gets 2 servant jobs (for real this time)
+- Closed Collective cannot be taken with Eusocial Hive Mind
+- Empath cannot be taken with Closed Collective
+- Fixed purifiers and exterminators not getting unity from purging
+- Standardized Hive civic icons
+- Robots under hive minds will not be outsiders, and will be purged
+- Restored deposit image for lithoid monoliths from 2.5 (Why do you do this, Paradox?)
+- New ai personalities will have varying federation acceptance
+- The Worm temple on your homeworld spawns with special text if you have the Void Dwellers origin
+- Fixed icon for lithoid growth traits
+
+Removals:
+- Changes to the Plunder war goal moved to Better Raiding
+
+1.4.3.1
+Addition:
+- New Origin: Research Union
+
+Tweaks:
+- Exploited homeworld deposit no longer reduces farmer output, instead reducing farming districts by an additional 3 (6 total)
+- Buffed exploited homeworld habitability traits slightly
+- With Ecology Mod, exploited homeworld gets +5 stability (to balance out heavy pollution)
+- Private healthcare effects the happiness of specialist pops less, and ruler pops not at all
+
+Bug Fixes:
+- Fixed amenities from Enclave buildings being multiplied instead of added
+- Fixed Extant Creators starting with one too many pops
+- Restored: running out of food causes major emigration push (now takes lithoids into consideration)
+
+1.4.3
+Updated for 2.6.3
+Additions:
+- Void Dweller can be taken by hive minds
+- A few more lines of diplomatic dialogue
+- Tempestuous Unification starts with Ground Defense Planning tech option
+- Civs that give admin cap also gives Adaptive Bureaucracy tech option
+- Supremacist faction won't be upsed at being the leader of a hegemony
+
+Tweaks:
+- Efficient Bureaucracy now only starts with Adaptive Bureaucracy tech option
+- Starvation Fearing can no longer be used with Void Dweller, Shattered Ring, or Post-Apocalyptic origins
+
+Bug Fixes:
+- Fixed minor errors in the district files
+
+Removals:
+- Reverted roboticist upkeep changes
+
+1.4.2
+Updated for 2.6
+Addition:
+- New Origin: Tempestuous Unification
+- New Origin: Syncretic Crystals
+- New Origin: Exploited Homeworld, replaces exploited homeworld random event
+- New Civic: Closed Collective
+- New Civic: Self Experimentation
+- New Civic: Integrated Bioarchitecture
+- New Civic: Interlacing Warrens
+- New Civic: Starvation Horders
+- New Civic: Stone Sense
+- New Trait: Eternal
+- New Decision: Mineral Prospecting (For Lithoids)
+- New AI Personality: Peacekeeping Interventionists
+- New AI Personality: Sneering Technocrat
+- Lost Colony Origin now gives: +25% colony development speed, -25% colony ship cost, random blocker tech, gets a minor opinion boost between them and their home country
+- Calamitous Birth Origin, Meteorite Colony Ships now give a lesser version of the crater on the homeworld
+- Natural Neural Network, unemployed drones also produce +1 unity
+- Natural Neural Network, can set Unemployed Drones Usage policy to produce even more research from unemployed drones
+- The Inward Perfection civic makes the Isolationist faction happier
+- Nature Preserves also give +5% habitability
+- Merchant Guild now gives +1 merchant jobs to Auto-Curating Vaults
+- Added Unemployed Drones Usage policy for hive minds
+- Hive Minds get their own version of the healtcare policy
+- Trade League trade policy split between Acquisitions and Extraction
+- Restored research from gestalt unity jobs (+1 research from evaluators, +3 society from synapse drones)
+- Synth Colonists produce energy instead of food
+- Replicator upkeep now 0.75 alloys (from 1), roboticist upkeep now 1.5 alloys (from 6 minerals)
+- Spawning Drones give +2 society research
+- Xenos can make use of self-modification. Xenos will not trigger the Rising Tensions event chain.
+- Hives can make use of self-modification, and can trigger the Rising Tensions event chain with modified text
+- Added Android Occupation Army
+- Reworked changes to administrative capacity
+- Added gestalt diplomacy techs
+- Transcendent Learning, leaders start at level 2
+- Void Dweller: Domination Opener gives -33% upkeep on habitat capitals
+
+Tweaks:
+- The Following Civics have been converted into Origins:
+	- Terraformer
+	- Eusocial Hive Mind
+	- Syncretic Equals
+	- Syncretic Livestock
+	- Delicate Ecosystem, bonuses now given as a trait
+	- Extant Creators, creators get unique trait, capitals give 1 less replicator jobs
+	- Subterranean Evolution, Subterranean Expansion is more expensive (50 influence, 2000 energy and minerals), can only be used twice
+	- Ancien Régime, reworked effects
+	- Primitive Cyborgs
+	
+Changes to the Preset Empires:
+	- Blorg Commonality starts with Fanatical Befrienders instead of Free Haven
+	- Chinorr start with the Exploited Homeworld origin
+	- Ix'Idar Star Collective starts with the Subterranean Evolution origin
+	- Kingdom of Yondarim starts with the Ancien Régime origin
+	- Maweer Caretakers starts with the Terraformer origin
+	- Tzynn Empire starts with the Tempestuous Unification origin
+	- Scyldari Confederacy starts with the Delicate Ecosystem origin
+	- Voor Technocracy starts with the Primitive Cyborgs origin
+
+- Environmentalist civic now cannot be taken with xenophobe ethics or the merchant guild civic
+- Efficient Administrative Protocols now gives +10% admin cap
+- Byzantine Hierarchy Renamed Labor Resource Specialists
+- Subsumed Will gives +5% diplo weight from pops, no longer discounts diplomacy influence costs
+- Unitary Cohesion gives +10% Diplomatic Weight from Pops, no longer decreases deviancy
+- Static Research Analysis, Evaluators give extra research instead of Coordinators
+- Removed job changes to Slavers Guild / Indentured Assets (Indentured Servant slave type made them redudnant)
+-	- Without Utopia, owner species can still work specialist jobs
+- Indentured Assets, indentured servants have less political power
+- Warrior Culture and its equivalents no longer start with Centralized Command (get it as a tech option instead)
+- Cannot take both Byzantine Bureaucracy and Efficient Bureaucracy
+- Fanatical Befrienders now gives only +5% unity per migration treaty (up to +25%)
+- Megastore now requires not being militarist
+- Inwards Perfection and its equivalents get free non-aggression pacts
+- Closed Area Network now also gives -1 envoy, same diplomatic stance restrictions as Inwards Perfection
+- Harmonious Hive Mind / Cooperative Network now also gives +1 envoy
+- Interlacing Warrens, housing buildings give +2 amenities instead of housing
+- High Priests restored to only +5 base unity and amenities
+- Bureaucrats gives 20% less admin cap
+- Telepaths now only give +1 stability
+- Roboticists and Replicators now only give +2 engineering research
+- Supplier jobs now give 6 consumer goods for 6 energy
+- Patrol Drones now gives +2 stability
+- Gestalt Unity jobs restored to base unity production
+- Zro from purged pops halved
+- Purged robot pops always gives alloys
+- Temples no longer give bonuses to unity (they are now spamable)
+- Enclaves give 1 supplier job instead of 2
+- Hives now give 1 extra maintenance drone instead of 2 extra synapse drones with Galactic Administration and 80+ pops
+- Organic Santuaries no longer give coordinator jobs
+- Seat of Consciousness now unlocked by Autocurating Vault tech
+- Supersaturated Growth is now an advanced trait
+- Obedient gives -15% empire size from pops
+- Poisonous now gives +15% chemist (mote) production instead of +50% defensive army damage
+- Signal Repeater renamed Eusocial Software
+- Shoddy Transmitters renamed Unsynchronized
+- New icon for Ageless trait
+- Production Targets for lithoids give +25% minerals (was +30%)
+- Improved Working Environment gives +4% specialist and +8% worker happiness
+- Consume world decision will now also clear a blocker when free districts start to get low
+- Public Works decision now gives +15% planetary build speed (was +5%)
+- Access to the Information Quarantine and Encourage Political Thought edicts are now controlled by media rights policy, rather than ethics
+- Censored media gives lesser versions of the above edicts
+- Removing subteranean deposits are now more expensive
+- Private healthcare policy gives lower pop growth malus, gives slight happiness malus
+- Synaptic Extensions tradition now only gives +2 to its respective buildings (Synaptic Nodes are now spamable)
+- Protectorates can no longer be integrated
+- Xenophobe empires care less about purging other aliens
+- Vassals give +25 naval capacity instead of +10%
+- Oracle gives +10% admin cap, but -10% diplomatic weight from pops
+- Artificial Personality Matrix converted into a diplomatic tech
+- Non-materialist fallen empires spawn with more pops, it balance out against the materialist's ring world
+
+Bug Fixes:
+- Hopefully fixed void dweller gene mod exploit
+- Front Corporation gets +2 ruler political power, in line with Shadow Council
+- Fixed error in Media Conglomerate's description
+- Cleaned up and updated job weights
+- Ring world districts are now more in line with their regular counterparts
+- Fixed bug with machine FE
+- Fixed a bug with some Traditionalist demands
+- Endemic now has the correct trait cost
+- Serviles cannot take the Clever trait
+- Hive Minds can no longer use the Carefree and Skittish traits
+- Fixed bug in synchronicity finisher
+- Imperious Architecture now also effects habitat capitals
+- Closed Collective / Network get adaptability tradition swap
+
+Removals:
+- Removed Lost Colony civic (now redundant)
+- Removed Living World civic (now redundant)
+- Removed Machine World civic (now redundant)
+- Removed Automated Labor civic (now redundant)
+- Removed Livestock Ranchers (Merged with Syncretic Livestock)
+- Removed Subterranean Progenitors (Merged with Subterranean Evolution)
+- Removed Peaceful Collective civic
+- Removed changes to ethics (may add it back in if needed)
+- Ascetic no longer gives food upkeep bonus (gets +5% habitability now)
+- Indentured Assets, no longer gets extra crime reduction on worlds with slaves
+- Technocracy, researcher no longer produce extra research
+- Technocracy and its equivalent civics no longer gives unity from researching tech
+- Natural Neural Network no longer gives bonuses to synapse drones (now gets research from unemployed pops)
+- Shadow Council no longer gets +5% ruler happiness (gets +10% ruler production instead)
+- Philosopher King no longer gets bonus to ruler production (shadow council gets it instead)
+- Modular Depot tradition no longer gives +2 housing to fortress buildings (gets -25% sprawl from districts instead)
+- Maintenance Drones no longer produce research
+- Machine Worlds no longer gives bonus to roboticist/replicator pop production
+- Changes to Authority removed to another mod currently being worked on
+- Effect on empire size on empire ethics attraction moved to another mod currently being worked on
+- Many non-government related opinion modifiers have been moved to another mod currently being worked on
+- Restored old habitat capital upkeep
+
+1.4.1
+Additions:
+- New AI Personality: Warrior-Scholars
+- Venerable and Enduring for Lithoids 50% better
+- New random name formats for megacorps
+- New random name formats for agrarian idyll empires
+- New random name formats for Communal Parities
+- Xenophobes who share a planet with free xenos will be less happy
+- Egalitarian bio-trophies are less happy
+- Pops will non-governing ethics will be less happy under dictatorial or imperial authority
+- Progressive faction dislikes living under a police state
+- Added Media Rights policy
+- Added Healthcare policy
+- Added faction demands related to the new policies
+
+Tweaks:
+- Hive Mind pop growth bonus increased to 33% (was 25%)
+- Doubled resources gained from Lithoid traits
+- Democratic Crusaders hate egalitarian oligarchs and non-authoritarian peaceful traders less
+- Democratic Crusaders hate royal trade companies more
+- Democratic Crusaders are neutral towards worker coops
+- Ascended Synths only get one roboticist job from capitals, regardless of level
+- Plantoid farmers take up no housing
+- Tweaked how unemployment effects crime
+- Nobles now give 2 unity
+
+Bug Fixes:
+- Fixed lithoids not using planetary growth
+- Primitives won't generate extra crime
+- Criminal syndicates should no longer be able to build branch offices on their own planets
+- Fixed Nu-Baol pops not spawning with plantoid trait
+
+1.4.0
+Additions:
+- New Trait: Coniferous
+- New Trait: Crystalline
+- Lithoid pops get +1 minerals from miners, but -1 food from farmers
+
+Tweaks:
+- Lithoid hive minds can make use of the hive food policy
+- Lithoid pop growth penalty changed to -20% (was -25%)
+- Lithoid and Fungoid leaders will spawn slightly younger
+- Obedient gives +10% happiness and -10% amenities usage, no longer gives army morale
+- New icon for Fungal Colony
+- New icon for Supersaturated Growth
+- Pops generally produce more crime
+- Civs that start with slaves start with a Precinct House/Sentinel Posts and two extra pops
+- Conformist and Obedient pops generally produce less crime
+
+Bug Fixes:
+- Fixed artisan drones producing too many consumer goods
+- Fixed the description of Engineered Pheremones to accurately reflect its effects
+
+1.3.9
+Additions:
+- New Trait: Supersaturated Growth
+- New Trait: Succulent
+- New Tradition Swap: Arcadian Housing
+- When the last district of a planet is consumed, the hive gets a last influx of resources and the planet is abandoned
+- Hive city districts give +1 agri-drone jobs (mining-drone if lithoid)
+- Space Mining and Research bonus from techs and traditions give +25% bonus, instead of 10%
+- Gave Plantoid and Fungoid unique trait icons
+
+Tweaks:
+- Plantoids give -15% dry habitability (was -10%), but plantoid farmers use half as much housing
+- Consume world always gives pops, minerals, alloys, also gives unity, engineering research, sometimes rare resources
+- Delicious gives a percent bonus to food and minerals (temp fix until federations dlc gives us origins)
+- Synaptic Extensions gives +3 housing to relevant buildings (was +2)
+
+Bug Fixes:
+- Synaptic Extensions and Modular Depot traditions properly add housing to fortress buildings
+- Fixed missing preset empires
+- Fixed districts not costing anything
+
+1.3.8
+Updated to 2.5
+Additions:
+- New Ai Personality: Decadent Technocracy
+- New Edict: Volatile Energy Generation
+- New Edict: Mining Lasers
+- New Edict: Crystalline Research
+- New Edict: Living Prosthesis
+- New Edict: Self-Assembling Machines
+- New Trait: Shiny
+- New Trait: Dense
+- New Trait: Hardened
+- New Trait: Compact
+- New Trait: Solid Shape
+- New Civic Swap: Subterranean Idyll
+- New Tech Swap: Engineered Mining-Drones
+- Terravores get more from consuming worlds
+- Fungoids can use Gaseous Byproducts
+- Lithoids get a better version of production target
+- Dark Matter Research and Zro Aphrodisiac only costs 25 resource (was 50)
+- Zro Aphrodisiac only gives +15% pop growth (was +25%)
+- Mind over Matter / Transcendance gives +10%/+20% unity and -10%/-20% edict cost
+- Efficient Bureaucracy and equivalent civics now only give -5% empire sprawl penalties, but now gives an additional +10 administrative cap
+- Pops will give up to 1 crime, depending on strata and living standards
+- Low amenities, low stability, overcrowding, and unemployment increases crime slightly
+- High stability gives gestalts up to -15% pop upkeep
+- New dialogue for Knowledge Seekers
+- Lithoids get access to machine empire's better mineral processing building, which also gives them +1 mining jobs
+- Lithoids can use encourage growth decision, which costs minerals and is more expensive (+30% upkeep instead of +20%)
+
+Tweaks:
+- Photosynthetic renamed Plantoid, now a required trait for plantoids, see full description for details
+- Decomposer renamed Fungoid, now a required trait for fungoids, see full description for details
+- Seasonal gives -25 leader lifespan (down from -20)
+- Encourage Planetary Spawning is now a toggle
+- Egalitarian megacorps can be trade league if they lack certain civics
+- Free Traders cannot be used with visionary founders
+- Police State cannot be used with egalitarian ethics
+- Agrarian Idyll and Mining Guilds are now mutually exclusive
+- Agribusiness and Mining Company are now mutually exclusive
+- Lithoid Agribusiness, artisans have upkeep of 3 food and 3 minerals, and entertainers have an upkeep of 3 food
+- Obedient gives +15% happiness and army morale, no longer reduces housing usage, can no longer be used with skittish or nerve-stapled traits
+- Courier Network only gives -5% empire sprawl (was -10%)
+- Enforcers no longer give less crime reduction on populated planets
+- Base crime reduced back to 2
+- Max level cap increased to 20
+
+Bug Fixes:
+- Fixed minor error in expanded_pop_events
+- Free non-gestalt pops in gestalt empires will no longer have double the base housing and amenities usage
+- Spawning Vats now correctly costs exotic gases to build
+- Fixed missing icon for Artificial Personality Matrix
+
+1.3.7
+Updated for 2.4.0
+Additions:
+- You can only build one Numistic Shrine per deal
+- Enforcers give less crime reduction on populated planets (60 or more)
+
+Tweaks:
+- AI won't turn gaia, hive, and machine worlds into city worlds
+- Cannot guarantee someone currently at war
+- Galactic Stock Exchanges gives 1 merchant job per 50 pops (was 40), and has a rare crystal upkeep
+- Megacorp roboticist building gives private roboticist jobs which give +1 assembly point
+- With Ecology Mod, Consumerist civic will get 1 additional merchant job and one less clerk job from trade buildings and will start with the Space Trading Technology
+- Non genocidal machine empires will tend to like materialists and cyborgs and dislike spiritualists
+- Organic pop growth penalty for machine empires raised to -50% (was -40%)
+
+Bug Fixes:
+- Added missing icons
+- Awakened FE can build city worlds
+
+1.3.6.1
+Tweaks:
+- Charter Companies can no longer be integrated, but are now taxed +10% of their consumer good
+- AI will not switch to an ethic that is the opposite of their current ethics
+
+Bug Fixes:
+- FINALLY figured out why ai wasn't declaring war
+- Prevented ai from taking corporate dominion if you have megacorp
+- Added missing localization
+
+1.3.6
+Additions:
+- NEW Civic: Harmonious Hive Mind
+- NEW Civic: Cooperative Network
+- NEW Civic: Extant Creator
+- NEW Policy: Vassal Autonomy
+- NEW Edict: Zro Aphrodisiac
+- NEW Vassal Type: Charter Company
+- Encourage Growth and Distribute Luxuries are now toggles
+- Non-special gestalts can give non-gestalts resident citizenship, but too many free non-gestalts will cause increasing penalties (see full features for details)
+- New gestalt ai personalities
+- Gestalts can use regular slavery, slaves and residents can only work simple drone jobs
+- Unique branch office buildings for the Megastore civic
+- Battle Thralls give +2 naval capacity from soldier, enforcer, duelist, and overseer jobs
+- Unemployed Battle Thralls work grunt jobs, giving naval capacity and defensive armies
+- Domination opener gives +1 defensive army from soldiers
+- Imperious Architecture gives +1 housing to fortress buildings
+- Citadels of Faith give +1 high priest jobs
+- With Technocracy, Auto-Curating Vault gives +1 Head Researcher
+- Oracle Administration modifier gives -10% empire sprawl penalty
+- Mining Guilds and its equivalents give +10% mining station output
+- Functional Architecture and its equivalents give +2 housing from housing buildings
+- Added new faction demands related to the new vassal autonomy policy
+- Pops being displaced or neutered can work normal worker jobs
+- High amenities gives bonus to trade value / simple drone production
+- Stratification faction demand will also be satisfied if all species not your own is a resident
+
+Tweaks:
+- Trading Post gives +20 opinion with non-gestalt neighbors, instead of -50% border friction
+- Slaver's guild, slaves who's species is not entirely enslaved can take entertainer and enforcer jobs
+- Terraformer can no longer be added or removed after game start
+- Machine World now gives +1 max districts
+- Primitive Cyborgs get -10 opinion from non-materialist empires, no longer requires the repugnant trait
+- Mechanist gets +15% robot assembly speed instead of an additional roboticists job
+- More slight ethics tweaks
+- Branch office bonus from Commercial Forums/Smuggler Rings have been reduced to their vanilla value
+- Smugglers produce 2 consumer goods and 2 trade value (was 4 trade value)
+- Cannot make tomb worlds resort worlds
+- Abolitionist movements less likely in authoritarian countries
+
+Bug Fixes:
+- Fixed crime from criminal Temple of Prosperity
+- Branch office buildings that can't be built on city worlds also can't be built on relic worlds
+- Fixed some civic icons
+- Fixed underground railroad edict so that you can actually use it
+- Fixed minor errors in the pop faction files
+
+1.3.5
+Additions:
+- Psi Corps is now a Empire Unique, turns all enforcers turn into telepaths, unlocks decision to do the same on other planets, no longer gives stability directly (give stability through telepath jobs), gives empire-wide +5% government ethics attraction, now costs zro to build and maintain
+- Galactic Stock Exchanges is now an Empire Unique requiring 50 pops, gives +1 merchant job and +10% trade value localy, +20% trade value and +1 merchant job per 40 pops across empire, cost increased to 1000 minerals
+- Ministry of Production / Production Center is now a sector unique, applying its bonus across the sector. The planet it's built on gets an additional +5% bonus
+- Private Research Enterprises / Illicit Research Labs gives +1 researcher job
+- Public Relations Firm and Private Construction Contractors gives +1 manager job
+- Gang Wars modifier gives -5 stability, +1 Criminal job, + 1 Criminal jobs per 17 crime
+- Drug Trade modifier gives +1 Smuggler, Apothecary, and Criminal jobs, +1 Apothecary and Criminal jobs per 33 crime
+- Mob Rule modifier gives +1 Commissioner job, +1 Criminal job, + 1 Criminal jobs per 17 crime
+- Some temporary criminal modifiers also gives unique jobs
+- Natural Hunters, livestock slaves get special Prey job, which also produces +2 amenities
+- Crime gives +1 emigration push per crime
+- Deviancy gives -0.33% unity from jobs per deviancy
+- Food and consumer good deficits will increase emigration push
+- Added some easter-egg dialogue
+
+Tweaks:
+- Unique jobs from criminal branch office buildings give some negative effects
+- Questionable Charity also gives emigration push on the planet it is built on
+- Telepaths give +2 stability (from +2.5)
+- Telepaths only give -25% crime reduction (from -30%)
+- Slave Overseers give only -20 crime, same as enforcers
+- Deviant Drones have food upkeep instead of energy upkeep
+- More crime from criminal syndicate buildings
+- Chrysalic Young renamed Chrysalid Young, because chrysalic isn't a word
+- More subtle ethics attraction tweaks
+- Pops are much less likely flee starvation, low living standards, or high crime if they have another country they can migrate to
+- With Galactic Administration, the Hive Nexus gives +2 synapse drone and +1 hunter-seeker drone jobs once you reach 80 pops (was only the capital)
+- Primary Synaptic Confluence renamed to Seat of Consciousness
+- Natural Hunters gets a new icon
+- Removed colony types files, as it is no longer needed
+
+Bug Fixes:
+- Fixed bugged start screen message for post-apocalyptic empires
+- Fixed Activity Program modifier not doing anything
+- Fixed Buged name and description for Subterranean Evolution for hive minds
+- Send Artifacts to Museum Exhibits decision also gives unity bonus to priests
+
+1.3.4
+- Added Support for Hybrids Animated Portraits
+Additions:
+- New Building: Mafia Commission
+- New Building: Questionable Charity
+- Resources and jobs from corporate buildings have been doubled
+- Amusement Megaplex and Underground Clubs gives +1 entertainer job
+- Mercenary Liaison Office/Pirate Free Haven produce 10 energy for its corporate owner if the planet's owner is at war (or has pirates, in case of the Pirate Free Haven)
+- Mercenary Liaison Office/Pirate Free Haven allow for the construction of merc armies, which cost energy instead of minerals, branch office owner gets a cut when built
+- Private Military Industries gives +1 metallurgist job
+- Some corporate buildings produce unique jobs
+- Edict to keep idiot ai federation members from declaring war for 10 years
+- Unique text if you get presapient refugees
+- Criminal Branch Offices have a base crime of 40 (up from 25)
+- New Abolitionist Events
+- Empires can fund an underground railroad
+- Slaves are much less likely to flee without an underground railroad on the planet
+- Ending a deal with local crime lords while crime is too high might have negative consequences
+
+Tweaks:
+- Strength of Legions give 1 warrior job per 20 pops (was 25)
+- Worker Coop gets +20% influence from factions, instead of +5 stability and +5% amenity usage
+- Idealistic Foundation gets +0.5 influence if certain progressive faction demands are met (same as beacon of liberty)
+- Pops five times less likely to flee from high crime if crime lord deal active
+- Numistic Temple gives +10% unity and spiritualist ethics attraction, in line with other temples
+- Refugee MTTH has been increased in general, and for slaves in particular
+- Tweaks to ethics attraction
+
+Bug Fixes:
+- Refugees must be able to survive in the empire that they are fleeing to
+- Cleaned up icon for Uninventive trait
+- Corvee's Laborer jops properly classified in the worked category
+- Determined Exterminators get unity from purges (2/month, same as fanatic purifiers)
+- Portal researchers won't give extra unity with Technocracy civic
+
+1.3.3
+Additions:
+- NEW TRAIT: Economical
+- Slaver Guilds/Indentured Assets: Unemployed normal slaves can work servant jobs, no longer gets slave upkeep bonus
+- Environmentalist empires will slightly dislike corps and wasteful civs, and like fellow environmentalists
+- Distant colonies take a stability hit
+
+Tweak:
+- Local Manufacturing is now new worlds rather than statescraft
+- Enforcers only give -20 crime
+- Holographic Casts / Nano-Circuit Assembly have higher weights based on years passed
+
+Bug Fixes:
+- Fixed vanilla bug that made in impossible pops to flee to countries where they would not be full citizens
+- Fixed being able to add brain slug trait when you haven't completed the brain slug anomaly
+- Fixed missing NOR in city world decision
+
+1.3.2
+Addition:
+- NEW: Encourage Planetary Spawning decision
+- Nationalistic Zeal: After a successful war, +10% happiness and unity for 30 years
+- Mastery of Nature decision has a 50% chance of adding a new deposits on valid planets (same restrictions as prospect planet decision)
+- If xenophobe, spiritualist aliens will join the isolationist faction instead of the traditionalist
+- If xenophobe, the traditionalist faction will have additional anti-alien demands
+- If xenophile, the traditionalist faction will have some additional pro-alien demands
+- Unless you are fanatic spiritualist, the traditionalist faction is more neutral to the presence of robots
+- If both pacifist and spiritualist, the traditionalist faction will dislike you if you start a war of aggression
+- If spiritualist and either militarist or xenophobe, the traditionalist faction will like you if you win an ideology war
+
+Tweaks:
+- Imperial Cult: empire capital gives a small amount of unity
+- Private Prospectors: new colonies get -10% building and district cost for 10 years
+- Media Conglomerate: -10% claims cost while at war
+- Propaganda Broadcasts Edict gives -5% claim influence cost instead of +5% pop happiness
+- Natural Hunters now get bonuses from more types of ships, including large crisis ships and stations
+- Hive construction campaign gives a 15% bonus (from 12%)
+- Military Academy gives +1 soldier job per 30 pops (was 33)
+- Clerks give +1 trade value if owner is a megacorp
+
+Bug Fixes:
+- Fixed incorrect description of Idealistic Foundation
+- Fixed incorrect description of Franchising
+- Subspace Ephapse actually updated as promised
+- Fixed reptiles having no pop upkeep
+
+1.3.1
+Disentangled mod from Glavius, for good this time
+
+Additions:
+- Beacon of Liberty: additional +5% unity if certain progressive faction demands satisfied
+- Imperial Cult: +25% governing ethics attraction (up from +10%)
+- Cut-Throat Politics: +1 leader level
+- Ruthless Competition: -25% demotion time
+- Brand Loyalty: +20% governing ethics
+- Ascetic: -10% food upkeep
+- Subsumed Will: -20% diplomatic influence upkeep.
+- OTA Updates: -50% pop demotion time
+- Zero-Waste Protocols: - 15% ship upkeep
+- One Mind/Unitary Cohesion: -10% deviance
+- With Neural Implants or Collective Production Methods (or machine equivalent), processing slavery and purges give +1 resource
+- Colonial and Galactic Bureaucracy techs each give -5% empire sprawl penalty
+- Brain Slug gives +15% unity and research, can be gene modded onto pops
+- Pacifists get -5%/-10% empire sprawl penalty
+- Integrated more thourough ethics attraction
+
+Tweaks:
+- Efficient Bureaucracy: Starts with Adaptive Bureaucracy technology
+- Police State/Security Company: +5 trade protection
+- Slaver Guilds/Indentured Assets: -10% Slave Upkeep
+- Shadow Council / Front Corporation: +2 ruler political power (up from +1) and +5% ruler happiness
+- Barbaric Despoilers: +5% worker production
+- Merchant Guilds: Starts with Space Trading Technology
+- Ancien Régime: +5 admin cap
+- Terraformer: +1 max district
+- Natural Hunters: +100 army starting experience (down from +250), +33% army morale damage, +1 General level cap
+- Zealous Crusaders: +25% army morale
+- Naval Contractors: +1 admiral level, +10 command limit, no longer gives +1 trade to soldiers
+- Franchising: -33% Empire Sprawl from Branch Office (up from +25%)
+- Chrysalic Young: +2 pops on new colonies (up from +1)
+- Divided Attention/Efficient Administrative Protocols: -10% war exhaustion
+- Subspace Ephapse: +10 command limit, no longer gives upkeep bonus
+- Deepspace Networking: +5% fire rate, no longer gives upkeep bonus
+- Police State and Security Company have lower ai weights
+- Purged psionics gives monthly zro instead when pop is killed
+- Courier Network gives -10% empire sprawl penalty, restored to only +20 admin cap
+- Military Academy gives 1 soldier job per 33 pops
+- War Factory gives 1 warrior job per 25 pops
+- Military Academy/War Factory now requires a stronghold to be built first
+
+Bug Fixes:
+- Arenas should give army morale properly
+- Megastore gives trade value to artisans properly
+- Fixed some borked code
+
+1.3.0.1
+Additions:
+- Media Conglomerate gains the Propaganda Broadcasts edict
+- Slaver Guilds/Indentured Assets: Slaves of owner's species can always work Entertainer and Enforcer jobs
+
+Bug Fixes:
+- Removed conflicting job triggers
+- Updated pop factions for 2.3.*
+
+1.3.0
+Additions:
+- New Civic: Chrysalic Young
+- New Trait: Carefree
+- New Trait: Skittish
+- New Trait: Endemic
+- New Technology: Psionic Revitalization
+- Warrior Culture: arenas replace holo-theaters
+- Trading Post: -50% border friction with non-gestalts (experimental)
+- Franchising: Subsidiaries give an additional flat monthly +5 energy and +0.25 influence
+- Mining Corporation renamed Mining Conglomerate
+- Some civics give +1 political power and +5% happiness to some jobs (if pop not a slave)
+	- Agrarian Idyll: Farmers
+	- Citizen Service and Warrior Culture (and corp equivalent): Soldiers
+	- Exalted Priesthood: Priests
+	- Mining Guilds: Miners
+	- Natural Hunters: Hunters
+	- Slaver's Guild and Police State (and corp equivalents): Enforcers
+	- Technocracy (and corp equivalent): Scientists
+	- Zealous Crusaders: Templars
+- Repurposed Hardware costs -2 and also gives -1 leader level
+- Corporations get better and more varried trade policy
+- Baol decision adds one random rare resource deposit
+
+Tweaks:
+- Interplanetary Logistics gives +15% defensive army health and morale (was +33% defensive army health)
+- Citadel tech gives +15% defensive army health and damage
+- Genetic Memory gives +2 max level, +20% unity from jobs
+- Clonal Colony gives -5% habitability (from -10%)
+- Conformist and Obedient pops less likely to flee
+- Bribe Law Enforcement decison reworked into an empire edict, due to game limitations
+- With Slaver's Guild (and corp equivalent), enslaved clerks get +10% trade value and amenities
+- Cut-throat politics, Ruthless Competition, leaders less likely to get bad traits
+
+Bugfixes:
+- Updated special decisions to 2.3.3
+- Updated leader trait gain to 2.2.3
+- Fixed Subterranean Evolution icon
+
+1.2.9
+Additions:
+- New Civic: Vault Tech
+- Survivor trait only gets +60% tomb world habitability (down from +70%) (as it gets +10% general habitability)
+- Robot Empires get -40% biological pop growth
+- With the Droid technology, can reprogram captured machine units using the Assimilation citizenship right
+- Pops assimilating into synths will get traits based off of their organic traits
+- Purging robots gives engineering research and 25 minerals
+- Nu-Baol pops are Photosynthetic and Lethargic, Ancient instead of Venerable
+- If you are a hive mind, but not a devouring swarm, Nu-Baol pops will also have the hive mind trait
+- Decadent pops will be slightly happier as bio-trophies
+- Commercial Buildings give +2%/+4% trade value
+- Agrarian Idyll: commercial buildings replaced with farmers market, +5%/10% food production
+
+Tweaks:
+- Due to above changes to robot empires, biological pop growth malus from Assimilators removed, Servitors only get a -10% malus
+- Policy file rewritten to only modify the policies that need to be modified
+- Philosopher King gets +5% ruler production
+- The Red/Green/Blue traits can be gene modded on and off once you get it
+- Temples give extra planetary unity (+5% per level)
+- Devouring swarms can release vassals of their species
+- Determined Exterminators can release subjects with any machine species (they only dislike organics)
+- Criminal Underworld and gestalt equivalent modifiers give more criminal jobs per crime
+- Empire Sprawl also has small effect on ethics attraction
+- Clerks and Entertainers produce +1 trade value on resort worlds
+- Strong and Very Strong Duelists give +1 amenities
+
+Bug Fixes:
+- Robot empires can no longer get high on zro edicts
+- Closed Collective and Closed Network civs are now locked in to passive study of primitives
+- Fixed start screen for subteranean civic
+- Fixed Preemptive Strike special project from failing after only 2 days
+- Decoupled from Glavius more cleanly
+- Bureaucratic Complex will not be auto-destroyed under Byzantine Hierarchy
+
+Removals:
+- Removed change to pop ethics defines to make room for other mods that do the same job
+
+1.2.8
+No longer explicitly requires Glavius AI
+Additions:
+- New Trait: Amphibious
+- New Trait: Arid Adaptations
+- Deviant gives +15% Ethics Shift Chance 
+- Agrarian Idyll: Sponser Fair decision replaces Distribute Luxuries, costs equal amounts of food and consumer goods, gives +25% amenities, +15% trade, +1 clerk jobs (someone's got to run the fair)
+- Everyone except Devouring Swarms can release vassals
+- With the zro distillation tech and the transcendence perk, psionic pops that are being purged or under livestock slavery produce zro
+- If your chosen one dies, you can get another one from the shroud
+- With the Initiate Performance Competition decison active, executives and managers ~10% produce more trade value
+- Yuht Cleansing Process will remove hunting preserves, cunning flora
+- Rare resource miners produce +1 resource
+
+Tweaks:
+- Telepaths give +2.5 stability (down from +5)
+- Nanite Dust gives +75% terraforming speed (up from +30%) and +25% terraforming cost, no longer costs energy
+- Nanite Scales gives +25% food production (up from +20%)
+- Nature Preserve will give Science Communicator Jobs if a Technocracy
+- Machine Empires no longer get +1 miner jobs from Mineral Processing Facilities (done by accident earlier, but made official now)
+- Food Processing Center costs 500 food for hive minds (was 300)
+- Militant Isolationists will start with the ageles trait
+- Added unique tech icons for the new agrarian idyll techs
+
+Bug Fixes:
+- Restored changes to Resort and Penal colonies that were lost in the update to 2.3.*
+- Updated edict and policy files to 2.3.*
+- Updated species class file for 2.3.*
+- Closed Collective and Closed Network can no longer use the unrestricted war policy
+- Energy grids now give +1 technician jobs to robot empires, as intended
+- Regular rare resource miners have 1 energy upkeep, like their gestalt counterparts
+- Gestalt rare resource manufacturing jobs are now have the correct resource category
+- Fixed missing icon for hive food production tech
+- Hopefully ensured that Feudal Realm civs will get a Duchy instead of a vassal when subjugating another civ
+
+1.2.7.1
+Tweak:
+- Machine World civic starts with size 20 world
+- Telepaths give +5 stability, but only 30% crime reduction (down from 35%)
+
+Bug Fixes:
+- Properly updated gestalt jobs to 2.3.*
+
+1.2.7
+Compatibility with Stellaris Patch 2.3.0 (Wolfe)
+
+Additions:
+- Can build branch offices on another corp's planet if either 1) you are a criminal syndicate, or 2) they are your subsidiary
+- Machine and Synthetic Empires get +25% mining station output (was +10%)
+- Temple of Prosperity now gives +6 unity
+
+Tweaks:
+- Duchies now give a flat +0.25 influence
+- Machine and Synthetic Empires no longer get less housing requirements
+- Tech Startup now requires Fanatical Materialist ethics
+
+Removals:
+- Imperial Prerogative / Universal Transactions no longer give bonus admin cap to rulers, other effects moved to expanded megastructures
+- Removed ringworld foundry district
+
+Bug Fixes:
+- Duchies now tax minerals and energy properly
+- Overlords can no longer declare wars on their duchy subjects
+
+1.2.6
+Additions:
+- New Civic: Eusocial Hive Mind
+- New Trait: Rooted, plantoids only
+- New Trait: Inept
+- New Trait: Uninventive
+- New Trait: Lethargic
+- New Edict: Nanite Dust
+- New Edict: Nanite Scales
+- Post-Apocalyptic gives an underground vault deposit instead of a research lab on homeworld. Vault gives +2 researcher and +1 soldier jobs, +3 housing, +20% physics research.
+- Philosopher King, rulers start at +1 level
+- Hive Warren Buildings have cost split between food and minerals/energy
+- Expanded Warren has +8 food upkeep instead of rare crystal upkeep
+- Pops will evaluate their ethics more often (~5% of pops every 90 days, verses ~2% of pops every year)
+- Basic assault armies for hives have cost split between food and minerals/energy
+- Base administrative cap increased to 40 (was 30)
+- Clerks give +1 trade value per 50 pops (up to 200 pops)
+- Merchants and Executives give +1 trade value per 100 pops (up to 400 pops)
+- Bio-Trophies get -50% growth speed, approximately what they were supposed to get
+- Despolation CB also gives alloys and consumer goods upon victory
+- Barbaric Despoilers get +5% fire rate
+- Pops under chemical bliss won't work important jobs
+
+Tweaks:
+- Delicate Ecosystem modifier will no longer spawn on gaia worlds
+- Ancient trait cost restored back to 4
+- Metabolism traits can now be added and removed by gene modding
+- Clerk and Manager jobs produce a more noticable amound of trade value if any pops on planet have a high living standard, and now includes Merchants and Executives
+- Xenophobic Protectionists hate Driven Assimilator and Rogue Servitor, same as Democratic Crusaders
+- Zealous Crusaders get +15% fire rate (was +10%)
+- Utopian Communal Housing maintenance increased to 8 (was 4)
+- Agrarian Idyll techs no longer give extra housing, give +5% production instead
+- No longer tweak surrender weights
+
+Bug Fixes:
+- Fixed Worker Coop localization
+- Updated pop weights to bring them in line with Glavius
+- Fixed machine world industrial districts
+- Peaceful Collective now has an icon
+
+1.2.5.1
+Additions:
+-Agrarian Idyll and Agribusiness, farming subsidies give +25% food, available at game start
+
+Tweak:
+- Megacorp ai is slightly more willing to sign commercial pacts
+
+Bug Fixes:
+- Localization for the Pirate Hunter trait is fixed, for real this time
+- Fixed bug in random names for Royal Trade Company empires
+- Fixed non-gestalt rulers getting gestalt traits on level-up and vice-versa
+
+Removals:
+- Removed ethic attraction weights
+
+1.2.5
+Additions:
+- New Trait, Crafty
+- Artificial Personality Matrix tech (tier 4) for machine empires
+- Synthetic Empires get +1 technicians from city districts
+- New demand from the prosperity faction, encourage growth, triggered by using Nutritional Plenitude policy, +5 / -0
+- Restored Genetic Purity demand for the supremacy faction under Fanatical Purifiers, +5 / -5
+- Restored the Regional Governance demand for the tolalitarian faction, +0 / -5
+- Fanatical purifiers will get +15 instead of +10 to imperialist faction happiness after a successful conquest
+- Tweaked ethic attraction weights
+- Hive Minds like authoritarians and dislike egalitarians
+- Authoritarians dislike hive minds less
+- Complex Drone jobs can no longer be worked by nerve-stapled or prole pops
+- With both Agribusiness and Criminal Syndicate, farmers produce an additional +2 trade value (+4 total) (Because they're not just growing turnips, if you know what I mean)
+- Fallen Empires get more ships and a full store of alloys and consumer goods when they awaken
+- Fallen Empires automatically rebuild any ruined gateways when they awaken
+- 50% chance xenophobe fallen empire will have a wormhole in their borders leading to a random system
+- Two new techs for Agrarian Idyll, tier 4, which gives +1 foundry job from mines / +1 artisan job from farms, +1 housing from mines / farms, +2% alloys from foundry jobs / consumer goods from artisan jobs
+
+Tweaks:
+- Xenoist no alien slaves demand no longer applies if you have the slaver's guild or indentured assets civic
+- Removed ruined megastructure from xenophobe empire, as that has the potential to cause way to much havok
+- Xenophobe awakened empires will no longer build gateways, for the same reason
+- Exploited homeworld no longer gives the bleak modifier
+
+Bug Fixes:
+- Fixed effect localiation on the Pirate Hunter admiral trait
+- Cleaned up custom descriptions of some technologies
+- Cleaned up refugee script effects
+
+1.2.4.1
+Tweaks:
+- Subterranean Evolution can no longer be removed, is picked less by the ai
+- Adjusted ai weighting for crime buildings
+- Delicate Ecosystem modifier weight increased to on par with other modifiers
+- Drone Campaign (Hive) gives +20% pop growth (was +10%)
+
+Bugfixes:
+- Removed Hive Mind changes to assault armies, as it was making them cost nothing
+- Fixed not being able to pick refugee policy (will likely require a new game)
+
+1.2.4
+Additions:
+- New Civic: Byzantine Hierarchy
+- Expropriation wars give corps 2000 energy per branch office on a status quo peace
+- Expropriation wars statue quo peace against criminal syndicates only closes branch offices on planets with less than 25 crime, remaining branch offices give -25 crime on their planets for 10 years.
+
+Tweaks:
+- Technocracy and Tech Startup gives +1 research to researchers
+
+Bugfixes:
+- Fixed Iferyx having wrong government with Megacorp
+- Fixed Security Company And Woorker Coop usable with non-corporates
+
+
+1.2.3
+Additions:
+- New Civic: Security Company
+- New Civic: Woorker Coop (with new government type)
+- New Civic: Closed Area Network
+- With the Galactic Markets tech, clerks and managers give +1 trade value
+- Restored Organic Probability Theory tech, which now gives +1 energy to calculator drones
+- New Technology, Engineered Agri-Drones, +1 agri-drone food production
+- Trading Post now gives -10% starbase building and module cost
+- Delegated Functions now gives +10% complex drone production, no longer gives +1 leader pool size
+- Shared Burden now gives -5% amenities usage
+- Philosopher King now gives +5 stability if you have a level 5+ ruler
+- Xenophobes and authoritarians can give residency and slavery citizenship to subspecies of your main species
+- Roboticists and Replicators no longer cost mineral upkeep if robot construction is stopped on a planet
+- Synthetic Empires gets +1 pop on new colonies, +10% mining station output, similar to machine empires
+- New government types for Fanatical Befriender civic
+- New government type for Royal Trading Company civic
+- Temple of Prosperity will give +40 crime if owner is a Criminal Syndicate
+- Temple of Prosperity will convert 2 pops to spiritualist when built (one time only)
+
+Tweaks:
+- Delicate Ecosystem now gives -10% amenities usage (was -20%)
+- Tech Startup, researchers give +4 trade value (was +3)
+- Technocracy, researchers no longer give unity or extra research
+- Technocracy, culture workers replaced by science communicators, which give +4 unity, +2 research
+- (If you want them replaced on habitat and city world districts, you will also need my Expanded Megastructures and Technologies mod)
+- Technocracy and its equivalents gain 3 months worth of unity after researching a new tech
+- Adjusted spawn weights for delicate ecosystem modifier
+- Building cost of unique branch office buildings increased to match vanilla values
+- Planetary Citadel build time increased to match vanilla values
+- Unity and research from master control program jobs increased to match coordinator jobs
+- Venerable Elder Site gives -1 administrator and executive jobs
+- Venerable Elder Site will not give -1 district on ring worlds
+- Venerable Elder jobs under corporate authority will give +4 trade value
+
+Bug Fixes:
+- Fixed localiation for Delicate Ecosystem
+- Fixed broken localization in the refugee file
+- Hopefully fixed feudal empires not using duchies
+
+Removals:
+- Changes to Robot/Machine Assembly Plants moved to Expanded Megastructures and Technologies mod
+- Changes to Clone Vats moved to Expanded Megastructures and Technologies mod
+
+1.2.2
+Additions:
+- With Galactic Administration, the Hive Nexus on the capital world gives +2 synapse drone and +1 hunter-seeker drone jobes
+- Cost of hive unity buildings split between minerals/energy and food
+- Cost of hive regular assault armies split between minerals/energy and food
+- Added the Primary Synaptic Confluence, the Hive equivalent of the Alpha Hub
+- Criminal Syndicate branch offices with the Front Corporation civic are less likely to be shut down
+- Criminal Syndicates can use Bribe Official decisions on planets that you have branch offices, decreasing the effectiveness of local enforcer jobs
+- Strength of Legions gives +1 warrior drone per 25 pops, no longer modifies warrior drone jobs
+- Idealistic Foundation gets +0.5 monthly influence as long as more than 25% of the population is egalitarian
+- Planets with shrines from the Familliar Shrine event chain count as Gaia Worlds for the purposes of the Consecrate World decison. A modifier will be left behind to remind you where there worlds are
+
+Tweaks:
+- Organic Santuaries give coordinator instead of maintenance drone jobs
+- With Exalted Priesthood, priests now give +2 unity and amenities
+- High Priests produce +6 unity and amenities
+
+Bug Fixes:
+- Slavers Guilds now also get crime benefit from Slave Overseers on Thrall Worlds
+- Fixed Consecrate World decision with regards to the Dead God modifier
+- Pops fleeing slavery has been tentatively restored
+
+
+1.2.1.1
+Compatibility with The Decadence of Sanity--An Expanded Feature on Shroud
+
+
+1.2.1
+Additions:
+- Consecrate world decision modifiers buffed
+- Consecrate world decision will take some modifiers into account
+- The cost and maintenance for several hive buildings has been split between minerals/energy and food, including:
+	- Capital Buildings
+	- Spawning Pools
+	- City and Rural Districts (Arcology and Habitat Districts unchagned)
+- Food processing buildings have an additional food cost, and now give an additional +1 agri-drone job, +5% food production, and +2/+4 max farming districts
+
+Tweaks:
+- Robot empires get +1 job from Mineral Processing Facilities and Energy Hubs
+- Brain drones give +1 society research
+- Calculator drones give +1 engineering research
+- Tweaked weight for Xenophobic Protectionists personality
+- With Slavers Guilds, slaves are 4 times less likely to take artisan and metallurgist jobs
+- With Slavers Guilds, enforcers give -10% crime on worlds with slaves
+
+Bug Fixes:
+- Fixed Xenophobic Protectionists localization
+- Synthetic Empires will once again have access to machine empire campaigns
+
+Removals:
+- Enclave-related changes (except enclave regugees) have been moved to their own file
+- Removed additional planet names (causes minor problems if you don't have Planetary Diversity, will get its own mode eventually)
+
+
+1.2.0.1
+Tweaks:
+- Adjusted some opinion modifiers
+- A few new opinion modifiers
+- Megastore gives 0 - 6 trade value from artisans
+
+Bugfixes:
+- fixed non-spiritualist PCMs getting chaplains instead of logistics officers
+
+
+1.2.0
+Additions:
+- Private Military Company, managers replaced with logistics officers, who give +2 naval capacity, +4 unity and society research
+- Strength of Legions / Warbots, soldiers give +2 naval capacity and stability
+- Strength of Legions / Warbots, soldiers give an extra +2 stability when Deploy Hunter-Killer Drones decision is active
+- Determined Exterminators get war factories, which replace military academies and gives an additional +1 patrol drone job
+- New Admiral trait, Pirate Hunter, gives +25% piracy suppression, +10% subspace speed
+- Gestalt Rulers can get leader traits
+- Several gestalt-only ruler traits have been added
+- Machine worlds get industrial districts, giving +2 foundry drones
+- Feudal Realm uses Duchies instead of vassals. Duchies provide +10% of their energy and minerals, and +15% of their influence, but can expand and conduct diplomacy, and cannot be integrated
+- Vassals and Duchies provide +10% naval capacity per vassal, up to 50%
+- Vassals and Duchies have a 10% penalty to their naval capacity
+- Pooled Knowledge gives +10% complex drone production instead of +1 leader pool
+- Advanced Drone Cloning, tier 3 tech for hive minds, gives access to Spawning Vats, and improvement to spawning pools that give an additional spawning drone job, requires exotic gases
+
+Tweaks:
+- Zealous Crusaders, templars replace priests, templars produce society research like priests do, other bonuses unchanged
+- Visionary Founder gives +1 unity to priests (as managers and priests are mutually exclusive)
+- Military Academy give +50% army build speed
+- Clone Vats give +1 researcher
+- Criminal Syndicate branch offices have a lower penalty at low crime (-25%, from -50%), and a larger bonus at high crime (+75%, from +50%)
+- Farming districts give +1 housing on hive worlds
+- Synapse drones give +4 unity and society research
+- Survivor (Post-Apocalyptic) gives +10% habitability
+- Civics that give admin cap give their default amounts, also give -10% empire sprawl penalties
+
+Bug Fixes:
+- Adjusted job ai weights to be closer to Glavius AI
+- Coordinators give +5 unity, like they're supposed to
+
+
+1.1.9
+Tweaks:
+- Duelists provide +1 defensive armies
+
+Bug Fixes:
+- With slavers guild, slaves are much less likely to promote to forge and artisan jobs if there are unemployed specialists
+- Coordinator and Synapse drone resources recatagorized as culture worker, from planet jobs, so modifiers that effect culture workers effect them too
+- Fixed calculator jobs not being filled
+
+
+1.1.8
+Compatibility with 2.2.6
+
+Addition:
+- New Technology, Interplanetary Logistics, tier 3, gives +33% defensive army health, +2 naval capacity from soldiers
+
+Tweaks:
+- Defensive army health bonus from Citadel Defense Network moved to Interplanetary Logistics
+- Corporate Authority gets +30 admin capacity (up from +20)
+
+
+1.1.7
+Compatibility with Zenith of a Fallen Empire
+
+Addition:
+- New opinion modifier for use with Zenith of a Fallen Empire
+
+Tweaks:
+- Artist monument gives +15% unity from jobs
+- Penal Colony gives +5% technician, miner, and farmer output
+
+Bug Fixes:
+- AI will determine living standards based on consumer good output, not mineral output
+- AI will not go straight to utopian abundance from decent living conditions
+- Dictatorial Exalted Priesthood will get the correct government type
+
+
+1.1.6
+Additions:
+- New Civic: Fanafical Befrienders
+- New Civic: Master Computer
+- New Civic: Visionary Founder
+
+Tweaks:
+- Adjusted some civic ai weights
+- Subterranean expansion unlocked with Mastery of Nature (not subteranean evolution) is blocked if the mod Mastery of Nature is active
+- An empire with both Front Corporation and Criminal Syndicate civics can pass as a legitimate business, and can sign commercial pacts
+- Pacifists/Fanatic Pacifists give +2/+4 administrative cap from rulers
+- Can build housing buildings on habitats
+
+
+1.1.5.1
+Tweaks:
+- Restored some Blorg war declarations
+- AI Corporation more likely to accept commercial pacts
+
+Bug Fixes:
+Delicate Ecosystem not spawning with their modifier
+
+
+1.1.5
+Additions:
+- New Civic: Lost Colony
+- New Civic: Delicate Ecosystem
+- Delicate Ecosystem modifier can spawn on random planets
+
+Tweaks:
+- Terraformer civic not available with life seeded, living world, or post apocalyptic civics
+- With terraformer, start with only one industrial wasteland blocker on homeworld
+- Hive World Civic requires Utopia instead of Apocalypse
+
+Bug Fixes:
+- Temporarily removed pops fleeing slavery event until I can figure out how it is causing crashes.
+
+
+1.1.4.1
+Tweaks:
+- With Subterranean Evolution, can expand a planet a third time with either the World Shaper or Hive World perk
+- Artisan drones upkeep increased to 8 minerals (up from 6)
+
+Bug Fixes:
+- Fixed broken faction demands
+- Removed Happy Aristocrat demand until I can figure out why it's broken
+
+
+1.1.4
+- Compatibility with 2.2.5 beta patch
+
+Additions
+- New Edict, Pitharan Fertilizer
+- New Edict, Crystalline Hull Plating
+- Amusement Megaplex and Underground Clubs are more effective on gaia and resort worlds, especially gaia resort worlds
+- When an enclave station is destroyed, one lucky nation will get two refugee pops. They will strongly prefer to flee to the space owner of their system, if that is an option
+- Trader Enclaves offer alloys and consumer goods at a good price
+- Changed how enclave species get their extra traits
+- Planets that have been expanded with the Mastery of Nature perk can be expanded further underground. Similar to the ability of Subterranean Evolution civic, but significantly more expensive.
+- Resort Worlds give +50% trade value, +1 entertainer job per 5 pops, +20% amenities and immigration pull to other planets
+- Iferyx playable with Megacorp, as a democracy with the Merchant Guilds and Shadow Council civics
+- Can build trade buildings on habitats once there are no more free districts
+- Additional faction demands
+- Democratic Crusaders can make claims against non democracies under liberation war policy. Democratic players that are militarist and fanatic egalitarian can do the same.
+
+Tweaks:
+- Crime from new unique criminal syndicate buildings have been brought up to match the vanilla buildings
+- Democratic Crusaders will generally prefer liberation wars policy
+- Utopian Communal Housing upkeep increased to 4 energy (up from 3)
+- Merchant Guilds provide +1 merchant and -1 clerks from trade buildings
+- Merchant Guilds no longer give bonuses to clerks
+- Exalted Priesthood give +25% spiritualist ethics attraction, high priests give +1 amenities
+- Removed native +10% pop assembly speed from Machine Intelligence
+
+Bug Fixes:
+- Can resettle slaves regardless of policy, for real this time
+
+
+1.1.3.1
+- Added Compatibility with More Events Mod
+
+Tweaks:
+- Pops fleeing high crime will usually try to flee to another planet in the same empire
+- Slaves less likely to flee thrall and penal colonies
+- Slave processing center will make it even less likely that a slave will flee
+- Pops less likely to flee from empires with the slavers guild / indentured assets civic
+- Criminal jobs add a small amount of crime
+
+
+1.1.3
+Additions:
+- With certain trait and civic combinations, you may start out with an exploited homeworld. With Expanded Events, this guarantees the Damaged Ecosystem event chain
+- Chinorr Combine, added the Poisonous and Slow Breeder traits
+- Chinorr Combine have Tropical habitat prefrence, always start with an exploited homeworld
+
+Bug Fixes:
+- Machine empires not getting buildings
+
+
+1.1.2
+Added compatibility with Diverse Districts
+
+Additions:
+- New Civic: Machine World
+- New Civic: Mining Corporation
+- Additional civic-based faction demands
+- Roboticists and Replicators produce +0.5 robot assembly on machine worlds
+- Patrol and warrior drones give +1 defensive army on hive worlds
+
+Tweaks:
+- More admin cap from civics
+- Tweaked health and damage of machine empire defensive armies
+- Zealous Crusaders not available with Merchant Guilds, Corporate Dominion, or Imperial Cult civics
+- With Zealous Crusaders, priests benefit from the Ground Defense Planning tech
+
+Bug Fixes:
+- Progressive faction no longer unhappy about synths with migration control
+
+
+1.1.1
+Additions:
+- Housing buildings benefit from housing technologies
+
+Tweaks:
+- Utopian Communal Housing has no rare crystal upkeep, higher energy upkeep
+- Increased production from civic-specific branch office buildings by 1
+- Tweaked some job weights
+
+Bug Fixes:
+- Synaptic Extensions/Modular Depots Traditions give +2 housing to housing buildings, as advertised
+- Hunting and nature preserves can be built on your capital if the deposit isn't added on game start for any reason.
+
+
+1.1.0
+Additions:
+- New Trait, Regenerative Tissue
+
+Tweaks:
+- Reduced overall likelyhood that a pop will flee
+- Pops being purged (not displaced) will not flee from starvation
+- Pops are much less likely to flee to a country their previous owner was at war with, if there are any other options
+- Adjusted AI weights on civics
+- Hive Queen civic cannot be removed or added after game start
+
+Bug Fixes:
+- fixed refugee weights being additive instead of multiplicative, as intended
+
+
+1.0.9.3
+Up to date with latest Glavius AI patch
+
+Tweaks:
+- Construction Company's unique building gives +1 clerk jobs
+- Pops fleeing starvation are much less likely to flee if there is still food stockpiled
+- Ruler and specialist pops less likely to flee starvation
+- Tweaked logic of where starving pops will try to flee to
+
+1.0.9.2
+Tweaks:
+- Royal Trading Company cannot be added or removed later
+
+Bug Fixes:
+- Planetary Capitals not giving right number of jobs
+
+
+1.0.9.1
+Tweaks:
+- Pops being purged (expect by displacement) are 100 times less likely to flee from starvation
+- Pops dying of starvation will give homicidal empires the same resources as if they were purged normally
+- Tweaked some pop weights to better match current version of Glavius AI Mod
+
+
+1.0.9
+Additions:
+- With Corvee System civic, can use public work planetary decision
+
+Bug Fixes:
+- Fixed error in Hive Mind job
+
+
+1.0.8
+Additions:
+- New Civic, Megastore
+- New Civic, Constructon Company
+- New Civic, Hive Queen
+
+Tweaks:
+- Changed some pop weights to better match current version of Glavius AI Mod
+
+Bug Fixes:
+- Tooltip for Technocracy wrongly showing 1+% science from researchers, instead of +1 science
+- Zealous Crusaders not getting naval cap from priests
+- Syncretic Equals available to Megacorps, as originally intended
+- Engineered Pheremones give the correct amount of extra amenities
+
+
+1.0.7.2
+Tweaks:
+- Chance of pops fleeing due to slavery or poverty has been reduced even more
+- Pops half as likely to flee slavery from countries with slavers guild or indentured assets civic
+- Buildings no longer need immunity from being ruined, as AI can repair ruined buildings again
+
+
+1.0.7.1
+Updated for beta patch 2.2.4
+
+Tweaks:
+- Fungal Colony no longer compatible with hive minds
+
+Bug Fixes:
+- Fixed Covert Robot Assembly Plant giving society instead of engineering research
+
+
+1.0.7
+Updated to final patch 2.2.3
+Updated required mods to 2.2.3 Glavius AI mod
+
+Additions:
+- New Civic, Syncretic Equals
+- New Civic, Livestock Ranchers
+- New Civic, Syncretic Livestock
+
+Bug Fixes:
+- Hive Prefrence trait will not longer be selectable when creating a new empire. Living World civic gives hidden +100% gaia world habitability instead.
+- Fixed organic empires getting Hotjoin Protocols tradition
+
+
+1.0.6
+Updated for new version of Glavius AI mod
+
+Additions:
+- New Civic, Peaceful Collective
+
+Tweaks:
+- Chance of pops fleeing due to slavery or poverty has been reduced
+- Spiritualists don't like Primitive Cyborgs
+
+Bug Fixes:
+- Pops won't flee to countries that have no communication with their current owner
+
+
+1.0.5
+Updated for new version of Glavius AI mod
+
+Additions:
+- New Trait, Delicate
+- New Trait, Signal Repeater
+- New Trait, Shoddy Transmitters
+- New Civic, Atom Splitters
+
+Tweaks:
+- Nerve Stapled gives +10% bonus to jobs, pops have no political power
+- Droid Armies auto-upgrade to Android Armies upon tech increase
+- Upon Synthetic Ascension, pops will get traits based on their biological traits
+- Pop job weights now include traits from More Events Mod
+- Upkeep of planetary citadels increased, in line with other tier 3 buildings
+
+Bug Fixes
+- Upon Synthetic Ascension, armies upgrade to Android rather than Droid Armies
+- Fixed not being able to upgrade fortresses to citadels
+
+
+1.0.4
+Additions:
+- New Civic, Biological Engineers
+- New Civic, Engineered Drones
+- New Civic, Modular Construction
+
+Tweaks:
+- Expansion Opener gives +33% colony development speed (up from +25%)
+- Courier Network gives +30 administrative cap (up from +20)
+- Surrender threshold for most standard wars have been reduced
+- HMO civic gives +1 biological trait point and -20% gene modding cost, no longer gives +15% population growth
+- Spiritualist megacorps can no longer build Corporate Culture Sites. Priests get +2 trade value instead
+- Habitats have an inate +2.5% specialist output bonus
+
+Bug Fixes
+- Upgraded habitat capital giving gestalts administrator jobs
+- minor bug fixes
+
+
+1.0.3
+Additions:
+- New civic, Zealous Crusaders
+- Automated Labor gives a unique branch office building
+
+Tweaks:
+- HMO Private Clinic / Backalley Clinic give +5 energy and society research
+- Idealistic Foundation gives +50% egalitarian ethics attraction
+- Company Townships renamed Company Housing
+- Colonists produce +2 food (up from +1)
+
+Various Minor Bug Fixes
+
+
+1.0.2
+Updated for new version of Glavius AI mod
+
+Tweaks
+- Fungal Colony gives -25% pop growth (down from -20%)
+- +1 venerable elder job per 100 pops (up from 50)
+- Ancient costs 3 (down from 4)
+- Ancient gives +300 leader lifespan (up from +200)
+
+Bug Fixes
+- Removed some outdated job weights
+
+
+1.0.1
+Additions:
+- Banning resettlement won't stop you from resettling slaves
+- Added an additional civic-dependent faction demand
+- With Environmentalist Civic, can build nature preserves, giving amenities and culture workers at the cost of 1 district
+- Clerk and Manager jobs produce slightly more trade value if any pops on planet have a high living standard
+
+Tweaks
+- Increased empire sprawl from districts and systems to +0.75 and +1.5 (from +0.5 and +1.0)
+- Coordinators and Synapse Drones give +1 administrative cap (down from +2)
+- Imperial Prerogative and Universal Transactions perks give +1 administrative capacity to ruler jobs (down from +2)
+
+Bug Fixes
+- Mechanists get roboticists on habitat capitals
+- Added Bio-Trophy jobs to habitat capitals
+
+
+1.0.0
+Initial Release

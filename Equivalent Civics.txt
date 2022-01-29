@@ -1,0 +1,95 @@
+Key: - Normal / Corp / Hive / Machine
+* this mod
+*E expanded events
+*M megastructures and technology mod
+
+Civics:
+- Agrarian Idyll / Agribusiness* / Starvation Fearing* / Atom Splitters*
+- Aristocratic Elite / Royal Trading Company* / Hive Queens*M (origin) / none
+- Beacon of Liberty / Brand Loyalty / One Mind / Unitary Cohesion 
+- Citizen Service / Naval Contractors / Subspace Ephapse / Deepspace Networking*
+- Corvée System / Company Housing* / Subsumed Will / OTA Updates
+- Cut-Throat Politics / Ruthless Competition / Self Experimentation* / Static Research Analysis
+- Distinguished Admiralty / Naval Contractors / Subspace Ephapse / Deepspace Networking*
+- Efficient Bureaucracy / Private Prospectors / Divided Attention / Efficient Administrative Protocols*
+- Environmentalist / Megastore* / Ascetic / Zero-Waste Protocols 
+- Exalted Priesthood / Gospel of the Masses / Hardened Synapses* / Maintenance Protocols
+- Feudal Society / Franchising / none / none
+- Free Haven / Multicultural Workplace* / none / Rogue Servitor
+- Functional Architecture / Construction Company* / Integrated Bioarchitecture* and Interlacing Warrens* / Constructobot
+- Idealistic Foundation / Media Conglomerate / NA / NA
+- Imperial Cult / Managerial Synergy* / Hardened Synapses* / Directorial Override*
+- Inward Perfection / NA / Closed Collective* / Closed Area Network*
+- Meritocracy / Ruthless Competition / Pooled Knowledge / Factory Overclocking and Delegated Functions
+- Mining Guilds / Mining Corporation* / Mineral Hoarders* / Rockbreakers
+- Nationalistic Zeal / Media Conglomerate / Territorial* / none
+- Parliamentary System / Chamber of Commerce / NA / NA
+- Philosopher King / Family-Owned / One Mind / Master Computer* (origin)
+- Police State / Security Company* / One Mind / Adaptive Security Protocols*
+- Shadow Council / Shell Corporation / NA / NA
+- Slaver Guilds / Indentured Assets / none / none
+- Technocracy / Tech Startup* / Natural Neural Network and Self Experimentation* / Static Research Analysis and Introspective
+- Warrior Culture / Private Military Companies / Strength of Legions / Warbots
+- Fanatic Purifiers / NA / Devouring Swarm / Determined Exterminators
+- Barbaric Despoilers / Criminal Syndicate / Parasitic Hive / none
+- Byzantine Bureaucracy / Labor Resource Specialists* / Hardened Synapses* / Administrative Privileges*
+- Merchant Guilds / Free Traders / NA / NA
+- Shared Burdens / Woorker Coop* / NA / NA
+- Diplomatic Core / Public Relations Specialists / Empath / Socialization Protocols
+- Memorialists / Nostalgia Peddlers* / Memorialists / Memorialists
+- Reanimators / Reanimated Military Companies* / Necrophagic Armies* / none
+- Death Cult / Corporate Death Cult / none / NA(?)
+- Pleasure Seekers / Corporate Hedonism / NA / NA
+- Catalytic Processing / Catalytic Processing / Catalytic Processing / Catalytic Processing
+- Masterful Crafters / Mastercraft Inc. / none / none
+- Idyllic Bloom	/ none / Idyllic Bloom / Resource Consolidation (origin)
+- Anglers / Anglers / none / none
+- Pompous Purists / none / none / none
+- none / Trading Posts / Territorial* / none
+- none / Private Prospectors and Worker Coop* / Subsumed Will / OTA Updates
+- Calamitous Birth (origin) / Calamitous Birth (origin) / Chrysalic Young* and Calamitous Birth (origin) / Rapid Deployment*
+- Fanatical Befrienders* (origin) / none / Harmonious Hive Mind* / Rogue Servitor and Cooperative Network*
+- Necrophage (origin) / Necrophage (origin) / Necrophage (origin) and Infestation / Driven Assimilators
+- Zealous Crusaders* / none / none / none
+- Biological Engineers* / Health Maintenance Organization* / Engineered Drones* / Modular Constructon*
+- Organic Construction* / Organic Construction* / Hive Mind (Authority) / none
+- Aerial Construction* / Avian Construction* / Secluded Roosts* / none
+
+Origins:
+- Galactic Doorstep / Galactic Doorstep / Galactic Doorstep / Galactic Doorstep 
+- Prosperous Unification / Prosperous Unification / Prosperous Unification / Prosperous Unification 
+- Lost Colony / Lost Colony / none / none
+- Calamitous Birth / Calamitous Birth / Calamitous Birth and Chrysalic Young* (civic) / Rapid Deployment* (civic)
+- Mechanist / Mechanist / NA / Extant Creators* (inverted)
+- Syncretic Evolution (Equals*) / Syncretic Evolution (Equals*) / Eusocial Hive Mind* / Extant Creators*
+- Arborial Harmony* and Holy Mountain* (Lithoid) / Arborial Harmony* and Holy Mountain* (Lithoid) / Tree of Life / none
+- Life-Seeded / Life-Seeded / Life-Seeded / Resource Consolidation 
+- Post-Apocalyptic / Post-Apocalyptic / Post-Apocalyptic / Determined Exterminators (civic)
+- Remnants / Remnants / Remnants / Remnants
+- Common Ground / Common Ground / Common Ground* / Research Union*
+- Hegemon / Hegemon / Hegemon* / Hegemon*
+- Doomsday / Doomsday / Doomsday / Doomsday
+- On the Shoulders of Giants / On the Shoulders of Giants / none / none
+- Scion / Scion / Scion* / Scion*
+- Shattered Ring / Shattered Ring / Shattered Ring / Shattered Ring 
+- Void Dwellers / Void Dwellers / Void Dwellers* / Void Dwellers*
+- Clone Army and Genesis Project*M / Clone Army and Genesis Project*M / Hive Queens*M / NA(?)
+- Necrophage / Necrophage / Necrophage and Infestation* (civic) / Driven Assimilators (civic)
+- Here be Dragons / Here be Dragons / Here be Dragons / Here be Dragons
+- Ocean Paradise / Ocean Paradise / Ocean Paradise / Resource Consolidation 
+- Ancien Régime* / none / Symbiosis* / Master Computer*
+- Delicate Ecosystem* / Delicate Ecosystem* / Delicate Ecosystem* / none
+- Exploited Homeworld* / Exploited Homeworld* / none / Resource Consolidation
+- Galactic Cradle*E / Galactic Cradle*E / Galactic Cradle*E / Galactic Cradle*E
+- Galactic Preserve*E / Galactic Preserve*E / none / none
+- Primitive Cyborgs* / Primitive Cyborgs* / NA / Driven Assimilators (civic)
+- Private Colonization Initiative* / Private Colonization Initiative* / NA / NA
+- Research Union* / Research Union* / none / Research Union*
+- Subterranean Evolution* / Subterranean Evolution* / Subterranean Evolution* / Subterranean Evolution*
+- Syncretic Livestock* (Crystals*) / Syncretic Livestock* (Crystals*) / Syncretic Livestock* (Crystals*) / Extant Creators* (only if you're mean)
+- Tempestuous Unification* / none / none / none
+- Terraformer* / Terraformer* / Terraformer* / none
+- Natural Hunters* / Natural Hunters* / Natural Hunters* / none
+- Cyberocracy* and Heavenly Choir* / Cyberocracy* / NA / NA
+- Fanatical Befrienders* / none / Harmonious Hive Mind* (civic) / Rogue Servitor and Cooperative Network* (civics)
+- Ship Graveyard*E / Ship Graveyard*E / Ship Graveyard*E / Ship Graveyard*E

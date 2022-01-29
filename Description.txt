@@ -1,0 +1,100 @@
+For Stellaris 3.2
+
+This mod adds a large number of new traits and civics, among other things. Please see the discussion post for a full list of features.
+
+Special Thanks to Kuyan-Judith for allowing me to integrate their Trait Upgrader and Better AI Trait-Modding mod
+
+[h1]General Features[/h1]
+
+New Traits
+- New Normal Traits (both positive and negative)
+- New Species-Specific Traits
+- New Advanced Traits
+- Better Lithoid Traits
+- Some species classes get their own unique traits
+- Better Self-Modified Pops
+- Integrated kuyan-judith's Trait Upgrader and Better AI Trait-Modding
+
+Many New Civics and Origins, and changes to existing ones
+- Equivalent Civics for corporations and gestalts
+- Civics and Origins inspired by the Preset Empires
+- Civics inspired by the (sadly now defunct) Hive Mind Expanded mod
+- Two new megacorp authorities, based on the democratic and imperial authorities
+- Preset Empires will use the new origins and civics where appropriate
+
+New ways to get refugees:
+- Pops might flee starvation, war, slavery, and very low living standards
+
+New Edicts, and improvements to existing ones
+- New Campaigns
+- New Subsidies
+- New Rare Resource Edicts
+
+New Policies
+- Governmental policies such as Media Rights and Healthcare
+- Can choose to let vassals expand
+- Megacorps get better and more varied trade policies
+- Hive Minds can decide what unemployed pops produce
+- Machines can chose if matrixed pops produce energy or physics research
+
+Changes to Buildings and Jobs
+- Buffed Medical Workers
+- Clerks and Merchants produce more trade value on highly populated planets
+- Criminal modifiers and branch office buildings often give unique criminal jobs
+- Galactic Stock Exchanges and Psi Corps are Empire Uniques
+- Buffed Branch Offices
+- Buffed Resort Worlds
+- Buffed some of the less useful buildings
+- Maintenance Drones give more amenities, districts give less of them
+
+Synthetic Empires get some machine intelligence swaps
+- Tradition Swaps
+- Mega-Warforms
+- Chemical Processing slavery and purges
+- Machine Worlds perk
+
+Synthetic Mastery, alternative to Synthetic Evolution for robot exploiters
+
+Normal gestalts can give give non-gestalts residency, and build Autonomous Enclaves to support them.
+- Too many free non-gestalts will cause increasing penalties, which can be mitigated with the Synchronicity finisher and certain civics
+Hive Minds build districts and some buildings partially with food (unless Lithoid)
+Gestalts can turn relic worlds into city worlds
+
+Pops produce more crime
+Changes to Admin Capacity to make it mean more
+Limited when the AI will integrate vassals
+
+New ai personalities: Seekers of Knowledge, Xenophobic Protectionists, Decadent Technocracy, Warrior-Scholars, Peacekeeping Interventionists, Sneering Technocrats, Ambitious Unifiers
+Ai personalities for Closed Collective and Closed Network, based off of the Xenophobic Isolationist personality
+Ai personalities for gestalts that are friendlier and multi-species
+Infestation AI personality based on the Driven Assimilator personality
+
+General buffs and bug fixes
+
+
+[h1]Available Comp Patches[/h1]
+Ecology Mod:
+https://steamcommunity.com/sharedfiles/filedetails/?id=1847214315
+
+Potent Rebellion
+https://steamcommunity.com/sharedfiles/filedetails/?id=2277680431
+
+
+[h1]Recommended Mods[/h1]
+Mods that compliment this mod, or which this mod can tie into
+
+(Expanded Events)
+https://steamcommunity.com/sharedfiles/filedetails/?id=1641807098
+
+ARC Servitor Morale Restored
+https://steamcommunity.com/sharedfiles/filedetails/?id=1597149387
+
+
+[h1]Credits[/h1]
+kuyan-judith, for letting me integrate their Trait Upgrader and Better AI Trait-Modding mod
+Pawjwp, for supplying better looking origin icons
+
+
+[h1]Donations[/h1]
+[url=https://www.patreon.com/user?u=32677412] [img]https://c5.patreon.com/external/logo/become_a_patron_button@2x.png[/img] [/url]
+I have recently launched a [url=https://www.patreon.com/user?u=32677412]patreon[/url] page. I have a lot of future plans for my mods, but they will rely on your support to see fruition. I'm not planning on delaying releases for non-patreons or anything like that, but my patreons will get behind the scenes looks into upcoming content. If you enjoy my mods, I hope you consider donating a little.

@@ -1,0 +1,10 @@
+	################################################################
+	# ASCENSION PERK ICONS
+	################################################################
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_synthetic_servants"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_synthetic_servants.dds"
+		alwaystransparent = yes
+	}
+}

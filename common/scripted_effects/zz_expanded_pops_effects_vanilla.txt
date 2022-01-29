@@ -1,0 +1,5431 @@
+### Fallen Empire Effects ###
+create_fe_fringe_colony = {
+	set_planet_flag = fallen_empire_world
+	prevent_anomaly = yes
+	set_owner = ROOT
+	add_building = building_ancient_palace
+	add_building = building_fe_stronghold
+	add_building = building_fe_dome
+	add_building = building_affluence_center
+	add_building = building_nourishment_center
+	add_building = building_class_4_singularity
+	add_building = building_dimensional_fabricator
+	add_building = building_nano_forge
+	while = {
+		count = 5
+		add_district_and_planet_size_if_needed_effect = { district = district_city }
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = { district = district_generator }
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = { district = district_mining }
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = { district = district_farming }
+	}
+	while = {
+		count = 12
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+	while = {
+		count = 20
+		create_pop = {
+			species = event_target:fe_servants
+		}
+	}
+}
+
+create_fe_spiritualist_fringe_colony = {
+	set_planet_flag = fallen_empire_world
+	prevent_anomaly = yes
+	set_owner = ROOT
+	add_building = building_ancient_palace
+	add_building = building_fe_stronghold
+	add_building = building_fe_dome
+	add_building = building_class_4_singularity
+	add_building = building_class_4_singularity
+	add_building = building_dimensional_fabricator
+	add_building = building_dimensional_fabricator
+	add_building = building_nano_forge
+	while = {
+		count = 4
+		add_district_and_planet_size_if_needed_effect = { district = district_city }
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = { district = district_generator }
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = { district = district_mining }
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = { district = district_farming }
+	}
+	while = {
+		count = 23
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+}
+
+create_fe_servant_species = {
+	create_species = {
+		name = random
+		class = random_non_machine
+		portrait = random
+		traits = {
+			trait = "trait_nerve_stapled"
+			trait = "trait_strong"
+			trait = "trait_charismatic"
+			trait = random_traits
+		}
+	}
+	last_created_species = {
+		 set_slavery_type = { country = prev type = slavery_domestic cooldown = yes } 
+	}
+}
+
+### Origin Effects ###
+create_common_ground_member_1 = {
+	if = {
+		limit = { 
+			root = { has_spiritualist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_spiritualist"
+				ethic = "ethic_fanatic_spiritualist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			root = { has_militarist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_militarist"
+				ethic = "ethic_fanatic_militarist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_pacifist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_pacifist"
+				ethic = "ethic_fanatic_pacifist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { OR = { has_materialist_government = yes is_machine_empire = yes } }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_materialist"
+				ethic = "ethic_fanatic_materialist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = {
+				OR = {
+					is_authoritarian = yes
+					is_hive_empire = yes
+				}
+			}
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_authoritarian"
+				ethic = "ethic_fanatic_authoritarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_egalitarian = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_egalitarian"
+				ethic = "ethic_fanatic_egalitarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else = {
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_fanatic_xenophile"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+}
+
+create_common_ground_member_2 = {
+	if = {
+		limit = {
+			root = {
+				OR = {
+					is_hive_empire = yes
+					AND = {
+						is_xenophile = yes
+						is_authoritarian = yes
+					}
+				}
+			}
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			authority = auth_hive_mind
+			ethos = {
+				ethic = "ethic_gestalt_consciousness"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_spiritualist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_spiritualist"
+				ethic = "ethic_fanatic_spiritualist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			root = { has_militarist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_militarist"
+				ethic = "ethic_fanatic_militarist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_pacifist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_pacifist"
+				ethic = "ethic_fanatic_pacifist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_materialist_government = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_materialist"
+				ethic = "ethic_fanatic_materialist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_authoritarian = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_authoritarian"
+				ethic = "ethic_fanatic_authoritarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_egalitarian = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_egalitarian"
+				ethic = "ethic_fanatic_egalitarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			root = { is_machine_empire = yes }
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			ethos = {
+				ethic = "ethic_gestalt_consciousness"
+			}
+			authority = auth_machine_intelligence
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else = {
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_common_ground_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_fanatic_xenophile"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+}
+
+create_hegemon_member_1 = {
+	if = {
+		limit = { 
+			root = { has_spiritualist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_spiritualist"
+				ethic = "ethic_fanatic_spiritualist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			root = { has_militarist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_militarist"
+				ethic = "ethic_fanatic_militarist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_pacifist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_pacifist"
+				ethic = "ethic_fanatic_pacifist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_materialist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_materialist"
+				ethic = "ethic_fanatic_materialist"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_authoritarian = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_authoritarian"
+				ethic = "ethic_fanatic_authoritarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_egalitarian = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_egalitarian"
+				ethic = "ethic_fanatic_egalitarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else = {
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_1_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_fanatic_xenophile"
+			}
+			effect = {
+				save_event_target_as = fed_member_1
+				establish_communications_no_message = root
+			}
+		}
+	}
+}
+
+create_hegemon_member_2 = {
+	if = {
+		limit = { 
+			root = { has_spiritualist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_spiritualist"
+				ethic = "ethic_fanatic_spiritualist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			root = { has_militarist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_militarist"
+				ethic = "ethic_fanatic_militarist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_pacifist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_pacifist"
+				ethic = "ethic_fanatic_pacifist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { has_materialist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_materialist"
+				ethic = "ethic_fanatic_materialist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_authoritarian = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_authoritarian"
+				ethic = "ethic_fanatic_authoritarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			root = { is_egalitarian = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_egalitarian"
+				ethic = "ethic_fanatic_egalitarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:fed_member_1 = { has_spiritualist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_spiritualist"
+				ethic = "ethic_fanatic_spiritualist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:fed_member_1 = { has_militarist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_militarist"
+				ethic = "ethic_fanatic_militarist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:fed_member_1 = { has_pacifist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_pacifist"
+				ethic = "ethic_fanatic_pacifist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:fed_member_1 = { has_materialist_government = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_materialist"
+				ethic = "ethic_fanatic_materialist"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:fed_member_1 = { is_authoritarian = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_authoritarian"
+				ethic = "ethic_fanatic_authoritarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:fed_member_1 = { is_egalitarian = yes }
+		}
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_egalitarian"
+				ethic = "ethic_fanatic_egalitarian"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+	else = {
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:fed_planet_2_species
+			type = default
+			origin = "origin_hegemon_npc"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophile"
+				ethic = "ethic_fanatic_xenophile"
+			}
+			effect = {
+				save_event_target_as = fed_member_2
+				establish_communications_no_message = root
+			}
+		}
+	}
+}
+
+### Ascension Effects ###
+
+# Given a species, create a mod with trait_cybernetic and apply to all pops, leaders
+# and armies that have the original species and the same owner as the scope object.
+# Scope: Something that has a species and an owner
+create_cybernetic_species_mod = {
+	species = {
+		create_species = {
+			is_mod = yes
+			name = this
+			plural = this
+			class = this
+			portrait = this
+			traits = this
+			homeworld = this
+			traits = {
+				ideal_planet_class = this
+				trait = trait_cybernetic
+			}
+		}
+		save_event_target_as = changing_species
+	}
+
+	owner = {
+		
+		every_owned_pop = {
+			limit = { is_exact_same_species = event_target:changing_species }
+			change_species = last_created_species
+			if = {
+				limit = { has_trait = trait_primitive_cybernetic }
+				modify_species = {
+					species = this
+					remove_trait = trait_primitive_cybernetic
+				}
+			}
+		}
+		every_owned_leader = {
+			limit = { is_exact_same_species = event_target:changing_species }
+			change_species = last_created_species
+		}
+		every_pool_leader = {
+			limit = { is_exact_same_species = event_target:changing_species }
+			change_species = last_created_species
+		}
+		every_owned_army = {
+			limit = {
+				exists = species
+				is_exact_same_species = event_target:changing_species
+			}
+			change_species = last_created_species
+		}
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				is_exact_same_species = event_target:changing_species
+			}
+			change_species = last_created_species
+		}
+	}
+}
+
+# root/this = planet
+assimilation_effect = {
+	random_owned_pop = {
+		limit = {
+			has_citizenship_type = {
+				type = citizenship_assimilation
+				country = root.owner
+			}
+		}
+		if = { # ascended synths
+			limit = {
+				root.owner = {
+					has_country_flag = synthetic_empire
+				}
+			}
+			get_ascended_synth_traits = yes
+			change_species = root.owner
+			set_ascended_synth_traits = yes
+			root = {
+				owner = {
+					if = {
+						limit = { has_ascension_perk = ap_become_the_crisis }
+						complete_crisis_objective = crisobj_purge_pops
+					}
+				}
+			}
+		}
+		else = {
+			random_galaxy_species = {
+				limit = {
+					has_species_flag = assimilation_species_of_species@prev.species
+					has_species_flag = assimilation_species_of_empire@root.owner
+				}
+				save_event_target_as = convert_to_species
+			}
+			species = {
+				save_event_target_as = old_species
+			}
+			if = {
+				limit = {
+					exists = event_target:convert_to_species #should always exist
+				}
+				change_species = event_target:convert_to_species
+				owner = {
+					if = {
+						limit = { has_ascension_perk = ap_become_the_crisis }
+						complete_crisis_objective = crisobj_purge_pops
+					}
+				}
+				root = {
+					change_variable = {
+						which = assimilation_counter
+						value = -1
+					}
+					while = { #to avoid doing the random_galaxy_species thing too many times
+						limit = {
+							exists = event_target:old_species
+							check_variable = {
+								which = assimilation_counter
+								value > 0
+							}
+							any_owned_pop = {
+								is_same_value = event_target:old_species
+							}
+						}
+						random_owned_pop = {
+							limit = {
+								is_exact_same_species = event_target:old_species
+							}
+							change_species = event_target:convert_to_species
+							apply_post_assimilation_effects = yes
+						}
+						change_variable = {
+							which = assimilation_counter
+							value = -1
+						}
+						owner = {
+							if = {
+								limit = { has_ascension_perk = ap_become_the_crisis }
+								complete_crisis_objective = crisobj_purge_pops
+							}
+						}
+					}
+				}
+				apply_post_assimilation_effects = yes
+			}
+			else = {
+				log_error = "No species found for \\[This.Species.GetName] pop owned by \\[This.Owner.GetName] on \\[This.Planet.GetName] to assimilate to"
+			}
+		}
+	}
+}
+
+### Espionage Effects ###
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_spiritualist = {
+	if = {
+		limit = {
+			root.target = {
+				OR = {
+					has_authority = auth_democratic
+					has_authority = auth_oligarchic
+					has_authority = auth_imperial
+				}
+			}
+		}
+		set_country_flag = smear_spiritualist_ridic@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { is_megacorp = yes }
+		}
+		set_country_flag = smear_spiritualist_merch@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		set_country_flag = smear_spiritualist_deity@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+}
+
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_militarist = {
+	if = {
+		limit = {
+			root.target = { is_gestalt = yes }
+		}
+		set_country_flag = smear_militarist_study@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			has_truce = root.target
+		}
+		set_country_flag = smear_militarist_priso@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = {
+				OR = {
+					is_militarist = yes
+					is_auth_corporate = yes
+				}
+			}
+		}
+		set_country_flag = smear_militarist_armsd@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { is_pacifist = yes }
+		}
+		set_country_flag = smear_militarist_pacif@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else = {
+		set_country_flag = smear_militarist_satir@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+}
+
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_xenophobe = {
+	if = {
+		limit = {
+			root.target = {
+				is_auth_corporate = yes
+				has_technology = tech_gene_tailoring
+			}
+		}
+		set_country_flag = smear_xenophobe_genes@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		set_country_flag = smear_xenophobe_abduc@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+}
+
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_pacifist = {
+	if = {
+		limit = {
+			root.target = {
+				is_auth_corporate = yes
+			}
+		}
+		set_country_flag = smear_pacifist_gunrun@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = {
+				OR = {
+					vassals > 0
+					AND = {
+						has_federation = yes
+						federation = { has_federation_type = hegemony_federation }
+					}
+				}
+			}
+			root.target = { is_xenophile = no } #They seem less believable as meddlers
+		}
+		set_country_flag = smear_pacifist_vassal@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { is_militarist = yes }
+		}
+		set_country_flag = smear_pacifist_weapon@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else = {
+		set_country_flag = smear_pacifist_border@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+}
+
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_xenophile = {
+	if = {
+		limit = {
+			root.target = {
+				OR = {
+					is_auth_corporate = yes
+					has_commercial_pact = event_target:smear_campaign_recipient
+				}
+			}
+		}
+		set_country_flag = smear_xenophile_commerc@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { allows_slavery = yes } #Includes gestalts
+		}
+		set_country_flag = smear_xenophile_slavery@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = {
+				is_xenophile = yes
+				has_diplo_migration_treaty = event_target:smear_campaign_recipient
+			}
+		}
+		set_country_flag = smear_xenophile_motives@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		set_country_flag = smear_xenophile_contact@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+}
+
+### Leader Effects ###
+# Adds a trait to a leader
+add_random_leader_trait = {
+	if = { #Is a science ship commander
+		limit = {
+			leader_class = scientist
+			NOR = {
+				is_researching_area = society
+				is_researching_area = engineering
+				is_researching_area = physics
+			}
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_resilient }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_stubborn 
+								has_trait = leader_trait_rigid_programming
+								owner = { has_authority = "auth_hive_mind" }
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_stubborn
+							set_timed_leader_flag = { flag = gained_leader_trait_stubborn days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_rigid_programming
+							set_timed_leader_flag = { flag = gained_leader_trait_rigid_programming days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_substance_abuser }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_substance_abuser
+						set_timed_leader_flag = { flag = gained_leader_trait_substance_abuser days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_arrested_development  }
+						}
+						add_trait = leader_trait_arrested_development
+						set_timed_leader_flag = { flag = gained_leader_trait_arrested_development days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_meticulous }
+						}
+						add_trait = leader_trait_meticulous
+						set_timed_leader_flag = { flag = gained_leader_trait_meticulous days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_spark_of_genius }
+						}
+						add_trait = leader_trait_spark_of_genius
+						set_timed_leader_flag = { flag = gained_leader_trait_spark_of_genius days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_carefree }
+						}
+						add_trait = leader_trait_carefree
+						set_timed_leader_flag = { flag = gained_leader_trait_carefree days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_roamer 
+								has_trait = leader_trait_cataloger
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_roamer 
+							set_timed_leader_flag = { flag = gained_leader_trait_roamer days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_cataloger
+							set_timed_leader_flag = { flag = gained_leader_trait_cataloger days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_archaeologist
+								has_trait = leader_trait_archaeologist_ancrel 
+							}
+						}
+						if = {
+							limit = {
+								owner = { has_ancrel = yes }
+							}
+							add_trait = leader_trait_archaeologist_ancrel 
+							set_timed_leader_flag = { flag = leader_trait_archaeologist_ancrel days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_ancrel = no }
+							}
+							add_trait = leader_trait_archaeologist
+							set_timed_leader_flag = { flag = leader_trait_archaeologist days = 7 }
+						}
+
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_maniacal }
+						}
+						add_trait = leader_trait_maniacal
+						set_timed_leader_flag = { flag = gained_leader_trait_maniacal days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_custom_AI_assistant }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_custom_AI_assistant
+						set_timed_leader_flag = { flag = gained_leader_trait_custom_AI_assistant days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_materials }
+						}
+						add_trait = leader_trait_expertise_materials
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_materials days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_propulsion }
+						}
+						add_trait = leader_trait_expertise_propulsion
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_propulsion days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_voidcraft }
+						}
+						add_trait = leader_trait_expertise_voidcraft
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_voidcraft days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_industry }
+						}
+						add_trait = leader_trait_expertise_industry
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_industry days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_field_manipulation }
+						}
+						add_trait = leader_trait_expertise_field_manipulation
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_field_manipulation days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_particles }
+						}
+						add_trait = leader_trait_expertise_particles
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_particles days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_computing }
+						}
+						add_trait = leader_trait_expertise_computing
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_computing days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_expertise_psionics
+								owner = { has_ethic = ethic_gestalt_consciousness }
+								species = { has_trait = trait_mechanical }
+							}
+						}
+						add_trait = leader_trait_expertise_psionics
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_psionics days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_new_worlds }
+						}
+						add_trait = leader_trait_expertise_new_worlds
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_new_worlds days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_statecraft }
+						}
+						add_trait = leader_trait_expertise_statecraft
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_statecraft days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_biology }
+						}
+						add_trait = leader_trait_expertise_biology
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_biology days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_expertise_military_theory }
+						}
+						add_trait = leader_trait_expertise_military_theory
+						set_timed_leader_flag = { flag = gained_leader_trait_expertise_military_theory days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_paranoid }
+						}
+						add_trait = leader_trait_paranoid
+						set_timed_leader_flag = { flag = gained_leader_trait_paranoid days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.21} }
+	}
+	if = {
+		limit = {
+			leader_class = admiral
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_resilient
+								owner = { has_ethic = ethic_gestalt_consciousness }
+								species = { has_trait = trait_mechanical }
+							}
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_stubborn 
+								has_trait = leader_trait_rigid_programming
+								owner = { has_authority = "auth_hive_mind" }
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_stubborn
+							set_timed_leader_flag = { flag = gained_leader_trait_stubborn days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_rigid_programming
+							set_timed_leader_flag = { flag = gained_leader_trait_rigid_programming days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_substance_abuser }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_substance_abuser
+						set_timed_leader_flag = { flag = gained_leader_trait_substance_abuser days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_arrested_development  }
+						}
+						add_trait = leader_trait_arrested_development
+						set_timed_leader_flag = { flag = gained_leader_trait_arrested_development days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_trickster }
+						}
+						add_trait = leader_trait_trickster
+						set_timed_leader_flag = { flag = gained_leader_trait_trickster days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_fleet_logistician
+								has_trait = leader_trait_maintenance_loop
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_fleet_logistician
+							set_timed_leader_flag = { flag = gained_leader_trait_fleet_logistician days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_maintenance_loop
+							set_timed_leader_flag = { flag = gained_leader_trait_maintenance_loop days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_engineer }
+						}
+						add_trait = leader_trait_engineer
+						set_timed_leader_flag = { flag = gained_leader_trait_engineer days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_aggressive }
+						}
+						add_trait = leader_trait_aggressive
+						set_timed_leader_flag = { flag = gained_leader_trait_aggressive days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_cautious }
+						}
+						add_trait = leader_trait_cautious
+						set_timed_leader_flag = { flag = gained_leader_trait_cautious days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_scout }
+						}
+						add_trait = leader_trait_scout
+						set_timed_leader_flag = { flag = gained_leader_trait_scout days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_unyielding }
+						}
+						add_trait = leader_trait_unyielding
+						set_timed_leader_flag = { flag = gained_leader_trait_unyielding days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_gale_speed }
+						}
+						add_trait = leader_trait_gale_speed
+						set_timed_leader_flag = { flag = gained_leader_trait_gale_speed days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							has_valid_civic = civic_hive_one_mind
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_lethargic }
+						}
+						add_trait = leader_trait_lethargic
+						set_timed_leader_flag = { flag = gained_leader_trait_lethargic days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_global_flag = TechAscendant_active }
+							owner = { NOT = { has_technology = tech_military_theory_breakthrough } }
+						}
+					}
+					modifier = {
+						factor = 1.25
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_strategist }
+						}
+						add_trait = leader_trait_strategist
+						set_timed_leader_flag = { flag = gained_leader_trait_strategist days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_global_flag = TechAscendant_active }
+							owner = { NOT = { has_technology = tech_military_theory_breakthrough } }
+						}
+					}
+					modifier = {
+						factor = 1.25
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_tactician }
+						}
+						add_trait = leader_trait_tactician
+						set_timed_leader_flag = { flag = gained_leader_trait_tactician days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.22} }
+	}
+	if = {
+		limit = {
+			leader_class = governor
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_resilient }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_stubborn 
+								has_trait = leader_trait_rigid_programming
+								owner = { has_authority = "auth_hive_mind" }
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_stubborn
+							set_timed_leader_flag = { flag = gained_leader_trait_stubborn days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_rigid_programming
+							set_timed_leader_flag = { flag = gained_leader_trait_rigid_programming days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_substance_abuser }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_substance_abuser
+						set_timed_leader_flag = { flag = gained_leader_trait_substance_abuser days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_righteous
+								has_trait = leader_trait_corrupt
+							}
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_corrupt
+						set_timed_leader_flag = { flag = gained_leader_trait_corrupt days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 1.1
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_righteous
+								has_trait = leader_trait_corrupt
+							}
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_righteous
+						set_timed_leader_flag = { flag = gained_leader_trait_righteous days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_arrested_development  }
+						}
+						add_trait = leader_trait_arrested_development
+						set_timed_leader_flag = { flag = gained_leader_trait_arrested_development days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_iron_fist
+								owner = { allows_slavery = no }
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+						}
+						add_trait = leader_trait_iron_fist
+						set_timed_leader_flag = { flag = gained_leader_trait_iron_fist days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_architectural_interest }
+						}
+						add_trait = leader_trait_architectural_interest
+						set_timed_leader_flag = { flag = gained_leader_trait_architectural_interest days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 1.1
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_intellectual 
+								has_trait = leader_trait_analytical
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_intellectual 
+							set_timed_leader_flag = { flag = gained_leader_trait_intellectual days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_analytical
+							set_timed_leader_flag = { flag = gained_leader_trait_analytical days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_environmental_engineer 
+								has_trait = leader_trait_bulldozer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_environmental_engineer 
+							set_timed_leader_flag = { flag = gained_leader_trait_environmental_engineer days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_bulldozer
+							set_timed_leader_flag = { flag = gained_leader_trait_bulldozer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.23} }
+	}
+	if = {
+		limit = {
+			leader_class = general
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_resilient }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_stubborn 
+								has_trait = leader_trait_rigid_programming
+								owner = { has_authority = "auth_hive_mind" }
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_stubborn
+							set_timed_leader_flag = { flag = gained_leader_trait_stubborn days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_rigid_programming
+							set_timed_leader_flag = { flag = gained_leader_trait_rigid_programming days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_substance_abuser }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_substance_abuser
+						set_timed_leader_flag = { flag = gained_leader_trait_substance_abuser days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_arrested_development  }
+						}
+						add_trait = leader_trait_arrested_development
+						set_timed_leader_flag = { flag = gained_leader_trait_arrested_development days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							owner = {
+								NOT = { has_authority = "auth_machine_intelligence" }
+							}						
+							NOT = { has_trait = leader_trait_butcher }
+							NOT = { has_trait = leader_trait_restrained }						
+						}
+						add_trait = leader_trait_restrained
+						set_timed_leader_flag = { flag = gained_leader_trait_restrained days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 1.1
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_charismatic 
+								has_trait = leader_trait_demoralizer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_charismatic 
+							set_timed_leader_flag = { flag = gained_leader_trait_charismatic days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_demoralizer
+							set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_butcher }
+							NOT = { has_trait = leader_trait_restrained }
+						}
+						add_trait = leader_trait_butcher
+						set_timed_leader_flag = { flag = gained_leader_trait_butcher days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_glory_seeker
+								has_trait = leader_trait_demoralizer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_glory_seeker
+							set_timed_leader_flag = { flag = gained_leader_trait_glory_seeker days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_demoralizer
+							set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_armchair_commander 
+								has_trait = leader_trait_erratic_morality_core
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_armchair_commander 
+							set_timed_leader_flag = { flag = gained_leader_trait_armchair_commander days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_erratic_morality_core
+							set_timed_leader_flag = { flag = gained_leader_trait_erratic_morality_core days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_army_logistician 
+								has_trait = leader_trait_parts_cannibalizer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_army_logistician 
+							set_timed_leader_flag = { flag = gained_leader_trait_army_logistician days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_parts_cannibalizer
+							set_timed_leader_flag = { flag = gained_leader_trait_parts_cannibalizer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.24} }
+	}
+	if = {
+		limit = {
+			leader_class = ruler
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						exists = owner
+						NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_resilient }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					modifier = {
+						factor = 0
+						owner = { has_authority = auth_hive_mind }
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = leader_trait_stubborn 
+								has_trait = leader_trait_rigid_programming
+								owner = { has_authority = "auth_hive_mind" }
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_stubborn
+							set_timed_leader_flag = { flag = gained_leader_trait_stubborn days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_rigid_programming
+							set_timed_leader_flag = { flag = gained_leader_trait_rigid_programming days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_substance_abuser }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_substance_abuser
+						set_timed_leader_flag = { flag = gained_leader_trait_substance_abuser days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0.5
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					modifier = {
+						factor = 0
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_arrested_development }
+						}
+						add_trait = leader_trait_arrested_development
+						set_timed_leader_flag = { flag = gained_leader_trait_arrested_development days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = trait_ruler_corvette_focus
+								has_trait = trait_ruler_destroyer_focus
+								has_trait = trait_ruler_cruiser_focus
+								has_trait = trait_ruler_battleship_focus 
+							}
+							owner = { has_technology = "tech_destroyers" }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = trait_ruler_corvette_focus
+						set_timed_leader_flag = { flag = gained_trait_ruler_corvette_focus days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = trait_ruler_corvette_focus
+								has_trait = trait_ruler_destroyer_focus
+								has_trait = trait_ruler_cruiser_focus
+								has_trait = trait_ruler_battleship_focus 
+							}
+							owner = { has_technology = "tech_destroyers" }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = trait_ruler_destroyer_focus
+						set_timed_leader_flag = { flag = gained_trait_ruler_destroyer_focus days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = trait_ruler_corvette_focus
+								has_trait = trait_ruler_destroyer_focus
+								has_trait = trait_ruler_cruiser_focus
+								has_trait = trait_ruler_battleship_focus 
+							}
+							owner = { has_technology = "tech_cruisers" }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = trait_ruler_cruiser_focus
+						set_timed_leader_flag = { flag = gained_trait_ruler_cruiser_focus days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOR = { 
+								has_trait = trait_ruler_corvette_focus
+								has_trait = trait_ruler_destroyer_focus
+								has_trait = trait_ruler_cruiser_focus
+								has_trait = trait_ruler_battleship_focus 
+							}
+							owner = { has_technology = "tech_battleships" }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = trait_ruler_battleship_focus
+						set_timed_leader_flag = { flag = gained_trait_ruler_battleship_focus days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_recruiter }
+						}
+						add_trait = trait_ruler_recruiter
+						set_timed_leader_flag = { flag = gained_trait_ruler_recruiter days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness" }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_fortifier }
+						}
+						add_trait = trait_ruler_fortifier
+						set_timed_leader_flag = { flag = gained_trait_ruler_fortifier days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_logistic_understanding }
+						}
+						add_trait = trait_ruler_logistic_understanding
+						set_timed_leader_flag = { flag = gained_trait_ruler_logistic_understanding days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_military_pioneer }
+						}
+						add_trait = trait_ruler_military_pioneer
+						set_timed_leader_flag = { flag = gained_trait_ruler_military_pioneer days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_warlike }
+						}
+						add_trait = trait_ruler_warlike
+						set_timed_leader_flag = { flag = gained_trait_ruler_warlike days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_architectural_sense }
+							NOT = { has_trait = trait_ruler_architectural_sense_gestalt }
+						}
+						if = {
+							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
+							add_trait = trait_ruler_architectural_sense_gestalt
+						}
+						else = {
+							add_trait = trait_ruler_architectural_sense
+						}
+						set_timed_leader_flag = { flag = gained_trait_ruler_architectural_sense days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_frontier_spirit }
+						}
+						add_trait = trait_ruler_frontier_spirit
+						set_timed_leader_flag = { flag = gained_trait_ruler_frontier_spirit days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_world_shaper }
+						}
+						add_trait = trait_ruler_world_shaper
+						set_timed_leader_flag = { flag = gained_trait_ruler_world_shaper days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_home_in_the_sky }
+						}
+						add_trait = trait_ruler_home_in_the_sky
+						set_timed_leader_flag = { flag = gained_trait_ruler_home_in_the_sky days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_industrialist }
+						}
+						add_trait = trait_ruler_industrialist
+						set_timed_leader_flag = { flag = gained_trait_ruler_industrialist days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				100 = {
+					modifier = {
+						factor = 0.1
+						owner = { has_ethic = "ethic_gestalt_consciousness"  }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_eye_for_talent }
+							NOT = { has_trait = trait_ruler_pooled_knowledge }
+						}
+						if = {
+							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
+							add_trait = trait_ruler_pooled_knowledge
+						}
+						else = {
+							add_trait = trait_ruler_eye_for_talent
+						}
+						set_timed_leader_flag = { flag = gained_trait_ruler_eye_for_talent days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 1.25
+						exists = owner
+						owner = {
+							is_civic_cutthroat_politics = yes
+						}
+					}
+					modifier = {
+						factor = 0.5
+						species = { has_trait = trait_shrewd }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_deep_connections }
+							NOT = { has_trait = trait_ruler_deep_connections_gestalt }
+						}
+						if = {
+							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
+							add_trait = trait_ruler_deep_connections_gestalt
+						}
+						else = {
+							add_trait = trait_ruler_deep_connections
+						}
+						set_timed_leader_flag = { flag = gained_trait_ruler_deep_connections days = 7 }
+						add_trait = trait_ruler_deep_connections
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 1.1
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_champion_of_the_people }
+							NOT = { has_trait = trait_ruler_one_mind }
+						}
+						if = {
+							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
+							add_trait = trait_ruler_one_mind
+						}
+						else = {
+							add_trait = trait_ruler_champion_of_the_people
+						}
+						set_timed_leader_flag = { flag = gained_trait_ruler_champion_of_the_people days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_expansionist }
+						}
+						add_trait = trait_ruler_expansionist
+						set_timed_leader_flag = { flag = gained_trait_ruler_expansionist days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_authority = "auth_machine_intelligence" }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_fertility_preacher }
+						}
+						add_trait = trait_ruler_fertility_preacher
+						set_timed_leader_flag = { flag = gained_trait_ruler_fertility_preacher days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { has_ethic = "ethic_gestalt_consciousness"  }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_investor }
+						}
+						add_trait = trait_ruler_investor
+						set_timed_leader_flag = { flag = gained_trait_ruler_investor days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_explorer }
+						}
+						add_trait = trait_ruler_explorer
+						set_timed_leader_flag = { flag = gained_trait_ruler_explorer days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_fleet_organizer }
+							NOT = { has_trait = leader_trait_fleet_organizer_gestalt }
+						}
+						if = {
+							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
+							add_trait = leader_trait_fleet_organizer_gestalt
+						}
+						else = {
+							add_trait = leader_trait_fleet_organizer
+						}
+						set_timed_leader_flag = { flag = gained_leader_trait_fleet_organizer days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 1.25
+						exists = owner
+						owner = {
+							OR = { has_valid_civic = civic_philosopher_king has_valid_civic = civic_corp_philosopher_king has_valid_civic = civic_hive_one_mind }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_charismatic }
+							NOT = { has_trait = trait_ruler_subsumed_will }
+						}
+						if = {
+							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
+							add_trait = trait_ruler_subsumed_will
+						}
+						else = {
+							add_trait = trait_ruler_charismatic
+						}
+						set_timed_leader_flag = { flag = gained_trait_ruler_charismatic days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_reformer_gestalt }
+						}
+						add_trait = leader_trait_reformer_gestalt
+						set_timed_leader_flag = { flag = gained_leader_trait_reformer_gestalt days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						owner = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
+					}
+					if = {
+						limit = {
+							NOT = { has_trait = trait_ruler_from_the_ranks_gestalt }
+						}
+						add_trait = trait_ruler_from_the_ranks_gestalt
+						set_timed_leader_flag = { flag = gained_trait_ruler_from_the_ranks_gestalt days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.25} }
+	}
+}
+
+## OTHER ###
+create_nu_baol_effect = {
+	if = {
+		limit = {
+			host_has_dlc = "Plantoids Species Pack"
+		}
+		if = {
+			limit = {
+				NOT = { exists = event_target:nu_baol_species }
+				owner = {
+					has_authority = auth_hive_mind
+					NOT = { has_valid_civic = civic_hive_devouring_swarm }
+					NOT = { has_valid_civic = civic_infestation }
+					NOT = { has_origin = origin_necrophage }
+				}
+			}
+			create_species = {
+				name = "NAME_Nu_Baol"
+				plural = "NAME_Nu_Baol"
+				class = "PLANT"
+				portrait = pla16_baol
+				name_list = "PLANT2"
+				extra_trait_points = 4
+				traits = {
+					trait = "trait_hive_mind"
+					trait = "trait_photosynthetic"
+					trait = "trait_plantoid_phototrophic"
+					trait = "trait_agrarian"
+					trait = "trait_communal"
+					trait = "trait_ancient"
+					trait = "trait_delicious"
+					trait = "trait_slow_breeders"
+					trait = "trait_pc_gaia_preference"
+				}
+				effect = {
+					save_global_event_target_as = nu_baol_species
+				}
+			}
+		}
+		else = {
+			create_species = {
+				name = "NAME_Nu_Baol"
+				plural = "NAME_Nu_Baol"
+				class = "PLANT"
+				portrait = pla16_baol
+				name_list = "PLANT2"
+				extra_trait_points = 4
+				traits = {
+					trait = "trait_photosynthetic"
+					trait = "trait_plantoid_phototrophic"
+					trait = "trait_agrarian"
+					trait = "trait_communal"
+					trait = "trait_ancient"
+					trait = "trait_delicious"
+					trait = "trait_slow_breeders"
+					trait = "trait_pc_gaia_preference"
+				}
+				effect = {
+					save_global_event_target_as = nu_baol_species
+				}
+			}
+		}
+	}
+
+	else = {
+		if = {
+			limit = {
+				NOT = { exists = event_target:nu_baol_species }
+				owner = {
+					has_authority = auth_hive_mind
+					NOT = { has_valid_civic = civic_hive_devouring_swarm }
+					NOT = { has_valid_civic = civic_infestation }
+					NOT = { has_origin = origin_necrophage }
+				}
+			}
+			create_species = {
+				name = "NAME_Nu_Baol"
+				plural = "NAME_Nu_Baol"
+				class = "PLANT"
+				portrait = pla16_baol
+				name_list = "PLANT2"
+				extra_trait_points = 3
+				traits = {
+					trait = "trait_hive_mind"
+					trait = "trait_photosynthetic"
+					trait = "trait_agrarian"
+					trait = "trait_communal"
+					trait = "trait_ancient"
+					trait = "trait_delicious"
+					trait = "trait_slow_breeders"
+					trait = "trait_pc_gaia_preference"
+				}
+				effect = {
+					save_global_event_target_as = nu_baol_species
+				}
+			}
+		}
+		else = {
+			create_species = {
+				name = "NAME_Nu_Baol"
+				plural = "NAME_Nu_Baol"
+				class = "PLANT"
+				portrait = pla16_baol
+				name_list = "PLANT2"
+				extra_trait_points = 3
+				traits = {
+					trait = "trait_photosynthetic"
+					trait = "trait_agrarian"
+					trait = "trait_communal"
+					trait = "trait_ancient"
+					trait = "trait_delicious"
+					trait = "trait_slow_breeders"
+					trait = "trait_pc_gaia_preference"
+				}
+				effect = {
+					save_global_event_target_as = nu_baol_species
+				}
+			}
+		}
+	}
+}
+
+### REAL SPACE ###
+add_newfrontiers_starting_deposits = {
+	#remove_all_districts = yes
+	#remove_all_buildings = yes
+	clear_deposits = yes
+	
+	# blockers
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_post_apocalyptic
+			}
+		}
+		add_deposit = d_tomb_world_ruins
+		add_deposit = d_tomb_world_wasteland
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_civic = civic_machine_terminator
+				NOT = { has_origin = origin_machine }
+			}
+		}
+
+		add_deposit = d_exterminators_ruins
+		add_deposit = d_former_battlefield
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_civic = civic_machine_servitor
+			}
+		}
+
+		add_deposit = d_strip_mine
+		add_deposit = d_unsupervised_settlement
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_civic = civic_machine_assimilator
+				NOT = { has_origin = origin_machine }
+			}
+		}
+
+		add_deposit = d_strip_mine
+		add_deposit = d_assimilators_ruins
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_authority = auth_machine_intelligence
+				NOR = { 
+					has_origin = origin_machine
+					has_origin = origin_derelict_evolution
+				}
+			}
+		}
+
+		add_deposit = d_strip_mine
+		add_deposit = d_machine_empire_ruins
+	}
+	else_if = {
+		limit = {
+			owner = {
+				is_hive_empire = yes
+				has_origin = origin_delicate_ecosystem
+			}
+		}
+		add_deposit = d_collapsed_burrows
+	}
+	else_if = {
+		limit = {
+			owner = {
+				is_hive_empire = yes
+				has_origin = origin_terraformer
+			}
+		}
+		add_deposit = d_collapsed_burrows
+		add_deposit = d_failing_infrastructure
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_authority = auth_hive_mind
+			}
+		}
+
+		add_deposit = d_collapsed_burrows
+		add_deposit = d_failing_infrastructure
+		add_deposit = d_failing_infrastructure
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_origin = origin_delicate_ecosystem
+			}
+		}
+		add_deposit = d_decrepit_dwellings
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_origin = origin_terraformer
+			}
+		}
+		add_deposit = d_decrepit_dwellings
+		add_deposit = d_failing_infrastructure
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_country_flag = human_2
+			}
+		}
+		add_deposit = d_decrepit_dwellings
+		add_deposit = d_dangerous_wildlife_blocker
+		add_deposit = d_chrysanthemum
+		owner = { give_technology = { tech = "tech_dangerous_wildlife" message = no } }
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_origin = origin_lost_colony
+			}
+		}
+		add_deposit = d_decrepit_dwellings
+		random_list = {
+			1 = {
+				add_deposit = d_mountain_range
+				owner = {
+					give_technology = { tech = "tech_mountain_range" message = no }
+				}
+			}
+			1 = {
+				add_deposit = d_active_volcano
+				owner = {
+					give_technology = { tech = "tech_volcano" message = no }
+				}
+			}
+			1 = {
+				add_deposit = d_dangerous_wildlife_blocker
+				owner = {
+					give_technology = { tech = "tech_dangerous_wildlife" message = no }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_wet = no
+				}
+				add_deposit = d_dense_jungle
+				owner = {
+					give_technology = { tech = "tech_dense_jungle" message = no }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_wet = no
+				}
+				add_deposit = d_toxic_kelp
+				owner = {
+					give_technology = { tech = "tech_toxic_kelp" message = no }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_dry = no
+				}
+				add_deposit = d_deep_sinkhole
+				owner = {
+					give_technology = { tech = "tech_deep_sinkhole" message = no }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_dry = no
+				}
+				add_deposit = d_quicksand_basin
+				owner = {
+					give_technology = { tech = "tech_quicksand_basin" message = no }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_cold = no
+				}
+				add_deposit = d_noxious_swamp
+				owner = {
+					give_technology = { tech = "tech_noxious_swamp" message = no }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_cold = no
+				}
+				add_deposit = d_massive_glacier
+				owner = {
+					give_technology = { tech = "tech_massive_glacier" message = no }
+				}
+			}
+		}
+		add_deposit = d_lost_colony
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_origin = origin_militarist
+			}
+		}
+		add_deposit = d_decrepit_dwellings
+		add_deposit = d_decrepit_dwellings
+		add_deposit = d_decrepit_dwellings
+		add_deposit = d_crater
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_country_flag = the_voor
+				has_origin = origin_primitive_cyborgs
+			}
+		}
+		if = {
+			limit = { planet_size < 21 }
+			set_planet_size = 21
+		}
+		add_deposit = d_massive_glacier
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_origin = origin_primitive_cyborgs
+				NOT = { has_country_flag = the_voor }
+			}
+		}
+		if = {
+			limit = { planet_size < 21 }
+			set_planet_size = 21
+		}
+		random_list = {
+			1 = {
+				add_deposit = d_mountain_range
+			}
+			1 = {
+				add_deposit = d_active_volcano
+			}
+			1 = {
+				add_deposit = d_dangerous_wildlife_blocker
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_wet = no
+				}
+				add_deposit = d_dense_jungle
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_wet = no
+				}
+				add_deposit = d_toxic_kelp
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_dry = no
+				}
+				add_deposit = d_deep_sinkhole
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_dry = no
+				}
+				add_deposit = d_quicksand_basin
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_cold = no
+				}
+				add_deposit = d_noxious_swamp
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_cold = no
+				}
+				add_deposit = d_massive_glacier
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				OR = {
+					has_origin = origin_subterranean
+					has_origin = origin_scavengers
+					has_origin = origin_forsaken
+					has_origin = origin_derelict_evolution
+				}
+			}
+		}
+		#No blockers in the Hollow Worlds.
+	}
+	else_if = {
+		limit = {
+			owner = {
+				NOT = { 
+					has_origin = origin_machine 
+				}
+			}
+		}
+		add_deposit = d_decrepit_dwellings
+		add_deposit = d_failing_infrastructure
+		add_deposit = d_failing_infrastructure
+	}
+
+	if = {
+		limit = {
+			owner = {
+				is_lithoid_empire = yes
+				NOR = {
+					has_valid_civic = civic_hive_devouring_swarm
+					has_origin = origin_lithoid
+				}
+			}
+		}
+		while = {
+			count = 4
+			add_deposit = d_hibernating_lithoids
+		}
+	}
+
+	if = {
+		limit = {
+			owner = {
+				is_lithoid_empire = yes
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+		}
+		while = {
+			count = 2
+			add_deposit = d_hibernating_lithoids
+		}
+	}
+	
+	#ORIGINS
+	#Subterranean
+	if = {
+		limit = { owner = { has_origin = origin_subterranean } }
+		
+		set_planet_size = 25
+		
+		if = {
+			limit = { has_modifier = infernal_world }
+			
+			# 2 + 3 energy
+			add_deposit = d_underground_springs
+			add_deposit = d_gaseous_eruption
+
+			# 2 + 4 mining
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_lodes
+
+			# 2 + 2 farming	
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_lodes
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+			
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystalline_caverns
+		}
+		else_if = {
+			limit = { has_modifier = subglacial_world }
+			
+			# 2 + 3 energy
+			add_deposit = d_turbulent_currents
+			add_deposit = d_submerged_gas_eruption
+			add_deposit = d_rich_lodes
+
+			# 2 + 4 mining
+			add_deposit = d_submerged_ore_veins
+
+			# 2 + 2 farming	
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+			
+			add_deposit = d_crystal_reef
+			add_deposit = d_betharian_deposit
+		}
+		else = {
+		
+			# 2 + 3 energy
+			add_deposit = d_underground_springs
+			add_deposit = d_gaseous_eruption
+
+			# 2 + 4 mining
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_lodes
+
+			# 2 + 2 farming	
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_lodes
+			}
+			else = {
+				add_deposit = d_underground_reservoir
+			}
+			
+			add_deposit = d_dust_caverns
+		}
+	}
+	#Scavengers
+	if = {
+		limit = { owner = { has_origin = origin_scavengers } }
+		
+		# blockers
+		add_deposit = d_industrial_boneyard
+		add_deposit = d_industrial_boneyard
+		add_deposit = d_industrial_boneyard
+		add_deposit = d_industrial_boneyard
+		
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_searing_desert
+		add_deposit = d_underwater_vent
+
+		# 3 + 4 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+
+		# 3 + 2 farming
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_fungal_caves
+		add_deposit = d_agrarian_dome
+		
+		if = {
+			limit = { owner = { NOT = { has_authority = auth_machine_intelligence } } }
+			add_deposit = d_subway_tunnel_network
+		}
+	}
+	#Twilight Ones
+	if = {
+		limit = { owner = { has_origin = origin_twilight_ones } }
+		
+		if = {
+			limit = { has_modifier = flaming_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_arid_highlands
+			add_deposit = d_searing_desert
+			add_deposit = d_scorched_badlands
+
+			# 3 + 3 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_mountain
+
+			# 4 + 3 farming (lithoids swap 3 for minerals)
+			add_deposit = d_hydroponic_complex
+			add_deposit = d_irrigated_fields
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+			
+			add_deposit = d_dust_desert
+		}
+		else_if = {
+			limit = { has_modifier = meridiem_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_frozen_gas_lake
+			add_deposit = d_geothermal_vent
+
+			# 3 + 3 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_mountain
+
+			# 4 + 3 farming (lithoids swap 3 for minerals)
+			add_deposit = d_rugged_woods
+			add_deposit = d_lush_jungle
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_estuary_meadows
+			}
+		}
+		else_if = {
+			limit = { has_modifier = eyeball_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_turbulent_currents
+			add_deposit = d_submerged_gas_eruption
+			add_deposit = d_underwater_vent
+
+			# 3 + 3 mining
+			add_deposit = d_offshore_fields
+			add_deposit = d_abundant_atoll
+			add_deposit = d_submerged_ore_veins
+
+			# 4 + 3 farming (lithoids swap 3 for minerals)
+			add_deposit = d_seagrass_shelf
+			add_deposit = d_kelp_forest
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}
+		else = {
+			# 3 + 3 energy
+			add_deposit = d_arid_highlands
+			add_deposit = d_searing_desert
+			add_deposit = d_scorched_badlands
+
+			# 3 + 3 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_ore_rich_caverns
+			add_deposit = d_rich_mountain
+
+			# 4 + 3 farming (lithoids swap 3 for minerals)
+			add_deposit = d_bountiful_plains
+			add_deposit = d_great_river
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}
+	}
+	#Forsaken
+	if = {
+		limit = { owner = { has_origin = origin_forsaken } }
+
+		if = {
+			limit = { has_modifier = lava_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_geothermal_vent
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_rich_mountain
+
+			# 2 + 2 farming	
+			add_deposit = d_hydroponic_complex
+			add_deposit = d_agrarian_dome
+			
+			add_deposit = d_dust_desert
+			add_deposit = d_fuming_bog
+		}
+		else_if = {
+			limit = { has_modifier = ash_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_geothermal_vent
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_rich_mountain
+
+			# 2 + 2 farming	
+			add_deposit = d_hydroponic_complex
+			add_deposit = d_agrarian_dome
+			
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystal_forest
+		}
+		else = {
+		
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_geothermal_vent
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_rich_mountain
+
+			# 2 + 2 farming	
+			add_deposit = d_hydroponic_complex
+			add_deposit = d_agrarian_dome
+		}
+		
+		add_deposit = d_protective_vault_system
+	}
+	#Derelict Evolution
+	if = {
+		limit = { owner = { has_origin = origin_derelict_evolution } }
+
+		if = {
+			limit = { has_modifier = lava_world }
+			
+			# blockers
+			add_deposit = d_rusty_debris
+			add_deposit = d_giant_fossils
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			
+			add_deposit = d_dust_desert
+			add_deposit = d_fuming_bog
+		}
+		else_if = {
+			limit = { has_modifier = ash_world }
+			
+			# blockers
+			add_deposit = d_rusty_debris
+			add_deposit = d_giant_fossils
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystal_forest
+		}
+		else = {
+			
+			# blockers
+			add_deposit = d_rusty_debris
+			add_deposit = d_giant_fossils
+		
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+		}
+	}
+	#Sentient Planet
+	if = {
+		limit = { owner = { has_origin = origin_sentient_planet } }
+
+		if = {
+			limit = { has_modifier = lava_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_geothermal_vent
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			
+			add_deposit = d_dust_desert
+			add_deposit = d_fuming_bog
+			
+			add_deposit = d_heart_of_the_overmind
+		}
+		else_if = {
+			limit = { has_modifier = ash_world }
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_geothermal_vent
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			
+			add_deposit = d_dust_caverns
+			add_deposit = d_crystal_forest
+			
+			add_deposit = d_heart_of_the_overmind
+		}
+		else = {
+			
+			# 3 + 3 energy
+			add_deposit = d_hot_springs
+			add_deposit = d_gaseous_eruption
+			add_deposit = d_geothermal_vent
+
+			# 3 + 4 mining
+			add_deposit = d_mineral_fields
+			add_deposit = d_prosperous_mesa
+			add_deposit = d_rich_mountain
+			add_deposit = d_rich_mountain
+			
+			add_deposit = d_heart_of_the_overmind
+		}
+	}
+	
+	#SUBCLASSES
+	if = {
+		limit = { has_modifier = dune_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_nutritious_mudland
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_nutritious_mudland
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_marvelous_oasis
+			}
+		}
+	}
+	#Dune
+	if = {
+		limit = { has_modifier = dune_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_irrigated_fields
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_dust_desert
+	}
+	#Oasis
+	if = {
+		limit = { has_modifier = oasis_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_tropical_island
+			}
+		}
+	}
+	#Salt
+	if = {
+		limit = { has_modifier = salt_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_salt_flat
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_salt_flat
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_irrigated_fields
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+	}
+	#Adiabatic
+	if = {
+		limit = { has_modifier = adiabatic_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_irrigated_fields
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_crystal_forest
+	}
+	#Karst
+	if = {
+		limit = { has_modifier = karstic_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_underground_reservoir
+			}
+		}
+		
+		add_deposit = d_karst_cave
+	}
+	#Dust
+	if = {
+		limit = { has_modifier = dust_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_irrigated_fields
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_dust_caverns
+		add_deposit = d_dust_caverns
+		add_deposit = d_dust_caverns
+	}
+	#Mediterranean
+	if = {
+		limit = { has_modifier = mediterranean_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_bountiful_plains
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_bountiful_plains
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_tropical_island
+			}
+		}
+	}
+	#Mesa
+	if = {
+		limit = { has_modifier = mesa_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_grand_canyon
+	}
+	#Steppe
+	if = {
+		limit = { has_modifier = steppe_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_bountiful_plains
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_bountiful_plains
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}
+	}
+	#Coriolis
+	if = {
+		limit = { has_modifier = coriolis_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_great_vortex
+	}
+	#Prairie
+	if = {
+		limit = { has_modifier = prairie_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_bountiful_plains
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_bountiful_plains
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}
+	}
+	#Veld
+	if = {
+		limit = { has_modifier = veld_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_bountiful_plains
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_bountiful_plains
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_huge_tree
+			}
+		}
+	}
+	#Swamp
+	if = {
+		limit = { has_modifier = swamp_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_peat_moors
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_peat_moors
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_boggy_fens
+		add_deposit = d_lush_jungle
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_boggy_fens
+				add_deposit = d_estuary_meadows
+			}
+		}
+		
+		add_deposit = d_bubbling_swamp
+	}
+	#Forest
+	if = {
+		limit = { has_modifier = forest_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_peat_moors
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_peat_moors
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_green_hills
+		add_deposit = d_lush_jungle
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_huge_tree
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_green_hills
+				add_deposit = d_huge_tree
+			}
+		}
+	}
+	#Monsoon
+	if = {
+		limit = { has_modifier = monsoon_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_green_hills
+		add_deposit = d_lush_jungle
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_green_hills
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_betharian_deposit
+	}
+	#Jungle
+	if = {
+		limit = { has_modifier = jungle_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_green_hills
+		add_deposit = d_lush_jungle
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_green_hills
+				add_deposit = d_estuary_meadows
+			}
+		}
+	}
+	#Boreal
+	if = {
+		limit = { has_modifier = boreal_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_rugged_woods
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}
+	}
+	#Pangea
+	if = {
+		limit = { has_modifier = pangea_world }
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_rugged_woods
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_tropical_island
+			}
+		}
+		
+		add_deposit = d_great_vortex
+	}
+	#Young
+	if = {
+		limit = { has_modifier = young_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_seagrass_shelf
+		add_deposit = d_kelp_forest
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_seagrass_shelf
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}
+		
+		add_deposit = d_bubbling_swamp
+	}
+	#Primal
+	if = {
+		limit = { has_modifier = primal_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_rugged_woods
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}
+	}
+	#Panthalassic
+	if = {
+		limit = { has_modifier = panthalassic_world }
+
+		# 3 + 3 energy
+		add_deposit = d_turbulent_currents
+		add_deposit = d_submerged_gas_eruption
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_submerged_gas_eruption
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_turbulent_currents
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_offshore_fields
+		add_deposit = d_abundant_atoll
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_seagrass_shelf
+		add_deposit = d_kelp_forest
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_seagrass_shelf
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}
+	}
+	#Atoll
+	if = {
+		limit = { has_modifier = atoll_world }
+
+		# 3 + 3 energy
+		add_deposit = d_turbulent_currents
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_turbulent_currents
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_offshore_fields
+		add_deposit = d_abundant_atoll
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_seagrass_shelf
+		add_deposit = d_lush_jungle
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_seagrass_shelf
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}
+		
+		add_deposit = d_serene_coastline
+	}
+	#Storm
+	if = {
+		limit = { has_modifier = storm_world }
+
+		# 3 + 3 energy
+		add_deposit = d_turbulent_currents
+		add_deposit = d_submerged_gas_eruption
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_submerged_gas_eruption
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_turbulent_currents
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_seagrass_shelf
+		add_deposit = d_kelp_forest
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_seagrass_shelf
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}
+		
+		add_deposit = d_stormy_water
+	}
+	#Crag
+	if = {
+		limit = { has_modifier = crag_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_submerged_gas_eruption
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_submerged_gas_eruption
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_seagrass_shelf
+		add_deposit = d_kelp_forest
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_seagrass_shelf
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}
+		
+		add_deposit = d_maze_cliff_formations
+	}
+	#Taiga
+	if = {
+		limit = { has_modifier = taiga_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_peat_moors
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_peat_moors
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_rugged_woods
+		add_deposit = d_agrothermal_plains
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}
+	}
+	#Frigid
+	if = {
+		limit = { has_modifier = frigid_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_forgiving_tundra
+		add_deposit = d_agrothermal_plains
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_forgiving_tundra
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_dust_desert
+	}
+	#Bog
+	if = {
+		limit = { has_modifier = bog_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_peat_moors
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_peat_moors
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_forgiving_tundra
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_forgiving_tundra
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}
+		
+		add_deposit = d_fuming_bog
+	}
+	#Awakened
+	if = {
+		limit = { has_modifier = awakened_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_forgiving_tundra
+		add_deposit = d_agrothermal_plains
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_forgiving_tundra
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}
+	}
+	#Glacial
+	if = {
+		limit = { has_modifier = glacial_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_agrothermal_plains
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_crystal_forest
+	}
+	#Melting
+	if = {
+		limit = { has_modifier = melting_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_lichen_fields
+		add_deposit = d_kelp_forest
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_lichen_fields
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}
+	}
+	#Geothermal
+	if = {
+		limit = { has_modifier = geothermal_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_ice_geyser
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_ice_geyser
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_green_hills
+		add_deposit = d_lush_jungle
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_green_hills
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_estuary_meadows
+			}
+		}
+	}
+	#Ice
+	if = {
+		limit = { has_modifier = ice_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_ice_geyser
+		add_deposit = d_underwater_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_ice_geyser
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_agrothermal_plains
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_crystal_reef
+	}
+	#Mineral
+	if = {
+		limit = { has_modifier = mineral_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_hydroponic_complex
+		add_deposit = d_agrothermal_plains
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_hydroponic_complex
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_agrarian_dome
+			}
+		}
+		
+		add_deposit = d_crystalline_caverns
+		add_deposit = d_crystalline_caverns
+	}
+	#Snow
+	if = {
+		limit = { has_modifier = snow_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_rugged_woods
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}
+	}
+	#Plateau
+	if = {
+		limit = { has_modifier = plateau_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_forgiving_tundra
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_forgiving_tundra
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}
+	}
+	#Highland
+	if = {
+		limit = { has_modifier = highland_world }
+
+		# 3 + 3 energy
+		add_deposit = d_hot_springs
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_forgiving_tundra
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_forgiving_tundra
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}
+	}
+	
+	#generate_start_buildings_and_districts = yes
+	#planet_event = { id = game_start.22 }
+	
+	if = {
+		limit = {
+			owner = {
+				AND = {
+					OR = {
+						has_origin = origin_tree_of_life
+						has_origin = origin_sacred_tree
+					}
+					capital_scope = { NOT = { has_deposit = d_tree_of_life_home } }
+				}
+			}
+		}
+		owner = {
+			capital_scope = {
+				add_deposit = d_tree_of_life_home
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_lithoid
+			}
+		}
+		owner = {
+			capital_scope = {
+				add_deposit = d_lithoid_crater
+				add_deposit = d_buried_lithoids
+				add_deposit = d_buried_lithoids
+				add_deposit = d_buried_lithoids
+				add_deposit = d_buried_lithoids
+			}
+		}
+	}
+}

@@ -1,0 +1,267 @@
+############################
+#
+# Crime and Punishment
+#
+############################
+
+namespace = crime
+
+# Criminal Underworld Appears (Unemployment)
+planet_event = {
+	id = crime.1
+	title = crime.1.name
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		text = crime.1.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		text = crime.1.b.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		text = crime.1.c.desc
+	}
+	picture = {
+		trigger = { 
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		picture = GFX_evt_dark_alley
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		picture = GFX_evt_glitchy_matrix
+	}
+	show_sound = event_criminal_activity
+	location = root
+
+	trigger = {
+		has_owner = yes
+		is_under_colonization = no
+		owner = { is_country_type = default }
+		NOR = {
+			has_planet_flag = criminal_underworld_event_up
+			has_modifier = unemployment_benefits
+			has_modifier = activity_program
+			has_modifier = standby_mode
+			has_modifier = criminal_underworld
+			has_modifier = drone_deviancy
+			has_modifier = drone_corruption
+			has_modifier = gang_wars
+			has_modifier = center_of_drug_trade
+			has_modifier = mob_rule
+		}
+		NOT = { has_planet_flag = criminal_underworld_disappeared } # Cooldown
+		num_pops > 3
+		OR = {
+			AND = {
+				owner = { is_gestalt = no }
+				count_owned_pop = {
+					limit = {
+						is_unemployed = yes
+						is_shackled_robot = no
+						NOR = {
+							has_living_standard = { type = living_standard_utopian }
+							has_living_standard = { type = living_standard_good }
+							has_living_standard = { type = living_standard_shared_burden }
+						}
+					}
+					count > 3
+				}
+			}
+			AND = {
+				owner = { is_gestalt = yes }
+				count_owned_pop = {
+					limit = {
+						is_unemployed = yes
+						NOT = { has_living_standard = { type = living_standard_organic_trophy } }
+					}
+					count > 10
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_planet_flag = criminal_underworld_event_up
+	}
+
+	after = {
+		hidden_effect = { remove_planet_flag = criminal_underworld_event_up }
+	}
+
+	mean_time_to_happen = {
+		months = 180
+
+		modifier = {
+			factor = 0.5
+			num_assigned_jobs = {
+				job = unemployed
+				value > 5
+			}
+		}
+		modifier = {
+			factor = 0.5
+			num_assigned_jobs = {
+				job = unemployed
+				value > 7
+			}
+		}
+		modifier = {
+			factor = 0.5
+			num_assigned_jobs = {
+				job = unemployed
+				value > 9
+			}
+		}		
+		modifier = {
+			factor = 0.5
+			num_assigned_jobs = {
+				job = unemployed
+				value > 11
+			}
+		}	
+	}
+	
+	option = {
+		name = crime.1.a
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		add_modifier = { modifier = "unemployment_benefits" days = 3600 }
+	}
+	option = {
+		name = crime.1.a2
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		add_modifier = { modifier = "activity_program" days = 3600 }
+	}
+	option = {
+		name = crime.1.a3
+		custom_tooltip = crime.1.a3.tooltip
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		hidden_effect = { add_modifier = { modifier = "standby_mode" days = 3600 } }
+	}
+	option = {
+		name = crime.1.b
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		add_modifier = { modifier = criminal_underworld days = -1 }
+	}
+	option = {
+		name = crime.1.b2
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		add_modifier = { modifier = drone_deviancy days = -1 }
+	}
+	option = {
+		name = crime.1.b3
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		add_modifier = { modifier = drone_corruption days = -1 }
+	}
+}
+
+# Criminal Branch Office Closes
+event = {
+	id = crime.1000
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			any_owned_planet = {
+				has_branch_office = yes
+				branch_office_owner = { 
+					is_criminal_syndicate = yes
+					NOT = { has_country_flag = criminal_branch_closed_cooldown }
+				}
+				planet_crime < 1
+			}
+		}
+	}
+
+	immediate = {
+		random_list = {
+			19 = {}
+			1 = {
+				random_playable_country = {
+					limit = {
+						any_owned_planet = {
+							has_branch_office = yes
+							branch_office_owner = { 
+								is_criminal_syndicate = yes
+								NOT = { has_country_flag = criminal_branch_closed_cooldown }
+							}
+							planet_crime < 1
+						}
+					}
+					random_owned_planet = {
+						limit = {
+							has_branch_office = yes
+							branch_office_owner = { 
+								is_criminal_syndicate = yes
+								NOT = { has_country_flag = criminal_branch_closed_cooldown }
+							}
+							planet_crime < 1
+						}
+						random_list = {
+							100 = {
+								branch_office_owner = { save_event_target_as = office_owner }
+								planet_event = { id = crime.1001 days = 360 random = 40 }
+							}
+							50 = {
+								# Do Nothing
+								modifier = {
+									factor = 0
+									NOR = {
+										has_building = building_syndicate_outreach_office
+										has_modifier = syndicate_bribery
+										branch_office_owner = { has_civic = civic_shadow_council_megacorp }
+									}
+								}
+								modifier = {
+									factor = 2
+									branch_office_owner = { has_civic = civic_shadow_council_megacorp }
+								}
+								modifier = {
+									factor = 4
+									has_modifier = syndicate_bribery
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

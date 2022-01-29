@@ -1,0 +1,58 @@
+############################
+#
+# Fallen Empire 'Awakening' Events
+#
+# Written by Martin Anward
+#
+############################
+
+namespace = fallen_empires_awakening
+
+country_event = {
+	id = fallen_empires_awakening.3
+	title = OK
+	desc = OK
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = sleepers_awake_first_sleeper
+		set_country_type = awakened_fallen_empire
+		change_government = {
+			civics = {
+				civic = civic_revanchist_fervor
+				civic = civic_ancient_caches_of_technology
+			}
+		}
+
+		add_awakened_fallen_empire_resources = yes
+		add_awakened_fallen_empire_fleet = yes
+		
+		# Non-Xenophobes rebuild gateways
+		if = {
+			limit = { is_xenophobe = no }
+			every_owned_megastructure = {
+				limit = { is_megastructure_type = gateway_ruined }
+				upgrade_megastructure_to = gateway_restored
+			}
+		}
+
+		# Establish communications
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				NOT = { has_communications = root }
+			}
+
+			establish_communications_no_message = root
+			root = { save_event_target_as = contact_empire }
+			country_event = { id = action.1 }
+		}
+	}
+}

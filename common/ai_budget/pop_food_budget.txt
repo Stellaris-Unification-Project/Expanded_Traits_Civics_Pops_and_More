@@ -1,0 +1,218 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+
+food_expenditure_colonies_expand = {
+	resource = food
+	type = expenditure
+	category = colonies
+
+	potential = {
+		is_machine_empire = no
+		is_lithoid_empire = no
+		NOR = {
+			has_origin = origin_tree_of_life
+			has_origin = origin_sacred_tree
+		}
+		ai_colonize_plans > 0
+		has_resource = { type = food amount > 400 }
+		has_monthly_income = {
+			resource = food
+			value > 0
+		}
+	}
+
+	fraction = {
+		weight = 2.0
+	}
+
+	static_max = {
+		base = 750
+	}
+}
+
+food_expenditure_colonies_expand_tree = {
+	resource = food
+	type = expenditure
+	category = colonies
+
+	potential = {
+		is_machine_empire = no
+		is_lithoid_empire = no
+		OR = {
+			has_origin = origin_tree_of_life
+			has_origin = origin_sacred_tree
+		}
+		ai_colonize_plans > 0
+		has_resource = { type = food amount > 400 }
+		has_monthly_income = {
+			resource = food
+			value > 0
+		}
+	}
+
+	fraction = {
+		weight = 2.0
+	}
+
+	static_max = {
+		base = 1500
+	}
+}
+
+food_expenditure_colonies_expand_rock_tree = {
+	resource = food
+	type = expenditure
+	category = colonies
+
+	potential = {
+		is_machine_empire = no
+		is_lithoid_empire = yes
+		OR = {
+			has_origin = origin_tree_of_life
+			has_origin = origin_sacred_tree
+		}
+		ai_colonize_plans > 0
+		has_resource = { type = food amount > 400 }
+		has_monthly_income = {
+			resource = food
+			value > 0
+		}
+	}
+
+	fraction = {
+		weight = 2.0
+	}
+
+	static_max = {
+		base = 600
+	}
+}
+
+food_expenditure_planets = {
+	resource = food
+	type = expenditure
+	category = planets
+	
+	potential = {
+		OR = {
+			is_hive_empire = yes
+			is_plantoid_empire = yes
+			is_civic_plant_organic = yes
+		}
+		is_lithoid_empire = no
+	}
+	
+	fraction = {
+		weight = 0.5
+	}	
+	static_min = {
+		base = 50000
+	}
+}
+
+food_expenditure_armies = {
+	resource = food
+	type = expenditure
+	category = armies
+
+	potential = {
+		is_lithoid_empire = no
+		OR = {
+			is_hive_empire = yes
+			has_technology = tech_gene_banks
+			has_technology = tech_gene_seed_purification
+		}
+		OR = {
+			is_at_war = yes
+			NOT = {
+				count_owned_army = {
+					count >= @armies_for_declaring_war
+					limit = {
+						is_defensive_army = no
+					}
+				}
+			}
+			AND = {
+				has_global_flag = str_enabled_flag
+				prepare_for_war = yes
+				used_naval_capacity_percent > 0.9 # focus on the navy first
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+		modifier = {
+			factor = 2
+			OR = {
+				any_neighbor_country = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+				any_country = {
+					is_crisis_faction = yes
+				}
+			}
+		}
+	}
+}
+
+food_expenditure_agrarian_decisions = {
+	resource = food
+	type = expenditure
+	category = decisions
+
+	potential = {
+		OR = {
+			has_valid_civic = civic_agrarian_idyll
+			AND = {
+				has_origin = origin_sacred_tree
+				any_owned_planet = {
+					NOR = {
+						has_deposit = d_tree_of_life_colony
+						has_deposit = d_tree_of_life_home
+					}
+				}
+			}
+			is_hive_empire = yes
+		}
+		is_lithoid_empire = no
+		resource_stockpile_compare = {
+            resource = food
+            value > 2000
+        }
+	}
+
+	fraction = {
+		weight = 0.1 # only needs a little bit
+	}
+	static_min = {
+		base = 550
+	}
+}
+
+############
+## Upkeep ##
+############
+
+food_upkeep_planets = {
+	resource = minerals
+	type = upkeep
+	category = planets
+
+	potential = {
+		OR = {
+			is_hive_empire = yes
+			is_plantoid_empire = yes
+			is_civic_plant_organic = yes
+		}
+		is_lithoid_empire = no
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+}

@@ -1,0 +1,22 @@
+NGameplay = {
+	#POP_CRIME							= 2		# From each pop with happiness (scaled inversely to happiness)
+	#MIN_PLANET_CRIME					= 0		# Minimum planetary crime
+	CRIMINAL_SYNDICATE_HIGH_CRIME_MULT	= 0.75	# Applied to branch office value at max crime
+	CRIMINAL_SYNDICATE_LOW_CRIME_MULT	= -0.25	# Applied to branch office value at no crime
+	
+	LEADER_MAX_SKILL_CAP	= 20
+	
+	NEW_HEIR_CHANCE = 0.003
+}
+
+NSpecies = {
+	TRAIT_MODIFICATION_BASE_COST 		= 2500		# This cost is always added to a species modification project so modifying single pops isn't efficient
+}
+
+NPop = {
+	MAX_CARRYING_CAPACITY				= 10000	# Logistic Carrying Capacity Cap (so modders have access to this value in case they make a planet with infinite districts or something like that)
+	OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.10	# At this amount of overcrowding (required housing / actual housing), growth stops entirely (1.15)
+	OVERCROWDING_DECLINE_THRESHOLD		= 1.20	# At this amount of overcrowding (required housing / actual housing), pops start declining (1.25)
+	OVERCROWDING_ABSOLUTE_THRESHOLD_FOR_NO_GROWTH		= 0	# Planet needs this amount of overcrowding (required housing - actual housing) for OVERCROWDING_NO_GROWTH_THRESHOLD to kick in (5)
+	REQUIRED_POP_ASSEMBLY				= 80	# Required assembly to add a pop (100)
+}

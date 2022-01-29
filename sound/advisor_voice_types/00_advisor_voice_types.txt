@@ -1,0 +1,497 @@
+# The name of the advisor VO type must match the VO sound group.
+# The type with the highest weight that is larger than 0 fulfills the possible trigger will be chosen.
+# If there are ties, the first one scripted in this file wins.
+# The order of the voice types in this file also defines the order of the voice types in the selection UI.
+#
+# soundgroup = {		# much match the name of a sound group
+#	name = "KEY"			# localization key for display name. default: key of this advisor voice type
+#	icon = "icon.dds"		# path to displayed icon, no icon if empty. default: empty
+#
+#	playable = {}			# trigger to make voice type available, no scope. default: { always = yes }
+#
+#	weight = {}				# scripted weight, supporting add and factor, trigger scope this=country. default: { base = 0 }
+# }
+
+l_english = {
+	name = "SETTINGS_VOICE_TYPE_default_advisor_voice_type"
+	icon = "gfx/interface/icons/ethics/ethic_middle.dds"
+
+	weight = {
+		base = 1 # Fallback
+	}
+}
+
+l_authoritarian = {
+	name = "ethic_authoritarian"
+	icon = "gfx/interface/icons/ethics/ethic_authoritarian.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 3
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			add = 6
+			has_ethic = ethic_fanatic_authoritarian
+		}
+	}
+}
+
+l_egalitarian = {
+	name = "ethic_egalitarian"
+	icon = "gfx/interface/icons/ethics/ethic_egalitarian.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 3
+			has_ethic = ethic_egalitarian
+		}
+		modifier = {
+			add = 6
+			has_ethic = ethic_fanatic_egalitarian
+		}
+	}
+}
+
+l_xenophobe = {
+	name = "ethic_xenophobe"
+	icon = "gfx/interface/icons/ethics/ethic_xenophobe.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 3
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			add = 6
+			has_ethic = ethic_fanatic_xenophobe
+		}
+	}
+}
+
+l_xenophile = {
+	name = "ethic_xenophile"
+	icon = "gfx/interface/icons/ethics/ethic_xenophile.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 2
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			add = 4
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+}
+
+l_militarist = {
+	name = "ethic_militarist"
+	icon = "gfx/interface/icons/ethics/ethic_militarist.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 3
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			add = 6
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			add = 4
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+}
+
+l_pacifist = {
+	name = "ethic_pacifist"
+	icon = "gfx/interface/icons/ethics/ethic_pacifist.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			add = 4
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+}
+
+l_spiritualist = {
+	name = "ethic_spiritualist"
+	icon = "gfx/interface/icons/ethics/ethic_spiritualist.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 2
+			has_ethic = ethic_spiritualist
+		}
+		modifier = {
+			add = 4
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+}
+
+l_materialist = {
+	name = "ethic_materialist"
+	icon = "gfx/interface/icons/ethics/ethic_materialist.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 2
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			add = 4
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+}
+
+l_hivemind = {
+	name = "auth_hive_mind"
+	icon = "gfx/interface/icons/governments/authorities/auth_hive_mind.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 8
+			has_authority = auth_hive_mind
+		}
+	}
+}
+
+l_machine = {
+	name = "auth_machine_intelligence"
+	icon = "gfx/interface/icons/governments/authorities/auth_machine_intelligence.dds"
+
+	playable = {
+		local_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 8
+			has_authority = auth_machine_intelligence
+		}
+	}
+}
+
+l_the_diplomat = {
+	name = "vo_the_diplomat"
+	icon = "gfx/interface/icons/advisor_vo/vo_the_diplomat.dds"
+
+	playable = {
+		local_has_dlc = "Humanoids Species Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 8
+			has_country_flag = human_1
+		}
+		modifier = {
+			add = 8
+			OR = {
+				has_valid_civic = civic_diplomatic_corps
+				has_valid_civic = civic_beacon_of_liberty
+				has_valid_civic = civic_idealistic_foundation
+				has_valid_civic = civic_parliamentary_system
+				has_valid_civic = civic_parliamentary_system_corp
+			}
+		}
+	}
+}
+
+l_the_soldier = {
+	name = "vo_the_soldier"
+	icon = "gfx/interface/icons/advisor_vo/vo_the_soldier.dds"
+
+	playable = {
+		local_has_dlc = "Humanoids Species Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 8
+			has_country_flag = human_2
+		}
+		modifier = {
+			add = 8
+			OR = {
+				has_valid_civic = civic_nationalistic_zeal
+				has_valid_civic = civic_distinguished_admiralty
+				has_valid_civic = civic_naval_contractors
+				has_valid_civic = civic_corp_security
+			}
+			NOR = {
+				has_valid_civic = civic_warrior_culture
+				has_valid_civic = civic_private_military_companies
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+	}
+}
+
+l_the_technocrat = {
+	name = "vo_the_technocrat"
+	icon = "gfx/interface/icons/advisor_vo/vo_the_technocrat.dds"
+
+	playable = {
+		local_has_dlc = "Humanoids Species Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 8
+			has_country_flag = the_voor
+		}
+		modifier = {
+			add = 8
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		modifier = {
+			add = 4
+			has_valid_civic = civic_technocracy
+			NOR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+	}
+}
+
+l_evil_corp = {
+	name = "vo_evil_corp"
+	icon = "gfx/interface/icons/advisor_vo/vo_evil_corp.dds"
+
+	playable = {
+		local_has_dlc = "Megacorp"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 4
+			is_megacorp = yes
+		}
+		modifier = {
+			add = 4
+			OR = {
+				has_valid_civic = civic_criminal_heritage
+				has_valid_civic = civic_indentured_assets
+				has_valid_civic = civic_private_military_companies
+				has_valid_civic = civic_corvee_system_megacorp
+				has_valid_civic = civic_shadow_council_megacorp
+				has_valid_civic = civic_byzantine_bureaucracy_corp
+			}
+		}
+		modifier = {
+			factor = 100
+			has_country_flag = chinorr_combine
+		}
+	}
+}
+
+l_slick_corp = {
+	name = "vo_slick_corp"
+	icon = "gfx/interface/icons/advisor_vo/vo_slick_corp.dds"
+
+	playable = {
+		local_has_dlc = "Megacorp"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 4
+			is_megacorp = yes
+		}
+		modifier = {
+			add = 4
+			OR = {
+				has_valid_civic = civic_brand_loyalty
+				has_valid_civic = civic_franchising
+				has_valid_civic = civic_media_conglomerate
+				has_valid_civic = civic_public_relations_specialists
+				has_valid_civic = civic_technocracy_corp
+				has_valid_civic = civic_hmo
+				has_valid_civic = civic_free_haven_corp
+			}
+		}
+	}
+}
+
+l_the_worker = {
+	name = "vo_the_worker"
+	icon = "gfx/interface/icons/advisor_vo/vo_the_worker.dds"
+
+	playable = {
+		local_has_dlc = "Megacorp"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 2
+			is_megacorp = yes
+		}
+		modifier = {
+			add = 4
+			has_ethic = ethic_fanatic_egalitarian
+		}
+		modifier = {
+			add = 8
+			OR = {
+				has_valid_civic = civic_shared_burden
+				has_valid_civic = civic_worker_coop
+			}
+		}
+	}
+}
+
+l_lithoid_vir = {
+	name = "vo_lithoid_voice"
+	icon = "gfx/interface/icons/traits/trait_lithoid.dds"
+
+	playable = {
+		local_has_dlc = "Lithoids Species Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 10
+			is_lithoid_empire = yes
+		}
+	}
+}
+
+l_necroid_vir = {
+	name = "vo_necroid_voice"
+	icon = "gfx/interface/icons/traits/trait_necrophage.dds"
+
+	playable = {
+		local_has_dlc = "Necroids Species Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 10
+			OR = {
+				necroids_portrait = yes
+				has_origin = origin_necrophage
+			}
+		}
+		modifier = {
+			add = 4
+			OR = { #Any Necroid civic
+				has_valid_civic = civic_death_cult
+				has_valid_civic = civic_death_cult_corporate
+				has_valid_civic = civic_reanimated_armies
+				has_valid_civic = civic_corp_reanimated_armies
+				has_valid_civic = civic_hive_reanimated_armies
+				has_valid_civic = civic_memorialist
+				has_valid_civic = civic_memorialist_corp
+				has_valid_civic = civic_hive_memorialist
+				has_valid_civic = civic_machine_memorialist
+			}
+		}
+	}
+}
+
+l_aqu_vir = {
+	name = "vo_aquatics_voice"
+	icon = "gfx/interface/icons/traits/trait_aquatic.dds"
+
+	playable = {
+		local_has_dlc = "Aquatics Species Pack"
+	}
+
+	weight = {
+		base = 0
+		modifier = {
+			add = 10
+			OR = {
+				aquatics_portrait = yes
+				has_origin = origin_ocean_paradise
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				has_trait = trait_aquatic
+				has_valid_civic = civic_anglers
+				has_valid_civic = civic_corporate_anglers
+			}
+		}
+	}
+}

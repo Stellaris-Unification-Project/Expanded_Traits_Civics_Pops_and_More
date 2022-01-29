@@ -1,0 +1,450 @@
+origin_little_sister = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_little_sister.dds"
+	picture = "GFX_origin_little_sister"
+	
+	initializers = { little_sister_init_01 little_sister_init_02 little_sister_init_03 little_sister_init_04 little_sister_init_sol }
+
+	possible = {
+		always = yes
+	}
+
+	description = "civic_tooltip_little_sister_effects"
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_terraformer = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_terraformer.dds"
+	picture = "GFX_origin_terraformer"
+
+	possible = {
+		authority = { NOT = { value = auth_machine_intelligence } }
+	}
+
+	description = "civic_tooltip_terraformer_effects"
+
+	flags = { custom_start_screen }
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_natural_hunters = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_natural_hunters.dds"
+	picture = GFX_origin_eldest_sibling
+
+	possible = {
+		authority = {
+			NOR = {
+				value = auth_machine_intelligence
+			}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_hive_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_harm_hive
+				value = civic_hive_empath
+			}
+		}
+	}
+	
+	modifier = {
+		army_starting_experience_add = 100
+		army_morale_damage_mult = 0.25
+		general_skill_levels = 1
+	}
+	
+	description = "civic_tooltip_natural_hunters_effects"
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_delicate_ecosystem = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_delicate_ecosystem.dds"
+	picture = GFX_origin_delicate_ecosystem
+
+	possible = {
+		authority = { NOT = { value = auth_machine_intelligence } }
+	}
+	
+	description = "civic_tooltip_delicate_ecosystem_effects"
+
+	traits = {
+		trait = trait_ecologists
+	}
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_exploited_homeworld = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_exploited_homeworld.dds"
+	picture = GFX_origin_exploited_homeworld
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+			NOR = {
+				text = civic_tooltip_not_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_environmentalist
+				value = civic_agrarian_idyll
+				value = civic_agribusiness
+				value = civic_biological_engineering
+				value = civic_hmo
+			}
+		}
+	}
+	
+	traits = {
+		trait = trait_exploiter
+	}
+	
+	description = "origin_tooltip_exploited_homeworld_effects"
+	
+	advanced_start = yes
+
+	random_weight = {
+		base = 6
+	}
+}
+
+origin_subterranean_evolution = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_subterranean_evolution.dds"
+	picture = GFX_origin_subterranean_evolution
+	max_once_global = yes
+
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_anglers
+				value = civic_corporate_anglers
+			}
+		}
+	}
+	
+	description = "civic_tooltip_subterranean_evolution_effects"
+
+	flags = { custom_homeworld_desc }
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_iron_despot = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_iron_despot.dds"
+	picture = GFX_origin_iron_despot
+	max_once_global = yes
+
+	possible = {
+		authority = {
+			OR = {
+				value = auth_dictatorial
+				value = auth_private
+			}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_fanatic_materialist
+				value = ethic_materialist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_barbaric_despoilers
+				value = civic_shadow_council
+				value = civic_warrior_culture
+				value = civic_criminal_heritage
+				value = civic_shadow_council_megacorp
+				value = civic_private_military_companies
+				value = civic_corp_philosopher_king
+			}
+		}
+	}
+	
+	description = "civic_iron_despot_effects"
+	
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_iron_despot_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_iron_despot.dds"
+	picture = GFX_origin_iron_despot
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_shroud_pact = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_shroud_touched.dds"
+	picture = GFX_origin_shroud_touched
+	max_once_global = yes
+
+	possible = {
+		authority = {
+			OR = {
+				value = auth_oligarchic
+				value = auth_dictatorial
+				value = auth_imperial
+			}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_barbaric_despoilers
+				value = civic_imperial_cult
+				value = civic_shadow_council
+			}
+		}
+	}
+	
+	description = "civic_shroud_pact_effects"
+	
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_shroud_pact_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_shroud_touched.dds"
+	picture = GFX_origin_shroud_touched
+
+	playable = {
+		always = no # Non-player origin
+	}
+		
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_befrienders = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_befrienders.dds"
+	picture = GFX_origin_befrienders
+	max_once_global = yes
+
+	possible = {
+		authority = {
+			NOR = {
+				value = auth_corporate
+				value = auth_cooperative
+				value = auth_private
+			}
+		}
+		ethics = {
+			value = ethic_fanatic_xenophile
+			value = ethic_militarist
+		}
+		civics = {
+			NOR = {
+				value = civic_corvee_system
+			}
+		}
+	}
+	
+	description = "civic_tooltip_befrienders_effects"
+
+	#flags = { custom_homeworld_desc }
+	
+	modifier = {
+		pop_growth_from_immigration = 0.15
+	}
+	
+	traits = {
+		trait = trait_solitary
+	}
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_primitive_cyborgs = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_primitive_cyborgs.dds"
+	picture = GFX_origin_mechanist
+	max_once_global = yes
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_fanatic_materialist
+				value = ethic_materialist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_idyllic_bloom
+			}
+		}
+	}
+	
+	modifier = {
+		category_computing_research_speed_mult = 0.1
+		category_industry_research_speed_mult = 0.1
+	}
+	
+	description = "civic_tooltip_primitive_cyborgs_effects"
+	
+	traits = {
+		trait = trait_primitive_cybernetic
+	}
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_ancient_dynasty = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_ancient_dynasty.dds"
+	picture = GFX_origin_syncretic_evolution
+	max_once_global = yes
+
+	possible = {
+		authority = {
+			value = auth_imperial
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_merchant_guilds
+				value = civic_technocracy
+			}
+		}
+	}
+	
+	description = "civic_tooltip_ancient_dynasty_effects"
+
+	flags = { custom_gov_desc }
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_master_computer = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_master_computer.dds"
+	picture = GFX_origin_master_computer
+	max_once_global = yes
+	
+	playable = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	possible = {
+		authority = {
+			value = auth_machine_intelligence
+		}
+		civics = {
+			NOT = {
+				value = civic_machine_delegated_functions
+				value = civic_machine_administrator
+			}
+		}
+	}
+	
+	modifier = {
+		ruler_skill_levels = 1
+	}
+	
+	description = "civic_tooltip_master_computer_effects"
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_symbiote = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_symbiote.dds"
+	picture = GFX_origin_symbiote
+	max_once_global = yes
+
+	possible = {
+		authority = {
+			value = auth_hive_mind
+		}
+		civics = {
+			NOR = {
+				value = civic_hive_devouring_swarm
+				value = civic_closed_collective
+				value = civic_infestation
+				value = civic_living_hosts
+				value = civic_hive_territorial
+				value = civic_hive_reanimated_armies
+			}
+		}
+	}
+	
+	modifier = {
+		planet_stability_add = 5
+	}
+	
+	description = "civic_tooltip_origin_symbiote_effects"
+	
+	traits = {
+		trait = trait_brainslug
+	}
+
+	random_weight = {
+		base = 10
+	}
+}

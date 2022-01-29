@@ -1,0 +1,915 @@
+############################
+#
+# Expanded Pop Events
+#
+############################
+
+namespace = popexpanded
+
+### Self Modified Pops ###
+# self_modified pops upgrade to ageless
+country_event = {
+	id = popexpanded.1
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_genetic_mastery
+	}
+	
+	immediate = {
+		every_owned_pop = {
+			limit = { pop_has_trait = trait_self_modified }
+			planet = {
+				planet_event = { id = popexpanded.2 days = 10 }
+			}
+		}
+	}
+}
+
+# Add additional traits to self-modified pops
+planet_event = {
+	id = popexpanded.2
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_pop = {
+			limit = { pop_has_trait = trait_self_modified }
+			if = {
+				limit { ROOT = { owner = { has_technology = tech_genetic_mastery } } }
+				modify_species = {
+					species = THIS
+					remove_trait = trait_robust
+					add_trait = trait_ageless
+					add_trait = trait_erudite
+				}
+			}
+			else = {
+				modify_species = {
+					species = THIS
+					add_trait = trait_robust
+				}
+			}
+		}
+	}
+}
+
+# Priest become spiritualist
+country_event = {
+	id = popexpanded.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_pop = {
+			OR = {
+				has_job = priest
+				has_job = high_priest
+				has_job = death_priest
+				has_job = preacher
+				has_job = chaplain
+				has_job = templar
+			}
+			NOT = { pop_has_ethic = ethic_spiritualist }
+		}
+	}
+	
+	immediate = {
+		random_owned_pop = {
+			limit = {
+				OR = {
+					has_job = priest
+					has_job = high_priest
+					has_job = death_priest
+					has_job = preacher
+					has_job = chaplain
+					has_job = templar
+				}
+				NOT = { pop_has_ethic = ethic_spiritualist }
+			}
+			pop_change_ethic = ethic_spiritualist
+		}
+		random_owned_pop = {
+			limit = {
+				OR = {
+					has_job = priest
+					has_job = high_priest
+					has_job = death_priest
+					has_job = preacher
+					has_job = chaplain
+					has_job = templar
+				}
+				NOT = { pop_has_ethic = ethic_spiritualist }
+			}
+			pop_change_ethic = ethic_spiritualist
+		}
+	}
+}
+
+# Pop Self Modification (xenos only)
+pop_event = {
+	id = "popexpanded.4"
+	title = "pop.1.name"
+	desc = "popexpanded.4.desc"
+	picture = GFX_evt_cybernetics
+	
+	trigger = {
+		exists = owner
+		NOT = { is_exact_same_species = owner }
+		is_enslaved = no
+		is_being_purged = no
+		is_robot_pop = no
+		planet = {
+			is_capital = no
+			has_owner = yes
+			NOT = { has_planet_flag = pop_modification_xeno }
+			NOT = { is_planet_class = pc_habitat }
+			habitability = { 
+				who = root
+				value < 0.45
+			}
+			owner = {
+				OR = { is_country_type = default is_country_type = ascended_empire is_country_type = lost_empire }
+				has_technology = "tech_gene_tailoring"
+				NOT = { is_same_species = ROOT }
+				NOR = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+				ROOT = {
+					planet = {
+						controller = { is_same_value = PREVPREVPREV }
+					}
+				}
+			}
+			count_owned_pop = {
+				limit = { 
+					is_same_species = ROOT
+					is_enslaved = no
+					is_being_purged = no
+					is_robot_pop = no
+					#happiness < 0.5 #happiness shouldn't stop it
+				}
+				count > 3
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	immediate = {
+		species = { save_event_target_as = original_xeno_species }
+		planet = {
+			set_planet_flag = pop_modification_xeno
+			create_species = {
+				is_mod = yes
+				name = event_target:original_xeno_species
+				plural = event_target:original_xeno_species
+				class = event_target:original_xeno_species
+				portrait = event_target:original_xeno_species
+				traits = {
+					trait = trait_self_modified
+					trait = random_traits
+				}
+				homeworld = this
+			}
+		}
+
+		if = {
+			limit = {
+				planet = {
+					count_owned_pop = {
+						limit = {
+							is_same_species = ROOT
+						}
+						count < 6
+					}
+				}
+			}
+			planet = {
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					save_event_target_as = non_modified_pop_1
+				}
+				every_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					set_pop_flag = non_modified_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						is_pop = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					save_event_target_as = modified_pop_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				planet = {
+					count_owned_pop = {
+						limit = {
+							is_same_species = ROOT
+						}
+						count > 6
+					}
+				}
+			}
+			planet = {
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					save_event_target_as = non_modified_pop_1
+				}
+				every_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					set_pop_flag = non_modified_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						is_pop = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					save_event_target_as = modified_pop_1
+					change_species = last_created_species
+				}
+			}
+		}
+		planet = {
+			planet_event = { id = popexpanded.2 }
+		}
+	}
+	
+	option = {
+		name = "OK"
+	}
+}
+
+### Fungal Colony ###
+# What to do with venerable colonies
+planet_event = {
+	id = popexpanded.10
+	title = "popexpanded.10.name"
+	desc = "popexpanded.10.desc"
+	picture = GFX_evt_physics_research
+	show_sound = event_alien_nature
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { NOT = { has_trait = trait_fungal_colony } }
+		has_deposit = d_venerable_elder_site
+	}
+	
+	option = {
+		name = "popexpanded.10.a"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_xenophile
+					}
+				}
+			}
+			FROM = { add_resource = { influence = -20 } }
+		}
+		else = { FROM = { add_resource = { influence = -40 } } }
+	}
+	
+	option = {
+		name = "popexpanded.10.b"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_civic = civic_fanatic_purifiers
+					has_civic = civic_hive_devouring_swarm
+					has_civic = civic_machine_terminator
+				}
+			}
+		}
+		hidden_effect = { remove_deposit = d_venerable_elder_site }
+		add_deposit = d_venerable_elder_site_no_bonus
+	}
+	
+	option = {
+		name = "popexpanded.10.c"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		remove_deposit = d_venerable_elder_site
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_civic = civic_fanatic_purifiers
+						has_civic = civic_hive_devouring_swarm
+						has_civic = civic_machine_terminator
+					}
+				}
+			}
+			FROM = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = 1.5
+				}
+			}
+		}
+		else = { FROM = { add_resource = { influence = -20 } } }
+	}
+}
+
+# Reclaimed venerable colony
+planet_event = {
+	id = popexpanded.11
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { has_trait = trait_fungal_colony }
+		has_deposit = d_venerable_elder_site_no_bonus
+	}
+	
+	immediate = {
+		hidden_effect = { remove_deposit = d_venerable_elder_site_no_bonus }
+		add_deposit = d_venerable_elder_site
+	}
+}
+
+# New venerable colony
+country_event = {
+	id = popexpanded.12
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner_species = { has_trait = trait_fungal_colony }
+		has_technology = tech_battleships
+		has_technology = tech_cryostasis_2
+		any_owned_planet = {
+			has_deposit = d_venerable_elder_site
+		}
+		any_owned_planet = {
+			NOT = { has_deposit = d_venerable_elder_site }
+			NOT = { has_planet_flag = venerable_colony_migration }
+			OR = {
+				is_ideal_planet_class = {
+					who = PREV
+					status = yes
+				}
+				is_planet_class = pc_gaia
+				is_planet_class = pc_habitat
+				is_planet_class = pc_ringworld_habitable
+			}
+			free_district_slots >= 1
+		}
+	}
+	
+	immediate = {
+		random_owned_planet  = {
+			limit = {
+				NOT = { has_deposit = d_venerable_elder_site }
+				NOT = { has_planet_flag = venerable_colony_migration }
+				OR = {
+					is_ideal_planet_class = {
+						who = PREV
+						status = yes
+					}
+					is_planet_class = pc_gaia
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
+				free_district_slots >= 1
+			}
+			random_list = {
+				40 = {
+					set_planet_flag = venerable_colony_migration
+					planet_event = { id = popexpanded.13 }
+				}
+				60 = {
+					# nothing happens
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = popexpanded.13
+	title = "popexpanded.13.name"
+	desc = "popexpanded.13.desc"
+	picture = GFX_evt_alien_city
+	show_sound = event_alien_nature
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "popexpanded.13.a"
+		owner = {
+			begin_event_chain = {
+				event_chain = "migrating_venerable_colony_chain"
+				target = this
+			}
+			enable_special_project = {
+				name = "MIGRATING_VENERABLE_COLONY_1_PROJECT"
+				location = root
+				owner = this
+			}
+		}
+		hidden_effect = {
+			add_deposit = d_venerable_elder_migration_site
+		}
+	}
+	
+	option = {
+		name = "popexpanded.13.b"
+		trigger = { owner = { is_ai = no } }
+	}
+}
+
+planet_event = {
+	id = popexpanded.14
+	title = "popexpanded.14.name"
+	desc = "popexpanded.14.desc"
+	picture = GFX_evt_colony_settlement
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+		owner = {
+			enable_special_project = {
+				name = "MIGRATING_VENERABLE_COLONY_2_PROJECT"
+				location = root
+				owner = this
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = popexpanded.15
+	title = "popexpanded.15.name"
+	desc = "popexpanded.15.desc"
+	picture = GFX_evt_alien_city
+	show_sound = event_celebration
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_deposit = d_venerable_elder_site
+					any_owned_pop = { pop_has_trait = trait_fungal_colony }
+				}
+				random_owned_pop = {
+					limit = { pop_has_trait = trait_fungal_colony }
+					save_event_target_as = migrating_elder
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EXCELLENT"
+		hidden_effect = {
+			remove_deposit = d_venerable_elder_migration_site
+		}
+		add_deposit = d_venerable_elder_site
+		resettle_pop = {
+			pop = event_target:migrating_elder
+			planet = this
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		custom_tooltip = popexpanded.15.a.tooltip
+		hidden_effect = {
+			every_owned_pop = {
+				add_modifier = { modifier = mandate_fulfilled_mod days = 3600 }
+			}
+		}
+	}
+}
+
+### Robots ###
+# Android Army
+country_event = {
+	id = popexpanded.20
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_synthetic_workers
+		NOT = { has_policy_flag = ai_outlawed }
+	}
+	
+	immediate = {
+		every_owned_army = {
+			limit = {
+				army_type = robotic_army
+			}
+			modify_army = {
+				name = random
+				type = "android_army"
+			}
+		}
+		every_owned_army = {
+			limit = {
+				army_type = robotic_defense_army
+			}
+			modify_army = {
+				name = random
+				type = "android_defense_army"
+			}
+		}
+	}
+}
+
+### Psionics ###
+# Can get another chosen one
+country_event = {
+	id = popexpanded.30
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = shroud_vision_10
+		NOT = {
+			any_owned_leader = {
+				OR = {
+					has_trait = leader_trait_admiral_chosen
+					has_trait = leader_trait_general_chosen
+					has_trait = leader_trait_governor_chosen
+					has_trait = leader_trait_ruler_chosen
+					has_trait = leader_trait_scientist_chosen
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		remove_country_flag = shroud_vision_10
+	}
+}
+
+### Brain Slugs ###
+country_event = {
+	id = popexpanded.40
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = offered_brain_slug_hive }
+		is_gestalt = no
+		mid_game_years_passed > 0
+		end_game_years_passed < 75 # not guaranteed to spawn
+		NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		NOT = { has_ascension_perk = ap_mind_over_matter }
+		pop_percentage = {
+			percentage > 0.74
+			limit = { has_trait = trait_brainslug }
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				country_event = { id = popexpanded.41 days = 45 random = 405 }
+			}
+			4 = {
+				# do nothing
+				modifier = {
+					factor = 5
+					is_xenophobe = yes
+				}
+				modifier = {
+					factor = 4
+					is_militarist = yes
+				}
+				modifier = {
+					factor = 2
+					is_egalitarian = yes
+				}
+				modifier = {
+					factor = 0.75
+					is_authoritarian = yes
+				}
+				modifier = {
+					factor = 0.75
+					is_xenophile = yes
+				}
+				modifier = {
+					factor = 0.75
+					is_pacifist = yes
+				}
+				modifier = {
+					factor = 1.5
+					has_ascension_perk = ap_world_shaper
+				}
+				modifier = {
+					factor = 0.75
+					has_ascension_perk = ap_engineered_evolution
+				}
+				modifier = {
+					factor = 0.75
+					has_ascension_perk = ap_evolutionary_mastery
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = popexpanded.41
+	title = "popexpanded.41.name"
+	desc = "popexpanded.41.desc"
+	picture = GFX_evt_hive_mind
+	show_sound = event_alien_nature
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = offered_brain_slug_hive }
+		is_gestalt = no
+		NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		NOT = { has_ascension_perk = ap_mind_over_matter }
+		pop_percentage = {
+			percentage > 0.74
+			limit = { has_trait = trait_brainslug }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = offered_brain_slug_hive
+	}
+	
+	option = {
+		name = "popexpanded.41.a"
+		allow = {
+			is_xenophobe = no
+			is_egalitarian = no
+			OR = {
+				is_ai = no
+				NAND = {
+					has_policy_flag = ai_full_rights
+					has_technology = "tech_synthetic_workers"
+					any_owned_pop = { is_robot_pop = yes }
+				}
+			}
+			OR = {
+				is_ai = no
+				NAND = {
+					is_materialist = yes
+					any_owned_pop = { is_robot_pop = yes }
+				}
+			}
+			OR = {
+				is_ai = no
+				NOT = { has_ethic = ethic_fanatic_militarist }
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = popexpanded.41.a.tooltip
+		hidden_effect = {
+			remove_all_ethics_effect = yes
+			country_add_ethic = ethic_gestalt_consciousness
+			change_government = {
+				authority = auth_hive_mind
+				civics = {
+					civic = civic_harm_hive
+					civic = random
+				}
+			}
+			set_origin = origin_symbiote
+			every_owned_pop = {
+				limit = { has_trait = trait_brainslug }
+				modify_species = {
+					species = this
+					add_trait = trait_hive_mind
+					add_traits_at_start_of_list = yes
+				}
+				set_citizenship_type = {
+					type = citizenship_full
+					country = root
+				}
+				set_living_standard = {
+					type = living_standard_hive_mind
+					country = root
+				}
+			}
+			every_owned_pop = {
+				limit = {
+					NOT = { has_trait = trait_brainslug }
+					is_sapient = yes
+					is_robot_pop = yes
+				}
+				set_citizenship_type = {
+					type = citizenship_limited
+					country = root
+				}
+				set_living_standard = {
+					type = living_standard_subsistence
+					country = root
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					any_owned_pop = {
+						NOT = { has_trait = trait_brainslug }
+						is_sapient = yes
+						is_robot_pop = yes
+					}
+					OR = {
+						has_building = building_luxury_residence
+						has_building = building_communal_housing
+						has_building = building_hive_warren
+						has_building = building_paradise_dome
+						has_building = building_communal_housing_large
+						has_building = building_expanded_warren
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_building = building_paradise_dome
+							has_building = building_communal_housing_large
+							has_building = building_expanded_warren
+						}
+					}
+					remove_building = building_paradise_dome
+					remove_building = building_communal_housing_large
+					remove_building = building_expanded_warren
+					add_building = building_individualist_colony
+				}
+				else = {
+					remove_building = building_luxury_residence
+					remove_building = building_communal_housing
+					remove_building = building_hive_warren
+					add_building = building_individualist_enclave
+				}
+			}
+			every_owned_pop = { clear_pop_category = yes }
+			every_owned_planet = { check_planet_employment = yes }
+		}
+	}
+	option = {
+		name = "popexpanded.41.b"
+		trigger = {
+			is_xenophobe = no
+			is_egalitarian = no
+		}
+		custom_tooltip = popexpanded.41.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = "popexpanded.41.c"
+		trigger = {
+			is_xenophobe = yes
+		}
+		custom_tooltip = popexpanded.41.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = "popexpanded.41.d"
+		trigger = {
+			is_egalitarian = yes
+		}
+		custom_tooltip = popexpanded.41.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+	}
+}

@@ -1,0 +1,478 @@
+namespace = trait_upgrade
+
+country_event = {
+	id = trait_upgrade.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		from = {
+			OR = {
+				has_trait = trait_extremely_adaptive_upgrade
+				has_trait = trait_very_strong_upgrade
+				has_trait = trait_venerable_upgrade
+				has_trait = trait_erudite_upgrade
+				has_trait = trait_robust_upgrade_1
+				has_trait = trait_robust_upgrade_2
+				has_trait = trait_robust_upgrade_3
+				has_trait = trait_fertile_upgrade_1
+				has_trait = remove_trait_venerable
+				has_trait = remove_trait_intelligent
+				has_trait = trait_robust_upgrade_3
+				has_trait = trait_titanic_strength_upgrade_1
+				has_trait = trait_titanic_strength_upgrade_2
+				has_trait = trait_rapid_breeders_lithoid_upgrade
+				has_trait = trait_pheremones_update
+				has_trait = trait_lithoid_shiny_update
+				has_trait = trait_obedient_update
+				has_trait = trait_lithoid_compact_update
+				has_trait = trait_lithoid_byproducts_update
+				has_trait = trait_ageless_upgrade_1
+				has_trait = trait_ageless_upgrade_2
+				has_trait = trait_ageless_upgrade_3
+				has_trait = trait_ageless_upgrade_4
+				has_trait = trait_ageless_upgrade_5
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				any_galaxy_species = {
+					has_species_flag = upgraded_form@from
+				}
+			}
+			random_galaxy_species = {
+				limit = {
+					has_species_flag = upgraded_form@from
+				}
+				save_event_target_as = upgraded_form
+			}
+			every_owned_pop = {
+				limit = { is_exact_same_species = from }
+				change_species = event_target:upgraded_form
+			}
+		}
+		else = {
+			from = { save_event_target_as = species_to_upgrade }
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_extremely_adaptive_upgrade }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_adaptive
+					remove_trait = trait_extremely_adaptive_upgrade
+					add_trait = trait_extremely_adaptive
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_very_strong_upgrade }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_strong
+					remove_trait = trait_very_strong_upgrade
+					add_trait = trait_very_strong
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_venerable_upgrade }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_enduring
+					remove_trait = trait_venerable_upgrade
+					add_trait = trait_venerable
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_erudite_upgrade }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_intelligent
+					remove_trait = trait_erudite_upgrade
+					add_trait = trait_erudite
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_robust_upgrade_1 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_adaptive
+					remove_trait = trait_robust_upgrade_1
+					add_trait = trait_robust
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			ELSE_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_robust_upgrade_2 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_extremely_adaptive
+					remove_trait = trait_robust_upgrade_2
+					add_trait = trait_robust
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			ELSE_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_robust_upgrade_3 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_adaptable_evolution
+					remove_trait = trait_robust_upgrade_3
+					add_trait = trait_robust
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_ageless_upgrade_1 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_adaptive
+					remove_trait = trait_adaptive_lithoid
+					remove_trait = trait_ageless_upgrade_1
+					add_trait = trait_ageless
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			ELSE_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_ageless_upgrade_2 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_extremely_adaptive
+					remove_trait = trait_ancient
+					remove_trait = trait_necroid_ancient
+					remove_trait = trait_lithoid_eternal
+					remove_trait = trait_venerable
+					remove_trait = trait_venerable_lithoid
+					remove_trait = trait_ageless_upgrade_2
+					add_trait = trait_ageless
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = trait_ageless_upgrade_3 }
+			}
+			ELSE_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_robust_upgrade_3 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_adaptable_evolution
+					remove_trait = trait_ageless_upgrade_3
+					add_trait = trait_ageless
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			ELSE_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_ageless_upgrade_4 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_robust
+					remove_trait = trait_ageless_upgrade_4
+					add_trait = trait_ageless
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			ELSE_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_ageless_upgrade_5 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_enduring
+					remove_trait = trait_enduring_lithoid
+					remove_trait = trait_ageless_upgrade_5
+					add_trait = trait_ageless
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_fertile_upgrade_1 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_rapid_breeders
+					remove_trait = trait_fertile_upgrade_1
+					add_trait = trait_fertile
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_titanic_strength_upgrade_1 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				if = {
+					limit = { is_lithoid = no }
+					modify_species = {
+						species = event_target:species_to_upgrade
+						remove_trait = trait_strong
+						remove_trait = trait_titanic_strength_upgrade_1
+						add_trait = trait_titanic_strength
+						change_scoped_species = no
+					}
+				}
+				else = {
+					modify_species = {
+						species = event_target:species_to_upgrade
+						remove_trait = trait_strong
+						remove_trait = trait_titanic_strength_upgrade_1
+						add_trait = trait_lithoid_titanic_strength
+						change_scoped_species = no
+					}
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			else_if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_titanic_strength_upgrade_2 }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				if = {
+					limit = { is_lithoid = no }
+					modify_species = {
+						species = event_target:species_to_upgrade
+						remove_trait = trait_very_strong
+						remove_trait = trait_titanic_strength_upgrade_2
+						add_trait = trait_titanic_strength
+						change_scoped_species = no
+					}
+				}
+				else = {
+					modify_species = {
+						species = event_target:species_to_upgrade
+						remove_trait = trait_very_strong
+						remove_trait = trait_titanic_strength_upgrade_2
+						add_trait = trait_lithoid_titanic_strength
+						change_scoped_species = no
+					}
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_rapid_breeders_lithoid_upgrade }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_lithoid_crystal
+					remove_trait = trait_rapid_breeders_lithoid_upgrade
+					add_trait = trait_rapid_breeders_lithoid
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_pheremones_update }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_charismatic
+					remove_trait = trait_pheremones_update
+					add_trait = trait_pheremones
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_lithoid_shiny_update }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_charismatic
+					remove_trait = trait_lithoid_shiny_update
+					add_trait = trait_lithoid_shiny
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_obedient_update }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_conformists
+					remove_trait = trait_obedient_update
+					add_trait = trait_obedient
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_lithoid_compact_update }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_communal
+					remove_trait = trait_lithoid_compact_update
+					add_trait = trait_lithoid_compact
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = trait_lithoid_byproducts_update }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_lithoid_gaseous_byproducts
+					remove_trait = trait_lithoid_scintillating
+					remove_trait = trait_lithoid_volatile_excretions
+					remove_trait = trait_lithoid_byproducts_update
+					add_trait = trait_lithoid_byproducts
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = remove_trait_venerable }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_venerable
+					remove_trait = trait_venerable_lithoid
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			if = {
+				limit = {
+					event_target:species_to_upgrade = { has_trait = remove_trait_intelligent }
+				}
+				event_target:species_to_upgrade = {
+					set_species_flag = upgrading_species@root
+				}
+				modify_species = {
+					species = event_target:species_to_upgrade
+					remove_trait = trait_intelligent
+					change_scoped_species = no
+				}
+				last_created_species = { save_event_target_as = species_to_upgrade }
+			}
+			
+			every_galaxy_species = {
+				limit = { has_species_flag = upgrading_species@root }
+				remove_species_flag = upgrading_species@root
+				last_created_species = {
+					set_species_flag = upgraded_form@prev
+				}
+			}
+			every_owned_pop = {
+				limit = { is_exact_same_species = from }
+				change_species = last_created_species
+			}
+		}
+
+		# every_owned_leader = {
+		# 	limit = { is_exact_same_species = from }
+		# 	change_species = last_created_species
+		# }
+		# every_pool_leader = {
+		# 	limit = { is_exact_same_species = from }
+		# 	change_species = last_created_species
+		# }
+	}
+}

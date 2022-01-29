@@ -1,0 +1,182 @@
+Trait:
+Species Class Traits
+- Humanoid Traits:
+	- Clawed (Shared with Mammalian, Avian, Reptilian, Avian), +25% army damage, other effects TBD
+- Mammalian Traits:
+- Reptilian Traits:
+- Avian Traits:
+- Arthropoid Traits:
+- Moluscoid
+	- Chameleon (trait_chameleon) (shared with Reptilians, Arthropoids) able to change color, +50% army disengage chance, +2 amenities from entertainers and culture workers (party trick, socialization)
+- Lithoids Traits
+	- Electroid(?), upkeep of 0.5 minerals and energy, +5% pop growth and assembly, costs 2
+- Fungoid Traits
+- Plantoid Traits
+- Necroid Traits:
+	- Auspicious, +10% unity, gets unique leader trait
+- Aquatic Traits:
+	- Dry-Skinned, +10% habitability on dry worlds, cannot take with aquatic trait or perk
+
+Marine and Amphibious should give -10% pop growth on dry worlds
+		
+- Ecology Mod:
+	- Scavenger, waste jobs produce extra resources, -5% amenities usage
+
+- Robot and Machine Traits
+	- ???, -5% food, minerals, and energy from jobs, costs -2, machine only
+	
+New Civics:
+- Machine equivalent of feudal society, -33% subject power penalty, free research agreements, uses Server Farm vassal type that can expand, gives a portion of their research, overlord has full intel on them
+	- Consider: unemployed drones produce +1/+1/+1.5 research
+	- Consider: free research agreements with robot empires
+	- may need new ai personality that wants vassals, or adjust an existing personality
+	- cannot take with assimilators, servitors, or exterminators
+	- This machine intelligence has developed special systems to ensure directives from the central intelligence are disseminated quickly and efficiently
+- Machine Cult, spiritualist faction like robots and ai, +10% robot production, +20% industry research, priests produce engineering instead of society tech, roboticists give +1 unity, start with exoskeleton tech, robot tech option, cannot take psionic ascension, likes materialists and robot empires, dislike other spiritualists (except fellow machine cults)
+- Dictatorship of the Proletariat, requires oligarchic or dictatorship, not authoritarian or xenophobe, similar to shared burdens, leaders get higher bonuses (similar to worker coop), non-citizens can be given Basic Subsistence living standard, special Revolutionary Council / Vanguard government. Does not get along with civs with Shared Burdens (Revisionists, ext)
+
+New Origins
+- Exiled Creators (machine), not rogue servitor or driven assimilator, spawns creators, either as regular empire or as nomads, if possible. Bonuses TBD.
+- Hostile Takeover, took over their homeworld using aggressive or underhanded means, cannot be Trade Leagues or Cooperatives, or have the Free Traders or Trading Posts civics
+	-Gives +1 codebreaking, -10% war exhaustion, other effects TBD
+-???. survivors of ai uprising, total war against all machine and synth empires, cannot legalize ai or robots, starts with exoskeleton and robots (for irony's sake), get unity from purging robots, starts with relevant deposits, other effects?
+- Caretaker (machine), not exterminator or assimilator, tasked with maintaining planetary ecosystems, gives -10% amenities usage, +10% society research, can create nature preserves (gives evaluator and calculator jobs), clearing blockers gives unity, -50% penalty from non-gestalt residents, cannot take the machine-world perk, + opinion boost with organics, usually has open machine intelligence ai personality
+
+Changed Origins
+- Scion, add more unique tasks that may be asked of you
+	- ask to search for relic in area once owned by FE
+	- machine FE may ask for help cleaning corrupted data, chance to infect your machines as well
+	- machine FE: events related to the contingency
+- Lost Colony, maybe homeworld taken over by aliens or robot uprising
+
+Changed Civics:
+- Servitor get liberation bombardment, rescues slaves and undesirables
+	- ap perk and maybe regular civic that gives above perk, exclusive with raiding perk
+- Servitors can take life seeded
+	- bio-trophies give higher bonuses on gaia worlds and similar
+- Consider: Strength of Legions gets +5% simple drone production, +2 naval capacity from warrior drones, instead of +1 warrior drone per 20 pops
+- Idyllic Bloom, with terraformer origin, unique decision is cheaper
+- Resurrected armies, late game tech to build necrotic titans, similar to titan and machine war machines
+
+- Consider the following:
+	- criminal heritage + worker coop, Illicit Commune government
+
+- Warrior Culture can resolve conflicts with duels, such as in response to an insult, to humiliate a rival, in response to scandal operation, or to relinquish claims on your systems
+	- has edict where you can choose target and reason
+	- winner gains influence and unity
+	- target may refuse to duel, causing loss of influence and causing you to lose opinion with them
+	- target may cheat, drastically lowing your opinion of them if you find out
+	- if they refuse to duel, you gain special humiliate cb against them, same effects, but leader of loser is also killed
+
+- Shadow Council, remove leader flavor text (civicsexpanded.38)
+	- Killed by "anarchists"
+	- Killed by "rival"
+	- Oligarcy/Corp: ousted by political rival
+	- Death Cult, forced to become an initiate
+	- Resigned from scandal: lover(s)
+	- Murdered, Julius Ceaser style
+
+Megacorps can build branch offices on gestalt worlds who they have open borders and good relations with
+	- see this mod for a starting point: https://steamcommunity.com/sharedfiles/filedetails/?id=1627803724
+	- by event, gives 0.5 ec per pop
+
+New Edicts:
+- Planetary Fortification edict, -20% fortress cost, +2 armies and naval capacity from soldiers, soldiers have 1 energy upkeep, requires centralized command
+- slavery edict, +20% slave production, +25% authoritarian ethics attraction, -10 stability
+- edict that increases amenities at the cost of higher consumer goods construction
+- imp/dict establish parliament, may slowly chip away at power
+	- gives +1 influence from factions, +5 stability, + worker and specialist political power, +10% empire size from pops, +33% egalitarian ethics attraction
+	- may add parliament deposit on capital
+	- pacifist, xenophiles, and philosopher kings start with a Parliament if not fanatical authoritarian
+	- authoritarian faction hates parliament, wants to do away with it (unless philosopher king)
+	- disbanding parliament causes massive worker and specialist unhappiness, - stability, + egalitarian ethics attraction, for 50 years
+
+Changed Edicts:
+
+New Policies:
+
+Diplomacy:
+- Harmonious gestalt civics and rogue servitors can allow migration treaties
+
+Factions:
+- Megacorps replace progressive faction with labor union faction
+	- attracts artisans, foundry workers, miners, farmers, technicians (unless authoritarian)
+	- non egalitarian pops have less weight towards union unless unhappy, less likely if unions are banned
+	- demands:
+		Is Worker Coop (+5 / -30), must be or was a worker coop
+		Not private (+10 / -15)
+		Not crisis (0 / -25)
+		Free Speech (0 / -5)
+		Union rights (0 / -30), requires not full rights
+		Full union rights (10 / 0), requires not banning union
+		No Stratified (0 / -25)
+		No elitism (5 / -5)
+		Welfare (10 / -10) All citizens have social welfare living standard or better (if xenophile, expands to everyone)
+		No robots (if spiritualist or a significant percentage of your pops are spiritualist)
+		No slaves (if not authoritarian or xenophobe)
+		Not galactic emperor (0 / -30)
+		No extended shifts (0 / -15)
+		Cooperative or Mercantile diplo stance (5 / 0)
+		No aggressive diplo stances (0 / -5)
+		
+
+Technology
+- Death cult, new tech that gives + defensive army damage, - planetary bombardment damage, requires psionic theory, spirits of dead cultists inspire and protect the living
+- Psionic Perfection, tier 5, requires Telepathy, dangerous (with expanded events, drastically increases likelihood of the Unbidden)
+	- +1 monthly influence, empire can ascend into energy beings
+	- Energy Beings are immortal, requires -50% less housing, +50% habitability, -15% pop growth, eats energy instead of food
+	
+	Engergy Beings inherits biological traits, except:
+		- class specific traits
+		- habitability traits
+		- leader lifespan traits
+		- agrarian
+		- ingenious (replaced)
+		- pop growth traits (replaced)
+		- strong traits (replaced)
+		- metabolism traits (replaced)
+	Unique Energy Being traits:
+		- Electrified, +25% energy from jobs, costs 2
+		- Shroud-Touched, +0.02 monthly zro, costs 2
+		- Eldritch, +0.02 monthly dark matter, costs 2
+		- ???, +15% pop growth, costs 2
+		- Efficient, +5% resources from jobs, costs 3
+		- Shocking, +25% army damage, morale damage, morale, costs 1
+		- Insulated, -10% energy upkeep, costs 1
+		
+Buildings
+
+Pops:
+- Displaced pops (and occasionally regular purged pops) with nowhere to go will sometimes form new countries.
+- special crime events if you have a lot of purging or slave pops on planet
+	- High crime, smuggle slaves and purged pops off world
+- Slave unrest
+- Frederick Douglass event (escaped slave writes on the horrors of slavery)
+
+- Corps: workforce unionizes (requires low stability, unemployment, ext)
+- With unions allowed, low stability or happiness can cause strikes, causes - stability and job production, how long it lasts depends on union policy
+
+- Xenophile FE has some primitive scions under their protection, primitives will become a normal scion when they discover FTL
+
+Traditions and Perks:
+- Consider: Mastery of Nature decision unlocked by world shaper / hive world / machine world, retire Mastery of Nature perk
+- Hive and Machine World perks give −25% Terraforming Cost
+
+More Annoying Manifesti Demands:
+- 10 free aliens in empire
+- all artist enclaves (or one of each enclave?) in empire
+
+Gestalts:
+- events with native non-gestalt residents
+	- Residents demand independence
+	- Residents demand greater autonomy (can eventually lead to becoming a vassal)
+	- Creating a vassal in a non-core sector
+	- If percentage of residents gets too high, may cause stability hit
+	- Get unique crime modifier, rogue settlements
+	- Recruit high level leader from residents
+Decision to spend consumer goods and increase biological happiness
+Hive minds may take psionic ascension, gets different event text
+
+AI Personalities
+- Warrior Mystics, spiritualist and militarist, not xenophobe or authoritarian, has military civic (such as warrior culture), friendlier than zealots, similar to honorbound warriors
+- Warhammer Ork personality, maybe barbaric despoiler + warrior culture, no good intelligence related traits

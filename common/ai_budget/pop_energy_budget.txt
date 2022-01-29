@@ -1,0 +1,64 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+
+energy_expenditure_private_armies = {
+	resource = energy
+	type = expenditure
+	category = armies
+
+	potential = {
+		is_gestalt = no
+		is_anti_corp = no
+		any_owned_planet = {
+			has_branch_office = yes
+			OR = {
+				has_building = building_military_contractors
+				has_building = building_pirate_haven
+				has_building = building_dread_encampment_corp
+				has_building = building_dread_encampment_corp_crime
+			}
+		}
+		OR = {
+			is_at_war = yes
+			NOT = {
+				count_owned_army = {
+					count >= @armies_for_declaring_war
+					limit = {
+						is_defensive_army = no
+					}
+				}
+			}
+			AND = {
+				has_global_flag = str_enabled_flag
+				prepare_for_war = yes
+				used_naval_capacity_percent > 0.9 # focus on the navy first
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+		modifier = {
+			factor = 2
+			OR = {
+				any_neighbor_country = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+				any_country = {
+					is_crisis_faction = yes
+				}
+			}
+		}
+	}
+	static_min = {
+		base = 500
+	}
+}
+
+############
+## Upkeep ##
+############

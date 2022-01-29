@@ -1,0 +1,113 @@
+############################
+#
+# Aquatics Events
+#
+# Written by Pierre du Plessis
+#
+############################
+
+namespace = aquatics
+
+# Happy Dragon wants to start a family with you
+country_event = {
+	id = aquatics.120
+	title = aquatics.120.diplo_name
+	diplomatic_title = aquatics.120.name
+	desc = aquatics.120.desc
+	location = capital_star
+	show_sound = event_mystic_reveal
+	diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	trigger = {
+		has_origin = origin_here_be_dragons
+		has_country_flag = origin_dragon_not_ready
+		has_non_hostile_origin_dragon_trigger = yes
+		if = { #Finished ascension path or quite far with all the traditions
+			limit = {
+				OR = {
+					has_ascension_perk = ap_evolutionary_mastery
+					has_ascension_perk = ap_synthetic_evolution
+					has_ascension_perk = ap_synthetic_servants
+					has_ascension_perk = ap_transcendence
+				}
+			}
+			num_ascension_perks >= 4
+		}
+		else = { num_ascension_perks >= 6 }
+	}
+
+	immediate = {
+		remove_country_flag = origin_dragon_not_ready
+		random_country = {
+			limit = { has_country_flag = here_be_the_dragon@root }
+			save_event_target_as = dragon_country
+		}
+	}
+
+	option = {
+		name = aquatics.120.dialog.1
+		response_text = aquatics.120.dialog.1.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = aquatics.120.dialog.2
+		response_text = aquatics.120.dialog.2.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = aquatics.120.dialog.3
+		response_text = aquatics.120.dialog.3.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = aquatics.120.dialog.4
+		response_text = aquatics.120.dialog.4.response
+		is_dialog_only = yes
+	}
+
+	option = { #accept, of course
+		name = aquatics.120.A
+		response_text = aquatics.120.A.response
+
+		event_target:dragon_country = {
+			random_owned_fleet = {
+				hidden_effect = { clear_fleet_actions = this }
+				set_owner = root
+			}
+		}
+		custom_tooltip = aquatics.120.A.tooltip
+		hidden_effect = {
+			set_country_flag = dragon_breeders
+			create_ship_design = { design = "NAME_Sky_Dragon_Baby" }
+			add_ship_design = last_created_design
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = { #reject, just because
+		name = aquatics.120.B
+		response_text = aquatics.120.B.response
+		custom_tooltip = aquatics.120.B.tooltip
+
+		add_resource = {
+			influence = 500
+		}
+		hidden_effect = {
+			event_target:dragon_country = {
+				every_owned_fleet = {
+					delete_fleet = this
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,293 @@
+	# Faction Happiness
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			exists = owner
+			OR = {
+				AND = {
+					has_ethic = ethic_xenophobe
+					owner = { has_modifier = suppressed_xenophobe }
+				}
+				AND = {
+					has_ethic = ethic_xenophile
+					owner = { has_modifier = suppressed_xenophile }
+				}
+				AND = {
+					has_ethic = ethic_materialist
+					owner = { has_modifier = suppressed_materialist }
+				}
+				AND = {
+					has_ethic = ethic_spiritualist
+					owner = { has_modifier = suppressed_spiritualist }
+				}
+				AND = {
+					has_ethic = ethic_pacifist
+					owner = { has_modifier = suppressed_pacifist }
+				}
+				AND = {
+					has_ethic = ethic_militarist
+					owner = { has_modifier = suppressed_militarist }
+				}
+				AND = {
+					has_ethic = ethic_egalitarian
+					owner = { has_modifier = suppressed_egalitarian }
+				}
+				AND = {
+					has_ethic = ethic_authoritarian
+					owner = { has_modifier = suppressed_authoritarian }
+				}
+			}
+		}
+		pop_happiness = -0.20
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_militarist
+			exists = owner
+			owner = {
+				NOR = {
+					has_policy_flag = unrestricted_wars 
+					has_policy_flag = liberation_wars
+				}
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			OR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_militarist
+			}
+			exists = owner
+			owner = {
+				is_subject = yes
+				is_scion_subject = no
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			exists = owner
+			OR = {
+				has_ethic = ethic_pacifist
+				AND = {
+					has_ethic = ethic_xenophobe
+					OR = {
+						NOT = { is_same_species = owner_species }
+						owner = { is_pacifist = yes }
+					}
+				}
+			}
+			owner = {
+				is_at_war = yes
+				NOR = {
+					any_war = { is_war_participant = { who = prev side = attackers } }
+					has_country_flag = entered_war_as_attacker
+				}
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			exists = owner
+			OR = {
+				has_ethic = ethic_pacifist
+				AND = {
+					has_ethic = ethic_xenophobe
+					OR = {
+						NOT = { is_same_species = owner_species }
+						owner = { is_pacifist = yes }
+					}
+				}
+			}
+			owner = {
+				has_policy_flag = unrestricted_wars
+			}
+		}
+		pop_happiness = -0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			exists = owner
+			has_ethic = ethic_xenophobe
+			owner = {
+				has_federation = yes
+			}
+		}
+		pop_happiness = -0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_egalitarian
+			planet = {
+				exists = owner
+				owner = {
+					OR = {
+						has_authority = auth_imperial
+						has_authority = auth_dictatorial
+						has_authority = auth_private
+					}
+				}
+			}
+		}
+		pop_happiness = -0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_egalitarian
+			exists = owner
+			owner = { has_policy_flag = population_controls_allowed }
+		}
+		pop_happiness = -0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_xenophobe
+			exists = owner
+			owner = {
+				exists = ruler
+				ruler = { is_same_species = owner_species }
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_xenophobe
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_xeno_compatibility
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_materialist
+			exists = owner
+			owner = {
+				OR = {
+					has_policy_flag = robots_outlawed
+					has_policy_flag = ai_outlawed
+				}
+			}
+		}
+		pop_happiness = -0.15
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_authoritarian
+			exists = owner
+			owner = {
+				OR = {
+					has_authority = auth_democratic
+					has_authority = auth_cooperative
+				}
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_authoritarian
+			exists = owner
+			NOR = {
+				has_living_standard = { type = living_standard_stratified }
+				has_living_standard = { type = living_standard_academic_privilege }
+				owner = {
+					any_owned_pop = {
+						OR = {
+							is_enslaved = yes
+							has_citizenship_type = { type = citizenship_limited }
+						}
+					}
+				}
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_spiritualist
+			exists = owner
+			owner = {
+				can_set_ai_policy = yes
+				has_policy_flag = ai_full_rights
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_spiritualist
+			exists = owner
+			owner = {
+				has_country_flag = flesh_weakened
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_spiritualist
+			exists = owner
+			owner = {
+				is_spiritualist = no
+			}
+		}
+		pop_happiness = -0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_xenophile
+			exists = owner
+			owner = {
+				has_policy_flag = slavery_allowed
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			has_ethic = ethic_xenophile
+			exists = owner
+			owner = {
+				has_policy_flag = purge_allowed
+			}
+		}
+		pop_happiness = -0.10
+	}
+	triggered_pop_modifier = {
+		potential = {
+			can_generate_crime = yes
+			OR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_egalitarian
+			}
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_become_the_crisis 
+			}
+		}
+		pop_happiness = -0.10
+	}

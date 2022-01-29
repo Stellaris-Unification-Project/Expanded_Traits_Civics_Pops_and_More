@@ -1,0 +1,1191 @@
+Additions:
+New Species traits
+	- Crafty, +2.5% specialist output, +10% leader xp, costs 1
+	- Poisonous, +25% army damage, +15% chemist (mote) production, -4 food from livestock processing, costs 2
+	- Low Metabolism, -10% organic food upkeep, costs 1
+	- High Metabolism, +10% organic food upkeep, costs -1
+	- Carefree, +5% happiness, +20% army morale, costs 1
+	- Skittish, -5% happiness, -20% army morale, costs -1
+	- Inept, -1 leader level, costs -1
+	- Uninventive, -5% research from jobs, costs -1
+	- Lethargic, -5% food, minerals, and energy from jobs, costs -2
+	- Endemic, -20% habitability, costs -4
+	
+	- Garrison Bot, +50% defensive army damage, +5% army damage, costs 1
+	- Delicate, -20% army health, +5% robot upkeep, costs -1
+	- Economical, +25% trade value from jobs, costs 2, synths only
+	- Cohesive Hardware, +10% unity from jobs, costs 1, machine empire only
+	- Unsynchronized, -10% unity from jobs, costs -1, machine empire only
+	- Obsolescent, -5% research, costs -1, machines and synths only
+	
+	Humanoid traits:
+		- Mammalian, required for Humanoid and Mammalians, +10% cold habitability, +10% leader xp, +10% physics research, +10% food upkeep
+		- Shrewd (shared with Mammalians, Avians, Moluscoids, and Aquatics), +1 leader level, +25% leader xp, less likely to get bad leader traits, costs 2
+		- Burrowing (shared with Mammalians, Avians Reptilians, Arthropoids, and Lithoids), +5% minerals from jobs, can create burrow deposits that add extra housing, mining districts, minerals from jobs, suffers -5% habitability on worlds without a burrow, cannot be used with Aerial, costs 2
+	
+	Mammalian traits:
+		- Requires Mammalian
+		- Aerial (shared with Avians and Arthropoids), -10% housing requirements, +10% engineering research, +10% food upkeep, costs 2
+		- Gregarious (shared with Avians, Arthropoids, and Aquatics), -15% housing requirements, -5% empire size from pops, -15% happiness on worlds with less than 15 pops (+10% amenities usage if hive mind)
+		- Can use Shrewd
+		- Can use Burrowing
+	
+	Reptilian traits:
+		- Reptilian, required for all reptilians, -10% food upkeep, +10% amenities usage on cold worlds, -10% happiness on cold worlds, artisans produce +2 amenities, but have +1 energy upkeep, maintenance drones produce +1 amenities, but have +0.5 energy upkeep, unemployed workers hibernate, requiring less food, consumer goods, and amenities
+		- Amphibious, +20% wet habitability, -10% habitability on dry planets, costs 1
+		- Arid Adaptations, +20% dry habitability, -10% cold habitability, costs 1
+		- Scaly (Shared with Aquatics), +25% army health, morale, and defensive army damage, costs 1
+		- Regenerative Tissue (Shared by everyone except Humanoids, Mammalians, and Avians), +15% army damage, +15 leader lifespan, costs 1
+		- Can use Burrowing
+	
+	Avian traits:
+		- Avian, required for all avians, +15% pop growth from immigration, +50% automatic migration chance, +10% food upkeep, Admirals give +10% sublight speed
+		- Melodic (shared with Aquatics), +20 opinion with other empires, entertainers and culture workers give +2 amenities, but cost +0.5 consumer goods, synapse drones give +2 amenities but cost +1 food, costs 2
+		- Peacockish, +10% consumer goods upkeep, +5% amenities usage, costs -2
+		- Can use Aerial
+		- Can use Burrowing
+		- Can use Shrewd
+		- Can use Gregarious
+		
+	Arthropoid traits:
+		- Arthropoid, required for all arthropoids, +10% pop growth and assembly speed, -30 leader lifespan, rulers and synapse drones give +1% pop growth and assembly, but consume +1 more food 
+		- Hardened Exoskeleton, +25% army health, morale, and defensive army damage, costs 1
+		- Irradiated (shared with Necroids), +100% tomb world habitability, +5% habitability, +30 leader lifespan, costs 3, cannot be used with the Post-Apocalyptic origin
+		- Voracious, +20% food upkeep, costs -2
+		- Can use Burrowing
+		- Can use Aerial
+		- Can use Regenerative Tissue
+		- Can use Gregarious
+		
+	Moluscoid traits:
+		- Moluscoid, required for all moluscoids, gives +3% ruler and specialist output, -3% worker output, -10% army damage +30% wet habitability, -10% dry and cold habitability
+		- Pearlescent (Shared with Aquatics), Moluscoid equivalent of Scintillating Skin
+		- Shelled, +25% army health, morale, and defensive army damage, costs 1
+		- Can use Shrewd
+		- Can use Regenerative Tissue
+	
+	Fungoid traits:
+		- Fungoid, required for all fungoids, -20% organic food upkeep, +10% habitability, -30 leader lifespan, access to the Mycelial Terraforming decision (gives +5% habitability and +1 farming deposit)
+		- Fugal Colony, +500 leader lifespan, -25% growth speed, costs 2, cannot be used with hive minds
+			+1 Venerable Elder ruler job on homeworld, +1 per 100 pops, gives +3 unity, +2% worker output, +1% specialist output, +4 trade if corporate
+			Capital has -1 max districts (taken up by venerable elders) (exception: ringworlds)
+			With the battleship and Self-Aware Colony Ship techs, can be asked to move some of the venerable colony to an ideal class planet, gaia world, habitat, or ringworld
+		- Can use Gaseous Byproducts
+		- Can use Regenerative Tissue
+	
+	Plantoid traits:
+		- Plantoid, required for all plantoids, -10% food and energy consumption, +30% wet habitability, -15% dry habitability, farmers use no housing, +2 food from livestock, makes consumer goods partially with food, access to the Planetary Landscaping decision (gives +1 farming deposit, adds a good farming modifier, or removes a bad one, requires the Eco Simulation technology)
+		- Succulent, +30% dry habitability, -10% cold habitability, costs 1
+		- Coniferous, +20% cold habitability, -10% dry habitability, costs 1
+		- Ancient, +300 leader lifespan, costs 4
+		- Seasonal, -25 leader lifespan, costs -2
+		- Rooted, -30% growth from immigration, +50% resettlement cost, costs -2
+		- Can use Regenerative Tissue
+		
+	Lithoid traits:
+		- Lithoids only get -20% pop growth and assembly speed, get +1 minerals from miners, but -1 food from farmers
+		- Hardened, pops produce +0.05 alloys per month, costs 2
+		- Crystalline, +5% population growth and pop assembly speed, costs 1
+		- Eternal, +400 leader lifespan, spawns an additional petrified pop on homeworld, costs 5
+		- Gain their own version of Enduring and Venerable
+		- Can use Burrowing
+		- Can use Regenerative Tissue
+	
+	Necroid traits:
+		- Necroid, required for necroids, +25 leader lifespan, +25% army health, +10% society research from jobs, necroid rulers suffer -20 opinion with other empires (except gestalts and other necroids)
+		- Preserved, +300 leader lifespan, costs 4
+		- Tormented, -10% happiness, -10 leader lifespan, costs -2
+		- Can use Regenerative Tissue
+		- Can use Irradiated
+		
+	Aquatic Traits
+		- Marine, required by aquatics, +10% unity and +5% happiness on wet worlds, -5% habitability on dry worlds, +10% society research from jobs, +10% hull strength from admirals, allows taking the Hydrocentric perk if your homeworld is wet
+		- Can use Regenerative Tissue
+		- Can use Melodic
+		- Can use Shrewd
+		- Can use Pearlescent
+		- Can use Scaly
+		- Can use Gregarious
+	
+	New perk traits
+		- Adaptable, +5% pop resource production, costs 3, cannot be used with robust or efficient processors. Requires Engineered Evolution.
+	
+	New advanced traits
+		- Titanic Strength, +60% army damage, +7.5% worker job production, costs 4
+		- Engineered Pheromones (improved charismatic), +10 opinion from other empires, +40% amenities from jobs, costs 3
+		- Obedient, +50% governing ethics attraction, -15% empire size from pops, -10% amenities usage, costs 3
+		- Supersaturated Growth, replaces Rapid Breeder for Lithoids, also gives +10% pop assembly speed
+		- Solid Shape, Lithoid equivalent of Titanic Strength, only costs 3
+		- Shiny, Lithoid equivalent of Engineered Pheromones
+		- Dense, Lithoid equivalent of Delicious, gives +2 minerals from livestock
+		- Compact, Lithoid only, gives -25% housing required, -33% resettlement cost, costs 3
+	
+	Genetic Mastery Tech, can be researched after getting the Evolutionary Mastery perk and researching Genetic Resequencing. Gives +3 gene mod points, -20% gene mod project cost, access to additional advanced traits
+		- Ageless (improved robust), +30% habitability, +10% resources from jobs, +5% happiness, immortal leaders, costs 5
+		- Genetic Memory, +100% leader experience gain, +2 max leader level, +20% unity from jobs, costs 4
+		- Sleepless, +25% resources from jobs, +25% organic food upkeep, costs 4
+		- Engineered Byproducts, produces +2 monthly rare resources, costs 5
+		- Complex genetic code, -10% habitability, +10% organic food upkeep, costs -5
+
+Changed Traits
+	- Doubled resources gained from Lithoid traits
+	- Aquatic now also gives bonuses on gaia worlds, and no longer have penalties on artificial worlds
+	- Decadent has +25% pop demotion time
+	- Repugnant gives -2 food from livestock processing (normally won't come up, except perhaps as one last middle finger to the devouring swarm that's eating your pops)
+	- Repurposed Hardware costs -2 and also gives -1 leader level
+	- Deviant gives +15% Ethics Shift Chance
+	- Docile and Conformist give -5% crime
+	- Unruly and Deviant give +5% crime
+	- Obedient gives -10% crime
+	- Nerve Stapled gives +10% bonus to jobs, pops have no political power
+	- Latent Psionic gives +5% happiness, Psionic gives +10%
+	- Robots have an inherent +2.5% bonus to worker and simple drone jobs
+	- Brain Slug gives +15% unity and research, can be gene modded onto pops
+	- Integrated kuyan-judith's Trait Upgrader and Better AI Trait-Modding
+	
+	- Self-Modified pops will always get robust on top of any other traits they get
+	- Self-modifying can happen more than once. The rising-tension event chain can still only happen once per empire, and it's chance of happening has been slightly reduced
+	- Gene Modding base cost reduced to 2500, down from 3000
+	- Enigmatic Observers have the ageless trait (they're basically space elves anyway)
+	- Militant Isolationists have the ageless trait (they're the bad kind of space elves)
+	- Ruler of the Holy Guardians has the Chosen One trait
+	
+Leaders
+	New Trait: Pirate Hunter, Admiral, +25% piracy suppression, +10% subspace speed
+	Industrialist gives +5% mineral and alloy production
+	Charismatic gives +1 edict capacity instead of a bonus to edict length
+	Gestalt Rulers can get leader traits. Several gestalt-only ruler traits have been added
+	Max leader level increased to 20
+	If your chosen one dies, you can get another one from the shroud
+
+
+New Origins
+	Ancien Régime
+	Requires Imperial Authority, Authoritarian Ethics, does not have the Technocracy or Merchant Guilds
+	Starts with 3 extra pops and 1 extra district
+	Capitals gives +1 noble jobs
+	+1 unity from ruler jobs
+	Starts the game with the Planetary Unification Tech
+	Effects only active if you have the Imperial authority
+	
+	Arborial Harmony
+	Requires both Utopia and Plantoids
+	Requires not gestalt, xenophobe, or militarist
+	None-Hive equivalent of the Tree of Life
+	Spawns with 6 plantoid caretakers
+	Starts with a Tree of Life on your homeworld
+	Colony Ships are more expensive, but spawn a Tree of Life
+	The Tree of Life does not increase pop growth, instead providing additional pop assembly when growing caretaker pops
+	
+	Cyberocracy
+	Requires Dictatorship / Private, Materialist, civic restrictions
+	Starts with an immortal level 10 leader (supercomputer)
+	Leader starts with a unique trait giving +5% research, +1 monthly influence, -25% influence from factions
+	Replaces one administrator job with a high programmer job, which gives stability and research
+	Starts with Administrative AI and Self-Evolving Logic techs
+	Cannot be removed normally after game-start, but an event-chain will fire if you switch to incompatible ethics or authorities, allowing you the choice to remove the civic
+	
+	Delicate Ecosystem
+	Requires not machine
+	Starts with the Ecologist trait, giving: +10% habitability, -10% amenities usage, +10% society research
+	Homeworld has Delicate Ecosystem modifier, giving +25% society research, -10% habitability, -1 max district, -2 max generator and mining districts
+	Delicate Ecosystem planets cannot be turned into specialized planets (city worlds, thrall worlds, ext)
+	
+	Eusocial Hive Mind (Hive Mind)
+	Hive equivalent to Syncretic Evolution
+	
+	Exploited Homeworld
+	Requires not xenophile, civic restrictions
+	Homeworld shifts to arid or arctic, (or desert or tundra, if already one of those worlds) with main species gaining a unique trait to adapt to this changed (trait applied at game start)
+	Homeworld gains exploted homeworld modifier, vastly increasing mineral production at the expense of food and amenities
+	Starts with the first level of mining and space mining techs
+	Gain the Homeworld Exploiter trait, which gives minor bonuses and blocks the Conservational, Communal, Traditional, and Agrarian traits
+	With Expanded Events, guarantees the Damaged Ecosystem event chain
+	
+	Extant Creator (Machine Intelligence)
+	Requires Utopia DLC
+	+10% pop assembly speed
+	Starts the game with 12 organic pops with the mechanist trait
+	Capitals give 1 less replicator job (same as Driven Assimilators)
+	Half penalties from non-gestalt residents (see below)
+	Non-gestalt residents can work calculator and replicator jobs
+	
+	Fanatical Befrienders
+	Requires Militarist and Fanatic Xenophile, cannot use with Corvee System
+	+15% Pop Growth from Immigration
+	+10% happiness with xeno-friends on planet
+	+5% unity per migration treaty (up to +25%)
+	All xenos-friends must have full citizenship
+	Gains the Solitary trait
+	
+	Heavenly Choir
+	Requires Spiritualist, not Democratic or Corporate, civic restrictions
+	Starts with immortal level 5 rulers and governors (shroud avatars)
+	Leaders gain unique trait, giving +5% happiness and +1 monthly zro
+	All governors are shroud avatars with unique trait giving +10% unity from jobs, -10% consumer goods upkeep, +25% spiritualist attraction
+	Starts with Psionic Theory tech already unlocked
+	Cannot be removed normally after game-start, but an event will fire if you switch to incompatible ethics or authorities, allowing you the choice to remove the civic
+	
+	Holy Mountain
+	Requires Lithoid Species, Spiritualist Ethic
+	Spawns a Holy Mountain deposit on your homeworld, granting bonuses to unity, happiness, society research, and spiritualist ethics attraction, as well as giving +1 high priest jobs and 2 rare crystal mines.
+	Additional empire-wide bonuses to unity, happiness, and spiritualist ethics attraction as long as you control your homeworld
+	Starts with Rare Crystal Mining research option
+	If you lose your homeworld, you gain a large malus to unity, happiness, and governing ethics attraction, and gain a total war cb on the empire that controls or destroyed your homeworld.
+	
+	Little Sister
+	Starts with a habitable moon, colonized with 4 pops (6 if gestalt)
+	Starts with AI-Controlled Colony Ships research option
+	
+	Master Computer (Machine Intelligence)
+	+1 ruler level cap
+	Starts with 3 extra pops and 1 extra district
+	Leaders half as likely to gain negative traits
+	Capitals give +1 Master Control Program job, which gives +2% simple drone production, +3 stability, +10 admin cap, +2 unity, costs 4 energy
+	
+	Natural Hunters
+	Requires Militarist Ethics, not Xenophile Ethics
+	Alternatively, Requires Hive Mind and not having the Harmonious Hive Mind or Empath civic
+	+100 army starting experience
+	+25% army morale damage
+	+1 General level cap
+	+ unity and influence when killing spaceborne aliens
+	Can build a hunting preserve on planets with dangerous wildlife, which gives hunter jobs
+	Starts with Dangerous Wildlife Removal tech
+	
+	Primitive Cyborgs
+	Requires Materialist
+	+10% computing and industry research
+	Starts with Powered Exoskeleton and Administrative AI techs
+	Starts with primitive cyborg trait, giving +10% habitability, +5% army damage, +20 leader lifespan. Will be replaced by vanilla cyborg trait if they take the Flesh is Weak perk.
+	-10 opinion from non-materialist empires
+	Cannot take psionic ascension path
+	Homeworld guaranteed to be at least size 21, but gets a blocker hinting at why you needed the cybernetics in the first place
+	
+	Private Colonization initiative
+	Requires Megacorp DLC
+	Start out with a megacorp neighbor of your species (or start out as said megacorp)
+	+10% trade value
+	
+	Research Union
+	Requires Materialist or Machine Empire, Federation DLC
+	Start as the leader of a Research Cooperative
+	Other members will be a xenophile materialist and a machine empire
+	Starts at Federation Level 2
+	
+	Subterranean Evolution
+	Can expand a colony, giving it one deposit that gives +2 max districts, +3 max of a random rural district
+	Starts with the Burrowing trait (or Power Drills if machine)
+	Expanding a planet costs 2000 energy and minerals, 50 influence
+	Homeworld starts fully expanded, with three deposits
+	Expanded planets cannot be converted into city worlds, although the deposits can be removed to allow it, at some cost
+	Deposits will be lost if converted to a machine world
+	
+	Symbiosis (Hive Mind)
+	Starts with 3 extra pops and 1 extra district
+	Starts with the Brainslug trait (+15% research and unity, -25% pop growth)
+	Cannot assimilate, but non-gestalt pops might join willingly
+	Half penalties from non-gestalt residents (see below)
+	
+	Syncretic Equals
+	Requires Utopia DLC
+	Will get 12 pops of a secondary species
+	Secondary species has no required traits, and has +1 trait point
+	
+	Syncretic Livestock
+	Requires Utopia DLC
+	Requires xenophobe or hive mind, not egalitarian, not lithoid
+	Will get 6 pops with the delicious trait (8 if hive mind)
+	
+	Syncretic Crystals
+	Requires Utopia and Lithoid DLC
+	Same as Syncretic Livestock, but pops start with dense instead
+	
+	Tempestuous Unification
+	Requires Militarist, not corporate
+	-10% war exhaustion
+	Starts with +2 pops, +2 soldier jobs
+	Starts with 6 extra corvettes
+	Most workers are recently conquered, and suffer a temporary unhappiness penalty
+	Starts with 2 extra sprawling slums
+	Starts with Ground Defense Planning tech option
+
+	Terraformer
+	Requires not machine
+	Starts with Terrestrial Sculpting tech
+	+1 max districts on homeworld, and on any worlds that they terraform
+
+
+Changed Origins
+	Calamitous Birth
+	Meteorite Colony Ships creates a crater, with half the bonuses as the one on the homeworld
+	Meteorite Colony Ships gives +25% colonization progress on impact, but also causes 100 devastation
+	Those without this origin can remove craters with the Ecological Adaptation tech
+	
+	Common Ground
+	Can be used by Hive Minds (will spawn one Hive Mind and one Xenophile Authoritarian empire)
+	Xenophile Authoritarian empires will also spawn with a Hive Mind as one of their members
+	Starts at Federation Level 2
+	
+	Doomsday
+	AI starts with a free colony ship (hopefully that makes the ai less suicidal)
+	
+	Galactic Doorstep
+	Doorstep events give greater progress on gateway techs
+	+15% particles and voidcraft research speed
+	-15% gateway construction cost
+	
+	Hegemon
+	Can be used by Gestalts (Ethics of spawned empires will be random, but they will usually share one ethic with each other)
+	Starts at Federation Level 2
+	
+	Life Seeded
+	Homeworld starts with +25% amenities and +100 immigration pull
+	Hive Minds start on hive worlds
+
+	Lost Colony
+	+25% Colony Development Speed
+	-25% Colony Ship Cost
+	Starts with a random blocker removal technology
+	
+	Mechanist
+	+15% pop assembly speed
+	
+	Post-Apocalyptic
+	Survivor gives +10% habitability
+	Homeworld gets vault deposit that gives +2 researcher and +1 soldier jobs, +3 housing, +20% physics research
+	Homeworld no longer starts with a research lab
+	
+	Resource Consolidation
+	Consolidated Resources deposit also gives +5 alloys and +1 mote, gas, and crystal
+	Organic Slurry gives 20 food
+	
+	Remnant
+	Unique planetary deposits
+	Clearing ruined arcologies on colonial remnants also give techs
+	Clearing ruined arcologies can sometimes give progress on tier 2 or even tier 3 techs
+	
+	Scion
+	Can be used by Gestalts (homicidal empires excluded)
+	Must pay a tax on resources or research, similar to vanilla fallen empire subject types
+	Xenophiles and Pacifists may end up under the care of the xenophile fallen empire, which requires no taxes, but imposes some policy restrictions
+	New Scion events
+	
+	Shattered Ring
+	Restoring the ring requires the prerequisites for mega-engineering, instead of mega-engineering itself
+	Clearing rubble gives progress on a tier 1 or 2 technology
+	
+	Tree of Life 
+	Tree deposit gives +2/+4 unity, and +5%/+10% habitability
+	The Tree of Life gives farmer jobs on planets that can't build farming districts (mainly habitats), but also has double food upkeep
+	
+	Void Dwellers
+	Can be used by Gestalts
+	Arcane Replicator adjusted for Gestalts, and gets one mini-replicator on each of your habitats
+	Machine Empires get -15% amenities usage on habitats instead of the void dweller trait (secondary species from Driven Assimilators and Rogue Servitors still get the trait)
+	Non-Hive Lithoids get an extra building on the capital habitat
+
+
+New Authorities
+	Cooperative
+	Requires not authoritarian nor xenophobe
+	Corporate version of democratic authority
+	
+	Private
+	Requires not egalitarian nor fanatic xenophobe
+	Corporate version of imperial authority
+
+
+Changed Authorities
+	Authorities have additional effects, generally modifying diplomatic weight and empire size from various sources
+
+
+New Civics
+	Biological Engineers (Regular) / Engineered Drones (Hive)
+	Requires not Xenophobe (Regular)
+	+25% Biology Research
+	+1 Gene Modification Point
+	-20% Modify Species Special Project Cost
+	Starts with Genome Mapping tech
+	
+	Organic Construction (Regular and Corporate)
+	Requires Fungoid or Plantoid, Plantoid DLC
+	+33% building speed
+	+33% building and district refund
+	Rural and City Districts are built and maintained partially out of food
+	Megacorps can build a unique branch office building (shared with Construction Company)
+	
+	Aerial Construction (Regular and Corporate) / Secluded Roosts
+	Requires Avian, Arthropoid, or Mammalian
+	City districts are more expensive, but provide +1 housing
+	Impassible Mountains and Dense Jungles do not prevent construction and provide unity
+	Starts with a mountain or jungle blocker on their homeworld
+	
+	Zealous Crusaders
+	Requires Spiritualist and Militarist, not Merchant Guilds, Corporate Dominion, or Imperial Cult
+	+15% fire rate
+	+25% army morale
+	Can harm relations 50% faster, but improves them 50% more slowly
+	Priests replaced with Templars, who produce +2 naval capacity and +1 defensive army
+	Can use Impose Religion war goal, mostly identical to Impose Ideology
+	With Cosmic Religion active, Impose Religion war goal will impose your religious modifier on the defender
+	Not friendly with non-spiritualists
+	With Cosmic Religion active, not friendly with the wrong kind of spiritualists, either
+	
+	
+	Agribusiness (Megacorp)
+	Requres Pacifist Ethics, does not have Syncretic Evolution or Indentured Assets civic
+	Agriculture districts give +1 housing and farming jobs
+	Farmers produce +4 trade value
+	Farming subsidies Edict is cheaper
+	With Criminal Heritage, farmers produce an additional +2 trade value (+6 total)
+	If Lithoid, artisans have upkeep of 3 food and 3 minerals, and entertainers have an upkeep of 3 food
+	
+	Chamber of Commerce (Megacorp)
+	Requires Cooperative
+	Megacorp equivalent of Parliamentary System
+	
+	Company Housing (Megacorp)
+	Requires not having Egalitarian Ethics, does not have Free Trader civic
+	Resettlement does not cost influence
+	+10% Growth from Immigration
+	-10% Housing Requirements
+	
+	Construction Company (Megacorp)
+	Megacorp equivalent of Functional Architecture
+	Can build a unique branch office building
+	
+	Health Maintenance Organization (Megacorp)
+	Requires not Xenophobe
+	+1 Gene Modification Point
+	-20% Modify Species Special Project Cost
+	+8 trade value from medical workers
+	Starts with Genome Mapping and Genetic Healthcare techs
+	Can build a unique branch office building
+	
+	Family-Owned (Megacorp)
+	Requires Private
+	+1 Ruler and Governor Level Cap
+	+10% Leader XP Gain
+	-10% Leader Upkeep
+	Rulers and Governors are less likely to gain negative traits
+	
+	Labor Resource Specialists (Megacorp)
+	Megacorp equivalent of Byzantine Bureaucracy
+	
+	Managerial Synergy (Megacorp)
+	Cannot have the Cooperative authority
+	+2 edict capacity
+	+1 unity from managers and priests
+	
+	Megastore (Megacorp)
+	Requires not Militarist
+	+20% consumer goods from artisans
+	Between 0 and +6 trade value from artisans, depending on economic policy
+	Can build a unique branch office building
+	Access to the Sales Campaign, which gives +10% trade and branch office value, costs 500 consumer goods
+	
+	Mining Conglomerate (Megacorp)
+	Cannot have the Free Trader civic
+	Megacorp equivalent of Mining Guilds
+	
+	Multicultural Workplace
+	Megacorp equivalent of Free Haven
+	
+	Nostalgia Peddlers (Megacorp)
+	Megacorp equivalent to Memorialist
+	Death Chroniclers give +2 trade value, but less society research
+	
+	Reanimated Military Companies
+	Megacorp equivalent of Reanimators
+	
+	Royal Trading Company (Megacorp)
+	Cannot have Criminal Heritage or Gospel of the Masses civic
+	Megacorp equivalent to Aristocratic Elite, nobles give +4 trade value
+	
+	Security Company (Megacorp)
+	Requires not egalitarian ethic, not Criminal Heritage
+	Megacorp equivalent of Police State
+	Gives +20 base intel instead of +1 encryption
+	Can build a unique branch office building
+	
+	Shell Corporation (Megacorp)
+	Cannot have the Private authority or the Free Trader civic
+	Megacorp equivalent of Shadow Council
+	+1 Encryption instead of +1 Codebreaking
+	
+	Tech Startup, requires materialist (Megacorp)
+	+25% Materialist Ethics Attraction
+	Science Director replaces some executives, also gives +4 trade value
+	Researchers provide +4 trade value
+	Research Subsidies edict is cheaper
+	
+	Worker Coop (Megacorp)
+	Requires cooperative authority, egalitarian ethic, not Criminal Heritage, Gospel of the Masses, or Tech Startup
+	Megacorp equivalent of Shared Burden
+	-20% empire size from pops
+	Does not get any bonus to stability or amenities
+	Shared Burden living conditions give rulers slightly more political power and happiness
+	
+	
+	Chrysalic Young (Hive Mind) / Rapid Deployment (Machine Intelligence)
+	+2 pop on new colony
+	+50% new colony development speed
+	
+	Closed Collective (Hive Mind) / Closed Area Network (Machine Intelligence)
+	Diplomatic restrictions of Inwards Perfection
+	Free Non-Aggression Pacts
+	+20% unity
+	+5% job production
+	+1 edict capacity
+	-1 envoy
+	+1 Encryption
+	-1 Code Breaking
+	
+	Hardened Synapses
+	+2 edict capacity
+	-20% edict and campaign costs
+	+1 amenity from synapse drones
+	
+	Harmonious Hive Mind (Hive Mind) / Cooperative Network (Machine Intelligence)
+	+5 stability
+	+5% job output
+	+10% diplomatic weight
+	+1 envoy
+	-1 encryption
+	Half penalties from non-gestalt residents (see below)
+	Autonomous Enclaves (see below) produce additional unique jobs
+	Must use No Wars policy
+	Cannot use slavery
+	Cannot purge (except by displacement)
+	
+	Infestation (Hive Mind)
+	Requires Utopia
+	Can Assimilate non-hive pops using the Infestation Pool building, cannot use normal assimilation
+	New species must be studied before they can be assimilated
+	Has the Infestation trait, which gives less empire sprawl from pops, but higher food and amenity requirements. Malus can be removed later via tech
+	Has low opinion with other empires
+	
+	Integrated Bioarchitecture (Hive Mind)
+	-10% build cost for buildings and districts
+	+10% build speed
+	+1 building slot
+	If Lithoid, Normal Rural and City districts cost no upkeep
+	Otherwise, Districts and Select Buildings are built entirely out of food
+	
+	Interlacing Warrens (Hive Mind)
+	-15% housing usage
+	+2 amenities from housing buildings
+	
+	Necrophagic Armies
+	Hive equivalent of Reanimators
+	
+	Parasitic Hive
+	Requires Apocalypse DLC
+	When a purged pop dies, a pop of the owner's species is created
+	Purged pops produce +2 society research
+	Can use the Raiding bombardment
+	Guaranteed worlds home to primitive civilizations (same as Necrophage)
+	-20% pop growth
+	
+	Self Experimentation (Hive Mind)
+	+20% Society Research
+	+1 Codebreaking
+	
+	Starvation Fearing (Hive Mind)
+	Not available to Lithoids
+	Agri-Drones produce +1 food
+	Farming subsidies Edict is cheaper
+	Stability penalty when running a food deficit
+	
+	Stone Sense (Hive Mind)
+	Hive equivalent of Mining Guilds
+	
+	Territorial (Hive Mind)
+	+2 Starbase Capacity
+	+25% Fire Rate Within Borders
+	+1 Max Rivalry
+	+100% Border Friction
+
+	
+	Adaptive Security Protocols (Machine Intelligence)
+	+5 Stability
+	+2 Encryption
+	-1 Codebreaking
+	Hunter-Seeker Drones give +1 unity
+
+	Administrative Privileges (Machine Intelligence)
+	+1 Unity and +1% simple drone output from Coordinator Drones
+	Uplink Nodes give +1 housing per level
+
+	Atom Splitters (Machine Intelligence)
+	+1 energy from technicians
+
+	Deepspace Networking (Machine Intelligence)
+	+15% Naval Capacity
+	+5% fire rate
+	
+	Efficient Administrative Protocols (Machine Intelligence)
+	+20% administrative capacity
+	
+	Directorial Override (Machine Intelligence)
+	Requiress not Delegated Functions
+	+2 edict capacity
+	-10% edict and campaign costs
+	
+	Meticulous Fabrication
+	Requires Humanoid DLC
+	Fabricators give +1 unity and engineering research, but cost +1 energy
+	+1 building slot per 3 industrial districts (habitats excluded)
+	
+	Modular Construction (Machine Intelligence)
+	+20% Industry Research
+	+1 Robot Modification Point
+	-15% Modify Species Special Project Cost
+	Starts with Powered Exoskeleton and Machine Template System
+	
+	Socialization Protocols (Machine Intelligence)
+	Machine Equivalent of Empath
+
+
+Changed Civics
+	Mining Guild / Mining Conglomerate / Rockbreaker
+	+10% mining station output
+	
+	Agrarian Idyll
+	Commercial buildings replaced with farmers markets, give +5%/10% food production
+	New tech, tier 4, which gives +0.5 alloys from miner jobs, +5% alloys from foundry jobs
+	New tech, tier 4, which gives +1 consumer goods from farmer jobs, +5% consumer goods from artisan jobs
+	Farming subsidies is cheaper
+	Sponsor Fair decision replaces Distribute Luxuries, costs equal amounts of food and consumer goods, gives +25% amenities, +15% trade value, +1 clerk jobs (no immigration bonus)
+	
+	Anglers
+	Anglers give +9 food
+	Pearl Divers produce 3 food, and have an upkeep of 3 minerals
+	Hydroponic farms on wet worlds also gives +1 pearl farmer jobs
+	Food Processing Facilities give anglers on wet worlds
+	Can be taken with Agrarian Idyll
+	
+	Mountain Home
+	Lithoid civic swap of Agrarian Idyll, bonuses to miners and minerals instead of farmers and food
+		
+	Aristocratic Elite
+	Nobles give +5 amenities
+	
+	Barbaric Despoilers
+	+5% fire rate
+	+5% worker production
+	
+	Byzantine Bureaucracy
+	Administrative buildings give -2% housing and amenities usage per level, but also gives -2% worker happiness
+	
+	Corvee System
+	Can use public works planetary decision, which gives -5% building costs, +15% build speed, unemployed worker and specialist pops produce +1 minerals and +2 amenities, lasts for 10 years
+	
+	Cut-Throat Politics
+	-20% campaign cost
+	Leaders half as likely to gain negative traits
+	
+	Death Cult / Corporate Death Cult
+	Cannot be Fanatical Egalitarian
+	+5% pop growth
+	Sacrifices give +25% spiritualist ethics attraction, +10% pop growth, and +0.5 influence
+	Citadel of Faith gives +1 high priest, +3 Death Priest and Mortal Initiate jobs
+	With Crusaders or Private Military Companies, Death Preachers give +2 naval capacity and +1 defensive army
+	Mortal Initiate jobs give +1 unity
+	Mortal Initiate jobs require less housing, consumer goods, and amenities
+	With most militarist civics, Mortal Initiate give +1 defensive army
+	
+	Environmentalist
+	Cannot be taken by Fanatic Xenophobes
+	Can build nature preserves, giving amenities and culture workers at the cost of 1 district
+	
+	Exalted Priesthood
+	+25% spiritualist ethics attraction
+	Priests also produce +1 amenities and stability
+	Veneration of Saints edict is cheaper
+	
+	Feudal Society
+	Uses Duchies instead of vassals. Duchies provide +10% of their energy and minerals, and +0.25 influence, but can expand and conduct diplomacy, and cannot be integrated
+	Overlords get higher intel on their duchies (75, compared to 50 for vassals)
+	-0.25 worker political power
+	Can always use the Stratified Economy living standard
+	Unemployed pops work Serf jobs, which give a token amount of food and amenities, and has a reduced housing requirement, but also has a happiness penalty
+	Serfs count as unemployed for the purpose of automatic resettlement
+	
+	Idealistic Foundation
+	+25% egalitarian ethics attraction
+	+2 diplomacy operation skill
+	Happiness penalty if egalitarian faction approval gets too low
+	
+	Inwards Perfection
+	Free Non-Aggression Pacts
+	
+	Imperial Cult
+	+25% authoritarian and spiritualist ethics attraction
+	
+	Memorialist
+	Cannot be Fanatic Xenophobe, Closed Collective/Network, or Living Hosts
+	Death Chronicler gives 4 society research
+	One-time decision to excavate 6-10 minor artifacts from tomb and relic worlds
+	
+	Merchant Guilds
+	Can be used with Exalted Priesthood and Aristocratic Elite, completely replacing administrator jobs
+	Trade buildings provide 1 additional manager job and 1 less clerk job
+	Starts with Space Trading Technology
+	
+	Meritocracy
+	Cannot be used with Xenophobe
+	
+	Nationalistic Zeal
+	+1 max rivalry
+	Liked less by peaceful empires
+	After a successful war, +10% happiness and unity for 30 years
+	
+	Philosopher King
+	Rulers start with 200 experience points
+	+10% Leader XP Gain
+	+5 Stability if you have a level 5+ ruler
+	+10% diplomatic weight from pops and technology, but -20% from fleet power
+	
+	Police State:
+	+1 encryption
+	+25% governing ethics attraction
+	
+	Reanimators
+	-10% war exhaustion
+	Dread Encampment gives +1 necromancer job per 40 pops, +50% army recruitment speed
+	Undead armies have higher health and morale damage, lower upkeep, gives almost no war exhaustion when killed
+	Access to the Undead Naval Doctrine tech (tier 2), which gives +15 naval capacity, -5% ship upkeep and war exhaustion
+	Access to the Necrotizing Reagents tech (tier 3), unlocks Death Curse bombardment, similar to Javorian Pox
+	
+	Shadow Council
+	Ruler pops gain +2 political power
+	Rules give +10% amenities and trade value
+	Can remove your current ruler for 100 influence and -5 stability for 10 years
+	
+	Shared Burden
+	-5% pop amenities usage
+	Rulers and Specialists use less amenities
+	
+	Slavers Guilds
+	Unemployed normal and indentured slaves can work servant and grunt jobs
+	Enforcers give -10 crime on worlds with slaves
+	Can build industrial districts on Thrall Worlds
+	
+	Technocracy
+	+25% Materialist Ethics Attraction
+	Research Subsidies edict is cheaper
+	
+	Warrior Culture
+	+100 starting army experience
+	Colosseums replace holo-theaters, gives duelist jobs and defensive army morale
+	
+	
+	Criminal Heritage
+	Cannot use with Fanatic Xenophile or Fanatic Egalitarian
+	+1 max rivalry
+	Branch offices have a lower penalty at low crime, and a larger bonus at high crime
+	With Shell Corporation, can pass as a legitimate business, and can sign commercial pacts
+	With the Front Corporation building or the Shell Corporation civic, branch offices are less likely to be shut down
+	Edict to bribe law enforcement on planets that you have branch offices. Enforcers give 5 less crime reduction and the branch office is less likely to be shut down, costs 300 consumer goods
+	Branch Offices have a base crime of 40
+	
+	Franchising
+	-15% branch office cost
+	Subsidiaries give an additional flat monthly +5 energy and +0.25 influence
+	
+	Gospel of the Masses
+	Cannot use the Cooperative authority
+	Temple of Prosperity gives +12 unity
+	
+	Indentured Assets
+	Unemployed normal and indentured slaves can work servant and grunt jobs
+	Indentured slaves only have +0.25 political power (instead of +0.5)
+	Can build industrial districts on Thrall Worlds
+	
+	Media Conglomerate
+	-20% war exhaustion
+	+2 skill at manipulation operations
+	-10% claim influence cost while at war
+	Propaganda Broadcasts Edict, gives +50% government ethics attraction, -5% claim influence cost, -5% war exhaustion, replaces Information Quarantine (authoritarian edict)
+	
+	Naval Contractors
+	+1 admiral level
+	+10 command limit
+	
+	Private Military Companies
+	Managers replaced with logistics officers, who give +2 naval capacity, +4 unity and society research
+	No longer gets army upkeep bonus
+	
+	Private Prospectors
+	-10% planet construction costs on new colonies for 10 years
+	
+	Ruthless Competition
+	Leaders half as likely to gain negative traits
+	
+	Trading Post
+	-10% starbase building and module cost
+	-25% Border Friction
+	
+	
+	Subsumed Will / OTA Updates
+	+50% automatic resettlement chance
+	
+	Natural Neural Network
+	-20% researcher upkeep
+	Unemployed drones also produce 1 unity
+	Unique policy option for Unemployed Drones Usage, allowing unemployed drones to produce even more research
+	
+	One Mind
+	+1 stability from hunter-seeker drones
+	
+	Pooled Knowledge
+	All leaders start 1 level higher
+	
+	Strength of Legions
+	+1 Warrior Drones per 20 pops
+	
+	Terravores
+	Consume World decision always gives pops, minerals, alloys, engineering research, and unity, chance to give rare resources
+	When last district is consumed, the hive gets a last influx of resources and unity, and the world is abandoned. Small worlds are always shattered, while larger worlds tend to become barren with the Terraforming Candidate modifier
+
+	Delegated Functions
+	-25% complex drone upkeep
+	No longer gives +1 leader pool
+	
+	Determined Exterminators
+	War factories replaces military academies, giving an additional +1 patrol drone job, 1 warrior job per 25 pops
+	
+	Factory Overclocking
+	Leaders never malfunction
+	Leaders cost +25% more to recruit
+	Self-Preservation Protocols tradition swapped to give -10% assembly cost instead
+
+	Rapid Replicators
+	- Replicator Overclocking Edict, +10% pop assembly speed, +10% empire size from pops, +25% pop assembly cost
+	
+	Rogue Servitor
+	+1 envoys
+	+20% diplo weight from pops, -20% from fleets
+	Organic Sanctuaries adds Caretaker jobs instead of Maintenance Drone jobs, which gives +8 amenities and +10% biological pop growth
+	Capitals give additional bio-trophy jobs
+	Bio-Trophies give minor bonuses based on their traits
+	
+	Static Research Analysis
+	+1 research from Maintenance Drones
+	+0.25 energy upkeep for Maintenance Drones
+	
+	Unitary Cohesion
+	+10% Diplomatic Weight from Pops and Economy
+	
+	Warbots
+	Warrior Drones give +2 naval capacity and stability
+	
+	Zero-Waste Protocols
+	- 15% ship upkeep
+
+
+Refugee Events
+	- Starvation can cause pops to die or flee
+	- Pops on planets being bombarded or occupied will occasionally flee to countries that are not at war
+	- Enslaved pops will occasionally flee to where they can be free
+	- Pops may rarely flee if under Basic Subsistence living standard, or planet has high crime
+	- Free Haven civic makes empires more likely to attract refugees
+	- Fanatic Egalitarians are more likely to attract slave refugees
+	- Refugees from destroyed enclave stations
+	- New Abolitionist Events
+	- Empires can fund an underground railroad, which makes slaves more likely to flee to freedom	
+	
+New Edicts and Decisions
+	- Economic Subsidies, +25% trade value, +15% consumer goods upkeep, requires Space Trading
+	- Refinery Subsidies, refinery workers give +10% output, but require +1 energy upkeep, requires one of the three refinery technologies
+	- Strict Rationing, mutually exclusive with Nutritional Plenitude, -10% pop growth, -5% happiness, +10% empire size from pops, -25% pop food and mineral consumption
+	- Self-Evolving Antivirus, machines only, +1 envoy, +1 encryption, and -15% deviance, requires Quantum Firewalls
+	- National Hyperlane Registry, +25% hyperlane wind up and wind down, +10% sublight speed, requires Hyperlane Breach Points
+	- Infrastructure Campaign, -10% building and district construction costs, +10% build speed (hive mind version costs 500 food, gives 15% bonuses)
+	- If the Universal Prosperity Mandate is active, non-authoritarian empires gain access to a new edict that unlocks the Utopian Abundance living standard
+	
+	- Mentorship / Autonomous Drone Campaign, +2 leader pool
+	- Army Recruitment Campaign, +25% army build speed, +100 army starting experience, +25% militarist ethic attraction, requires militarist ethic and comms with aliens
+	- Machine Research Campaign for machine empires, increases engineering and computing research by +10%
+	- Warbot Subsidies, machine equivalent to Army Recruitment Campaign, requires Warbots or Determined Exterminators
+	
+	- Pitharan Fertilizer, +40% food output, costs 25 exotic gas
+	- Volatile Energy Generation, +40% energy from jobs, costs 25 volatile motes
+	- Mining Lasers, +40% minerals from jobs, costs 25 rare crystals
+	- Crystalline Research, +15% physics from jobs, -15% researcher upkeep, costs 25 rare crystals
+	- Crystalline Hull Plating, +25% hull hit points, costs 50 rare crystals, requires Crystal-Infused Plating
+	- Living Prosthesis, medical workers give +5% pop growth, +1 energy upkeep / spawning drones give +0.2 pop assembly, +1 food / mineral upkeep, costs 25 living metal
+	- Self-Assembling Machines, +10% robot assembly speed, +25% replicator upkeep, costs 25 living metal, robot empires only
+	- Dark Matter Research, +10% research speed, costs 25 dark matter
+	- Dark Matter Explosives, +25% explosive weapon damage, costs 50 dark matter
+	- Extradimensional Research, +15 physics research, +20% statecraft and psionics research, twice as likely to draw psionic techs, costs 25 zro
+	- Zro Aphrodisiac, medical workers / spawning drones give +5% pop growth, +1 energy / food / mineral upkeep, costs 25 zro, requires Psionic Revitalization
+	- Zro-Enhanced Piloting, +10% evasion, +10% ship speed, +1 sensors, costs 50 zro
+	- Zro-Enhanced Soldiers, +25% army damage and morale, costs 50 zro, requires Telepathy
+	- Nanite Dust, +75% Terraforming Speed, +25% Terraforming Cost, costs 20 nanites
+	- Nanite Scales, +50% food production, costs 25 nanites
+	- Nanite Cloud, +33% construction speed, -33% construction cost
+	
+	- Maintenance Subsidies, gestalt equivalent of Distribute Luxury Goods
+	- Mineral Prospecting (Lithoids Only), replaces a farming deposit for a mining one
+	- Lithoid Empires can hibernate up to 10 unemployed pops at a time, spawning hibernating lithoid deposits that can be cleared later to recover the pop. Must have Population Controls allowed.
+
+Changed Edicts and Decisions
+	- Job Subsidy edicts such as Capacity Subsidies also give +1 political power and +5% happiness to pops of the affected job type
+	- Capacity Subsidies, technicians get consumer good / mineral upkeep, instead of energy
+	- Farming, Mining, and Research Subsidies increases consumer good upkeep instead of energy (non-gestalts only)
+	- Farming Subsidies for hive minds and agrarian idyll is cheaper (unless you are lithoids)
+	- Mining Subsidies for lithoids is cheaper (more so with Mountain Home)
+	- Peace Festivals, Entertainers give +1 amenities and trade value, +1 energy upkeep
+	- Improved Working Environment gives +4% specialist and +8% worker happiness
+	- Distribute Luxury Goods decision is now a toggle
+	- Nu-Baol pops are Ancient instead of Venerable
+	- If you are a hive mind, but not a devouring swarm or infestors, Nu-Baol pops will also have the hive mind trait
+
+Ascended Synthetic Empires get some machine empire swaps:
+	- Can take the Machine Worlds perk
+	- Harmony traditions, will get machine empire opener, Self-Preservation Protocols instead of Mind and Body
+	- Expansion traditions, get machine empire version of A New Life
+	- Can research and build mega-warforms (their version of the tech requires sentient combat computers)
+	- Access to Grid Amalgamation and Chemical Processing species rights, cannot use Livestock and Processing species rights
+	- Upon Synthetic Ascension, pops will get traits based on their biological traits
+	- +1 pops on new colonies, +1 encryption and codebreaking, +20% diplo weight from tech
+	- -50% biological pop growth
+	- Cannot build healthcare buildings
+
+Synthetic Mastery Perk
+	- Mutually Exclusive with Synthetic Evolution
+	- Gives +10% robot production, -10% robot upkeep, +1 roboticist jobs, +20% ruler happiness, +10% specialist happiness
+	- Unemployed Robots can always work servant jobs
+	- Full Citizens have access to the Utopian Abundance and Decadent living standards
+	- Unemployed Worker pops with Social Welfare living standard or higher have +10% happiness (taken care of by robots)
+	- All other non-robotic Worker pops suffer -10% happiness
+	- Robots and non-citizens are more likely to take worker jobs
+	- Cannot use the Full AI Rights policy
+
+Gestalts
+	- Gestalts can give non-gestalts residency citizenship
+	- Can build Autonomous Enclaves, which provides unique jobs for non-gestalt residents
+	- Too many free non-gestalts will cause increasing penalties
+	- Finishing the Synchronicity tradition tree will give -50% penalties
+	- Can expel excess free pops once you start getting penalties
+	- Gestalts can use regular slavery
+	- Gestalt slaves and residents can only work simple drone jobs
+	- Patrol drones now gives +1 stability
+	- Maintenance Drones give +1 society (hive) or engineering (machine) research
+	- Can turn relic worlds into city worlds
+	
+Machine Empire
+	- Replicators and Roboticists produce +2 engineering research
+	- Generator districts on machine worlds give +1 technician drone jobs and housing
+	- Technician techs boost Bio-Reactor energy output
+	- Robot empires get +1 job from Energy Hubs
+	- Restored Organic Probability Theory (rare tier 4), which now gives +1 energy to calculator drones
+	- With Positronic Processors tech and the Synthetic Age perk, machines can make cyborgs full citizens
+	- Automatic resettlement is always available to their robot pops
+
+Hive Mind
+	- Also gets +25% pop assembly
+	- Farmers produce +1 food
+	- If Lithoid, miners produce +1 minerals instead
+	- The cost and maintenance for some items has been split between minerals/energy and food for non-lithoid Hive Minds, including:
+		- Capital Buildings
+		- Spawning Pools
+		- Housing Buildings
+		- Unity Buildings
+		- City and Rural Districts
+		- Basic Assault Armies
+	- Spawning Drones give +2 society research and +2% habitability
+	- Seat of Consciousness, Hive equivalent of the Alpha Hub
+	- Engineered Agri-Drones, rare tier 4 tech that gives +1 food from agri-drones
+		- Lithoid Equivalent gives +1 minerals from miners
+	- Farming districts on hive worlds give +1 agri-drone job and housing (mining jobs if lithoid)
+	- Food processing buildings have an additional food cost, and now give an additional +1 agri-drone job, +5% food production, and +2/+4 max farming districts. Lithoids get better mineral processing instead
+	- Patrol and warrior drones give +1 defensive army on hive worlds
+	- With Galactic Administration, the Hive Nexus gives +1 maintenance drone and +1 hunter-seeker drone jobs once you reach 80 pops
+	- Habitat capitals give an extra maintenance drone
+	- With the Confluence of Thought technology and the Evolutionary Mastery perk, hive minds can make psionics full citizens
+
+
+Buildings and Districts
+	- NEW: Planetary Citadel building, gives +6 solder jobs and housing
+	- NEW: Coordination Districts for Gestalts Ecumenopolis, give +5 synapse drone/evaluator and +5 brain drone/calculator jobs
+	- Upgraded Habitats give extra building slots
+	- Psi Corps is now a Empire Unique, turns all enforcers turn into telepaths, unlocks decision to do the same on other planets, no longer gives stability directly (gives stability through telepath jobs), gives empire-wide +5% government ethics attraction, now costs zro to build and maintain
+	- Galactic Stock Exchanges is now an Empire Unique requiring 50 pops, gives +1 merchant job and +10% trade value locally, +20% trade value and +1 merchant job per 50 pops across empire, cost increased to 1000 minerals and has a rare crystal upkeep
+	- Military Academy give +50% army build speed, 1 soldier job per 33 pops, now requires a stronghold to be built first
+	- Healthcare Buildings only give +1/+2 jobs, but bonuses from medical workers doubled
+	- Commercial Buildings give +2%/+4% trade value
+	- Housing buildings benefit from housing technologies
+	- Holo theaters give +2% trade value per level, arenas give +1% happiness per level
+	- Utopian Communal Housing has no rare crystal upkeep, has a higher energy upkeep instead
+	- Leisure district (Ecumenopolis) will give priest or manager jobs when appropriate
+	- Nanite Transmuter provides 4 rare resources each
+
+	
+Branch Office Buildings
+	- NEW: Criminal equivalent buildings for Xeno-Outreach Agency, Executive Retreat
+	- Xeno Tourism and Questionable Charity branch office buildings will move an unemployed pop to one of the branch office owner's planets every 5 years (will not reduce planet below 25 pops)
+		- This requires a migration treaty with the owner (unless you are a criminal Heritage)
+		- Criminal Heritage corps will also take enslaved, undesirable, and criminal pops
+	- Resources from corporate buildings have been doubled
+	- Many corporate buildings give a relevant production bonus (less if criminal), those who do not give extra jobs
+	- Some corporate buildings produce unique jobs
+	- Amusement Megaplex and Underground Clubs are more effective on gaia and resort worlds, gives +1 entertainer job
+	- Mercenary Liaison Office/Pirate Free Haven produce 10 energy for its corporate owner if the planet's owner is at war (or has pirates, in case of the Pirate Free Haven)
+	- Mercenary Liaison Office/Pirate Free Haven allow for the construction of merc armies, which cost energy instead of minerals, branch office owner gets a cut when built
+	
+Jobs
+	- Ruler and Specialist/Complex Drone jobs require more amenities (2 and 1.5)
+	- The Droid technology allows automatic pop migration for robots
+	- Droids cannot take researcher jobs without the Positronic AI tech
+	- Synths cannot take priest and similar jobs without full ai rights
+	- Battle Thralls give +2 naval capacity from soldier, enforcer, duelist, and overseer jobs
+	- Unemployed Battle Thralls work Grunt jobs, giving +1 naval capacity and defensive army
+	- Complex Drone jobs can no longer be worked by proles
+	- With the Galactic Markets tech, clerks and managers give +1 trade value
+	- Spiritualist megacorps, priests get +2 trade value
+	- Duelists provide +1 defensive armies
+	- Roboticists and Replicators no longer cost alloy upkeep if robot construction is stopped on a planet
+	- Replicators provide +2 amenities and +2 unity
+	- Maintenance Drones give +6 amenities, cut down most job sources by about a third
+	- Rare resource miners produce +1 resource
+	- Rare resource miners (not gestalt) requires 0.5 consumer goods
+	- Rare resource miners (hive) requires 1 food/minerals (instead of energy)
+	- Clerks get +1 amenities with Galactic Administration
+	- With Agrarian Idyll, Farmers/Miners get +1 amenities with Agrarian Utopias
+	- New Tier 3 Technology, Interplanetary Logistics, gives +15 defensive army health and morale, +2 naval capacity from soldiers
+	- New Tier 3 Technology, Psionic Revitalization, gives an additional +10% pop growth from medical workers if robot workers outlawed, requires Mind Over Matter perk, Genetic Healthcare tech, and Outlawed Robotic Workers policy
+	- With the zro distillation tech and the transcendence perk, psionic pops that are being purged or under livestock slavery produce zro
+	- Some civics give +1 political power and +5% happiness to some jobs (if pop is not a slave)
+	- Pops being displaced or neutered can work normal worker jobs
+	- Additional tweaks to pop weights
+	
+Pop Growth
+	- Having high available housing, jobs, happiness, and free amenities gives bonuses to pop growth and assembly
+	- Pop assembly has a base cost of 80 (from 100)
+	- Pop growth will stop due to overcrowding earlier
+	- Housing modifiers also add or subtract planet capacity
+	
+Colonies
+	- Colony ships require more food (lithoid and robot colony ships unaffected)
+	- Colonies more than 20 jumps from the capital start getting hits to their stability and governing ethics attraction, updated every five years
+	- Resort Worlds give +50% trade value, +1 entertainer job per 5 pops, +20% amenities and immigration pull from other planets
+	- Clerks and Entertainers produce +1 trade value on resort worlds
+	- Penal colonies have unique capital buildings and ruler jobs
+	- Penal colonies have +100% habitability, but -33% pop growth
+	- Rogue Servitors can build resort worlds, which give bonuses unique to them
+	- Pops on low-habitability worlds will sometimes move to better worlds (won't reduce population below 10)
+
+Warfare and Armies
+	- Open Markets wargoal lets corporations build branch offices on the target's planets for 50 years.
+	- Expropriation wars give corps 2000 energy per branch office on a status quo peace
+	- Expropriation wars statue quo peace against criminal syndicates only closes branch offices on planets with less than 50 crime, remaining branch offices give -50 crime on their planets for 10 years.
+	- Restored android armies
+	- Clone and Gene Warrior armies have their cost split between minerals and food
+	- Gene Warrior armies have higher morale
+	- Slave, Clone, and Robot armies give less war exhaustion when killed
+	- Defensive armies give war exhaustion when killed (as much as equivalent offensive army)
+	
+Crime
+	- Pops produce additional crime based off of their living standards
+	- Purging and enslaved pops will also reduce stability
+	- Crime gives +1 emigration push per crime
+	- Deviancy gives -0.33% unity from jobs per deviancy
+	- Enforcers only give -20 crime reduction (down from -25)
+	- Telepaths give +1 stability, but only 25 crime reduction (down from 35)
+	- Enforcers give -5 crime reduction on populated planets (60 pops or more)
+	- Criminal Underworld and gestalt equivalent modifiers gives 1 Criminal job per 25 crime
+	- Gang Wars modifier gives -5 stability, +1 Criminal job, + 1 Criminal job per 25 crime
+	- Drug Trade modifier gives +1 Smuggler, Apothecary, and Criminal jobs, Criminal jobs per 33 crime, +1 Apothecary per 50 crime
+	- Mob Rule modifier gives +1 Commissioner job, +1 Criminal job, + 1 Criminal jobs per 25 crime
+	- Criminal Jobs only give -3 trade value, but also gives -1 stability
+	- Crime Lord Deal removed if crime goes below 10 (checked yearly)
+
+Policy:
+	- Vassal Autonomy, can choose if vassals can expand (Feudal Realm and Megacorps locked into letting them expand)
+	- Matrix Utilization, can chose if matrix pops give energy or physics
+	- Media Rights, controls access to the Information Quarantine and Encourage Political Thought edicts (Censored Media gets lesser versions of both)
+	- Labor Rights
+	- Healthcare
+	- Slaves can always be resettled, regardless of resettlement policy
+	- Megacorps get better and more varied trade value policies
+	- Trade League trade policy split between Acquisitions and Extraction
+	-   - Acquisitions gives +0.8 energy, +0.25 unity and consumer goods, +0.1 society research
+	-   - Extraction gives +0.8 energy, minerals and food
+	- Hives can decide if their unemployed pops produce minerals, food, or amenities
+	- Homicidal diplomatic stances give benefits similar to the Belligerent stance
+
+
+Traditions:
+	- Arcadian Housing, swap of Public Works for agrarian idyll and non-hive plantoids, gives +1 housing to farming districts (mining if lithoid)
+	- Domination opener gives +1 defensive army from soldiers
+	- Imperious Architecture gives +1 housing to fortress buildings
+	- Synaptic Extensions gives +2 housing to fortress buildings
+	- Deviancy Protocols / Divergence Suppression gives -20 deviance
+	- Mercantile Finisher give +10% diplo weight from economy
+	- Enhanced Recycling gives 25% refund per demolished building
+
+
+Empire Sprawl
+	- Empire Size has small effect on bureaucrat and synapse drone upkeep, and empire size from systems
+	- Empire Sprawl once again increases leader cost and upkeep
+	- Bureaucrats gives 20% less admin cap
+	- Colonial and Galactic Bureaucracy gives +5% admin cap (instead of a flat +10), but also +5% bureaucrat upkeep
+	
+	
+Diplomacy
+	- Harming relations is not enough to declare a rivaly: relations must actually be terrible
+	- Empires with opposite ethics can declare rivals with only poor relations
+	- Everyone can release vassals
+	- Vassals and Duchies provide +25 naval capacity per vassal, up to 125
+	- Vassal megacorps under non-megacorps will become charter companies, which can do diplomacy and give their overlord +25% of their energy and +10% of their consumer goods. Like vassals they cannot expand, but unlike vassals they will not provide naval cap and cannot be integrated
+	- AI won't integrate vassals if they are owned by a player, if they are over their administrative cap by more than 50, or if they are using the vassal expansion policy
+
+
+Preset Empires
+	- Blorg Commonality starts with Fanatical Befrienders origin
+	- Chinorr have the Poisonous and Slow Breeder traits, uses the Exploited Homeworld origin
+	- Glebsig Foundation uses On the Shoulders of Giants origin (without Federations, uses the Galactic Doorstep origin instead)
+	- Iferyx playable with Megacorp, as a democracy with the Merchant Guilds and Shadow Council civics
+	- Ix'Idar Star Collective uses the Subterranean Evolution origin
+	- Jehetma have the Fungal Colony trait, replacing the Ingenious trait
+	- Keepers of Ave'brenn uses the Holy Mountain origin
+	- Kel-Azaan Republic  use the Natural Hunters origin
+	- Kingdom of Yondarim have the Flighted and Non-Adaptive traits, uses the Ancien Régime origin
+	- Maweer Caretakers uses the Terraformer origin
+	- Tebrid Homolog uses the Master Computer origin
+	- Tzynn Empire uses the Tempestuous Unification origin
+	- Scyldari Confederacy uses the Delicate Ecosystem origin
+	- With the Aquatics DLC, the Scyldari are both Aquatic and Sedentary
+	- Voor Technocracy uses the Primitive Cyborgs origin
+	- XT-489 Eliminators uses the Resource Consolidation origin 
+
+
+- New ai personalities: Seekers of Knowledge, Xenophobic Protectionists, Decadent Technocracy, Warrior-Scholars, Peacekeeping Interventionists, Sneering Technocrats, Ambitious Unifiers
+- Ai personalities for Closed Collective and Closed Network, based off of the Xenophobic Isolationist personality
+- Ai personalities for gestalts that are friendlier and multi-species
+- Infestation AI personality based on the Driven Assimilator personality
+- The two Horizon Signal techs now do something
+- Horizon Signal retrovirus gives unique traits instead of standard traits
+- Cost of Mastery of Nature decision changed to 2000 energy and minerals, 75 influence
+- Mastery of Nature decision gives +3 districts, +10% habitability
+- Mind over Matter gives +10% unity and -10% edict cost
+- With the Droid technology, can reprogram captured machine units using the Assimilation citizenship right
+- If 75% of your pops have the brain slug trait, the slugs may offer to turn you into a hive mind
+
+
+Tweaks:
+- Some civics will add one or more faction demands to a relevant faction
+- Suppressing a faction will make its members very unhappy
+- Fallen Empires get more ships and a full store of alloys and consumer goods when they awaken
+- Fallen Empires spawn with some megastructures
+- Consecrate world decision modifiers buffed
+- Consecrate world decision will take into account some modifiers
+- Xenophobes and authoritarians can give residency and slavery citizenship to subspecies of your main species
+- Food and consumer good deficits will increase emigration push
+- More varying pop happiness (such as xenophobes not happy sharing planet with free xenos)
+- Max leader cap increased to 20
+- New Civic and Authority Related Opinion Modifiers

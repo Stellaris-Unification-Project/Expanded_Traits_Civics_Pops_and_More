@@ -1,0 +1,19 @@
+pop_category_resident_gestalt = {
+	parent = planet_pops
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+megastructures_gateway = {
+	use_for_ai_budget = yes
+	parent = megastructures
+	generate_mult_modifiers = {
+		cost
+	}
+}

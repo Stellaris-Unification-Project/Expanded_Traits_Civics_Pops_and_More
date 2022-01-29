@@ -1,0 +1,517 @@
+namespace = distar
+
+ship_event = { #Disabled event for Reanimators
+	id = distar.58
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_ship_flag = lost_amoeba_ship
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					is_civic_reanimated_armies = yes
+				}
+				#exists = event_target:amoeba_finding_scientist
+				NOT = { has_ship_flag = resurrected_once }
+			}
+			ship_event = { id = distar.340 }
+		}
+		else = {
+			if = {
+				limit = {
+					exists = event_target:amoeba_finding_scientist
+				}
+				fleet.owner = { country_event = { id = distar.57 } }
+			}
+			set_disabled = no
+			destroy_ship = this
+		}
+	}
+}
+
+ship_event = {
+	id = distar.171
+	title = "distar.171.name"
+	desc = {
+		trigger = {
+			owner = { NOT = { has_origin = origin_symbiote } }
+		}
+		text = "distar.171.desc"
+	}
+	desc = {
+		trigger = {
+			owner = { has_origin = origin_symbiote }
+		}
+		text = "distar.171.desc.symbiote"
+	}
+	picture = GFX_evt_society_research
+	show_sound = event_alien_nature
+	location = from
+
+	is_triggered_only = yes
+
+	immediate = {
+		leader = {
+			save_event_target_as = brainslug_scientist
+		}
+	}
+
+	option = {
+		name = "distar.171.a"
+		trigger = {
+			owner = { NOT = { has_origin = origin_symbiote } }
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+
+	option = {
+		name = "distar.171.b"
+		trigger = {
+			owner = { NOT = { has_origin = origin_symbiote } }
+		}
+		hidden_effect = {
+			ship_event = { id = distar.172 days = 30 }
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = "distar.171.a.alt"
+		trigger = {
+			owner = { has_origin = origin_symbiote }
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = "distar.171.c"
+		trigger = {
+			owner = { has_origin = origin_symbiote }
+		}
+		add_modifier = { modifier = brain_slug_union days = -1 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+}
+
+country_event = { #Death of the Matriarch
+	id = distar.212
+	title = "distar.212.name"
+	desc = "distar.212.desc"
+	picture = GFX_evt_ancient_tiyanki
+	show_sound = event_space_whale
+	location = event_target:dead_matriarch
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:elderly_tiyanki_fleet
+		FromFromFrom.fleet = {
+			is_same_value = event_target:elderly_tiyanki_fleet
+		}
+	}
+
+	immediate = {
+		set_country_flag = tiyanki_killed # Achievement flag
+		create_ambient_object = {
+			type = "elderly_tiyanki_dead_object"
+			location = fromfromfrom
+			effect = {
+				save_event_target_as = dead_matriarch
+			}
+		}
+		every_playable_country = {
+			limit = {
+				has_event_chain = curator_poi_chain
+				fromfrom.solar_system = {
+					is_point_of_interest = {
+						id = curator_poi_tiyanki
+						event_chain = curator_poi_chain
+						owner = prev
+					}
+				}
+			}
+			remove_point_of_interest = curator_poi_tiyanki
+			end_curator_chain = yes
+		}
+	}
+
+	option = {
+		name = "distar.212.a"
+		trigger = { NOT = { has_valid_civic = civic_memorialist } }
+		hidden_effect = {
+			if = {
+				limit = { is_country_type = default }
+				country_event = { id = distar.213 }
+				country_event = { id = galcom.110 days = 60 }
+			}
+		}
+	}
+
+	option = {
+		name = UNDERSTOOD
+		trigger = { has_valid_civic = civic_memorialist }
+		hidden_effect = {
+			if = {
+				limit = { is_country_type = default }
+				country_event = { id = distar.213 }
+				country_event = { id = galcom.110 days = 60 }
+			}
+		}
+	}
+
+	option = {
+		name = galactic_features.385.reanimated
+
+		trigger = {
+			is_civic_reanimated_armies = yes
+		}
+
+		event_target:dead_matriarch = {
+			enable_special_project = {
+				name = "REANIMATE_TIYANKI_MATRIARCH"
+				location = this
+				owner = root.owner
+			}
+		}
+
+		hidden_effect = {
+			country_event = { id = distar.213 }
+			country_event = { id = galcom.110 days = 60 }
+		}
+	}
+}
+
+ship_event = {
+	id = distar.340
+	title = "distar.57.name"
+	desc = {
+		trigger = { exists = event_target:amoeba_finding_scientist }
+		text = "distar.340.desc.science"
+	}
+	desc = {
+		trigger = { NOT = { exists = event_target:amoeba_finding_scientist } }
+		text = "distar.340.desc"
+	}
+	location = from
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_friendly_amoeba
+	show_sound = event_mystic_reveal
+
+	trigger = {
+
+	}
+	option = {
+		name = "distar.340.a"
+
+		trigger = {
+			owner = { is_civic_reanimated_armies = yes }
+		}
+		if = {
+			limit = { exists = event_target:amoeba_finding_scientist }
+			event_target:amoeba_finding_scientist = {
+				add_trait = leader_trait_maniacal
+			}
+		}
+
+		enable_special_project = {
+			name = "REANIMATE_LOST_AMOEBA"
+			location = this
+			owner = root.owner
+		}
+	}
+
+	option = {
+		name = "distar.340.b"
+		if = {
+			limit = { exists = event_target:amoeba_finding_scientist }
+			event_target:amoeba_finding_scientist = {
+				add_trait = leader_trait_substance_abuser
+			}
+		}
+		hidden_effect = {
+			from = {
+				set_disabled = no
+				destroy_ship = this
+			}
+		}
+	}
+}
+
+# Killed Hatchling
+country_event = {
+	id = distar.5009
+	title = distar.5009.name
+	desc = distar.5009.desc
+	picture = GFX_evt_voidspawn
+	show_sound = event_space_whale
+	location = event_target:slain_guardian_system
+	trackable = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { has_country_flag = hatchling_country }
+	}
+
+	immediate = {
+		set_country_flag = hatchling_killed # Achievement flag
+		set_country_flag = killed_hatchling
+		fromfrom.solar_system = {
+			save_event_target_as = slain_guardian_system
+		}
+		every_playable_country = {
+			limit = {
+				has_event_chain = curator_poi_chain
+				event_target:slain_guardian_system = {
+					is_point_of_interest = {
+						id = curator_poi_hatchling
+						event_chain = curator_poi_chain
+						owner = prev
+					}
+				}
+			}
+			remove_point_of_interest = curator_poi_hatchling
+			end_curator_chain = yes
+		}
+	}
+
+	option = {
+		name = distar.5009.a
+		event_target:hatchling_egg = {
+			enable_special_project = {
+				name = SHATTERED_EGG
+				location = this
+				owner = root
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:egg_owner
+				is_same_value = event_target:egg_owner
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 72
+				min = 600
+				max = 6000
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					NOT = {
+						exists = event_target:egg_owner
+					}
+					AND = {
+						exists = event_target:egg_owner
+						is_same_value = event_target:egg_owner
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = distar.5009.b
+		if = {
+			limit = {
+				exists = event_target:egg_owner
+				is_same_value = event_target:egg_owner
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 72
+				min = 600
+				max = 6000
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					NOT = {
+						exists = event_target:egg_owner
+					}
+					AND = {
+						exists = event_target:egg_owner
+						is_same_value = event_target:egg_owner
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	# Reanimate it!
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+
+		name = galactic_features.385.reanimated
+
+		trigger = {
+			is_civic_reanimated_armies = yes
+		}
+
+		event_target:hatchling_egg = {
+			enable_special_project = {
+				name = "REANIMATE_VOIDSPAWN"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+# Enigmatic Uplift Complete - Fail
+country_event = {
+	id = distar.5074
+	title = "distar.5074.name"
+	desc = "distar.5074.desc"
+	picture = GFX_evt_enigmatic_cache
+	show_sound = event_ship_bridge
+	location = root.capital_scope
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				is_same_species = owner_species
+				is_robot_pop = no
+				is_sapient = yes
+				NOT = { 
+					has_trait = trait_machine_unit 
+				}
+			}
+			if = {
+				limit = {
+					NOR = { 
+						has_trait = trait_enigmatic_intelligence_poor 
+						has_modifier = enigmatic_slumber 
+					}
+				}
+				modify_species = {
+					species = this
+					remove_trait = trait_uninventive
+					add_trait = trait_enigmatic_intelligence_poor
+				}
+				root = { set_country_flag = applied_enigmatic_intelligence_poor }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_modifier = enigmatic_madness 
+					}
+				}
+				add_modifier = {
+					modifier = enigmatic_madness
+					days = 3600
+				}
+				root = { set_country_flag = applied_enigmatic_madness }
+			}
+
+			if = {
+				limit = {
+					has_modifier = enigmatic_slumber
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_enigmatic_intelligence_failed
+				}
+				remove_modifier = enigmatic_slumber
+				root = { set_country_flag = applied_enigmatic_intelligence_failed }
+			}
+
+			if = {
+				limit = {
+					has_modifier = enigmatic_fatigue
+				}
+				remove_modifier = enigmatic_fatigue
+			}
+		}
+
+		#every_owned_pop = {
+		#	limit = {
+		#		has_trait = trait_machine_unit
+		#	}
+		#	if = {
+		#		limit = {
+		#			NOT = { has_trait = trait_natural_physicists }
+		#		}
+		#		modify_species = {
+		#			species = this
+		#			add_trait = trait_natural_physicists
+		#		}
+		#	}
+		#}
+	}
+
+	option = {
+		name = distar.5074.a
+		if = {
+			limit = { has_country_flag = applied_enigmatic_intelligence_poor }
+			custom_tooltip = applied_enigmatic_intelligence_poor.tooltip
+		}
+		if = {
+			limit = { has_country_flag = applied_enigmatic_madness }
+			custom_tooltip = applied_enigmatic_madness.tooltip
+		}
+		if = {
+			limit = { has_country_flag = applied_enigmatic_intelligence_failed }
+			custom_tooltip = trait_enigmatic_intelligence_failed.tooltip
+		}
+	}
+}

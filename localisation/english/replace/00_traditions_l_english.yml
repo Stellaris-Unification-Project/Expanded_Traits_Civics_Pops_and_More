@@ -1,0 +1,14 @@
+﻿l_english:
+tr_adaptability_recycling_desc:0 "§G25%§! refund whenever we demolish a building or a district."
+
+tr_domination_adopt_desc:1 "£job_soldier£ §YSoldiers§! now also provide an additional §YDevensive Army§!"
+tr_domination_adopt_hive_desc:1 "£job_soldier£ §YSoldiers§! now also provide an additional §YDevensive Army§!"
+tr_domination_adopt_void_desc:1 "§YHabitat§! £alloys£ Alloy Upkeep: §G-20%§!.\n£job_soldier£ §YSoldiers§! now also provide an additional §YDevensive Army§!"
+tr_domination_imperious_architecture_desc:2 "£building£ §YCapital Buildings§!, £building£ §YHousing Buildings§!, and £building£ §YFortress Buildings§! provide §G+1§! £housing£ §Y$MOD_PLANET_HOUSING_ADD$§! each."
+tr_domination_synaptic_extensions_desc:0 "£building£ §Y$building_hive_node$§! and £building£ §YFortress Buildings§! now also increase £housing£ §Y$MOD_PLANET_HOUSING_ADD$§! by §Y2§!."
+tr_domination_deviancy_protocols_desc:2 "§Y$MOD_PLANET_CRIME_NO_HAPPINESS_ADD$§! is reduced by §G20§! on all our planets."
+
+tr_synchronicity_finish_desc:2 "Reduces §Y$MOD_EMPIRE_SIZE_POPS_MULT$§! by §G10%§!.\nDecrease penalties from non-gestalt residents by §G50%\nAscension Perks Unlocked: §G+1§!"
+tr_synchronicity_machine_finish_desc:2 "Reduces §Y$MOD_EMPIRE_SIZE_POPS_MULT$§! by §G10%§!.\nDecrease penalties from non-gestalt residents by §G50%\n§HUnlocks Edict:§! $edict_industrial_maintenance$.\nAscension Perks Unlocked: §G+1§!"
+
+describe_decision_mastery_of_nature:0 "§EThis is a Decision that permanently increases the maximum number of districts a Planet can support by §Y3§!, and increases habitability by §Y10%§!. It can only be performed once on each planet.§!"

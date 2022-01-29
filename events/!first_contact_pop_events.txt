@@ -1,0 +1,777 @@
+################################
+#
+# First Contact Events
+#
+# Written by Pierre du Plessis
+#
+################################
+
+namespace = first_contact
+
+### Fully hostile chain 1: Capture their ship
+
+# You capture them and their ship alive (best)
+first_contact_event = {
+	id = first_contact.250
+	title = first_contact.250.name
+	desc = {
+		text = first_contact.250.desc
+		trigger = {
+			contact_country = {
+				is_gestalt = no
+				NOR = {
+					has_origin = origin_syncretic_evolution
+					has_origin = origin_syncretic_equals
+					AND = {
+						has_origin = origin_necrophage
+						NOT = { has_valid_civic = civic_fanatic_purifiers }
+					}
+					pop_percentage = {
+						percentage > 0.25
+						limit = {
+							is_organic_species = yes
+							NOT = { is_same_species = owner_species }
+						}
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = first_contact.250.desc.multispecies
+		trigger = {
+			contact_country = {
+				is_gestalt = no
+				OR = {
+					has_origin = origin_syncretic_evolution
+					has_origin = origin_syncretic_equals
+					AND = {
+						has_origin = origin_necrophage
+						NOT = { has_valid_civic = civic_fanatic_purifiers }
+					}
+					pop_percentage = {
+						percentage > 0.25
+						limit = {
+							is_organic_species = yes
+							NOT = { is_same_species = owner_species }
+						}
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = first_contact.250.desc.machine_victim
+		trigger = {
+			contact_country = {
+				is_machine_empire = yes
+			}
+		}
+	}
+	desc = {
+		text = first_contact.250.desc.hive_victim
+		trigger = {
+			contact_country = {
+				is_hive_empire = yes
+			}
+		}
+	}
+	picture = GFX_evt_face_off_in_space
+	show_sound = event_faceoff_in_space
+
+	is_triggered_only = yes
+	first_contact = yes
+
+	immediate = {
+		set_site_progress_locked = yes
+		first_contact_get_ship_to_capture = yes #generates event_target:fleet_to_seize
+		set_first_contact_flag = succeeded_capture_attempt
+		set_first_contact_flag = seen_aliens
+		reverse_first_contact = { set_first_contact_flag = seen_aliens }
+		owner = {
+			set_timed_relation_flag = {
+				who = root.contact_country
+				flag = vivisectors
+				years = 25
+			}
+		}
+	}
+
+	after = {
+		set_site_progress_locked = no
+	}
+
+	option = {
+		name = first_contact.250.A
+		hidden_effect = {
+			event_target:fleet_to_seize = {
+				destroy_fleet = this
+			}
+			contact_country = {
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_hostile_first_contact
+				}
+				first_contact_send_fleets_mia = yes
+				country_event = { id = first_contact.252 }
+			}
+		}
+		if = {
+			limit = {
+				contact_country = {
+					is_gestalt = yes
+				}
+			}
+			set_first_contact_stage = default_end_stage_hostile_with_crew_hard
+		}
+		else_if = {
+			limit = {
+				contact_country = {
+					OR = {
+						has_trait = trait_weak
+						has_trait = trait_docile
+						has_trait = trait_conformists
+						has_trait = trait_obedient
+						has_trait = trait_skittish
+					}
+				}
+			}
+			hidden_effect = { set_first_contact_flag = weak_interrogees }
+			set_first_contact_stage = default_end_stage_hostile_with_crew_easy
+		}
+		else_if = {
+			limit = {
+				contact_country = {
+					OR = {
+						has_trait = trait_strong
+						has_trait = trait_very_strong
+						has_trait = trait_quarrelsome
+						has_trait = trait_unruly
+						has_trait = trait_deviants
+						has_trait = trait_resilient
+						has_trait = trait_titanic_strength
+						has_trait = trait_lithoid_titanic_strength
+					}
+				}
+			}
+			hidden_effect = { set_first_contact_flag = strong_interrogees }
+			set_first_contact_stage = default_end_stage_hostile_with_crew_hard
+		}
+		else = {
+			set_first_contact_stage = default_end_stage_hostile_with_crew
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						is_homicidal = yes
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = {
+			text = first_contact.250.B
+			trigger = {
+				contact_country = {
+					is_machine_empire = no
+				}
+			}
+		}
+		name = {
+			text = first_contact.250.B.machine
+			trigger = {
+				contact_country = {
+					is_machine_empire = yes
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:fleet_to_seize = {
+				destroy_fleet = this
+			}
+			contact_country = {
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_hostile_first_contact_vivisection
+				}
+				first_contact_send_fleets_mia = yes
+				country_event = { id = first_contact.253 }
+			}
+		}
+		custom_tooltip = first_contact.250.B.tooltip
+		set_first_contact_stage = default_end_stage_hostile_with_vivisection
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				owner = { is_xenophobe = yes }
+			}
+		}
+	}
+	option = {
+		name = first_contact.250.C
+		trigger = {
+			owner = {
+				is_homicidal = yes
+				NOT = { has_valid_civic = civic_hive_devouring_swarm }
+			}
+		}
+		hidden_effect = {
+			event_target:fleet_to_seize = {
+				destroy_fleet = this
+			}
+			contact_country = {
+				add_opinion_modifier = { #it accumulates
+					who = root.owner
+					modifier = opinion_hostile_first_contact
+				}
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_hostile_first_contact
+				}
+				first_contact_send_fleets_mia = yes
+				country_event = { id = first_contact.254 }
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+			}
+		}
+		custom_tooltip = first_contact.250.C.homicidal_tooltip
+		set_first_contact_stage = default_end_stage_hostile_no_crew
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				owner = { has_civic = civic_machine_terminator }
+			}
+		}
+	}
+	option = {
+		name = first_contact.250.C.devourers
+		trigger = {
+			owner = { has_valid_civic = civic_hive_devouring_swarm }
+		}
+		if = {
+			limit = {
+				contact_country = { is_synthetic_empire = yes }
+			}
+			owner = {
+				add_resource = {
+					influence = 50
+				}
+				add_monthly_resource_mult = {
+					resource = alloys
+					value =  @tier1materialreward
+					min = @tier1materialmin
+				}
+			}
+		}
+		else_if = {
+			limit = { contact_country = { is_lithoid = yes } }
+			owner = {
+				add_resource = {
+					influence = 50
+				}
+				add_monthly_resource_mult = {
+					resource = minerals
+					value =  @tier1materialreward
+					min = @tier1materialmin
+				}
+			}
+		}
+		else = {
+			owner = {
+				add_resource = {
+					influence = 50
+				}
+				add_monthly_resource_mult = {
+					resource = food
+					value =  @tier1materialreward
+					min = @tier1materialmin
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:fleet_to_seize = {
+				destroy_fleet = this
+			}
+			contact_country = {
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_hostile_first_contact_hungry
+				}
+				first_contact_send_fleets_mia = yes
+				country_event = { id = first_contact.254 }
+			}
+		}
+		custom_tooltip = first_contact.250.C.homicidal_tooltip
+		set_first_contact_stage = default_end_stage_hostile_no_crew
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Hostile systems chain
+
+#You capture something
+first_contact_event = {
+	id = first_contact.320
+	title = first_contact.320.name
+	desc = {
+		text = first_contact.320.desc.planet.normal.normal
+		trigger = {
+			exists = event_target:abduction_planet
+			owner = { is_gestalt = no }
+			contact_country = {
+				OR = {
+					is_regular_empire = yes
+					is_hive_empire = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.planet.normal.machine
+		trigger = {
+			exists = event_target:abduction_planet
+			owner = { is_gestalt = no }
+			contact_country = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.planet.gestalt.normal
+		trigger = {
+			exists = event_target:abduction_planet
+			owner = { is_gestalt = yes }
+			contact_country = {
+				OR = {
+					is_regular_empire = yes
+					is_hive_empire = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.planet.hive.machine
+		trigger = {
+			exists = event_target:abduction_planet
+			owner = { is_hive_empire = yes }
+			contact_country = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.planet.machine.machine
+		trigger = {
+			exists = event_target:abduction_planet
+			owner = { is_machine_empire = yes }
+			contact_country = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.no_planet.normal.normal
+		trigger = {
+			NOT = { exists = event_target:abduction_planet }
+			owner = { is_gestalt = no }
+			contact_country = {
+				OR = {
+					is_regular_empire = yes
+					is_hive_empire = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.no_planet.normal.machine
+		trigger = {
+			NOT = { exists = event_target:abduction_planet }
+			owner = { is_gestalt = no }
+			contact_country = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.no_planet.gestalt.normal
+		trigger = {
+			NOT = { exists = event_target:abduction_planet }
+			owner = { is_gestalt = yes }
+			contact_country = {
+				OR = {
+					is_regular_empire = yes
+					is_hive_empire = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.no_planet.hive.machine
+		trigger = {
+			NOT = { exists = event_target:abduction_planet }
+			owner = { is_hive_empire = yes }
+			contact_country = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = first_contact.320.desc.no_planet.machine.machine
+		trigger = {
+			NOT = { exists = event_target:abduction_planet }
+			owner = { is_machine_empire = yes }
+			contact_country = { is_machine_empire = yes }
+		}
+	}
+	picture = {
+		picture = GFX_evt_alien_abduction
+		trigger = {
+			exists = event_target:abduction_planet
+		}
+	}
+	picture = {
+		picture = GFX_evt_unidentified_ship
+		trigger = {
+			NOT = { exists = event_target:abduction_planet }
+		}
+	}
+	show_sound = event_alien_abduction
+
+	is_triggered_only = yes
+	first_contact = yes
+
+	immediate = {
+		set_site_progress_locked = yes
+
+		set_first_contact_flag = seen_aliens
+		reverse_first_contact = { set_first_contact_flag = seen_aliens }
+
+		contact_country = {
+			random_owned_planet = {
+				limit = {
+					OR = {
+						is_surveyed = {
+							who = root.owner
+							status = yes
+						}
+						solar_system = {
+							root.owner = {
+								intel_level = {
+									level > low
+									system = prev
+								}
+							}
+						}
+					}
+				}
+				save_event_target_as = abduction_planet
+				root = { set_first_contact_flag = no_vessel }
+			}
+		}
+		if = {
+			limit = { NOT = { exists = event_target:abduction_planet } }
+			contact_country = {
+				random_system_within_border = {
+					limit = {
+						OR = {
+							is_surveyed = {
+								who = root.owner
+								status = yes
+							}
+							root.owner = {
+								intel_level = {
+									level > low
+									system = prev
+								}
+							}
+						}
+					}
+					save_event_target_as = abduction_system
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { exists = event_target:abduction_system } }
+			random_system = {
+				limit = {
+					has_star_flag = first_contact_known_system@root.owner
+				}
+				save_event_target_as = abduction_system
+			}
+		}
+		owner = {
+			set_timed_relation_flag = {
+				who = root.contact_country
+				flag = vivisectors
+				years = 25
+			}
+		}
+	}
+
+	after = {
+		set_site_progress_locked = no
+		hidden_effect = {
+			contact_country = { country_event = { id = first_contact.322 } }
+		}
+	}
+
+	option = {
+		name = {
+			text = first_contact.320.A
+			trigger = {
+				contact_country = {
+					is_machine_empire = no
+				}
+				owner = { is_gestalt = no }
+			}
+		}
+		name = {
+			text = first_contact.320.A2
+			trigger = {
+				OR = {
+					contact_country = {
+						is_machine_empire = yes
+					}
+					owner = { is_gestalt = yes }
+				}
+			}
+		}
+		custom_tooltip = first_contact.320.A.tooltip
+		hidden_effect = {
+			owner = {
+				every_owned_fleet = {
+					limit = {
+						is_within_borders_of = root.contact_country
+						if = {
+							limit = { prev = { is_hostile = root.contact_country } }
+							is_civilian = yes
+						}
+					}
+					set_mia = yes
+				}
+			}
+			contact_country = {
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_hostile_first_contact
+				}
+			}
+		}
+		if = {
+			limit = {
+				contact_country = {
+					is_gestalt = yes
+				}
+			}
+			set_first_contact_stage = default_end_stage_hostile_with_crew_hard
+		}
+		else_if = {
+			limit = {
+				contact_country = {
+					OR = {
+						has_trait = trait_weak
+						has_trait = trait_docile
+						has_trait = trait_conformists
+						has_trait = trait_obedient
+						has_trait = trait_skittish
+					}
+				}
+			}
+			hidden_effect = { set_first_contact_flag = weak_interrogees }
+			set_first_contact_stage = default_end_stage_hostile_with_crew_easy
+		}
+		else_if = {
+			limit = {
+				contact_country = {
+					OR = {
+						has_trait = trait_strong
+						has_trait = trait_very_strong
+						has_trait = trait_quarrelsome
+						has_trait = trait_unruly
+						has_trait = trait_deviants
+						has_trait = trait_resilient
+						has_trait = trait_titanic_strength
+						has_trait = trait_lithoid_titanic_strength
+					}
+				}
+			}
+			hidden_effect = { set_first_contact_flag = strong_interrogees }
+			set_first_contact_stage = default_end_stage_hostile_with_crew_hard
+		}
+		else = {
+			set_first_contact_stage = default_end_stage_hostile_with_crew
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						is_homicidal = yes
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = {
+			text = first_contact.250.B
+			trigger = {
+				contact_country = {
+					is_machine_empire = no
+				}
+			}
+		}
+		name = {
+			text = first_contact.250.B.machine
+			trigger = {
+				contact_country = {
+					is_machine_empire = yes
+				}
+			}
+		}
+		hidden_effect = {
+			contact_country = {
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_hostile_first_contact_vivisection
+				}
+			}
+		}
+		custom_tooltip = first_contact.250.B.tooltip
+		set_first_contact_stage = default_end_stage_hostile_with_vivisection
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				owner = { is_xenophobe = yes }
+			}
+		}
+	}
+
+	option = {
+		name = first_contact.250.C
+		trigger = {
+			owner = {
+				is_homicidal = yes
+				NOT = { has_valid_civic = civic_hive_devouring_swarm }
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+			}
+		}
+		if = {
+			limit = { has_first_contact_flag = no_vessel }
+			custom_tooltip = first_contact.320.C.homicidal_tooltip
+		}
+		else = {
+			custom_tooltip = first_contact.250.C.homicidal_tooltip
+		}
+		set_first_contact_stage = default_end_stage_hostile_no_crew
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				owner = { has_civic = civic_machine_terminator }
+			}
+		}
+	}
+	option = {
+		name = first_contact.250.C.devourers
+		trigger = {
+			owner = { has_valid_civic = civic_hive_devouring_swarm }
+		}
+		if = {
+			limit = {
+				contact_country = { is_synthetic_empire = yes }
+			}
+			owner = {
+				add_resource = {
+					influence = 50
+				}
+				add_monthly_resource_mult = {
+					resource = alloys
+					value =  @tier1materialreward
+					min = @tier1materialmin
+				}
+			}
+		}
+		else_if = {
+			limit = { contact_country = { is_lithoid = yes } }
+			owner = {
+				add_resource = {
+					influence = 50
+				}
+				add_monthly_resource_mult = {
+					resource = minerals
+					value =  @tier1materialreward
+					min = @tier1materialmin
+				}
+			}
+		}
+		else = {
+			owner = {
+				add_resource = {
+					influence = 50
+				}
+				add_monthly_resource_mult = {
+					resource = food
+					value =  @tier1materialreward
+					min = @tier1materialmin
+				}
+			}
+		}
+		if = {
+			limit = { has_first_contact_flag = no_vessel }
+			custom_tooltip = first_contact.320.C.homicidal_tooltip
+		}
+		else = {
+			custom_tooltip = first_contact.250.C.homicidal_tooltip
+		}
+		set_first_contact_stage = default_end_stage_hostile_no_crew
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Set your first contact protocols - fired by the story events
+country_event = {
+	id = first_contact.1060
+	hide_window = yes
+	is_triggered_only = yes
+
+	#further triggers are checked in the next event; this is to make sure the flag is always set the first time it tries to fire
+	trigger = {
+		NOR = {
+			has_country_flag = first_contact_protocol_event_happened
+			has_origin = origin_common_ground
+			has_origin = origin_common_ground_npc
+			has_origin = origin_hegemon
+			has_origin = origin_hegemon_npc
+			has_origin = origin_research_coop
+			has_origin = origin_research_coop_npc
+		}
+		years_passed < 15
+	}
+
+	immediate = {
+		set_country_flag = first_contact_protocol_event_happened
+		country_event = { id = first_contact.1061 }
+	}
+}

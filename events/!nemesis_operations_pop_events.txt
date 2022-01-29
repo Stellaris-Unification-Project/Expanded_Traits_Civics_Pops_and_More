@@ -1,0 +1,491 @@
+###########################################
+#
+# Nemesis Espionage Events
+# Written by Gemma Thomson
+#
+###########################################
+
+namespace = operation
+
+# SUBTERFUGE (.1XXX)
+# SABOTAGE (.2XXX)
+# MANIPULATION (.3XXX)
+# PROVOCATION (.4XXX)
+# RANDOM EVENTS (.5XXX)
+# CUSTODIAN (.6XXX)
+# INTEL (.7XXX)
+
+@OperationBribeCost1 = -400
+@OperationBribeCost2 = -600
+@OperationBribeCost3 = -800
+@OperationBribeThreshold1 = 400
+@OperationBribeThreshold2 = 600
+@OperationBribeThreshold3 = 800
+
+@StealTechnologyAmount = 1000 #Amount of science research in every discipline which will be granted if the operation cannot steal a Technology
+@StealTechnologyTimer = 2160 #days (6 years) until Steal Technology can be repeated. Referenced in tooltip strings "operation.1026.tooltip.cooldown" and "operation_steal_technology_too_recent".
+@SabotageStarbaseTimer = 1440 #days (4 years) until Sabotage Starbase can be repeated against this target.
+@CrisisBeaconTimer = 1440 #days (4 years) until Crisis Beacon can be attempted again. Referenced in tooltip string "operation_crisis_beacon_too_recent".
+
+# Number of days before a single event should (ideally) stand a chance of coming up again.
+@RandomOperationEventTimer = 600
+@RandomOperationEventTimerLong = 1000
+
+###########################
+# SMEAR CAMPAIGN
+###########################
+# this = operation; from = target (country)
+
+# NB: This operation targets two empires. 'target' is the Operation's target as seen in the UI, i.e. the empire which will actually suffer the diplomatic penalty. 'event_target:smear_campaign_recipient@target' refers to the empire chosen by the player in chapter 1, who will be made to look unfavourably upon the Smear Campaign's actual target.
+
+# Campaign drafted
+espionage_operation_event = {
+    id = operation.3001
+    title = operation.3001.name
+    espionage_operation = yes
+    desc = { #Flags set in immediate, below
+        trigger = {
+            hidden:event_target:smear_campaign_recipient = {
+                switch = {
+                    trigger = has_country_flag
+                    smear_spiritualist_ridic@root.target = { text = operation.3001.desc.spirit.ridic }
+                    smear_spiritualist_merch@root.target = { text = operation.3001.desc.spirit.merch }
+                    smear_spiritualist_deity@root.target = { text = operation.3001.desc.spirit.deity }
+                    smear_militarist_study@root.target = { text = operation.3001.desc.milit.study }
+                    smear_militarist_priso@root.target = { text = operation.3001.desc.milit.priso }
+                    smear_militarist_armsd@root.target = { text = operation.3001.desc.milit.armsd }
+                    smear_militarist_pacif@root.target = { text = operation.3001.desc.milit.pacif }
+                    smear_militarist_satir@root.target = { text = operation.3001.desc.milit.satir }
+                    smear_xenophobe_genes@root.target = { text = operation.3001.desc.phobe.genes }
+                    smear_xenophobe_abduc@root.target = { text = operation.3001.desc.phobe.abduc }
+                    smear_egalitarian_migra@root.target = { text = operation.3001.desc.egal.migra }
+                    smear_egalitarian_galco@root.target = { text = operation.3001.desc.egal.galco }
+                    smear_egalitarian_elect@root.target = { text = operation.3001.desc.egal.elect }
+                    smear_materialist_theft@root.target = { text = operation.3001.desc.mat.theft }
+                    smear_materialist_droid@root.target = { text = operation.3001.desc.mat.droid }
+                    smear_materialist_singu@root.target = { text = operation.3001.desc.mat.singu }
+                    smear_materialist_sabot@root.target = { text = operation.3001.desc.mat.sabot }
+                    smear_pacifist_gunrun@root.target = { text = operation.3001.desc.pacif.gunrun }
+                    smear_pacifist_vassal@root.target = { text = operation.3001.desc.pacif.vassal }
+                    smear_pacifist_weapon@root.target = { text = operation.3001.desc.pacif.weapon }
+                    smear_pacifist_border@root.target = { text = operation.3001.desc.pacif.border }
+                    smear_xenophile_commerc@root.target = { text = operation.3001.desc.phile.commerc }
+                    smear_xenophile_slavery@root.target = { text = operation.3001.desc.phile.slavery }
+                    smear_xenophile_motives@root.target = { text = operation.3001.desc.phile.motives }
+                    smear_xenophile_contact@root.target = { text = operation.3001.desc.phile.contact }
+                    smear_authoritarian_mockery@root.target = { text = operation.3001.desc.auth.mockery }
+                    smear_authoritarian_discord@root.target = { text = operation.3001.desc.auth.discord }
+                    smear_authoritarian_experim@root.target = { text = operation.3001.desc.auth.experim }
+                    smear_authoritarian_extorts@root.target = { text = operation.3001.desc.auth.extorts }
+                    smear_corporate_criment@root.target = { text = operation.3001.desc.corp.criment }
+                    smear_corporate_resells@root.target = { text = operation.3001.desc.corp.resells }
+                    smear_corporate_machine@root.target = { text = operation.3001.desc.corp.machine }
+                    smear_corporate_knockof@root.target = { text = operation.3001.desc.corp.knockof }
+                    smear_hive_asset@root.target = { text = operation.3001.desc.hive.asset }
+                    smear_hive_necro@root.target = { text = operation.3001.desc.hive.necro }
+                    smear_hive_toxin@root.target = { text = operation.3001.desc.hive.toxin }
+                    smear_machine_asset@root.target = { text = operation.3001.desc.machine.asset }
+                    smear_machine_milit@root.target = { text = operation.3001.desc.machine.milit }
+                    smear_machine_steal@root.target = { text = operation.3001.desc.machine.steal }
+                }
+            }
+        }
+    }
+    picture = GFX_evt_smear_campaign
+    show_sound = event_default
+    is_triggered_only = yes
+
+    trigger = {
+        any_playable_country = {
+            has_country_flag = smear_campaign_recipient@root
+        }
+    }
+
+    immediate = {
+        random_playable_country = {
+            limit = {
+                has_country_flag = smear_campaign_recipient@root
+            }
+            save_event_target_as = smear_campaign_recipient #One-time, extensive use in loc
+            if = {
+                limit = {
+                    is_regular_empire = yes
+                }
+                random_list = {
+                    1 = {
+                        modifier = { factor = 0 is_spiritualist = no }
+                        espionage_smear_campaign_spiritualist = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_militarist = no }
+                        espionage_smear_campaign_militarist = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_xenophobe = no }
+                        espionage_smear_campaign_xenophobe = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_egalitarian = no }
+                        espionage_smear_campaign_egalitarian = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_materialist = no }
+                        espionage_smear_campaign_materialist = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_pacifist = no }
+                        espionage_smear_campaign_pacifist = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_xenophile = no }
+                        espionage_smear_campaign_xenophile = yes
+                    }
+                    1 = {
+                        modifier = { factor = 0 is_authoritarian = no }
+                        espionage_smear_campaign_authoritarian = yes
+                    }
+                    1 = {
+                        modifier = {
+                            factor = 0
+                            NOT = { is_megacorp = yes }
+                        }
+                        espionage_smear_campaign_corporate = yes
+                    }
+                }
+            }
+            else = {
+                if = {
+                    limit = { has_authority = auth_hive_mind }
+                    espionage_smear_campaign_hive = yes
+                }
+                else = { espionage_smear_campaign_machine = yes }
+            }
+        }
+    }
+
+    option = {
+        name = OK
+    }
+}
+
+###########################
+# RANDOM EVENTS
+###########################
+# Triggered by operation_random_events_generic via e.g. operation_random_events_regular_regular
+
+
+### MISTAKEN FOR FOOD (gestalt vs. hive)
+# from = operation; fromfrom = target
+country_event = {
+    id = operation.5020
+    title = operation.5020.name
+    desc = {
+		trigger = { from.target = { is_open_gestalt = no } }
+		text = operation.5020.desc
+	}
+	desc = {
+		trigger = { from.target = { is_open_gestalt = yes } }
+		text = operation.5020.desc.open
+	}
+    picture = GFX_evt_aggressive_flora
+    show_sound = event_alien_nature
+    is_triggered_only = yes
+
+    trigger = {
+        exists = from
+    }
+
+    immediate = {
+        from = { set_espionage_operation_progress_locked = yes }
+        set_timed_country_flag = {
+            flag = recent_op_drones_hunted
+            days = @RandomOperationEventTimer
+        }
+    }
+
+    after = {
+        from = { set_espionage_operation_progress_locked = no }
+    }
+
+    option = { #Drop a lure (food)
+        name = operation.5020.a
+        exclusive_trigger = {
+            from.target = { is_lithoid_empire = no }
+            resource_stockpile_compare = {
+                resource = food
+                value > 400
+            }
+        }
+        add_resource = { food = -200 }
+        ai_chance = { factor = 3 }
+    }
+    option = { #Drop a lure (lithoids)
+        name = operation.5020.a
+        exclusive_trigger = {
+            from.target = { is_lithoid_empire = yes }
+            resource_stockpile_compare = {
+                resource = minerals
+                value > 400
+            }
+        }
+        add_resource = { minerals = -200 }
+        ai_chance = { factor = 2 }
+    }
+    option = { #Can't/won't afford a lure
+        name = operation.5020.b
+        from.spynetwork = {
+            add_modifier = {
+                modifier = spynetwork_drones_hunted
+                days = 280
+            }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 10
+                OR = {
+                    AND = {
+                        from.target = { is_lithoid_empire = no }
+                        resource_stockpile_compare = {
+                            resource = food
+                            value <= 600
+                        }
+                    }
+                    AND = {
+                        from.target = { is_lithoid_empire = yes }
+                        resource_stockpile_compare = {
+                            resource = minerals
+                            value <= 600
+                        }
+                    }
+                }
+            }
+        }
+    }
+    option = { #Expend Warrior Drone asset
+        name = operation.5020.c
+        custom_tooltip = tooltip_espionage_asset_guaranteed_resume
+        icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_SPYNETWORK_ASSET_EVENT_OPTION
+		}
+        trigger = {
+            OR = {
+                from = { has_espionage_asset = asset_warrior_drone }
+                from.spynetwork = { has_espionage_asset = asset_warrior_drone }
+            }
+        }
+        if = {
+            limit = {
+                from = { has_espionage_asset = asset_warrior_drone }
+            }
+            from = { destroy_espionage_asset = asset_warrior_drone }
+        }
+        else_if = {
+            limit = {
+                from.spynetwork = { has_espionage_asset = asset_warrior_drone }
+            }
+            from.spynetwork = { destroy_espionage_asset = asset_warrior_drone }
+        }
+        ai_chance = {
+            factor = 15
+        }
+    }
+	option = {
+        name = operation.5020.patrol
+        custom_tooltip = tooltip_espionage_asset_unpredictable
+        trigger = { from.target = { is_open_gestalt = yes } }
+        ai_chance = {
+            factor = 10
+        }
+		hidden_effect = {
+			random_list = {
+				5 = { country_event = { id = popspyexpanded.1 } }
+				2 = { country_event = { id = popspyexpanded.2 } }
+				2 = { country_event = { id = popspyexpanded.3 } }
+			}
+		}
+    }
+}
+
+### SNUFFED OUT (any vs. any)
+#from = operation; fromfrom = target
+country_event = {
+	id = operation.5035
+	title = operation.5035.name
+	desc = operation.5035.desc
+	picture = GFX_evt_cover_blown
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+		from = {
+			OR = {
+				has_espionage_category = op_cat_sabotage
+				has_espionage_category = op_cat_provocation
+				target = {
+					OR = {
+						has_valid_civic = civic_fanatic_purifiers
+						has_origin = origin_necrophage
+						AND = { #Unfriendly gestalts
+							is_gestalt = yes
+							NOR = {
+								has_valid_civic = civic_hive_empath
+								is_civic_machine_servitor = yes
+								is_open_gestalt = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			set_espionage_operation_progress_locked = yes
+			target = { save_event_target_as = snuffedout_country } #Used in loc
+		}
+		set_timed_country_flag = {
+			flag = recent_op_snuffed_out
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	option = { #Try to cover up
+		name = MAKE_IT_SO
+		custom_tooltip = operation.5035.a.tooltip
+		allow = {
+			resource_stockpile_compare = { resource = influence value >= 20 }
+			from.spynetwork = { has_available_spy_power >= 5 } #To cover the cost - a drop in Spy Network level
+		}
+		add_resource = { influence = -20 }
+		hidden_effect = {
+			random_list = {
+				1 = { #Success
+					modifier = {
+						factor = 6
+						from = { has_espionage_asset_matching_operation_theme = yes }
+					}
+					country_event = { id = operation.5036 days = 32 }
+				}
+				1 = { #Failure
+					modifier = {
+						factor = 3
+						from.target = {
+							relative_encryption_decryption = { target = root value >= 1.6 }
+						}
+					}
+					modifier = {
+						factor = 2
+						from.target = {
+							relative_encryption_decryption = { target = root value > 1.3 }
+							relative_encryption_decryption = { target = root value < 1.6 }
+						}
+					}
+					modifier = {
+						factor = 0.3
+						from.target = {
+							relative_encryption_decryption = { target = root value < 0.85 }
+						}
+					}
+					country_event = { id = operation.5037 days = 20 }
+					from.target = {
+						country_event = { id = espionage.1070 days = 20 } #"Hostile Infiltration Detected"
+					}
+				}
+			}
+		}
+		from = {
+			spynetwork = { add_spy_network_level = -5 }
+			if = {
+				limit = { has_espionage_asset_matching_operation_theme = yes }
+				switch = {
+					trigger = has_espionage_category
+					op_cat_diplomacy = { destroy_espionage_asset_diplomacy = yes }
+					op_cat_economy = { destroy_espionage_asset_economy = yes }
+					op_cat_government = { destroy_espionage_asset_government = yes }
+					op_cat_military = { destroy_espionage_asset_military = yes }
+					op_cat_technology = { destroy_espionage_asset_technology = yes }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 8
+				from = {
+					OR = {
+						has_espionage_asset_matching_operation_theme = yes
+						target = {
+							relative_encryption_decryption = { target = root value < 0.85 }
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DISAVOW
+		custom_tooltip = operation.5035.b.tooltip
+		hidden_effect = {
+			root = { set_country_flag = burn_notice_achievement }
+			locked_random_list = {
+				4 = { #Successful disavowal
+					modifier = {
+						factor = 0.2
+						from.target = {
+							relative_encryption_decryption = {
+								target = root
+								value > 1.4
+							}
+						}
+					}
+					modifier = {
+						factor = 1.5
+						from = { has_espionage_asset_matching_operation_category = yes }
+					}
+					root = {
+						set_timed_country_flag = {
+							flag = has_disavowed_operative
+							days = 36000 #100 years
+						}
+					}
+				}
+				1 = { #Identified by the target
+					from.target = {
+						country_event = { id = espionage.1070 } #Hostile Infiltration Detected
+					}
+				}
+			}
+		}
+		from = {
+			if = {
+				limit = { has_espionage_asset_matching_operation_category = yes }
+				switch = {
+					trigger = has_espionage_category
+					op_cat_manipulation = { destroy_espionage_asset_manipulation = yes }
+					op_cat_provocation = { } #No action - there are no Provocation-type Assets
+					op_cat_sabotage = { destroy_espionage_asset_sabotage = yes }
+					op_cat_subterfuge = { destroy_espionage_asset_subterfuge = yes }
+				}
+			}
+			set_espionage_operation_progress_locked = no
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 8
+				root = {
+					relative_encryption_decryption = {
+						target = from.target
+						value < 1.0 #At > 1.0 root's encryption is superior to target's decryption
+					}
+				}
+			}
+		}
+	}
+}

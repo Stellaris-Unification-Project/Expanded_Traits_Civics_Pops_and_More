@@ -1,0 +1,1028 @@
+# See traditions/README.txt for format
+
+#################
+# NEMESIS ASCENSION PERKS
+#################
+
+ap_become_the_crisis = {
+	potential = {
+		has_nemesis = yes
+		NOT = { has_ascension_perk = ap_become_the_crisis }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		NOR = {
+			is_civic_machine_servitor = yes
+			has_civic = civic_closed_collective
+			has_civic = civic_closed_network
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+			has_origin = origin_symbiote
+		}
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_ai_personality = became_the_crisis
+		}
+		activate_crisis_progression = yes
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			nor = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_gestalt = yes
+				and = { is_authoritarian = yes is_spiritualist = yes  }
+			}
+		}
+		modifier = {
+			factor = 0
+			or = {
+				is_open_gestalt = yes
+				is_honorbound_warriors = yes # would be dishonorable
+				is_civic_environmentalist = yes # would destroy the galaxy
+				has_origin = origin_terraformer
+				is_pleasure_seeker = yes
+				has_origin = origin_common_ground
+				has_origin = origin_common_ground_npc
+				has_origin = origin_holy_mountain # would destroy their mountain
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			is_materialist = yes
+		}
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+		}
+		modifier = {
+			factor = 10
+			num_ascension_perks > 2
+			resource_income_compare = {
+				resource = alloys
+				value > 200
+			}
+			resource_income_compare = {
+				resource = physics_research
+				value > 500
+			}
+			OR = {
+				is_xenophobe = yes
+				is_militarist = yes
+				is_civic_militarist = yes
+				is_homicidal = yes
+			}
+		}
+
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.3
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.4
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks >= 5
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				is_xenophobe = yes
+				is_militarist = yes
+				is_civic_militarist = yes
+				is_homicidal = yes
+			}
+			any_country = {
+				is_ai = no
+				OR = {
+					is_galactic_custodian = yes
+					is_galactic_emperor = yes
+					is_civic_machine_servitor = yes
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_origin = origin_symbiote
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			count_country = {
+				count > 2
+				limit = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+			}
+		}
+	}
+}
+
+#################
+# AQUATICS ASCENSION PERKS
+#################
+
+ap_hydrocentric = {
+	potential = {
+		has_aquatics = yes
+		NOT = { has_ascension_perk = ap_hydrocentric }
+		OR = {
+			has_trait = trait_pc_ocean_preference
+			has_trait = trait_pc_aquatic_preference
+			has_trait = trait_pc_reef_preference
+			has_trait = trait_pc_desertislands_preference
+			has_trait = trait_pc_subarctic_preference
+			has_trait = trait_pc_panthalassic_preference
+			has_trait = trait_pc_atoll_preference
+			has_trait = trait_pc_storm_preference
+			has_trait = trait_pc_crag_preference
+			AND = {
+				exists = home_planet
+				home_planet = { has_climate = wet }
+			}
+		}
+	}
+	possible = {
+		OR = {
+			has_trait = trait_aquatic
+			has_trait = trait_marine
+		}
+		has_technology = tech_terrestrial_sculpting
+	}
+
+	on_enabled = {
+		custom_tooltip = ap_hydrocentric_tooltip
+		if = {
+			limit = {
+				host_has_dlc = "Apocalypse"
+			}
+			if = {
+				limit = { has_ascension_perk = ap_colossus }
+				custom_tooltip = ap_hydrocentric_deluge_tooltip
+			}
+			else = {
+				custom_tooltip = ap_hydrocentric_deluge_pre_unlock_tooltip
+			}
+		}
+		hidden_effect = {
+			country_event = { id = aquatics.1 }
+		}
+	}
+
+	modifier = {
+		terraforming_ocean_cost_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 80 #it really is quite good for Aquatic species
+		modifier = {
+			factor = 0.5
+			is_xenophobe = no
+			is_hive_empire = no
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { has_trait = trait_aquatic }
+		}
+		modifier = {
+			factor = 0.75
+			is_civic_mining_guilds = yes
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_terraformer
+		}
+		modifier = {
+			factor = 5
+			has_origin = origin_ocean_paradise
+		}
+	}
+}
+
+#################
+# APOCALYPSE ASCENSION PERKS
+#################
+
+ap_nihilistic_acquisition = {
+	potential = {
+		host_has_dlc = "Apocalypse"
+		NOT = {
+			has_ascension_perk = ap_nihilistic_acquisition
+		}
+		NOT = { has_valid_civic = civic_barbaric_despoilers }
+		NOT = { has_valid_civic = civic_living_hosts }
+	}
+
+	on_enabled = {
+		custom_tooltip = "allow_raiding"
+	}
+
+	possible = {
+		OR = {
+			is_authoritarian = yes
+			is_xenophobe = yes
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ai_personality_behaviour = slaver
+				has_valid_civic = civic_infestation
+				has_valid_civic = civic_machine_assimilator
+				has_origin = origin_necrophage
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_origin = origin_necrophage }
+			OR = {
+				is_civic_inwards_perfection = yes
+				is_homicidal = yes
+			}
+		}
+	}
+}
+
+#################
+# ASCENSION PATHS
+#################
+
+@ap_engineered_evolution_POINTS = 3
+@ap_engineered_evolution_COST_MULT = -0.25
+ap_engineered_evolution = {
+	on_enabled = {
+		add_research_option = tech_gene_seed_purification
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+				}
+			}
+			custom_tooltip = clone_soldier_locked_genes
+		}
+		hidden_effect = {
+			country_event = { id = utopia.2700 }
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_biological_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_gene_tailoring"
+			has_technology = tech_gene_tailoring
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_mind_over_matter"
+			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+	}
+	modifier = {
+		description = ap_engineered_evolution_modifier_desc
+		description_parameters = {
+			POINTS = @ap_engineered_evolution_POINTS
+			COST_MULT = @ap_engineered_evolution_COST_MULT
+		}
+
+		BIOLOGICAL_species_trait_points_add = @ap_engineered_evolution_POINTS
+
+		modify_species_cost_mult = @ap_engineered_evolution_COST_MULT
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_engineered_evolution
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+		is_cyborg_empire = no
+	}
+
+	ai_weight = {
+		factor = 100
+		modifier = {
+			factor = 2.5
+			OR = {
+				is_civic_environmentalist = yes
+				has_origin = origin_terraformer
+			}
+		}
+		modifier = {
+			factor = 5
+			has_origin = origin_necrophage
+		}
+		modifier = {
+			factor = 5
+			is_civic_health = yes
+		}
+		modifier = {
+			factor = 10
+			is_hive_empire = yes
+		}
+		modifier = {
+			factor = 10
+			has_origin = origin_clone_army
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				is_spiritualist = yes
+				is_materialist = yes
+				is_xenophobe = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			years_passed < 150
+		}
+		modifier = {
+			factor = 0
+			is_machine_empire = yes
+		}
+	}
+}
+
+@ap_evolutionary_mastery_POINTS = 3
+@ap_evolutionary_mastery_COST_MULT = -0.25
+ap_evolutionary_mastery = {
+	on_enabled = {
+		add_research_option = tech_genetic_resequencing
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+				}
+			}
+			custom_tooltip = clone_soldier_locked_genes
+		}
+		hidden_effect = {
+			country_event = { id = utopia.2703 }
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_biological_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_glandular_acclimation"
+			has_technology = tech_glandular_acclimation
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_engineered_evolution"
+			has_ascension_perk = ap_engineered_evolution
+		}
+	}
+	modifier = {
+		description = ap_evolutionary_mastery_modifier_desc
+		description_parameters = {
+			POINTS = @ap_evolutionary_mastery_POINTS
+			COST_MULT = @ap_evolutionary_mastery_COST_MULT
+		}
+
+		BIOLOGICAL_species_trait_points_add = @ap_evolutionary_mastery_POINTS
+
+		modify_species_cost_mult = @ap_evolutionary_mastery_COST_MULT
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_evolutionary_mastery
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+		is_cyborg_empire = no
+	}
+
+	ai_weight = {
+		factor = 500
+	}
+}
+
+ap_the_flesh_is_weak = {
+	on_enabled = {
+		custom_tooltip = "flesh_is_weak_tooltip"
+		hidden_effect = {
+			country_event = { id = utopia.2500 }
+		}
+	}
+	modifier = {
+		planet_pops_robotics_upkeep_mult = -0.10
+		planet_pop_assembly_mult = 0.10
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_droid_workers"
+			has_technology = tech_droid_workers
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_engineered_evolution"
+			NOT = { has_ascension_perk = ap_engineered_evolution }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_mind_over_matter"
+			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+
+	ai_weight = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			is_materialist = no
+		}
+		modifier = {
+			factor = 2
+			is_civic_materialist = yes
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_origin = origin_research_coop
+				has_origin = origin_research_coop_npc
+			}
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				has_origin = origin_mechanists
+				has_origin = origin_iron_despot
+				has_origin = origin_iron_despot_npc
+				has_origin = origin_primitive_cyborgs
+			}
+		}
+		modifier = {
+			factor = 0
+			years_passed < 100
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ai_personality_behaviour = robot_exploiter
+				has_ai_personality_behaviour = robot_liberator
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_origin = origin_necrophage
+				has_origin = origin_clone_army
+				has_valid_civic = civic_idyllic_bloom
+				has_valid_civic = civic_hive_idyllic_bloom
+				is_pleasure_seeker = yes
+			}
+		}
+	}
+}
+
+ap_synthetic_evolution = {
+	on_enabled = {
+		custom_tooltip = "synthetic_evolution_tooltip"
+		if = {
+			limit = {
+				has_origin = origin_necrophage
+				has_trait = trait_necrophage
+			}
+			custom_tooltip = disables_necrophage_features
+		}
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+					has_trait = trait_clone_soldier_fertile
+				}
+			}
+			custom_tooltip = disables_clone_army_origin_features
+		}
+		if = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_idyllic_bloom
+					has_valid_civic = civic_hive_idyllic_bloom
+				}
+			}
+			custom_tooltip = disables_idyllic_bloom
+		}
+		hidden_effect = {
+			country_event = { id = utopia.2550 }
+		}
+	}
+	modifier = {
+		planet_jobs_robotic_produces_mult = 0.10
+		ROBOT_species_trait_points_add = 1
+		modify_species_cost_mult = -0.50
+	}
+	possible = {
+		NOT = { has_ascension_perk = ap_synthetic_servants }
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_synthetic_workers"
+			has_technology = tech_synthetic_workers
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_synthetic_leaders"
+			has_technology = tech_synthetic_leaders
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_the_flesh_is_weak"
+			has_ascension_perk = ap_the_flesh_is_weak
+		}
+		custom_tooltip = {
+			fail_text = "requires_finished_cybernetics_project"
+			NOT = { has_special_project = FLESH_IS_WEAK_PROJECT }
+		}
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_synthetic_evolution
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+
+	ai_weight = {
+		factor = 500
+		modifier = {
+			factor = 0.1
+			has_ai_personality_behaviour = robot_exploiter
+		}
+		modifier = {
+			factor = 0.1
+			is_pleasure_seeker = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_origin = origin_clone_army
+			OR = {
+				has_trait = trait_clone_soldier_infertile
+				has_trait = trait_clone_soldier_fertile
+			}
+		}
+		modifier = {
+			factor = 2.5
+			is_civic_has_meritocracy = yes
+		}
+		modifier = {
+			factor = 0
+			has_origin = origin_clone_army
+			has_trait = trait_clone_soldier_infertile_full_potential
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_origin = origin_necrophage
+				has_valid_civic = civic_idyllic_bloom
+				has_valid_civic = civic_hive_idyllic_bloom
+			}
+		}
+	}
+}
+
+ap_synthetic_servants = {
+	on_enabled = {
+		custom_tooltip = "synthetic_servants_tooltip"
+		hidden_effect = {
+			country_event = { id = onactionpops.3 }
+		}
+	}
+	modifier = {
+		planet_jobs_robotic_produces_mult = 0.10
+		planet_pops_robotics_upkeep_mult = -0.10
+		pop_cat_ruler_happiness = 0.20
+		pop_cat_specialist_happiness = 0.10
+		job_roboticist_add = 1
+	}
+	possible = {
+		NOT = { has_ascension_perk = ap_synthetic_evolution }
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only2"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_synthetic_workers"
+			has_technology = tech_synthetic_workers
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_synthetic_leaders"
+			has_technology = tech_synthetic_leaders
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_the_flesh_is_weak"
+			has_ascension_perk = ap_the_flesh_is_weak
+		}
+		custom_tooltip = {
+			fail_text = "requires_finished_cybernetics_project"
+			NOT = { has_special_project = FLESH_IS_WEAK_PROJECT }
+		}
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_synthetic_servants
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+	}
+
+	ai_weight = {
+		factor = 500
+		modifier = {
+			factor = 0.1
+			has_ai_personality_behaviour = robot_liberator
+		}
+		modifier = {
+			factor = 5
+			has_origin = origin_exploited_homeworld
+		}
+		modifier = {
+			factor = 10
+			has_origin = origin_necrophage
+		}
+		modifier = {
+			factor = 10
+			is_pleasure_seeker = yes
+		}
+		modifier = {
+			factor = 0.1
+			is_militarist = yes
+		}
+		modifier = {
+			factor = 2
+			is_xenophobe = yes
+		}
+		modifier = {
+			factor = 2.5
+			is_civic_has_elite = yes
+		}
+	}
+}
+
+ap_mind_over_matter = {
+	modifier = {
+		country_unity_produces_mult = 0.10
+		edicts_cost_mult = -0.10
+	}
+	on_enabled = {
+		custom_tooltip = "mind_over_matter_tooltip"
+		hidden_effect = {
+			country_event = { id = utopia.2600 }
+		}
+		add_research_option = tech_telepathy
+	}
+	possible = {	
+		custom_tooltip = {
+			fail_text = "synthetic_empire_psionic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only1"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_psionic_theory"
+			has_technology = tech_psionic_theory
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_engineered_evolution"
+			NOT = { has_ascension_perk = ap_engineered_evolution }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOR = {
+				has_ascension_perk = ap_the_flesh_is_weak
+				has_origin = origin_primitive_cyborgs
+			}
+		}
+	}
+	
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_mind_over_matter
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+		is_cyborg_empire = no
+	}
+	
+	ai_weight = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			is_spiritualist = no
+		}
+		modifier = {
+			factor = 2
+			is_civic_spiritualist = yes
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				has_origin = origin_shroud_pact
+				has_origin = origin_shroud_pact_npc
+			}
+		}
+		modifier = {
+			factor = 0
+			years_passed < 100
+		}
+	}
+}
+
+ap_transcendence = {
+	on_enabled = {
+		custom_tooltip = "transcendence_tooltip"
+		hidden_effect = {
+			country_event = { id = utopia.2650 }
+		}
+	}
+	modifier = {
+		intel_decryption_add = 2
+		intel_encryption_add = 2
+		add_base_country_intel = 10
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_psionic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "hive_mind_biological_ascension_only1"
+			NOT = { has_authority = auth_hive_mind }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_mind_over_matter"
+			has_ascension_perk = ap_mind_over_matter
+		}
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		NOT = {
+			has_ascension_perk = ap_transcendence
+			has_authority = "auth_machine_intelligence"
+		}
+		is_mechanical_empire = no
+		is_cyborg_empire = no
+	}
+
+	ai_weight = {
+		factor = 500
+	}
+}
+
+#################
+# GENERIC ASCENSION PERKS
+#################
+
+ap_imperial_prerogative = {
+	modifier = {
+		country_admin_cap_mult = 0.20
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_imperial_prerogative
+		}
+		is_megacorp = no
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 5
+			is_civic_expansionist = yes
+		}
+	}
+
+	on_enabled = {
+		run_ai_strategic_data = yes
+	}
+}
+
+ap_transcendent_learning = {
+	modifier = {
+		leader_skill_levels = 2
+		species_leader_exp_gain = 0.50
+	}
+	
+	on_enabled = {
+		custom_tooltip = "transcendent_learning_tooltip"
+		hidden_effect = {
+			every_pool_leader = {
+				add_skill = 1
+			}
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_transcendent_learning
+		}
+	}
+
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 0.1
+			NOT = {
+				has_ascension_perk = ap_executive_vigor
+			}
+		}
+	}
+}
+
+ap_shared_destiny = {
+	modifier = {
+		envoys_add = 2
+		subject_integration_influence_cost_mult = -0.5
+		country_subject_trust_cap_add = 100
+	}
+
+	potential = {
+		NOR = {
+			has_valid_civic = civic_fanatic_purifiers
+			has_valid_civic = civic_hive_devouring_swarm
+			is_xenophobic_isolationists = yes
+			has_valid_civic = civic_machine_terminator
+			is_megacorp = yes
+		}
+		NOT = {
+			has_ascension_perk = ap_shared_destiny
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = {
+				any_subject = {
+					is_subject_type = vassal
+				}
+			}
+		}
+	}
+}
+
+ap_machine_worlds = {
+	on_enabled = {
+		custom_tooltip = "allow_machine_worlds"
+		custom_tooltip = "describe_machine_worlds"
+		
+		if = {
+			limit = { has_civic = civic_machine_servitor }
+			custom_tooltip = "01_BERSERK_MACHINE_EMPIRE_ERROR"
+			custom_tooltip = "anomaly.3060.c"
+			custom_tooltip = "01_BERSERK_MACHINE_EMPIRE_ERROR"
+		}
+	}
+
+	potential = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		OR = {
+			has_authority = auth_machine_intelligence
+			has_country_flag = synthetic_empire
+		}
+		NOT = {
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_technology_tech_climate_restoration"
+			has_technology = tech_climate_restoration
+		}	
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 100
+		modifier = {
+			factor = 0
+			OR = {
+				is_civic_environmentalist = yes
+				has_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
+			}
+		}
+	}
+}

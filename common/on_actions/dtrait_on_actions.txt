@@ -1,0 +1,9 @@
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+on_tech_increased = {
+	events = {
+		d_traits_ai.11	# decide which traits if any to remove
+		d_traits_ai.12
+		d_traits_ai.13
+	}
+}

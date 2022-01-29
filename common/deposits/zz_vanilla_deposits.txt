@@ -1,0 +1,1411 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+@blocker_high = 10
+@blocker_low = 5
+
+### Vanilla ###
+d_mountain_range = {
+	time = 270
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	potential = {
+		planet_size >= 10
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				NOT = { exists = owner }
+				owner = { is_civic_avian_construction = no }
+			}
+		}
+		modifier = {
+			planet_max_districts_add = -2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_civic_avian_construction = yes }
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.1
+		}
+	}
+
+	drop_weight = {
+		weight = @blocker_low
+		modifier = {
+			factor = 2
+			is_planet_class = pc_alpine
+		}
+		modifier = {
+			factor = 0.5
+			planet_size < 15
+		}
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value < 2
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			is_civic_avian_construction = yes
+		}
+	}
+
+	prerequisites = { "tech_mountain_range" }
+}
+
+d_dense_jungle = {
+	time = 180
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 500
+		}
+	}
+
+	potential = {
+		is_wet = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				NOT = { exists = owner }
+				owner = { is_civic_avian_construction = no }
+			}
+		}
+		modifier = {
+			planet_max_districts_add = -1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_civic_avian_construction = yes }
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.1
+		}
+	}
+
+	all_blocker_swap_types = yes
+
+	drop_weight = {
+		weight = @blocker_high
+		modifier = {
+			factor = 2
+			OR = {
+				is_planet_class = pc_continental
+				is_planet_class = pc_tropical
+			}
+		}
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value < 2
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			is_civic_avian_construction = yes
+		}
+	}
+
+	prerequisites = { "tech_dense_jungle" }
+}
+
+d_thick_forest = {
+	time = 180
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 500
+		}
+	}
+	
+	potential = {
+		has_global_flag = has_new_frontiers_mod
+		OR = {
+			is_planet_class = pc_continental
+			is_planet_class = pc_tundra
+			is_planet_class = pc_alpine
+			has_modifier = "meridiem_world"
+		}
+		NOR = { 
+			has_modifier = "pangea_world"
+			has_modifier = "young_world"
+			has_modifier = "mineral_world"
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				NOT = { exists = owner }
+				owner = { is_civic_avian_construction = no }
+			}
+		}
+		modifier = {
+			planet_max_districts_add = -1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_civic_avian_construction = yes }
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.1
+		}
+	}
+	
+	use_weights_for_blocker_swap_types = yes
+	blocker_swap_types = {
+		d_hot_springs
+		d_rushing_waterfalls
+		d_peat_moors
+		d_geothermal_vent
+		d_tempestous_mountain
+		d_mineral_fields
+		d_prosperous_mesa
+		d_ore_rich_caverns
+		d_rich_mountain
+		d_rugged_woods
+		d_fungal_caves
+		d_fertile_lands
+		d_black_soil
+		d_dust_caverns
+		d_bubbling_swamp
+		d_fuming_bog
+		d_crystalline_caverns
+		d_betharian_deposit
+		d_alien_pets_deposit
+		d_boneyard
+		d_ancient_ruins
+		d_relic_landfill
+		d_levitating_rocks
+		d_karst_cave
+	}
+
+	drop_weight = {
+		weight = @blocker_high
+		modifier = {
+			factor = 3
+			OR = {
+				has_modifier = "boreal_world"
+				has_modifier = "taiga_world"
+				has_modifier = "snow_world"
+			}
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "snow_world"
+		}
+		modifier = {
+			factor = 0.5
+			is_planet_class = pc_alpine
+		}
+		modifier = {
+			factor = 0.25
+			is_planet_class = pc_tundra
+		}
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value < 2
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			is_civic_avian_construction = yes
+		}
+	}
+	
+	prerequisites = { "tech_thick_forest" }
+}
+
+d_city_ruins = {
+	time = 360
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = {
+		is_planet_class = pc_nuked
+		is_planet_class = pc_relic
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -2
+	}
+
+	resources = {
+		category = deposit_blockers
+		produces = {
+			trigger = {
+				has_global_flag = EcologyMod_active
+			}
+			waste = 300
+		}
+		cost = {
+			energy = 1200
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @blocker_high
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value < 2
+			}
+		}
+	}
+}
+
+d_tomb_world_ruins = {
+	icon = d_city_ruins
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	on_cleared = {
+		create_pop = {
+			species = owner
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		produces = {
+			trigger = {
+				has_global_flag = EcologyMod_active
+			}
+			waste = 300
+		}
+		cost = {
+			energy = 300
+		}
+	}
+}
+
+d_machine_empire_ruins = {
+	icon = d_city_ruins
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	use_weights_for_blocker_swap_types = no
+	blocker_swap_types = {
+		d_metal_boneyard
+		d_organic_landfill
+	}
+
+	resources = {
+		category = deposit_blockers
+		produces = {
+			trigger = {
+				has_global_flag = EcologyMod_active
+			}
+			waste = 300
+		}
+		cost = {
+			energy = 300
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+	}
+}
+
+
+d_exterminators_ruins = {
+	icon = d_city_ruins
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	use_weights_for_blocker_swap_types = no
+	blocker_swap_types = {
+		d_metal_boneyard
+	}
+
+	resources = {
+		category = deposit_blockers
+		produces = {
+			trigger = {
+				has_global_flag = EcologyMod_active
+			}
+			waste = 100
+		}
+		cost = {
+			energy = 300
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+	}
+}
+
+d_ruined_building_blocker = {	#Added via event
+	icon = d_city_ruins
+
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+	}
+}
+
+d_worm_mine = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_crystalline_caverns
+	
+	planet_modifier = {
+		district_mining_max = 4
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+		}
+	}	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_worm_farm = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_fertile_lands
+	
+	planet_modifier = {
+		district_farming_max = 4
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 2
+		}
+	}
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 2
+		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_underground_contact_zone = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_quarantine_zone
+	
+	planet_modifier = {
+		district_generator_max = 2
+		planet_max_districts_add = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_underground_trade_worker_add = 1
+			job_underground_trade_worker_per_pop = 0.05 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_underground_contact_drone_add = 1
+			job_underground_contact_drone_per_pop = 0.05 # 1 per 20
+		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# tree of life origin
+# home world
+
+d_tree_of_life_home = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_huge_tree
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_origin = origin_tree_of_life
+				has_origin = origin_sacred_tree
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.10
+		pop_environment_tolerance = 0.10
+		planet_housing_add = 10
+		district_farming_max = 4
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			pop_growth_speed = 0.15
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			OR = {
+				NOT = { exists = assembling_species }
+				assembling_species = { has_trait = trait_tree_caretaker }
+			}
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOR = {
+					uses_district_set = standard
+					uses_district_set = hive_world
+					uses_district_set = ring_world
+					uses_district_set = shattered_ring_world
+				}
+			}
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 2
+		}
+	}
+		
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOR = {
+					uses_district_set = standard
+					uses_district_set = hive_world
+					uses_district_set = ring_world
+					uses_district_set = shattered_ring_world
+				}
+			}
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOR = {
+					uses_district_set = standard
+					uses_district_set = hive_world
+					uses_district_set = ring_world
+					uses_district_set = shattered_ring_world
+				}
+			}
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 2
+		}
+	}
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			food = 4
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					NOR = {
+						uses_district_set = standard
+						uses_district_set = hive_world
+						uses_district_set = ring_world
+						uses_district_set = shattered_ring_world
+					}
+				}
+			}
+			food = 4
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#colony
+d_tree_of_life_colony = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_huge_tree
+
+	potential = {
+		exists = owner
+		planet = {
+			owner = {
+				OR = {
+					has_origin = origin_tree_of_life
+					has_origin = origin_sacred_tree
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.10
+		pop_environment_tolerance = 0.05
+		planet_housing_add = 5
+		district_farming_max = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			pop_growth_speed = 0.1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			OR = {
+				NOT = { exists = assembling_species }
+				assembling_species = { has_trait = trait_tree_caretaker }
+			}
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOR = {
+					uses_district_set = standard
+					uses_district_set = hive_world
+					uses_district_set = ring_world
+					uses_district_set = shattered_ring_world
+				}
+			}
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 1
+		}
+	}
+		
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOR = {
+					uses_district_set = standard
+					uses_district_set = hive_world
+					uses_district_set = ring_world
+					uses_district_set = shattered_ring_world
+				}
+			}
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_farmer_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOR = {
+					uses_district_set = standard
+					uses_district_set = hive_world
+					uses_district_set = ring_world
+					uses_district_set = shattered_ring_world
+				}
+			}
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			unity = 2
+		}
+		upkeep = {
+			food = 2
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					NOR = {
+						uses_district_set = standard
+						uses_district_set = hive_world
+						uses_district_set = ring_world
+						uses_district_set = shattered_ring_world
+					}
+				}
+			}
+			food = 2
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+###machine origin
+d_machine_minerals = {
+	is_for_colonizable = yes
+	icon = "d_veiny_cliffs"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			minerals = 25
+			alloys = 5
+			exotic_gases = 1
+			rare_crystals = 1
+			volatile_motes = 1
+		}
+	}
+}
+
+d_organic_slurry = {
+	is_for_colonizable = yes
+	icon = "d_bubbling_swamp"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			food = 20
+		}
+	}
+}
+
+d_ruined_arcology = {
+	time = 365
+	icon = d_city_ruins
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 750
+			minerals = 250
+		}
+	}
+
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+
+			if = {
+				limit = {
+					owner = {
+						NOT = { has_country_flag = league_world_found }
+					}
+					planet = { has_modifier = first_league_homeworld }
+				}
+				hidden_effect = {
+					owner = {
+						set_country_flag = league_world_found
+					}
+				}
+				custom_tooltip = league_artifact_research_unlocked
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_origin = origin_remnants }
+				OR = {
+					is_capital = yes
+					has_modifier = colonial_remains
+				}
+			}
+			custom_tooltip = rediscover_tech
+			hidden_effect = {
+				owner = {
+					country_event = { id = origin.3100 }
+				}
+			}
+		}
+	}
+}
+
+## Hibernating Lithoids are generated on lithoid homeworlds at game-start
+d_hibernating_lithoids = {
+	icon = d_old_hibernating_lithoids
+	time = 360
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				is_homeworld = no
+			}
+			owner = { add_resource = { minerals = 300 } }
+		}
+
+		if = {
+			limit = {
+				is_homeworld = yes
+			}
+			create_pop = {
+				species = owner
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			trigger = {
+				planet = {
+					is_homeworld = no
+				}
+			}
+			energy = 300
+		}
+		cost = {
+			trigger = {
+				planet = {
+					is_homeworld = yes
+				}
+			}
+			minerals = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+
+		modifier = {
+			factor = 2
+			from = {
+				is_homeworld = yes
+			}
+		}
+	}
+}
+
+## Shattered Ring
+
+d_segment_rubble_1 = {
+	is_for_colonizable = yes
+	icon = "d_organic_landfill"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 250
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_origin = origin_shattered_ring }
+				is_capital = yes
+			}
+			custom_tooltip = discover_tech
+			hidden_effect = {
+				owner = {
+					country_event = { id = civicsexpanded.100 }
+				}
+			}
+		}
+	}
+}
+
+d_segment_rubble_1_small = {
+	is_for_colonizable = yes
+	icon = "d_organic_landfill"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 250
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_origin = origin_shattered_ring }
+				is_capital = yes
+			}
+			custom_tooltip = discover_tech
+			hidden_effect = {
+				owner = {
+					country_event = { id = civicsexpanded.100 }
+				}
+			}
+		}
+	}
+}
+
+d_segment_rubble_2 = {
+	is_for_colonizable = yes
+	icon = "d_metal_boneyard"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 250
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_origin = origin_shattered_ring }
+				is_capital = yes
+			}
+			custom_tooltip = discover_tech
+			hidden_effect = {
+				owner = {
+					country_event = { id = civicsexpanded.100 }
+				}
+			}
+		}
+	}
+}
+
+d_segment_rubble_3 = {
+	is_for_colonizable = yes
+	icon = "d_ruins_medium"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 250
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_origin = origin_shattered_ring }
+				is_capital = yes
+			}
+			custom_tooltip = discover_tech
+			hidden_effect = {
+				owner = {
+					country_event = { id = civicsexpanded.100 }
+				}
+			}
+		}
+	}
+}
+
+d_segment_rubble_4 = {
+	is_for_colonizable = yes
+	icon = "d_city_ruins"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 250
+		}
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_ancrel = yes
+				}
+			}
+
+			custom_tooltip = minor_artifacts_found
+			random_list = {
+				33 = {
+					owner = { add_resource = { minor_artifacts = 1 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 3 } }
+				}
+				33 = {
+					owner = { add_resource = { minor_artifacts = 5 } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_origin = origin_shattered_ring }
+				is_capital = yes
+			}
+			custom_tooltip = discover_tech
+			hidden_effect = {
+				owner = {
+					country_event = { id = civicsexpanded.100 }
+				}
+			}
+		}
+	}
+}

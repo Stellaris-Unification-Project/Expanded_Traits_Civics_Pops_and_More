@@ -1,0 +1,1163 @@
+namespace = d_traits_ai
+
+# tech researched - bio
+country_event = {
+	id = d_traits_ai.11
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			last_increased_tech = tech_genetic_resequencing
+			last_increased_tech = tech_genetic_mastery
+		}
+		is_ai = yes
+	}
+	immediate = {
+		every_galaxy_species = {
+			limit = {
+				is_robotic = no
+				is_sapient = yes
+				OR = {
+					root = { is_homicidal = no }
+					is_same_species = root
+				}
+			}
+			if = {
+				limit = {
+					could_use_4_more_trait_points_biological = yes
+					ROOT = { has_technology = "tech_genetic_mastery" }
+					NOT = { has_trait = trait_complex_genetic_code }
+				}
+				set_species_flag = make_complex_genetic_code@root
+			}
+			else_if = {
+				limit = {
+					could_use_4_more_trait_points_biological = yes
+					OR = {
+						has_trait = trait_venerable
+						has_trait = trait_venerable_lithoid
+					}
+					has_citizenship_type = {
+						type = citizenship_slavery
+						country = root
+					}
+				}
+				set_species_flag = remove_venerable@root
+			}
+			else_if = {
+				limit = { could_use_2_more_trait_points_biological = yes }
+				random_list = {
+					1 = {
+						set_species_flag = make_slow_breeders@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = "trait_rapid_breeders"
+								has_trait = "trait_slow_breeders"
+								has_trait = "trait_fertile"
+								has_trait = "trait_fungal_colony"
+								has_trait = "trait_plantoid_budding"
+								has_trait = "trait_clones"
+								has_trait = "trait_clone_soldier_infertile_full_potential"
+								has_trait = "trait_clone_soldier_infertile"
+								has_trait = "trait_plantoid_budding"
+							}
+						}
+						modifier = {
+							factor = 10
+							root = { is_civic_environmentalist = yes }
+						}
+						modifier = {
+							factor = 5
+							root = { has_valid_civic = civic_agrarian_idyll }
+						}
+						modifier = {
+							factor = 0
+							root = {
+								is_galactic_community_member = yes
+								is_active_resolution = resolution_healthcare_universal_healthcare
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_slothful@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = "trait_agrarian"
+								has_trait = "trait_ingenious"
+								has_trait = "trait_industrious"
+								has_trait = "trait_slothful"
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_citizenship_type = { country = root type = citizenship_slavery }
+								AND = {
+									ROOT = { has_origin = origin_necrophage }
+									NOT = { has_trait = trait_necrophage }
+								}
+								AND = {
+									ROOT = { has_valid_civic = civic_agrarian_idyll }
+									has_citizenship_type = { country = prev type = citizenship_full }
+								}
+								AND = {
+									ROOT = { has_valid_civic = civic_mining_guilds }
+									has_citizenship_type = { country = prev type = citizenship_full }
+								}
+							}
+						}
+						modifier = {
+							factor = 1.5
+							has_trait = trait_decadent
+						}
+						modifier = {
+							factor = 0.75
+							NOT = { has_trait = trait_decadent }
+							NOT = { has_trait = trait_necrophage }
+						}
+						modifier = {
+							factor = 0.25
+							ROOT = { is_megacorp = yes }
+						}
+						modifier = {
+							factor = 4
+							has_trait = trait_necrophage
+						}
+					}
+					1 = {
+						set_species_flag = make_nonadaptive@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = "trait_extremely_adaptive"
+								has_trait = "trait_nonadaptive"
+								has_trait = "trait_adaptive"
+								has_trait = "trait_robust"
+								has_trait = "trait_adaptive_lithoid"
+								has_trait = "trait_ageless"
+								has_trait = "trait_endemic"
+							}
+						}
+						modifier = {
+							factor = 10
+							root = {
+								OR = {
+									has_ascension_perk = ap_world_shaper
+									has_ascension_perk = ap_voidborn
+								}
+							}
+						}
+						modifier = {
+							factor = 0
+							root = {
+								is_galactic_community_member = yes
+								is_active_resolution = resolution_healthcare_universal_healthcare
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_endemic@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = "trait_extremely_adaptive"
+								has_trait = "trait_nonadaptive"
+								has_trait = "trait_adaptive"
+								has_trait = "trait_robust"
+								has_trait = "trait_adaptive_lithoid"
+								has_trait = "trait_ageless"
+								has_trait = "trait_endemic"
+							}
+						}
+						modifier = {
+							factor = 0
+							could_use_4_more_trait_points_biological = no
+						}
+						modifier = {
+							factor = 0
+							NOR = {
+								has_citizenship_type = {
+									type = citizenship_slavery
+									country = root
+								}
+								root = {
+									OR = {
+										has_ascension_perk = ap_world_shaper
+										has_ascension_perk = ap_voidborn
+									}
+								}
+							}
+						}
+						modifier = {
+							factor = 0
+							root = {
+								is_galactic_community_member = yes
+								is_active_resolution = resolution_healthcare_universal_healthcare
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_unruly@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_unruly
+								has_trait = trait_docile
+								has_trait = trait_obedient
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									is_authoritarian = yes
+									is_civic_authoritarian = yes
+								}
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_repugnant@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_repugnant
+								is_trait_charismatic = yes
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_organic_trophy
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									has_valid_civic = civic_media_conglomerate
+									has_valid_civic = civic_diplomatic_corps
+									has_valid_civic = civic_hive_empath
+								}
+							}
+						}
+						modifier = {
+							factor = 0
+							has_slavery_type = { country = root type = slavery_domestic }
+						}
+					}
+					1 = {
+						set_species_flag = make_deeply_rooted@root
+						modifier = {
+							factor = 0
+							OR = {
+								is_plantoid = no
+								has_trait = trait_nomadic
+								has_trait = trait_sedentary
+								has_trait = trait_deeply_rooted
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_seasonal@root
+						modifier = {
+							factor = 0
+							OR = {
+								is_plantoid = no
+								has_trait = "trait_fleeting"
+								has_trait = "trait_venerable"
+								has_trait = "trait_enduring"
+								has_trait = "trait_enduring_lithoid"
+								has_trait = "trait_venerable_lithoid"
+								has_trait = "trait_lithoid_eternal"
+								has_trait = "trait_fleeting_lithoid"
+								has_trait = "trait_seasonal"
+								has_trait = "trait_ancient"
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_slavery
+							}
+							root = { is_xenophile = no }
+						}
+						modifier = {
+							factor = 10
+							root = { has_valid_civic = civic_warrior_culture }
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									is_materialist = yes
+									is_civic_materialist = yes
+								}
+							}
+						}
+						modifier = {
+							factor = 0
+							root = {
+								is_galactic_community_member = yes
+								is_active_resolution = resolution_healthcare_universal_healthcare
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_voracious@root
+						modifier = {
+							factor = 0
+							OR = {
+								is_arthropoid = no
+								has_trait = trait_high_metabolism
+								has_trait = trait_low_metabolism
+								has_trait = trait_voracious
+							}
+						}
+						modifier = {
+							factor = 0
+							root = { has_valid_civic = civic_starvation_fearing }
+						}
+						modifier = {
+							factor = 0.05
+							root = { is_civic_environmentalist = yes }
+						}
+						modifier = {
+							factor = 10
+							root = { has_ai_personality = ruthless_capitalists }
+						}
+						modifier = {
+							factor = 0
+							NOR = {
+								AND = {
+									is_lithoid = no
+									ROOT = { has_monthly_income = { resource = food  value > 75 } }
+								}
+								AND = {
+									is_lithoid = yes
+									ROOT = { has_monthly_income = { resource = minerals  value > 75 } }
+								}
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_peacockish@root
+						modifier = {
+							factor = 0
+							OR = {
+								is_avian = no
+								has_trait = trait_wasteful
+								has_trait = trait_conservational
+								has_trait = trait_peacockish
+								has_trait = trait_ecologists
+							}
+						}
+						modifier = {
+							factor = 0.05
+							root = { is_civic_environmentalist = yes }
+						}
+						modifier = {
+							factor = 50
+							root = { has_ai_personality = ruthless_capitalists }
+						}
+						modifier = {
+							factor = 10
+							root = { has_valid_civic = civic_media_conglomerate }
+						}
+						modifier = {
+							factor = 0
+							root = { is_hive_empire = yes }
+						}
+					}
+					1 = {
+						set_species_flag = make_tormented@root
+						modifier = {
+							factor = 0
+							is_necroid = no
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_skittish
+								has_trait = trait_carefree
+								has_trait = trait_tormented
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_slavery
+							}
+							root = { is_xenophile = no }
+						}
+						modifier = {
+							factor = 0.25
+							root = { is_pacifist = yes }
+						}
+						modifier = {
+							factor = 0
+							root = { is_hive_empire = yes }
+						}
+						modifier = {
+							factor = 0
+							root = {
+								is_galactic_community_member = yes
+								is_active_resolution = resolution_healthcare_universal_healthcare
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { could_use_1_more_trait_points_biological = yes }
+				random_list = {
+					1 = {
+						set_species_flag = make_slow_learners@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_slow_learners
+								has_trait = trait_quick_learners
+								has_trait = trait_enigmatic_intelligence
+								has_trait = trait_genetic_memory
+							}
+						}
+						modifier = {
+							factor = 1000
+							NOR = {
+								has_citizenship_type = {
+									country = root
+									type = citizenship_full
+								}
+								has_military_service_type = {
+									country = root
+									type = citizenship_full
+								}
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_quarrelsome@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_traditional
+								has_trait = trait_quarrelsome
+							}
+						}
+						modifier = {
+							factor = 0
+							has_citizenship_type = {
+								country = root
+								type = citizenship_organic_trophy
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = { is_pacifist = yes }
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									is_authoritarian = yes
+									is_civic_authoritarian = yes
+								}
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_weak@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_weak
+								has_trait = trait_strong
+								has_trait = trait_very_strong
+								has_trait = trait_titanic_strength
+								has_trait = trait_lithoid_titanic_strength
+							}
+						}
+						modifier = {
+							factor = 0.01
+							OR = {
+								has_citizenship_type = {
+									country = root
+									type = citizenship_slavery
+								}
+								has_trait = trait_syncretic_proles
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_organic_trophy
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_sedentary@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_nomadic
+								has_trait = trait_sedentary
+								has_trait = trait_deeply_rooted
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_solitary@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_communal
+								has_trait = trait_solitary
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = { is_pacifist = yes }
+						}
+						modifier = {
+							factor = 0.1
+							root = { is_civic_environmentalist = yes }
+						}
+					}
+					1 = {
+						set_species_flag = make_deviants@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_conformists
+								has_trait = trait_deviants
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									is_authoritarian = yes
+									is_civic_authoritarian = yes
+								}
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_organic_trophy
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_fleeting@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = "trait_fleeting"
+								has_trait = "trait_venerable"
+								has_trait = "trait_enduring"
+								has_trait = "trait_enduring_lithoid"
+								has_trait = "trait_venerable_lithoid"
+								has_trait = "trait_lithoid_eternal"
+								has_trait = "trait_fleeting_lithoid"
+								has_trait = "trait_seasonal"
+								has_trait = "trait_ancient"
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_slavery
+							}
+							root = { is_xenophile = no }
+						}
+						modifier = {
+							factor = 10
+							root = { has_valid_civic = civic_warrior_culture }
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									is_materialist = yes
+									is_civic_materialist = yes
+								}
+							}
+						}
+						modifier = {
+							factor = 0
+							root = {
+								is_galactic_community_member = yes
+								is_active_resolution = resolution_healthcare_universal_healthcare
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_decadent@root
+						modifier = {
+							factor = 0
+							has_trait = trait_decadent
+						}
+						modifier = {
+							factor = 2
+							root = {
+								any_owned_species = {
+									has_citizenship_type = {
+										country = root
+										type = citizenship_slavery
+									}
+								}
+							}
+							NOT = {
+								has_citizenship_type = {
+									country = root
+									type = citizenship_slavery
+								}
+							}
+						}
+						modifier = {
+							factor = 2
+							root = {
+								any_owned_species = {
+									has_trait = trait_syncretic_proles
+								}
+							}
+							NOT = {
+								has_trait = trait_syncretic_proles
+							}
+						}
+						modifier = {
+							factor = 2
+							root = {
+								has_technology = tech_robotic_workers
+								has_policy_flag = robots_allowed
+								NOT = { has_technology = tech_droid_workers }
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_organic_trophy
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = { is_egalitarian = yes }
+						}
+						modifier = {
+							factor = 0
+							root = { is_hive_empire = yes }
+						}
+					}
+					1 = {
+						set_species_flag = make_wasteful@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_wasteful
+								has_trait = trait_conservational
+								has_trait = trait_peacockish
+								has_trait = trait_ecologists
+							}
+						}
+						modifier = {
+							factor = 0.05
+							root = { is_civic_environmentalist = yes }
+						}
+						modifier = {
+							factor = 50
+							root = { has_ai_personality = ruthless_capitalists }
+						}
+						modifier = {
+							factor = 0
+							root = { is_hive_empire = yes }
+						}
+					}
+					1 = {
+						set_species_flag = make_high_metabolism@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_high_metabolism
+								has_trait = trait_low_metabolism
+								has_trait = trait_voracious
+							}
+						}
+						modifier = {
+							factor = 0
+							root = { has_valid_civic = civic_starvation_fearing }
+						}
+						modifier = {
+							factor = 0.05
+							root = { is_civic_environmentalist = yes }
+						}
+						modifier = {
+							factor = 10
+							root = { has_ai_personality = ruthless_capitalists }
+						}
+						modifier = {
+							factor = 0
+							NOR = {
+								AND = {
+									is_lithoid = no
+									ROOT = { has_monthly_income = { resource = food  value > 50 } }
+								}
+								AND = {
+									is_lithoid = yes
+									ROOT = { has_monthly_income = { resource = minerals  value > 50 } }
+								}
+							}
+						}
+					}
+					1 = {
+						set_species_flag = make_skittish@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_skittish
+								has_trait = trait_carefree
+								has_trait = trait_tormented
+							}
+						}
+						modifier = {
+							factor = 0.25
+							root = { is_pacifist = yes }
+						}
+						modifier = {
+							factor = 0
+							root = { is_hive_empire = yes }
+						}
+					}
+					1 = {
+						set_species_flag = make_inept@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_inept
+								has_trait = trait_talented
+								has_trait = trait_erudite
+								has_trait = trait_genetic_memory
+							}
+						}
+						modifier = {
+							factor = 3
+							ROOT = { is_xenophile = no }
+							NOR = {
+								has_citizenship_type = { country = prev type = citizenship_full }
+								has_military_service_type = { country = prev type = military_service_full }
+							}
+						}
+						modifier = {
+							factor = 0.5
+							root = { is_materialist = yes }
+						}
+					}
+					1 = {
+						set_species_flag = make_uninventive@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_uninventive
+								has_trait = trait_intelligent
+								has_trait = trait_erudite
+								has_trait = trait_enigmatic_intelligence_poor
+								has_trait = trait_natural_physicists
+								has_trait = trait_natural_sociologists
+								has_trait = trait_natural_engineers
+							}
+						}
+
+						modifier = {
+							factor = 3
+							ROOT = { is_xenophile = no }
+							NOR = {
+								has_citizenship_type = { country = prev type = citizenship_full }
+								has_military_service_type = { country = prev type = military_service_full }
+							}
+						}
+						modifier = {
+							factor = 0.25
+							root = { is_materialist = yes }
+						}
+					}
+					1 = {
+						set_species_flag = trait_slothful@root
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = trait_slothful
+								has_trait = trait_agrarian
+								has_trait = trait_ingenious
+								has_trait = trait_industrious
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_citizenship_type = { country = prev type = citizenship_slavery }
+								has_trait = trait_syncretic_proles
+							}
+						}
+						modifier = {
+							factor = 2
+							has_trait = trait_decadent
+						}
+						modifier = {
+							factor = 2
+							root = {
+								any_owned_species = {
+									has_citizenship_type = {
+										country = root
+										type = citizenship_slavery
+									}
+								}
+							}
+							NOT = {
+								has_citizenship_type = {
+									country = root
+									type = citizenship_slavery
+								}
+							}
+						}
+						modifier = {
+							factor = 2
+							root = {
+								any_owned_species = {
+									has_trait = trait_syncretic_proles
+								}
+							}
+							NOT = {
+								has_trait = trait_syncretic_proles
+							}
+						}
+						modifier = {
+							factor = 2
+							root = {
+								has_technology = tech_robotic_workers
+								has_policy_flag = robots_allowed
+								NOT = { has_technology = tech_droid_workers }
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_citizenship_type = {
+								country = root
+								type = citizenship_organic_trophy
+							}
+						}
+						modifier = {
+							factor = 0.1
+							root = {
+								OR = {
+									is_egalitarian = yes
+									is_civic_mining_guilds = yes
+									has_valid_civic = civic_agrarian_idyll
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# tech researched - robots
+country_event = {
+	id = d_traits_ai.12
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		last_increased_tech = tech_robomodding
+		is_ai = yes
+	}
+	immediate = {
+		random_list = {
+			2.5 = {
+				set_country_flag = make_robots_bulky
+				modifier = {
+					factor = 0.1
+					is_megacorp = yes
+				}
+				modifier = {
+					factor = 0.25
+					is_civic_environmentalist = yes
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_high_maintenance
+				modifier = {
+					factor = 0
+					is_civic_environmentalist = yes
+				}
+				modifier = {
+					factor = 2
+					has_ai_personality = ruthless_capitalists
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_repurposed_hardware
+				modifier = {
+					factor = 0.5
+					OR = {
+						is_materialist = yes
+						is_civic_materialist = yes
+					}
+				}
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_origin = origin_mechanists
+						has_origin = origin_scion
+					}
+				}
+				modifier = {
+					factor = 3
+					is_civic_environmentalist = yes
+				}
+				modifier = {
+					factor = 3
+					OR = {
+						has_origin = origin_void_dwellers
+						has_origin = origin_shattered_ring
+						has_origin = origin_remnants
+						has_origin = origin_post_apocalyptic
+					}
+				}
+			}
+			1.5 = {
+				set_country_flag = make_robots_custom_made
+				modifier = {
+					factor = 3
+					is_civic_environmentalist = yes
+				}
+				modifier = {
+					factor = 0.25
+					has_ethic = ethic_egalitarian
+				}
+				modifier = {
+					factor = 0.05
+					has_ethic = ethic_fanatic_egalitarian
+				}
+				modifier = {
+					factor = 2
+					is_civic_authoritarian = yes
+				}
+				modifier = {
+					factor = 4
+					has_ethic = ethic_authoritarian
+				}
+				modifier = {
+					factor = 10
+					has_ethic = ethic_fanatic_authoritarian
+				}
+				modifier = {
+					factor = 5
+					has_valid_civic = civic_agrarian_idyll
+				}
+			}
+			1.5 = {
+				set_country_flag = make_robots_luxurious
+				modifier = {
+					factor = 0.1
+					is_civic_environmentalist = yes
+				}
+				modifier = {
+					factor = 1.5
+					OR = {
+						is_authoritarian = yes
+						is_civic_authoritarian = yes
+					}
+				}
+				modifier = {
+					factor = 2
+					is_civic_has_elite = yes
+				}
+				modifier = {
+					factor = 2.5 # multiplies with is_civic_has_elite = yes
+					has_valid_civic = civic_aristocratic_elite
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_high_bandwidth
+			}
+			1.5 = {
+				set_country_flag = make_robot_quarrelsome
+			}
+			1.5 = {
+				set_country_flag = make_delicate
+				modifier = {
+					factor = 0
+					OR = {
+						is_militarist = yes
+						is_civic_militarist = yes
+					}
+				}
+				modifier = {
+					factor = 2
+					is_pacifist = yes
+				}
+			}
+			1.5 = {
+				set_country_flag = make_robot_uninventive
+				modifier = {
+					factor = 0
+					NOR = {
+						has_authority = auth_machine_intelligence
+						has_technology = tech_synthetic_workers
+						has_technology = tech_sapient_ai
+						has_technology = tech_positronic_implants
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						is_materialist = yes
+						is_robot_empire = yes
+					}
+				}
+				modifier = {
+					factor = 3
+					OR = {
+						has_ai_personality_behaviour = robot_exploiter
+						is_robot_empire = no
+					}
+				}
+			}
+		}
+	}
+}
+
+# tech researched - machines
+country_event = {
+	id = d_traits_ai.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		last_increased_tech = tech_robomodding_m
+		is_ai = yes
+		species = {
+			could_use_1_more_trait_points_robotic = yes
+		}
+	}
+	immediate = {
+		random_list = {
+			6 = {
+				set_country_flag = make_robots_uncanny
+				modifier = {
+					factor = 0
+					NOT = {
+						any_owned_species = {
+							OR = {
+								has_citizenship_type = {
+									country = root
+									type = citizenship_full_machine
+								}
+								has_citizenship_type = {
+									country = root
+									type = citizenship_organic_trophy
+								}
+							}
+							has_trait = trait_repugnant
+						}
+					}
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_bulky
+				modifier = {
+					factor = 0.25
+					has_country_flag = was_environmentalist
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_high_maintenance
+				modifier = {
+					factor = 0
+					has_country_flag = was_environmentalist
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_custom_made
+				modifier = {
+					factor = 3
+					has_country_flag = was_environmentalist
+				}
+				modifier = {
+					factor = 0
+					has_ai_personality_behaviour = propagator
+					NOT = { has_civic = civic_machine_assimilator }
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_luxurious
+				modifier = {
+					factor = 0.1
+					is_civic_environmentalist = yes
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						species = {
+							could_use_2_more_trait_points_robotic = yes
+						}				
+					}
+				}
+			}
+			2 = {
+				set_country_flag = make_robots_high_bandwidth
+				modifier = {
+					factor = 0
+					has_ai_personality_behaviour = propagator
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						species = {
+							could_use_2_more_trait_points_robotic = yes
+						}				
+					}
+				}
+			}
+			1.5 = {
+				set_country_flag = make_robot_quarrelsome
+				modifier = {
+					factor = 2
+					has_valid_civic = civic_machine_servitor
+				}
+				modifier = {
+					factor = 0.5
+					is_trait_charismatic = yes
+				}
+				modifier = {
+					factor = 0
+					has_valid_civic = civic_machine_unitary_cohesion
+				}
+			}
+			1.5 = {
+				set_country_flag = make_delicate
+				modifier = {
+					factor = 0
+					OR = {
+						is_militarist = yes
+						is_civic_militarist = yes
+					}
+				}
+				modifier = {
+					factor = 2
+					is_pacifist = yes
+				}
+			}
+		}
+	}
+}
