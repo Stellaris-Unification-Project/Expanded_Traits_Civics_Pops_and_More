@@ -720,16 +720,12 @@ is_psionic_candidate = {
 	NOR = {
 		has_trait = trait_latent_psionic
 		has_trait = trait_psionic
-	}
-	NOR = {
 		has_trait = trait_cybernetic
 		has_trait = trait_primitive_cybernetic
-	}
-	NOR = {
 		has_trait = trait_hive_mind
 		pop_has_ethic = ethic_materialist
+		pop_has_ethic = ethic_xenophobe
 	}
-	NOT = { pop_has_ethic = ethic_xenophobe }
 	is_enslaved = no
 	is_being_purged = no
 	is_robot_pop = no
@@ -739,16 +735,12 @@ is_cyborg_candidate = {
 	NOR = {
 		has_trait = trait_latent_psionic
 		has_trait = trait_psionic
-	}
-	NOR = {
 		has_trait = trait_cybernetic
 		has_trait = trait_primitive_cybernetic
-	}
-	NOR = {
 		has_trait = trait_hive_mind
 		pop_has_ethic = ethic_spiritualist
+		pop_has_ethic = ethic_xenophobe
 	}
-	NOT = { pop_has_ethic = ethic_xenophobe }
 	is_enslaved = no
 	is_being_purged = no
 	is_robot_pop = no
@@ -758,36 +750,22 @@ is_gene_candidate = {
 	NOR = {
 		has_trait = trait_adaptive_lithoid
 		has_trait = trait_rapid_breeders_lithoid
-	}
-	NOR = {
 		has_trait = trait_nerve_stapled
 		has_trait = trait_fertile
-	}
-	NOR = {
 		has_trait = trait_robust
 		has_trait = trait_erudite
-	}
-	NOR = {
 		has_trait = trait_titanic_strength
 		has_trait = trait_pheremones
-	}
-	NOR = {
 		has_trait = trait_obedient
 		has_trait = trait_lithoid_shiny
-	}
-	NOR = {
 		has_trait = trait_lithoid_compact
 		has_trait = trait_lithoid_titanic_strength
-	}
-	NOR = {
 		has_trait = trait_ageless
 		has_trait = trait_genetic_memory
-	}
-	NOR = {
 		has_trait = trait_sleepless
 		has_trait = trait_complex_genetic_code
+		pop_has_ethic = ethic_xenophobe
 	}
-	NOT = { pop_has_ethic = ethic_xenophobe }
 	is_enslaved = no
 	is_being_purged = no
 	is_robot_pop = no

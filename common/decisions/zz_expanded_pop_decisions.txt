@@ -19,8 +19,6 @@ decision_lithoid_prospect = {
 		NOR = {
 			is_planet_class = pc_machine
 			is_planet_class = pc_hive
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
 		}
@@ -236,8 +234,6 @@ decision_fungoid_prospect = {
 		NOR = {
 			is_planet_class = pc_machine
 			is_planet_class = pc_hive
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
 		}
@@ -512,8 +508,6 @@ decision_plantoid_prospect = {
 		NOR = {
 			is_planet_class = pc_machine
 			is_planet_class = pc_hive
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
 		}
@@ -900,8 +894,8 @@ decision_trait_burrow = {
 		NOR = {
 			is_planet_class = pc_machine
 			is_planet_class = pc_city
+			has_deposit = d_trait_burrow
 		}
-		NOT = { has_deposit = d_trait_burrow }
 		any_owned_pop = {
 			OR = {
 				has_trait = trait_burrowing
@@ -1192,8 +1186,6 @@ decision_nature_preserve = {
 		NOR = {
 			is_planet_class = pc_machine
 			is_planet_class = pc_city
-		}
-		NOR = {
 			has_deposit = d_nature_preserve
 			has_global_flag = EcologyMod_active
 		}

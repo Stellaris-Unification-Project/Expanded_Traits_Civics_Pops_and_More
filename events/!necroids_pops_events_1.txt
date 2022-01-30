@@ -105,16 +105,10 @@ planet_event = {
 					NOR = {
 						is_same_empire = root.owner
 						is_same_species = prev
-					}
-					NOR = {
 						has_ai_personality_behaviour = purger
 						has_valid_civic = civic_infestation
-					}
-					NOR = {
 						has_origin = origin_necrophage
 						has_ethic = ethic_gestalt_consciousness
-					}
-					NOR = {
 						has_valid_civic = civic_death_cult
 						has_valid_civic = civic_death_cult_corporate
 					}

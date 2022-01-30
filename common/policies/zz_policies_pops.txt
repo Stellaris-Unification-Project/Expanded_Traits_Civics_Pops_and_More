@@ -1180,8 +1180,6 @@ interference = {
 			NOR = {
 				is_subject_type = signatory
 				is_subject_type = scion_signatory
-			}
-			NOR = {
 				is_pacifist = yes
 				has_valid_civic = civic_closed_collective
 				has_valid_civic = civic_closed_network

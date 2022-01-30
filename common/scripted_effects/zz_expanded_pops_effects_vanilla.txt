@@ -3112,8 +3112,8 @@ create_nu_baol_effect = {
 					NOR = {
 						has_valid_civic = civic_hive_devouring_swarm
 						has_valid_civic = civic_infestation
+						has_origin = origin_necrophage
 					}
-					NOT = { has_origin = origin_necrophage }
 				}
 			}
 			create_species = {
@@ -3173,8 +3173,8 @@ create_nu_baol_effect = {
 					NOR = {
 						has_valid_civic = civic_hive_devouring_swarm
 						has_valid_civic = civic_infestation
+						has_origin = origin_necrophage
 					}
-					NOT = { has_origin = origin_necrophage }
 				}
 			}
 			create_species = {

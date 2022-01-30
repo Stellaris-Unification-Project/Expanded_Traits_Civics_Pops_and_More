@@ -1022,16 +1022,10 @@ planet_event = {
 					NOR = {
 						is_same_empire = root.owner
 						is_same_species = prev
-					}
-					NOR = {
 						has_ai_personality_behaviour = purger
 						has_valid_civic = civic_infestation
-					}
-					NOR = {
 						has_origin = origin_necrophage
 						has_ethic = ethic_gestalt_consciousness
-					}
-					NOR = {
 						has_valid_civic = civic_death_cult
 						has_valid_civic = civic_death_cult_corporate
 					}
@@ -1119,8 +1113,6 @@ country_event = {
 				NOR = {
 					has_trait = trait_hive_mind
 					has_species_flag = flag_species_to_infest
-				}
-				NOR = {
 					has_species_flag = flag_species_infestation_project
 					has_species_flag = flag_species_infestation_refused
 				}
@@ -1142,8 +1134,6 @@ country_event = {
 					NOR = {
 						has_trait = trait_hive_mind
 						has_species_flag = flag_species_to_infest
-					}
-					NOR = {
 						has_species_flag = flag_species_infestation_project
 						has_species_flag = flag_species_infestation_refused
 					}
@@ -1202,8 +1192,8 @@ country_event = {
 					NOR = {
 						has_trait = trait_hive_mind
 						has_species_flag = flag_species_to_infest
+						has_species_flag = flag_species_infestation_project
 					}
-					NOT = { has_species_flag = flag_species_infestation_project }
 					#NOT = { has_species_flag = flag_species_infestation_refused }
 					
 					#has_citizenship_type = { country = root type = citizenship_slavery }

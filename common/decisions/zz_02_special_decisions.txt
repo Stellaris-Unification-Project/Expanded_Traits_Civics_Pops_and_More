@@ -19,8 +19,6 @@ decision_prospect = {
 		NOR = {
 			is_planet_class = pc_machine
 			is_planet_class = pc_hive
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
 		}
@@ -90,8 +88,8 @@ decision_penal_colony = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = eco_trash_colony
 		}
-		NOT = { has_modifier = eco_trash_colony }
 		owner = { 
 			is_regular_empire = yes 
 		}
@@ -219,12 +217,8 @@ decision_slave_colony = {
 		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
-		}
-		NOR = {
 			has_modifier = resort_colony
 			has_modifier = penal_colony
-		}
-		NOR = {
 			has_modifier = slave_colony
 			has_modifier = eco_trash_colony
 		}
@@ -343,12 +337,8 @@ decision_resort_colony = {
 		NOR = {
 			has_modifier = penal_colony
 			has_modifier = slave_colony
-		}
-		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
-		}
-		NOR = {
 			is_planet_class = pc_nuked
 			has_modifier = eco_trash_colony
 		}
@@ -366,8 +356,8 @@ decision_resort_colony = {
 		NOR = {
 			has_modifier = delicate_ecosystem
 			has_modifier = eco_fragile_ecosystem
+			has_deposit = d_exploited_homeworld
 		}
-		NOT = { has_deposit = d_exploited_homeworld }
 		custom_tooltip = {
 			fail_text = decision_resort_colony_no_districts
 			num_districts = { type = any value < 1 }
@@ -536,12 +526,8 @@ decision_mastery_of_nature = {
 				NOR = {
 					is_planet_class = pc_machine
 					is_planet_class = pc_hive
-				}
-				NOR = {
 					is_planet_class = pc_city
 					is_planet_class = pc_relic
-				}
-				NOR = {
 					has_modifier = delicate_ecosystem
 					has_modifier = eco_fragile_ecosystem
 				}
@@ -681,8 +667,6 @@ decision_consecrated_worlds = {
 					NOR = {
 						is_planet_class = pc_shrouded
 						has_modifier = dead_god
-					}
-					NOR = {
 						has_modifier = old_god_shrine
 						has_modifier = rock_brain
 						has_modifier = life_electric
@@ -851,8 +835,6 @@ decision_consecrated_worlds = {
 					NOR = {
 						is_planet_class = pc_gaia
 						is_planet_class = pc_shrouded
-					}
-					NOR = {
 						has_modifier = dead_god
 						has_modifier = old_god_shrine
 					}

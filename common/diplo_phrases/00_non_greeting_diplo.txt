@@ -1777,8 +1777,8 @@ action_offer_peace = {
 					NOR = {
 						has_ethic = ethic_gestalt_consciousness
 						has_ai_personality = fanatic_purifiers
+						is_same_species_class = ROOT
 					}
-					NOT = { is_same_species_class = ROOT }
 					is_megacorp = no
 					has_war_goal = yes
 				}
@@ -1803,8 +1803,8 @@ action_offer_peace = {
 					NOR = {
 						has_ethic = ethic_gestalt_consciousness
 						has_ai_personality = fanatic_purifiers
+						is_same_species_class = ROOT
 					}
-					NOT = { is_same_species_class = ROOT }
 					is_megacorp = no
 					has_war_goal = no
 				}
@@ -2204,8 +2204,8 @@ action_offer_peace = {
 				NOR = {
 					has_ethic = ethic_gestalt_consciousness
 					has_ai_personality = fanatic_purifiers
+					is_same_species_class = FROM
 				}
-				NOT = { is_same_species_class = FROM }
 				is_megacorp = no
 			}
 		}
@@ -3997,11 +3997,9 @@ action_demand_vassalization = {
 				NOR = {
 					has_ethic = ethic_gestalt_consciousness
 					has_ai_personality = fanatic_purifiers
-				}
-				NOR = {
-						is_xenophobe = yes
+					is_xenophobe = yes
 						is_megacorp = yes
-}
+				}
 				OR = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
@@ -4015,12 +4013,8 @@ action_demand_vassalization = {
 				NOR = {
 					has_ethic = ethic_gestalt_consciousness
 					has_ai_personality = fanatic_purifiers
-				}
-				NOR = {
-						is_xenophobe = yes
+					is_xenophobe = yes
 						is_megacorp = yes
-}
-				NOT = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
 					is_protective_to = FROM
@@ -4228,11 +4222,11 @@ action_demand_vassalization = {
 		# Accept
 		01_DEMAND_VASS_ACCEPT = {
 			trigger = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 				NOR = {
-						is_xenophobe = yes
+					has_ethic = ethic_gestalt_consciousness
+					is_xenophobe = yes
 						is_megacorp = yes
-}
+				}
 			}
 		}
 		# Accept Xenophobe
@@ -4323,11 +4317,9 @@ action_demand_vassalization = {
 				NOR = {
 					has_ethic = ethic_gestalt_consciousness
 					has_ai_personality = fanatic_purifiers
-				}
-				NOR = {
-						is_xenophobe = yes
+					is_xenophobe = yes
 						is_megacorp = yes
-}
+				}
 				OR = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
@@ -4341,12 +4333,8 @@ action_demand_vassalization = {
 				NOR = {
 					has_ethic = ethic_gestalt_consciousness
 					has_ai_personality = fanatic_purifiers
-				}
-				NOR = {
-						is_xenophobe = yes
+					is_xenophobe = yes
 						is_megacorp = yes
-}
-				NOT = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
 					is_protective_to = FROM
@@ -4994,11 +4982,11 @@ action_demand_protectorate = {
 		# Protectoration Select
 		01_DEMAND_PROT_SELECT = {
 			trigger = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 				NOR = {
-						is_xenophobe = yes
+					has_ethic = ethic_gestalt_consciousness
+					is_xenophobe = yes
 						is_megacorp = yes
-}
+				}
 				OR = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
@@ -5009,12 +4997,10 @@ action_demand_protectorate = {
 		# Protectoration Select (Hostile)
 		02_DEMAND_PROT_SELECT = {
 			trigger = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 				NOR = {
-						is_xenophobe = yes
+					has_ethic = ethic_gestalt_consciousness
+					is_xenophobe = yes
 						is_megacorp = yes
-}
-				NOT = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
 					is_protective_to = FROM
@@ -5193,11 +5179,11 @@ action_demand_protectorate = {
 		# Accept
 		01_DEMAND_PROT_ACCEPT = {
 			trigger = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 				NOR = {
-						is_xenophobe = yes
+					has_ethic = ethic_gestalt_consciousness
+					is_xenophobe = yes
 						is_megacorp = yes
-}
+				}
 			}
 		}
 		# Accept Xenophobe
@@ -5271,11 +5257,11 @@ action_demand_protectorate = {
 		# Refuse
 		01_DEMAND_PROT_REFUSE = {
 			trigger = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 				NOR = {
-						is_xenophobe = yes
+					has_ethic = ethic_gestalt_consciousness
+					is_xenophobe = yes
 						is_megacorp = yes
-}
+				}
 				OR = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
@@ -5286,12 +5272,10 @@ action_demand_protectorate = {
 		# Refuse Hostile
 		02_DEMAND_PROT_REFUSE = {
 			trigger = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 				NOR = {
-						is_xenophobe = yes
+					has_ethic = ethic_gestalt_consciousness
+					is_xenophobe = yes
 						is_megacorp = yes
-}
-				NOT = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
 					is_protective_to = FROM
@@ -9487,20 +9471,14 @@ action_integrate_subject = {
 				NOR = {
 					is_friendly_to = FROM
 					is_cordial_to = FROM
-				}
-				NOR = {
 					is_protective_to = FROM
 					is_hostile_to = FROM
-				}
-				NOR = {
 					is_domineering_to = FROM
 					is_unfriendly_to = FROM
-				}
-				NOR = {
 					is_dismissive_to = FROM
 					is_patronizing_to = FROM
+					is_angry_to = FROM
 				}
-				NOT = { is_angry_to = FROM }
 			}
 		}
 		# Gen Machine Empire

@@ -241,8 +241,6 @@ trait_aquatic = {
 				NOR = {
 					has_climate = wet
 					is_planet_class = pc_subarctic
-				}
-				NOR = {
 					is_planet_class = pc_desert
 					is_planet_class = pc_arid
 					is_planet_class = pc_savannah

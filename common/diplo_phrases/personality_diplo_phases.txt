@@ -3435,8 +3435,8 @@ greetings = {
 			NOR = {
 				is_same_species = FROM
 				is_at_war_with = FROM
+				exists = overlord
 			}
-			NOT = { exists = overlord }
 			species_portrait = pla11
 			FROM = { NOT = { has_authority = auth_machine_intelligence } }
 		}

@@ -1982,8 +1982,8 @@ infest_species = {
 				NOR = {
 					has_trait = trait_hive_mind
 					has_species_flag = flag_species_to_infest
+					has_species_flag = flag_species_infestation_project
 				}
-				NOT = { has_species_flag = flag_species_infestation_project }
 				
 				has_species_flag = flag_species_infestation_refused
 				
