@@ -331,8 +331,10 @@ building_temple = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		modifier = {
@@ -382,20 +384,20 @@ building_temple = {
 
 	show_tech_unlock_if = {
 		is_spiritualist = yes
-		NOT = {
-			OR = {
+		NOR = {
 				has_valid_civic = civic_death_cult
 				has_valid_civic = civic_death_cult_corporate
-			}
-		}
+}
 	}
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		text = job_priest_effect_desc
@@ -474,8 +476,10 @@ building_holotemple = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		modifier = {
@@ -527,20 +531,20 @@ building_holotemple = {
 	
 	show_tech_unlock_if = {
 		is_spiritualist = yes
-		NOT = {
-			OR = {
+		NOR = {
 				has_valid_civic = civic_death_cult
 				has_valid_civic = civic_death_cult_corporate
-			}
-		}
+}
 	}
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		text = job_priest_effect_desc
@@ -620,8 +624,10 @@ building_sacred_nexus = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		modifier = {
@@ -669,20 +675,20 @@ building_sacred_nexus = {
 	
 	show_tech_unlock_if = {
 		is_spiritualist = yes
-		NOT = {
-			OR = {
+		NOR = {
 				has_valid_civic = civic_death_cult
 				has_valid_civic = civic_death_cult_corporate
-			}
-		}
+}
 	}
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		text = job_priest_effect_desc
@@ -745,15 +751,13 @@ building_galactic_memorial_1 = {
 				has_valid_civic = civic_hive_memorialist
 				has_valid_civic = civic_machine_memorialist
 			}
-			NOT = {
-				OR = {
+			NOR = {
 					is_megacorp = yes
 					has_valid_civic = civic_fanatic_purifiers
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
 					has_valid_civic = civic_machine_terminator
-				}
-			}
+}
 		}
 	}
 
@@ -768,14 +772,12 @@ building_galactic_memorial_1 = {
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
 					has_valid_civic = civic_machine_terminator
-					NOT = {
-						OR = {
+					NOR = {
 							has_valid_civic = civic_memorialist
 							has_valid_civic = civic_memorialist_corp
 							has_valid_civic = civic_hive_memorialist
 							has_valid_civic = civic_machine_memorialist
-						}
-					}
+}
 				}
 			}
 		}
@@ -895,15 +897,13 @@ building_galactic_memorial_2 = {
 				has_valid_civic = civic_hive_memorialist
 				has_valid_civic = civic_machine_memorialist
 			}
-			NOT = {
-				OR = {
+			NOR = {
 					is_megacorp = yes
 					has_valid_civic = civic_fanatic_purifiers
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
 					has_valid_civic = civic_machine_terminator
-				}
-			}
+}
 		}
 	}
 
@@ -931,14 +931,12 @@ building_galactic_memorial_2 = {
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
 					has_valid_civic = civic_machine_terminator
-					NOT = {
-						OR = {
+					NOR = {
 							has_valid_civic = civic_memorialist
 							has_valid_civic = civic_memorialist_corp
 							has_valid_civic = civic_hive_memorialist
 							has_valid_civic = civic_machine_memorialist
-						}
-					}
+}
 				}
 			}
 		}
@@ -1043,15 +1041,13 @@ building_galactic_memorial_3 = {
 				has_valid_civic = civic_hive_memorialist
 				has_valid_civic = civic_machine_memorialist
 			}
-			NOT = {
-				OR = {
+			NOR = {
 					is_megacorp = yes
 					has_valid_civic = civic_fanatic_purifiers
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
 					has_valid_civic = civic_machine_terminator
-				}
-			}
+}
 		}
 	}
 
@@ -1072,14 +1068,12 @@ building_galactic_memorial_3 = {
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
 					has_valid_civic = civic_machine_terminator
-					NOT = {
-						OR = {
+					NOR = {
 							has_valid_civic = civic_memorialist
 							has_valid_civic = civic_memorialist_corp
 							has_valid_civic = civic_hive_memorialist
 							has_valid_civic = civic_machine_memorialist
-						}
-					}
+}
 				}
 			}
 		}
@@ -2506,8 +2500,10 @@ building_citadel_of_faith = {
 		trigger = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		text = job_priest_effect_desc

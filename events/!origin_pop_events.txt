@@ -22,10 +22,8 @@ country_event = {
 			limit = {
 				NOT = {
 					any_country = {
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 					}
 				}
 			}
@@ -1787,18 +1785,14 @@ country_event = {
             }
             any_attacker = { is_same_value = root }
             any_defender = {
-            	OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+            	
+					is_fallen_empire = yes
             }
 		}
 		any_country = {
 			is_at_war_with = root
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			root = {
 				has_country_flag = borrowed_fleet_from@prev
 				any_owned_fleet = { has_fleet_flag = scion_borrowed_fleet }
@@ -1810,10 +1804,8 @@ country_event = {
 		random_country = {
 			limit = {
 				is_at_war_with = root
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				root = {
 					has_country_flag = borrowed_fleet_from@prev
 					any_owned_fleet = { has_fleet_flag = scion_borrowed_fleet }
@@ -2295,8 +2287,10 @@ country_event = {
 
 	trigger = {
 		has_origin = origin_galactic_doorstep
-		NOT = { has_technology = tech_gateway_construction }
-		NOT = { has_tech_option = tech_gateway_construction }
+		NOR = {
+			has_technology = tech_gateway_construction
+			has_tech_option = tech_gateway_construction
+		}
 		fromfromfrom = { has_megastructure_flag = doorstep_gateway@root }
 		NOR = {
 			has_country_flag = gateway_reactivated

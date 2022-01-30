@@ -17,14 +17,10 @@ event = {
 
 	trigger = {
 		years_passed >= 50
-		any_country = {
+		any_playable_country = {
 			is_country_type = default
 			is_ai = yes
-			NOR = {
-				has_valid_civic = civic_fanatic_purifiers
-				has_valid_civic = civic_hive_devouring_swarm
-				has_valid_civic = civic_machine_terminator
-			}
+			is_homicidal = no
 			any_relation = {
 				prev = { is_rival = prev }
 				NOR = {
@@ -49,11 +45,7 @@ event = {
 		random_playable_country = {
 			limit = {
 				is_ai = yes
-				NOR = {
-					has_valid_civic = civic_fanatic_purifiers
-					has_valid_civic = civic_hive_devouring_swarm
-					has_valid_civic = civic_machine_terminator
-				}
+				is_homicidal = no
 				any_relation = {
 					prev = { is_rival = prev }
 					NOR = {
@@ -226,7 +218,7 @@ event = {
 								limit = {
 									any_system_planet = {
 										exists = owner
-										owner = { is_same_value = event_target:marauder_target }
+										is_owned_by = event_target:marauder_target
 										num_pops > 0
 									}
 								}
@@ -236,7 +228,7 @@ event = {
 								random_system_planet = {
 									limit = {
 										exists = owner
-										owner = { is_same_value = event_target:marauder_target }
+										is_owned_by = event_target:marauder_target
 										num_pops > 0
 									}
 									save_event_target_as = raid_planet

@@ -31,10 +31,8 @@ ap_become_the_crisis = {
 			is_civic_machine_servitor = yes
 			has_civic = civic_closed_collective
 			has_civic = civic_closed_network
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
+			is_xenophile = yes
+			is_pacifist = yes
 			has_origin = origin_symbiote
 		}
 	}
@@ -130,16 +128,14 @@ ap_become_the_crisis = {
 				is_civic_militarist = yes
 				is_homicidal = yes
 			}
-			any_country = {
+			any_playable_country = {
 				is_ai = no
 				OR = {
 					is_galactic_custodian = yes
 					is_galactic_emperor = yes
 					is_civic_machine_servitor = yes
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
+					is_xenophile = yes
+					is_pacifist = yes
 					has_origin = origin_symbiote
 				}
 			}
@@ -244,10 +240,10 @@ ap_hydrocentric = {
 ap_nihilistic_acquisition = {
 	potential = {
 		host_has_dlc = "Apocalypse"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_nihilistic_acquisition
+			has_valid_civic = civic_barbaric_despoilers
 		}
-		NOT = { has_valid_civic = civic_barbaric_despoilers }
 		NOT = { has_valid_civic = civic_living_hosts }
 	}
 
@@ -960,8 +956,6 @@ ap_shared_destiny = {
 			is_xenophobic_isolationists = yes
 			has_valid_civic = civic_machine_terminator
 			is_megacorp = yes
-		}
-		NOT = {
 			has_ascension_perk = ap_shared_destiny
 		}
 	}
@@ -994,10 +988,7 @@ ap_machine_worlds = {
 
 	potential = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
-		OR = {
-			has_authority = auth_machine_intelligence
-			has_country_flag = synthetic_empire
-		}
+		is_synthetic_empire = yes
 		NOT = {
 			has_ascension_perk = ap_machine_worlds
 		}

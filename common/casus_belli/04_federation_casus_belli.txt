@@ -19,7 +19,7 @@ cb_scion = {
 	is_valid = {
 		from = {
 			is_country_type = default
-			NOT = { is_scion_subject = yes }
+			is_scion_subject = no
 		}
 		has_total_war_cb = no
 		NOT = { is_overlord_to = FROM }

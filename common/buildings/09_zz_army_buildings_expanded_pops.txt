@@ -323,7 +323,7 @@ building_stronghold = {
 			solar_system = {
 				any_neighbor_system = {
 					exists = space_owner
-					NOT = { is_same_value = prev.space_owner }
+					NOT = { is_same_empire = prev.space_owner }
 				}
 			}
 		}

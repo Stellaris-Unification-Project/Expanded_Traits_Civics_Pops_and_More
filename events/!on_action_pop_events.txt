@@ -887,8 +887,7 @@ planet_event = {
 		from = {
 			OR = {
 				is_country_type = default
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
+				is_fallen_empire = yes
 			}
 		}
 		habitable_planet = yes
@@ -1128,7 +1127,7 @@ country_event = {
 		}
 		remove_global_flag = ongoing_market_nomination
 		# nominees start equal, modifiers improve chances
-		random_country = {
+		random_playable_country = {
 			limit = {
 				is_country_type = default
 				has_country_flag = market_nomination_eligible

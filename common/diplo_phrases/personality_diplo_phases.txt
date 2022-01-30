@@ -12,8 +12,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
@@ -26,8 +28,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
@@ -40,17 +44,16 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
 			}
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 		}
 	}
@@ -60,17 +63,16 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
 			}
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 		}
 	}
@@ -107,8 +109,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
@@ -127,8 +131,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_domineering_to = FROM
 			}
@@ -141,8 +147,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_domineering_to = FROM
 			}
@@ -193,10 +201,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
 			FROM = {
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -236,10 +241,7 @@ greetings = {
 				is_protective_to = FROM
 			}
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 		}
 	}
@@ -263,8 +265,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = egalitarian_imperialists
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_friendly_to = FROM
 				is_cordial_to = FROM
@@ -281,10 +285,7 @@ greetings = {
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 		}
 	}
@@ -444,10 +445,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = decadent_technocracy
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -580,8 +578,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = decadent_technocracy
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_friendly_to = FROM
 				is_cordial_to = FROM
@@ -675,10 +675,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = decadent_technocracy
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
@@ -800,10 +797,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = knowledge_seekers
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -820,10 +814,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = knowledge_seekers
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -881,10 +872,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = knowledge_seekers
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -931,8 +919,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = knowledge_seekers
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_friendly_to = FROM
 				is_cordial_to = FROM
@@ -947,10 +937,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = knowledge_seekers
 			FROM = {
-				OR = {
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
-				}
+				is_materialist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1001,10 +988,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = knowledge_seekers
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
@@ -1043,8 +1027,10 @@ greetings = {
 		trigger = {
 			has_ai_personality = closed_hive_mind
 			FROM = {
-				NOT = { has_authority = auth_hive_mind }
-				NOT = { has_authority = auth_machine_intelligence }
+				NOR = {
+					has_authority = auth_hive_mind
+					has_authority = auth_machine_intelligence
+				}
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1097,10 +1083,7 @@ greetings = {
 				is_unfriendly_to = FROM
 			}
 			FROM = {
-				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = no
 			}
 		}
 	}
@@ -1125,10 +1108,7 @@ greetings = {
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
 			FROM = {
-				NOR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = no
 			}
 		}
 	}
@@ -1141,10 +1121,7 @@ greetings = {
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
 			FROM = {
-				NOR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = no
 			}
 		}
 	}
@@ -1165,10 +1142,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = closed_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
@@ -1225,10 +1199,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = closed_hive_mind
 				FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 				NOT = { is_species_class = ROBOT }
 			}
 			NOT = { is_at_war_with = FROM }
@@ -1261,10 +1232,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = closed_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1282,8 +1250,7 @@ greetings = {
 			has_ai_personality = closed_hive_mind
 			FROM = {
 				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_xenophobe = yes
 					has_valid_civic = civic_closed_collective
 					has_valid_civic = civic_closed_network
 				}
@@ -1389,10 +1356,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1409,10 +1373,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1428,10 +1389,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1445,8 +1403,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = open_hive_mind
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			is_neutral_to = FROM
 		}
 	}
@@ -1457,10 +1417,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 				FROM = {
 					NOT = {
 						has_authority = auth_machine_intelligence
@@ -1479,10 +1436,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
@@ -1558,10 +1512,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1578,10 +1529,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1631,10 +1579,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = open_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			is_at_war_with = FROM
 		}
@@ -1649,10 +1594,7 @@ greetings = {
 			has_ai_personality = technological_warriors
 			NOT = { is_at_war_with = FROM }
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			OR = {
 				is_hostile_to = FROM
@@ -1703,10 +1645,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = technological_warriors
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			relative_power = {
@@ -1727,10 +1666,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = technological_warriors
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			relative_power = {
@@ -1797,8 +1733,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = technological_warriors
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			relative_power = {
 				who = from
 				category = technology
@@ -1814,10 +1752,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = technological_warriors
 			FROM = {
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
+				is_militarist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
@@ -1834,8 +1769,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = technological_warriors
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			is_neutral_to = FROM
 		}
 	}
@@ -1845,8 +1782,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = technological_warriors
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			is_neutral_to = FROM
 		}
 	}
@@ -1857,10 +1796,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = technological_warriors
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
@@ -1901,8 +1837,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = technological_warriors
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			is_at_war = no
 			OR = {
 				is_friendly_to = FROM
@@ -1917,8 +1855,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = technological_warriors
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			is_at_war = yes
 			OR = {
 				is_friendly_to = FROM
@@ -1934,10 +1874,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = technological_warriors
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -2016,10 +1953,7 @@ greetings = {
 			has_ai_personality = technological_warriors
 			is_at_war_with = FROM
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 		}
 	}
@@ -2143,10 +2077,7 @@ greetings = {
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 		}
 	}
@@ -2316,10 +2247,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = vb_sneering_technocrats
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -2361,10 +2289,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = vb_sneering_technocrats
 			FROM = {
-				NOR = {
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
-				}
+				is_materialist = no
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -2385,8 +2310,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = vb_sneering_technocrats
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
@@ -2450,10 +2377,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = vb_sneering_technocrats
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -2519,10 +2443,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = vb_sneering_technocrats
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -2567,10 +2488,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = vb_sneering_technocrats
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
@@ -2716,10 +2634,7 @@ greetings = {
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 		}
 	}
@@ -2756,10 +2671,7 @@ greetings = {
 				is_unfriendly_to = FROM
 			}
 			FROM = {
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -2894,10 +2806,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = infested_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -3010,8 +2919,10 @@ greetings = {
 			}
 			from = {
 				has_authority = auth_hive_mind
-				NOT = { has_valid_civic = civic_infestation }
-				NOT = { has_origin = origin_necrophage }
+				NOR = {
+					has_valid_civic = civic_infestation
+					has_origin = origin_necrophage
+				}
 			}
 		}
 	}
@@ -3059,10 +2970,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = infested_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 				NOT = { is_species_class = ROBOT }
 			}
 			NOT = { is_at_war_with = FROM }
@@ -3114,10 +3022,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = infested_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
@@ -3130,10 +3035,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = infested_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 				NOT = { is_species_class = ROBOT }
 			}
 			NOT = { is_at_war_with = FROM }
@@ -3210,8 +3112,10 @@ greetings = {
 			}
 			from = {
 				has_authority = auth_hive_mind
-				NOT = { has_valid_civic = civic_infestation }
-				NOT = { has_origin = origin_necrophage }
+				NOR = {
+					has_valid_civic = civic_infestation
+					has_origin = origin_necrophage
+				}
 			}
 		}
 	}
@@ -3263,10 +3167,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = infested_hive_mind
 				FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 				NOT = { is_species_class = ROBOT }
 			}
 			NOT = { is_at_war_with = FROM }
@@ -3284,10 +3185,7 @@ greetings = {
 		trigger = {
 			has_ai_personality = infested_hive_mind
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -3534,8 +3432,10 @@ greetings = {
 		}
 		trigger = {
 			has_ai_personality = devouring_swarm
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
+			}
 			NOT = { exists = overlord }
 			species_portrait = pla11
 			FROM = { NOT = { has_authority = auth_machine_intelligence } }
@@ -3546,12 +3446,16 @@ greetings = {
 			weight = 4
 		}
 		trigger = {
-			NOT = { exists = overlord }
-			NOT = { has_authority = auth_machine_intelligence }
+			NOR = {
+				exists = overlord
+				has_authority = auth_machine_intelligence
+			}
 			FROM = {
 				has_valid_civic = "civic_hive_devouring_swarm"
-				NOT = { is_same_species = prev }
-				NOT = { is_at_war_with = prev }
+				NOR = {
+					is_same_species = prev
+					is_at_war_with = prev
+				}
 				species_portrait = pla11
 			}
 		}
@@ -3568,19 +3472,13 @@ greetings = {
 				has_ai_personality = hegemonic_imperialists
 			}
 			is_at_war_with = FROM
-			NOR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = no
 			relative_power = {
 				who = from
 				value >= equivalent
 			}
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 		}
 	}

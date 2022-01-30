@@ -64,7 +64,7 @@ country_event = {
 		}
 		
 		# Notify players
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
 			}

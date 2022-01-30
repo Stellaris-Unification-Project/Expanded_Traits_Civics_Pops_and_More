@@ -702,8 +702,10 @@ part = {
 
 	trigger = {
 		has_government = gov_hive_mind
-		NOR = { has_country_flag = custom_start_screen }
-		NOR = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -715,8 +717,10 @@ part = {
 	trigger = {
 		has_government = gov_devouring_swarm
 		is_lithoid_empire = no
-		NOR = { has_country_flag = custom_start_screen }
-		NOR = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -727,8 +731,10 @@ part = {
 	trigger = {
 		has_government = gov_devouring_swarm
 		is_lithoid_empire = yes
-		NOR = { has_country_flag = custom_start_screen }
-		NOR = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -755,8 +761,10 @@ part = {
 
 	trigger = {
 		has_government = gov_machine_servitor
-		NOT = { has_country_flag = custom_start_screen }
-		NOT = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -767,8 +775,10 @@ part = {
 
 	trigger = {
 		has_government = gov_machine_terminator
-		NOT = { has_country_flag = custom_start_screen }
-		NOT = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -779,8 +789,10 @@ part = {
 
 	trigger = {
 		has_government = gov_machine_assimilator
-		NOT = { has_country_flag = custom_start_screen }
-		NOT = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -791,8 +803,10 @@ part = {
 
 	trigger = {
 		has_origin = origin_post_apocalyptic
-		NOT = { has_country_flag = custom_start_screen }
-		NOT = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -803,8 +817,10 @@ part = {
 
 	trigger = {
 		has_origin = origin_life_seeded
-		NOT = { has_country_flag = custom_start_screen }
-		NOT = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -1005,8 +1021,10 @@ part = {
 	
 	trigger = {
 		has_origin = origin_hegemon
-		NOT = { has_authority = auth_hive_mind }
-		NOT = { has_authority = auth_machine_intelligence }
+		NOR = {
+			has_authority = auth_hive_mind
+			has_authority = auth_machine_intelligence
+		}
 	}
 }
 

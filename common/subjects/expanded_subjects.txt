@@ -81,7 +81,7 @@ duchy = {
 			limit = {
 				from = {
 					NOT = { has_valid_civic = civic_feudal_realm }
-					NOT = { is_megacorp = yes }
+					is_megacorp = no
 				}
 				is_megacorp = yes
 			}
@@ -204,7 +204,7 @@ charter = {
 		from = {
 			is_country_type = default
 			NOT = { has_valid_civic = civic_feudal_realm }
-			NOT = { is_megacorp = yes }
+			is_megacorp = no
 		}
 		is_megacorp = yes
 		has_been_declared_crisis = no
@@ -333,7 +333,7 @@ charter = {
 				OR = {
 					from = { is_megacorp = yes }
 					from = { has_valid_civic = civic_feudal_realm }
-					NOT = { is_megacorp = yes }
+					is_megacorp = no
 				}
 			}
 			set_subject_of = {
@@ -368,10 +368,8 @@ scion_dominion = {
 		has_origin = origin_scion
 		from = {
 			has_country_flag = scion_master
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_ethic = ethic_fanatic_spiritualist
 		}
 		has_been_declared_crisis = no
@@ -404,10 +402,8 @@ scion_satellite = {
 		has_origin = origin_scion
 		from = {
 			has_country_flag = scion_master
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_ethic = ethic_fanatic_materialist
 		}
 		has_been_declared_crisis = no
@@ -434,10 +430,8 @@ scion_signatory = {
 		has_origin = origin_scion
 		from = {
 			has_country_flag = scion_master
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_ethic = ethic_fanatic_xenophile
 		}
 		has_been_declared_crisis = no
@@ -464,10 +458,8 @@ scion_auxiliary = {
 		has_origin = origin_scion
 		from = {
 			has_country_flag = scion_master
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_authority = auth_machine_intelligence
 		}
 		has_been_declared_crisis = no

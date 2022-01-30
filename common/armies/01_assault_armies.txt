@@ -284,8 +284,10 @@ robotic_army = {
 	potential = {
 		from = { has_trait = "trait_mechanical" }
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
-			NOT = { has_technology = tech_synthetic_workers }
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_technology = tech_synthetic_workers
+			}
 		}
 	}
 

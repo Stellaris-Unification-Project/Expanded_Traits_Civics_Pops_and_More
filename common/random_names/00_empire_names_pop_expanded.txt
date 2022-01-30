@@ -840,22 +840,16 @@ empire_name_format = {
 			add = 3
 			has_authority = auth_democratic
 			NOR = {
-				has_ethic = "ethic_xenophobe"
-				has_ethic = "ethic_fanatic_xenophobe"
-				has_ethic = "ethic_authoritarian"
-				has_ethic = "ethic_fanatic_authoritarian"
-				has_ethic = "ethic_militarist"
-				has_ethic = "ethic_fanatic_militarist"
+				is_xenophobe = yes
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 			OR = {
-				has_ethic = "ethic_pacifist"
-				has_ethic = "ethic_fanatic_pacifist"
-				has_ethic = "ethic_xenophile"
-				has_ethic = "ethic_fanatic_xenophile"
+				is_pacifist = yes
+				is_xenophile = yes
 			}
 			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
+				is_egalitarian = yes
 				has_valid_civic = civic_beacon_of_liberty
 				has_valid_civic = civic_idealistic_foundation
 				has_valid_civic = civic_free_haven
@@ -882,8 +876,7 @@ empire_name_format = {
 			has_government = "gov_communal_parity"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.soviet_union.1"
@@ -1010,8 +1003,7 @@ empire_name_format = {
 			has_government = "gov_benevolent_empire"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.imp_befrienders.1"
@@ -1029,8 +1021,7 @@ empire_name_format = {
 			has_government = "gov_benevolent_empire"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.imp_befrienders.2"
@@ -1048,8 +1039,7 @@ empire_name_format = {
 			has_government = "gov_benevolent_empire"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.imp_befrienders.3"
@@ -1067,8 +1057,7 @@ empire_name_format = {
 			has_government = "gov_compassionate_order"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dict_befrienders.1"
@@ -1086,8 +1075,7 @@ empire_name_format = {
 			has_government = "gov_compassionate_order"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dict_befrienders.2"
@@ -1105,8 +1093,7 @@ empire_name_format = {
 			has_government = "gov_compassionate_order"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dict_befrienders.3"
@@ -1124,8 +1111,7 @@ empire_name_format = {
 			has_government = "gov_friendship_committee"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.olig_befrienders.1"
@@ -1143,8 +1129,7 @@ empire_name_format = {
 			has_government = "gov_friendship_committee"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.olig_befrienders.2"
@@ -1162,8 +1147,7 @@ empire_name_format = {
 			has_government = "gov_friendship_committee"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.olig_befrienders.3"
@@ -1181,8 +1165,7 @@ empire_name_format = {
 			has_government = "gov_harmony_assembly"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_befrienders.1"
@@ -1200,8 +1183,7 @@ empire_name_format = {
 			has_government = "gov_harmony_assembly"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_befrienders.2"
@@ -1219,8 +1201,7 @@ empire_name_format = {
 			has_government = "gov_harmony_assembly"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_befrienders.3"
@@ -1404,8 +1385,7 @@ empire_name_format = {
 			has_government = "gov_family_corp"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.family_corp.1"
@@ -1845,8 +1825,7 @@ empire_name_format = {
 			has_government = "gov_charter_company"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.charter.3"
@@ -1864,8 +1843,7 @@ empire_name_format = {
 			has_government = "gov_charter_company"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.charter.4"
@@ -1883,8 +1861,7 @@ empire_name_format = {
 			has_government = "gov_worker_cooperative"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.worker_coop.1"
@@ -1902,8 +1879,7 @@ empire_name_format = {
 			has_government = "gov_worker_cooperative"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.worker_coop.2"
@@ -1921,8 +1897,7 @@ empire_name_format = {
 			has_government = "gov_worker_cooperative"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.worker_coop.3"
@@ -1940,8 +1915,7 @@ empire_name_format = {
 			has_government = "gov_infested_hive_mind"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.hive_mind_infested.1"
@@ -1959,8 +1933,7 @@ empire_name_format = {
 			has_government = "gov_resource_collector_mind"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.hive_mind_collector.1"
@@ -1978,8 +1951,7 @@ empire_name_format = {
 			has_government = "gov_knowledge_driven_collective"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.hive_mind_knowledge.1"

@@ -177,8 +177,6 @@ country_event = {
 					has_valid_civic = civic_harm_machine
 					has_origin = origin_extant_creators
 					has_origin = origin_symbiote
-				}
-				NOR = {
 					has_active_tradition = tr_synchronicity_finish
 					has_active_tradition = tr_synchronicity_machine_finish
 				}
@@ -244,8 +242,7 @@ country_event = {
 					is_country_type = default
 					is_country_type = ascended_empire
 					is_country_type = lost_empire
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					is_fallen_empire = yes
 				}
 			}
 			every_owned_ship = {
@@ -262,8 +259,7 @@ country_event = {
 						is_country_type = default
 						is_country_type = ascended_empire
 						is_country_type = lost_empire
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 				every_owned_ship = {
@@ -310,7 +306,7 @@ country_event = {
 			if = {
 				limit = {
 					NOT = { has_valid_civic = civic_feudal_realm }
-					NOT = { is_megacorp = yes }
+					is_megacorp = no
 					ROOT = { is_megacorp = yes }
 				}
 				ROOT = {
@@ -339,8 +335,7 @@ country_event = {
 			is_country_type = default
 			is_country_type = ascended_empire
 			is_country_type = lost_empire
-			is_country_type = fallen_empire
-			is_country_type = awakened_fallen_empire
+			is_fallen_empire = yes
 		}
 	}
 	

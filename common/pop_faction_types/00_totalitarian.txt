@@ -372,8 +372,10 @@ totalitarian = {
 			owner = {
 				NOT = {
 					any_owned_sector = {
-						NOT = { has_sector_type = core_sector }
-						NOT = { exists = leader }
+						NOR = {
+							has_sector_type = core_sector
+							exists = leader
+						}
 					}
 				}
 			}
@@ -397,8 +399,10 @@ totalitarian = {
 
 		trigger = {
 			owner = {
-				NOT = { has_policy_flag = free_press }
-				NOT = { has_policy_flag = censored_media }
+				NOR = {
+					has_policy_flag = free_press
+					has_policy_flag = censored_media
+				}
 			}
 		}
 	}
@@ -691,8 +695,10 @@ totalitarian = {
 						if = {
 							limit = {
 								has_ethic = ethic_fanatic_authoritarian
-								NOT = { has_authority = auth_imperial }
-								NOT = { has_authority = auth_private }
+								NOR = {
+									has_authority = auth_imperial
+									has_authority = auth_private
+								}
 							}
 							if = {
 								limit = { is_megacorp = no }

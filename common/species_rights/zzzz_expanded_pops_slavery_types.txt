@@ -196,10 +196,7 @@ slavery_matrix = {
 	potential = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
 		from = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 		}
 	}
 	
@@ -267,8 +264,7 @@ slavery_livestock = {
 			fail_text = empire_not_xenophobe
 			from = {
 				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_xenophobe = yes
 					has_ethic = ethic_gestalt_consciousness
 				}
 			}

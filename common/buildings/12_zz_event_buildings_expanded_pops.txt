@@ -32,8 +32,10 @@ building_nuumismatic_shrine = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}					
 		}
 		modifier = {
@@ -74,8 +76,10 @@ building_nuumismatic_shrine = {
 		trigger = {
 			exists = owner
 			owner = {
-				NOT = { has_valid_civic = civic_private_military_companies }
-				NOT = { has_valid_civic = civic_crusaders }
+				NOR = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusaders
+				}
 			}
 		}
 		text = job_priest_effect_desc

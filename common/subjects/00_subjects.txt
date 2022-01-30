@@ -90,7 +90,7 @@ vassal = {
 			limit = {
 				from = {
 					NOT = { has_valid_civic = civic_feudal_realm }
-					NOT = { is_megacorp = yes }
+					is_megacorp = no
 				}
 				is_megacorp = yes
 			}
@@ -257,7 +257,7 @@ protectorate = {
 			limit = {
 				from = {
 					NOT = { has_valid_civic = civic_feudal_realm }
-					NOT = { is_megacorp = yes }
+					is_megacorp = no
 				}
 				is_megacorp = yes
 			}

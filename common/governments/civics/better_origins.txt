@@ -106,8 +106,8 @@ origin_exploited_homeworld = {
 
 	possible = {
 		ethics = {
-			NOT = { value = ethic_gestalt_consciousness }
 			NOR = {
+				value = ethic_gestalt_consciousness
 				text = civic_tooltip_not_xenophile
 				value = ethic_xenophile
 				value = ethic_fanatic_xenophile

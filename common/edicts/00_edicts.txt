@@ -304,8 +304,10 @@ food_rationing = {
 	}
 	
 	allow = {
-		NOT = { has_edict = nutritional_plenitude }
-		NOT = { has_edict = nutritional_plenitude_hive }
+		NOR = {
+			has_edict = nutritional_plenitude
+			has_edict = nutritional_plenitude_hive
+		}
 	}
 
 	ai_weight = {
@@ -494,10 +496,7 @@ enhanced_surveillance = {
 		}
 		modifier = {
 			factor = 0
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 	}
 }
@@ -1527,8 +1526,8 @@ research_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = research_subsidies }
 				NOR = {
+					has_edict = research_subsidies
 					has_civic = civic_technocracy
 					has_civic = civic_technocracy_corp
 				}
@@ -1651,8 +1650,8 @@ universal_prosperity_mandate = {
 		}
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = universal_prosperity_mandate }
 				NOR = {
+					has_edict = universal_prosperity_mandate
 					has_authority = auth_democratic
 					has_authority = auth_cooperative
 					has_authority = auth_oligarchic

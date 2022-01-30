@@ -443,8 +443,7 @@ tech_heritage_site = {
 	
 	potential = {
 		NOR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist		
+			is_spiritualist = yes		
 			has_valid_civic = civic_machine_servitor
 		}
 	}
@@ -503,10 +502,7 @@ tech_holographic_rituals = {
 	weight = @tier2weight2
 	
 	potential = {
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist		
-		}
+		is_spiritualist = yes
 	}
 	
 	weight_modifier = {
@@ -784,10 +780,7 @@ tech_psionic_theory = {
 		factor = 5 #very rare tech
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -1564,17 +1557,11 @@ tech_droid_workers = {
 		}
 		modifier = {
 			factor = 0.5
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 2
@@ -1594,10 +1581,7 @@ tech_droid_workers = {
 		weight = 2
 		modifier = {
 			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 0

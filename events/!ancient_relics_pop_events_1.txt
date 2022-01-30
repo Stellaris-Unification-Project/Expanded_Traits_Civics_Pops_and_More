@@ -32,7 +32,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					any_country = {
+					any_playable_country = {
 						has_event_chain = rubricator_chain_2
 					}
 				}
@@ -46,7 +46,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					any_country = {
+					any_playable_country = {
 						has_event_chain = rubricator_chain
 					}
 				}
@@ -76,7 +76,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					any_country = {
+					any_playable_country = {
 						has_event_chain = rubricator_chain_2
 					}
 				}
@@ -90,7 +90,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					any_country = {
+					any_playable_country = {
 						has_event_chain = rubricator_chain
 					}
 				}

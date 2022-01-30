@@ -139,11 +139,7 @@ country_event = {
 				modifier = { 
 					add = 1000
 					FROMFROM = {
-						solar_system = {
-							space_owner = {
-								is_same_value = PREVPREVPREV
-							}
-						}
+						solar_system = { is_owned_by = PREVPREVPREV }
 					}
 				}
 			}
@@ -305,11 +301,7 @@ country_event = {
 				modifier = { 
 					add = 1000
 					FROMFROM = {
-						solar_system = {
-							space_owner = {
-								is_same_value = PREVPREVPREV
-							}
-						}
+						solar_system = { is_owned_by = PREVPREVPREV }
 					}
 				}
 			}
@@ -427,11 +419,7 @@ country_event = {
 				modifier = { 
 					add = 1000
 					FROMFROM = {
-						solar_system = {
-							space_owner = {
-								is_same_value = PREVPREVPREV
-							}
-						}
+						solar_system = { is_owned_by = PREVPREVPREV }
 					}
 				}
 			}
@@ -519,7 +507,7 @@ country_event = {
 	}
 
 	immediate = {
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_country_type = default
 				has_modifier = draconic_beats
@@ -529,7 +517,7 @@ country_event = {
 		fromfrom.solar_system = {
 			save_event_target_as = slain_guardian_system
 		}
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_country_type = default
 				has_event_chain = curator_poi_chain

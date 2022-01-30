@@ -1939,8 +1939,10 @@ brain_slug_hive_offer = {
 	allow = {
 		is_xenophobe = no
 		is_egalitarian = no
-		NOT = { has_ascension_perk = ap_the_flesh_is_weak }
-		NOT = { has_ascension_perk = ap_mind_over_matter }
+		NOR = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_mind_over_matter
+		}
 		pop_percentage = {
 			percentage > 0.74
 			limit = { has_trait = trait_brainslug }
@@ -1977,9 +1979,10 @@ infest_species = {
 		
 		any_owned_pop = {
 			species = {
-				NOT = { has_trait = trait_hive_mind }
-
-				NOT = { has_species_flag = flag_species_to_infest }
+				NOR = {
+					has_trait = trait_hive_mind
+					has_species_flag = flag_species_to_infest
+				}
 				NOT = { has_species_flag = flag_species_infestation_project }
 				
 				has_species_flag = flag_species_infestation_refused

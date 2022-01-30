@@ -4882,8 +4882,8 @@ entertainer_gestalt = {
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }
 			NOR = {
+				has_trait = trait_mechanical
 				is_trait_charismatic = yes
 				has_trait = trait_traditional
 				is_trait_traditional = yes

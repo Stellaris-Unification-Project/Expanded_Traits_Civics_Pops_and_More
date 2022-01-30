@@ -135,7 +135,7 @@ planet_event = {
 			count >= 5
 		}
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		NOT = { has_modifier = gestalt_residents_infighting }
 		NOT = { has_planet_flag = recent_unrest_event }
@@ -196,7 +196,7 @@ planet_event = {
 			count >= 5
 		}
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		NOT = { has_modifier = gestalt_protest }
 		NOT = { has_modifier = gestalt_broken_protest }
@@ -285,7 +285,7 @@ planet_event = {
 			count >= 5
 		}
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		NOT = { has_modifier = gestalt_hiding_deviants }
 		NOT = { has_modifier = gestalt_hiding_deviants_mach }
@@ -386,7 +386,7 @@ planet_event = {
 			count >= 5
 		}
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		NOT = { has_modifier = gestalt_criminal_underworld }
 		NOT = { has_modifier = gestalt_criminal_underworld_mach }
@@ -458,7 +458,7 @@ planet_event = {
 	
 	trigger = {
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		OR = {
 			has_modifier = gestalt_criminal_underworld

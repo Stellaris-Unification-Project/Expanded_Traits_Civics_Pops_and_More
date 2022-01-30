@@ -25,8 +25,10 @@ android_defense_army = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
-			NOT = { has_policy_flag = robots_outlawed }
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_policy_flag = robots_outlawed
+			}
 			has_technology = tech_synthetic_workers
 		}
 	}

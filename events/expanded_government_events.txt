@@ -192,8 +192,7 @@ country_event = {
 						is_country_type = default
 						is_country_type = ascended_empire
 						is_country_type = lost_empire
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 						is_country_type = dormant_marauders
 						is_country_type = awakened_marauders
 					}
@@ -1020,12 +1019,18 @@ planet_event = {
 			every_country = {
 				limit = {
 					has_communications = root.owner
-					NOT = { is_country = root.owner }
-					NOT = { is_same_species = prev }
-					NOT = { has_ai_personality_behaviour = purger }
-					NOT = { has_valid_civic = civic_infestation }
-					NOT = { has_origin = origin_necrophage }
-					NOT = { has_ethic = ethic_gestalt_consciousness }
+					NOR = {
+						is_same_empire = root.owner
+						is_same_species = prev
+					}
+					NOR = {
+						has_ai_personality_behaviour = purger
+						has_valid_civic = civic_infestation
+					}
+					NOR = {
+						has_origin = origin_necrophage
+						has_ethic = ethic_gestalt_consciousness
+					}
 					NOR = {
 						has_valid_civic = civic_death_cult
 						has_valid_civic = civic_death_cult_corporate
@@ -1047,7 +1052,7 @@ planet_event = {
 			every_country = {
 				limit = {
 					has_communications = root.owner
-					NOT = { is_country = root.owner }
+					NOT = { is_same_empire = root.owner }
 					is_same_species = prev
 					has_intel_level = {
 						who = FROM
@@ -1111,10 +1116,14 @@ country_event = {
 			is_robot_pop = no
 			is_sapient = yes
 			species = {
-				NOT = { has_trait = trait_hive_mind }
-				NOT = { has_species_flag = flag_species_to_infest }
-				NOT = { has_species_flag = flag_species_infestation_project }
-				NOT = { has_species_flag = flag_species_infestation_refused }
+				NOR = {
+					has_trait = trait_hive_mind
+					has_species_flag = flag_species_to_infest
+				}
+				NOR = {
+					has_species_flag = flag_species_infestation_project
+					has_species_flag = flag_species_infestation_refused
+				}
 				#has_citizenship_type = { country = root type = citizenship_slavery }
 			}
 		}
@@ -1130,10 +1139,14 @@ country_event = {
 				is_robot_pop = no
 				is_sapient = yes
 				species = {
-					NOT = { has_trait = trait_hive_mind }
-					NOT = { has_species_flag = flag_species_to_infest }
-					NOT = { has_species_flag = flag_species_infestation_project }
-					NOT = { has_species_flag = flag_species_infestation_refused }
+					NOR = {
+						has_trait = trait_hive_mind
+						has_species_flag = flag_species_to_infest
+					}
+					NOR = {
+						has_species_flag = flag_species_infestation_project
+						has_species_flag = flag_species_infestation_refused
+					}
 					
 					#has_citizenship_type = { country = root type = citizenship_slavery }
 				}
@@ -1186,8 +1199,10 @@ country_event = {
 				is_robot_pop = no
 				is_sapient = yes
 				species = {
-					NOT = { has_trait = trait_hive_mind }
-					NOT = { has_species_flag = flag_species_to_infest }
+					NOR = {
+						has_trait = trait_hive_mind
+						has_species_flag = flag_species_to_infest
+					}
 					NOT = { has_species_flag = flag_species_infestation_project }
 					#NOT = { has_species_flag = flag_species_infestation_refused }
 					
@@ -1280,7 +1295,7 @@ country_event = {
 			country_event = { id = civicsexpanded.32 }
 		}
 		every_country = {
-			limit = { NOT = { is_overlord = yes  } }
+			limit = { is_overlord = no }
 			remove_vassal_navy_modifiers = yes
 		}
 		every_country = {
@@ -1803,8 +1818,10 @@ country_event = {
 		text = "civicsexpanded.38.desc_scandal_draft"
 		trigger = {
 			is_militarist = yes
-			NOT = { has_authority = auth_dictatorial }
-			NOT = { has_valid_civic = civic_citizen_service }
+			NOR = {
+				has_authority = auth_dictatorial
+				has_valid_civic = civic_citizen_service
+			}
 		}
 	}
 	desc = {

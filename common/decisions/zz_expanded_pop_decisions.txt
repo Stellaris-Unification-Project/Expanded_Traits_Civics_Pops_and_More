@@ -16,10 +16,14 @@ decision_lithoid_prospect = {
 	potential = {
 		is_homeworld = no
 		is_artificial = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_relic }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
 		owner = {
 			is_lithoid_empire = yes
 		}
@@ -27,8 +31,10 @@ decision_lithoid_prospect = {
 	}
 	
 	allow = {
-		NOT = { has_modifier = delicate_ecosystem }
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			has_modifier = delicate_ecosystem
+			has_modifier = resort_colony
+		}
 		custom_tooltip = decision_lithoid_prospect_trigger
 		hidden_trigger = {
 			OR = {
@@ -227,10 +233,14 @@ decision_fungoid_prospect = {
 	potential = {
 		is_homeworld = no
 		is_artificial = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_relic }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
 		owner = {
 			is_fungoid_empire = yes
 		}
@@ -499,10 +509,14 @@ decision_plantoid_prospect = {
 	potential = {
 		is_homeworld = no
 		is_artificial = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_relic }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
 		owner = {
 			is_plantoid_empire = yes
 		}
@@ -883,8 +897,10 @@ decision_trait_burrow = {
 	
 	potential = {
 		is_artificial = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_city }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_city
+		}
 		NOT = { has_deposit = d_trait_burrow }
 		any_owned_pop = {
 			OR = {
@@ -1073,13 +1089,13 @@ decision_hunting_preserve = {
 	
 	potential = {
 		is_artificial = no
-		NOT = {
+		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_machine
 			is_planet_class = pc_relic
 			is_planet_class = pc_hive
+			has_deposit = d_hunting_preserve
 		}
-		NOT = { has_deposit = d_hunting_preserve }
 		exists = owner
 		owner = { has_origin = origin_natural_hunters }
 		OR = {
@@ -1173,10 +1189,14 @@ decision_nature_preserve = {
 	
 	potential = {
 		is_artificial = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_city }
-		NOT = { has_deposit = d_nature_preserve }
-		NOT = { has_global_flag = EcologyMod_active }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_city
+		}
+		NOR = {
+			has_deposit = d_nature_preserve
+			has_global_flag = EcologyMod_active
+		}
 		exists = owner
 		owner = { has_civic = civic_environmentalist }
 	}
@@ -1500,8 +1520,10 @@ decision_train_telepaths = {
 	}
 	
 	allow = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 	
 	effect = {

@@ -297,8 +297,7 @@ pop_event = {
 				NOR = {
 					has_ethic = ethic_fanatic_pacifist
 					has_ethic = ethic_pacifist
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+					is_xenophile = yes
 					has_valid_civic = civic_hive_one_mind
 					has_valid_civic = civic_hive_subsumed_will
 					has_valid_civic = civic_harm_hive
@@ -810,8 +809,8 @@ pop_event = {
 		is_being_purged = no
 		planet = {
 			any_owned_pop = {
-				NOT = { is_pop = ROOT }
 				NOR = {
+					is_pop = ROOT
 					has_trait = trait_very_strong
 					has_trait = trait_titanic_strength
 				}
@@ -833,8 +832,8 @@ pop_event = {
 			set_planet_flag = popmod_strength
 			random_owned_pop = {
 				limit = {
-					NOT = { is_pop = ROOT }
 					NOR = {
+						is_pop = ROOT
 						has_trait = trait_very_strong
 						has_trait = trait_titanic_strength
 					}

@@ -144,7 +144,7 @@ subsidiary = {
 		if = {
 			limit = {
 				from = {
-					NOT = { is_megacorp = yes }
+					is_megacorp = no
 					NOT = { has_valid_civic = civic_feudal_realm }
 				}
 			}

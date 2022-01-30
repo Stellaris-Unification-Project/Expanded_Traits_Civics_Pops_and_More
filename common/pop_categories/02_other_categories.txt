@@ -151,8 +151,10 @@ slave = {
 	triggered_pop_modifier = {
 		potential = {
 			planet = {
-				NOT = { has_modifier = penal_colony }
-				NOT = { has_modifier = slave_colony }
+				NOR = {
+					has_modifier = penal_colony
+					has_modifier = slave_colony
+				}
 			}
 		}
 		species_empire_size_mult = 0.10
@@ -1788,10 +1790,8 @@ precursor = {
 	assign_to_pop = {
 		exists = owner
 		owner = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 		}
 		OR = {
 			is_same_species = owner

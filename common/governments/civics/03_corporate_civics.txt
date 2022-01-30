@@ -424,8 +424,10 @@ civic_corporate_hedonism = {
 	}
 	possible = {
 		civics = {
-			NOT = { value = civic_worker_coop }
-			NOT = { value = civic_indentured_assets } # would enslave hedonists
+			NOR = {
+				value = civic_worker_coop
+				value = civic_indentured_assets
+			} # would enslave hedonists
 		}
 	}
 	random_weight = { base = 5 }

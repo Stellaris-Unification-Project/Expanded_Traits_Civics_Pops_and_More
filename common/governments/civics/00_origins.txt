@@ -842,8 +842,10 @@ origin_lithoid = {
 			value = LITHOID
 		}
 		civics = {
-			NOT = { value = civic_catalytic_processing }
-			NOT = { value = civic_corporate_catalytic_processing }
+			NOR = {
+				value = civic_catalytic_processing
+				value = civic_corporate_catalytic_processing
+			}
 			NOT = { value = civic_hive_catalytic_processing }
 		}
 	}
@@ -873,8 +875,10 @@ origin_machine = {
 	possible = {
 		authority = { value = auth_machine_intelligence }
 		civics = {
-			NOT = { value = civic_machine_servitor }
-			NOT = { value = civic_harm_machine }
+			NOR = {
+				value = civic_machine_servitor
+				value = civic_harm_machine
+			}
 			NOT = { value = civic_machine_catalytic_processing }
 		}
 	}

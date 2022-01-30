@@ -125,8 +125,10 @@ pop_event = {
 		planet = {
 			is_capital = no
 			has_owner = yes
-			NOT = { has_planet_flag = pop_modification_xeno }
-			NOT = { is_planet_class = pc_habitat }
+			NOR = {
+				has_planet_flag = pop_modification_xeno
+				is_planet_class = pc_habitat
+			}
 			habitability = { 
 				who = root
 				value < 0.45
@@ -368,10 +370,7 @@ planet_event = {
 		if = {
 			limit = {
 				FROM = {
-					OR = {
-						has_ethic = ethic_xenophile
-						has_ethic = ethic_fanatic_xenophile
-					}
+					is_xenophile = yes
 				}
 			}
 			FROM = { add_resource = { influence = -20 } }
@@ -384,8 +383,7 @@ planet_event = {
 		trigger = {
 			owner = {
 				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+					is_xenophile = yes
 					has_civic = civic_fanatic_purifiers
 					has_civic = civic_hive_devouring_swarm
 					has_civic = civic_machine_terminator
@@ -400,10 +398,7 @@ planet_event = {
 		name = "popexpanded.10.c"
 		trigger = {
 			owner = {
-				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = no
 			}
 		}
 		remove_deposit = d_venerable_elder_site
@@ -461,16 +456,17 @@ country_event = {
 			has_deposit = d_venerable_elder_site
 		}
 		any_owned_planet = {
-			NOT = { has_deposit = d_venerable_elder_site }
-			NOT = { has_planet_flag = venerable_colony_migration }
+			NOR = {
+				has_deposit = d_venerable_elder_site
+				has_planet_flag = venerable_colony_migration
+			}
 			OR = {
 				is_ideal_planet_class = {
 					who = PREV
 					status = yes
 				}
 				is_planet_class = pc_gaia
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
+				is_artificial = yes
 			}
 			free_district_slots >= 1
 		}
@@ -479,16 +475,17 @@ country_event = {
 	immediate = {
 		random_owned_planet  = {
 			limit = {
-				NOT = { has_deposit = d_venerable_elder_site }
-				NOT = { has_planet_flag = venerable_colony_migration }
+				NOR = {
+					has_deposit = d_venerable_elder_site
+					has_planet_flag = venerable_colony_migration
+				}
 				OR = {
 					is_ideal_planet_class = {
 						who = PREV
 						status = yes
 					}
 					is_planet_class = pc_gaia
-					is_planet_class = pc_habitat
-					is_planet_class = pc_ringworld_habitable
+					is_artificial = yes
 				}
 				free_district_slots >= 1
 			}

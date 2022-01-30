@@ -39,8 +39,7 @@ d_venerable_elder_site = {
 	triggered_planet_modifier = {
 		potential = {
 			NOR = {
-				is_planet_class = pc_ringworld_habitable
-				is_planet_class = pc_ringworld_habitable
+				is_artificial = yes
 				is_planet_class = pc_cybrex
 			}
 		}

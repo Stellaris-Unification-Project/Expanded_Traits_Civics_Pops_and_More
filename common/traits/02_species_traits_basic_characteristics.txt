@@ -238,8 +238,10 @@ trait_aquatic = {
 		potential = {
 			exists = planet
 			planet = {
-				NOT = { has_climate = wet }
-				NOT = { is_planet_class = pc_subarctic }
+				NOR = {
+					has_climate = wet
+					is_planet_class = pc_subarctic
+				}
 				NOR = {
 					is_planet_class = pc_desert
 					is_planet_class = pc_arid
@@ -258,8 +260,10 @@ trait_aquatic = {
 		potential = {
 			exists = planet
 			planet = {
-				NOT = { has_climate = wet }
-				NOT = { is_planet_class = pc_subarctic }
+				NOR = {
+					has_climate = wet
+					is_planet_class = pc_subarctic
+				}
 				is_ideal = no
 				is_artificial = no
 			}
@@ -270,8 +274,10 @@ trait_aquatic = {
 		potential = {
 			exists = planet
 			planet = {
-				NOT = { has_climate = wet }
-				NOT = { is_planet_class = pc_subarctic }
+				NOR = {
+					has_climate = wet
+					is_planet_class = pc_subarctic
+				}
 				is_ideal = no
 				is_artificial = no
 				exists = owner

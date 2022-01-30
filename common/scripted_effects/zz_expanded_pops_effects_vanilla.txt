@@ -2426,8 +2426,10 @@ add_random_leader_trait = {
 				5 = {
 					if = {
 						limit = {
-							NOT = { has_trait = leader_trait_butcher }
-							NOT = { has_trait = leader_trait_restrained }
+							NOR = {
+								has_trait = leader_trait_butcher
+								has_trait = leader_trait_restrained
+							}
 						}
 						add_trait = leader_trait_butcher
 						set_timed_leader_flag = { flag = gained_leader_trait_butcher days = 7 }
@@ -2833,8 +2835,10 @@ add_random_leader_trait = {
 				5 = {
 					if = {
 						limit = {
-							NOT = { has_trait = trait_ruler_architectural_sense }
-							NOT = { has_trait = trait_ruler_architectural_sense_gestalt }
+							NOR = {
+								has_trait = trait_ruler_architectural_sense
+								has_trait = trait_ruler_architectural_sense_gestalt
+							}
 						}
 						if = {
 							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
@@ -2894,8 +2898,10 @@ add_random_leader_trait = {
 					}
 					if = {
 						limit = {
-							NOT = { has_trait = trait_ruler_eye_for_talent }
-							NOT = { has_trait = trait_ruler_pooled_knowledge }
+							NOR = {
+								has_trait = trait_ruler_eye_for_talent
+								has_trait = trait_ruler_pooled_knowledge
+							}
 						}
 						if = {
 							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
@@ -2922,8 +2928,10 @@ add_random_leader_trait = {
 					}
 					if = {
 						limit = {
-							NOT = { has_trait = trait_ruler_deep_connections }
-							NOT = { has_trait = trait_ruler_deep_connections_gestalt }
+							NOR = {
+								has_trait = trait_ruler_deep_connections
+								has_trait = trait_ruler_deep_connections_gestalt
+							}
 						}
 						if = {
 							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
@@ -2947,8 +2955,10 @@ add_random_leader_trait = {
 					}
 					if = {
 						limit = {
-							NOT = { has_trait = trait_ruler_champion_of_the_people }
-							NOT = { has_trait = trait_ruler_one_mind }
+							NOR = {
+								has_trait = trait_ruler_champion_of_the_people
+								has_trait = trait_ruler_one_mind
+							}
 						}
 						if = {
 							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
@@ -3012,8 +3022,10 @@ add_random_leader_trait = {
 				5 = {
 					if = {
 						limit = {
-							NOT = { has_trait = leader_trait_fleet_organizer }
-							NOT = { has_trait = leader_trait_fleet_organizer_gestalt }
+							NOR = {
+								has_trait = leader_trait_fleet_organizer
+								has_trait = leader_trait_fleet_organizer_gestalt
+							}
 						}
 						if = {
 							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
@@ -3036,8 +3048,10 @@ add_random_leader_trait = {
 					}
 					if = {
 						limit = {
-							NOT = { has_trait = trait_ruler_charismatic }
-							NOT = { has_trait = trait_ruler_subsumed_will }
+							NOR = {
+								has_trait = trait_ruler_charismatic
+								has_trait = trait_ruler_subsumed_will
+							}
 						}
 						if = {
 							limit = { owner = { has_ethic = "ethic_gestalt_consciousness"  } }
@@ -3095,8 +3109,10 @@ create_nu_baol_effect = {
 				NOT = { exists = event_target:nu_baol_species }
 				owner = {
 					has_authority = auth_hive_mind
-					NOT = { has_valid_civic = civic_hive_devouring_swarm }
-					NOT = { has_valid_civic = civic_infestation }
+					NOR = {
+						has_valid_civic = civic_hive_devouring_swarm
+						has_valid_civic = civic_infestation
+					}
 					NOT = { has_origin = origin_necrophage }
 				}
 			}
@@ -3154,8 +3170,10 @@ create_nu_baol_effect = {
 				NOT = { exists = event_target:nu_baol_species }
 				owner = {
 					has_authority = auth_hive_mind
-					NOT = { has_valid_civic = civic_hive_devouring_swarm }
-					NOT = { has_valid_civic = civic_infestation }
+					NOR = {
+						has_valid_civic = civic_hive_devouring_swarm
+						has_valid_civic = civic_infestation
+					}
 					NOT = { has_origin = origin_necrophage }
 				}
 			}

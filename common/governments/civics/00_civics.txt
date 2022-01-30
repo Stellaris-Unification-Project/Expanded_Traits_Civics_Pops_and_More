@@ -954,8 +954,10 @@ civic_shared_burden = {
 			}
 		}
 		civics = {
-			NOT = { value = civic_technocracy }
-			NOT = { value = civic_pleasure_seekers }
+			NOR = {
+				value = civic_technocracy
+				value = civic_pleasure_seekers
+			}
 		}
 		origin = {
 			NOR = {

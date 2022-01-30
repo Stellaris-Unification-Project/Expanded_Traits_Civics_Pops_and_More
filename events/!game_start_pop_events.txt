@@ -248,8 +248,10 @@ country_event = {
 		if = {
 			limit = {
 				has_origin = origin_necrophage
-				NOT = { has_civic = civic_fanatic_purifiers }
-				NOT = { has_ai_personality_behaviour = purger }
+				NOR = {
+					has_civic = civic_fanatic_purifiers
+					has_ai_personality_behaviour = purger
+				}
 			}
 			country_event = { id = necroids.2 days = 3420 } #tell them about the necrophage mechanic
 		}

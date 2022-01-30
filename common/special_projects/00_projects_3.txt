@@ -28,8 +28,10 @@ special_project = {
 							count = 0
 							limit = {
 								is_country_type = default
-								NOT = { has_established_contact = prev }
-								NOT = { is_same_value = prev }
+								NOR = {
+									has_established_contact = prev
+									is_same_value = prev
+								}
 							}
 						}
 					}
@@ -135,10 +137,7 @@ special_project = {
 		if = {
 			limit = {
 				owner = {
-					NOR = {
-						has_ethic = ethic_fanatic_spiritualist
-						has_ethic = ethic_spiritualist
-					}
+					is_spiritualist = no
 				}
 			}
 			random_list = {

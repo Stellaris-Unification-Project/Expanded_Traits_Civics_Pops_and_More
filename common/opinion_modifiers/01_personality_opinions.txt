@@ -59,11 +59,7 @@ opinion_fanatic_purifiers = {
 		modifier = {
 			add = -1000
 			is_country_type = default
-			NOR = {
-				has_valid_civic = civic_fanatic_purifiers
-				has_valid_civic = civic_hive_devouring_swarm
-				has_valid_civic = civic_machine_terminator
-			}
+			is_homicidal = no
 			FROM = { has_valid_civic = civic_fanatic_purifiers }
 		}
 	}
@@ -77,10 +73,7 @@ opinion_zealots_vs_materialists = {
 				has_ai_personality = evangelising_zealots
 				has_ai_personality = awakened_fallen_empire_spiritualist
 			}
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 			OR = {
 				FROM = { has_ethic = "ethic_materialist" }
 				FROM = { has_ethic = "ethic_fanatic_materialist" }
@@ -178,10 +171,7 @@ opinion_desecrated_holy_world = {
 			add = -200
 			has_ai_personality_behaviour = holy_planets
 			from = {
-				OR = {
-					is_country_type = default
-					is_country_type = awakened_fallen_empire
-				}
+				is_country_type_with_subjects = yes
 				is_valid_target_fe_cleanse_holy_worlds = yes
 			}
 		}
@@ -195,10 +185,7 @@ opinion_encroaching_borders = {
 			add = -200
 			has_ai_personality_behaviour = demands_clear_borders
 			from = {
-				OR = {
-					is_country_type = default
-					is_country_type = awakened_fallen_empire
-				}
+				is_country_type_with_subjects = yes
 				any_system_within_border = {
 					has_hyperlane_to = root
 				}

@@ -196,8 +196,10 @@ part = {
 	
 	trigger = {
 		has_government = gov_infested_hive_mind
-		NOR = { has_country_flag = custom_start_screen }
-		NOR = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -209,8 +211,10 @@ part = {
 	
 	trigger = {
 		has_government = gov_resource_collector_mind
-		NOR = { has_country_flag = custom_start_screen }
-		NOR = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 
@@ -221,8 +225,10 @@ part = {
 	
 	trigger = {
 		has_government = gov_knowledge_driven_collective
-		NOR = { has_country_flag = custom_start_screen }
-		NOR = { has_country_flag = custom_gov_desc }
+		NOR = {
+			has_country_flag = custom_start_screen
+			has_country_flag = custom_gov_desc
+		}
 	}
 }
 

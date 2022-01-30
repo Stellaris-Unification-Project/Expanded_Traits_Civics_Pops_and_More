@@ -195,14 +195,10 @@ gov_enlightened_iron_despot = {
 		has_origin = origin_iron_despot
 		OR = {
 			has_valid_civic = civic_philosopher_king
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
+			is_pacifist = yes
 			has_ethic = ethic_fanatic_xenophile
 		}
-		NOR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = no
 	}
 	
 	election_candidates = {
@@ -248,8 +244,7 @@ gov_totalitarian_iron_despot = {
 		has_authority = auth_dictatorial
 		has_origin = origin_iron_despot
 		OR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
+			is_authoritarian = yes
 			has_ethic = ethic_fanatic_militarist
 			has_ethic = ethic_fanatic_xenophobe
 		}

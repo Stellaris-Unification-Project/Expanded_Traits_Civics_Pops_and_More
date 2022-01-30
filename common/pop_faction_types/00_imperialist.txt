@@ -706,9 +706,9 @@ imperialist = {
 		trigger = {
 			owner = {
 				OR = {
-					AND = {
-						NOT = { has_edict = industrial_subsidies }
-						NOT = { has_edict = trade_subsidies }
+					NOR = {
+						has_edict = industrial_subsidies 
+						has_edict = trade_subsidies 
 					}
 					AND = {
 						is_at_war = no

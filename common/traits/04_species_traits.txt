@@ -2709,7 +2709,7 @@ trait_conservational = {
 		modifier = {
 			factor = 0.25
 			has_ethic = ethic_fanatic_egalitarian
-			NOT = { is_civic_shared_burden = yes }
+			is_civic_shared_burden = no
 		}
 	}
 }

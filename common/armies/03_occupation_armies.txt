@@ -23,7 +23,7 @@ occupation_army = {
 			}
 		}
 		owner = {
-			NOT = { is_civic_reanimated_armies = yes }
+			is_civic_reanimated_armies = no
 			OR = {
 				NOT = { has_authority = auth_machine_intelligence }
 				has_valid_civic = civic_machine_assimilator
@@ -50,8 +50,10 @@ robotic_occupation_army = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
-			NOT = { has_technology = tech_synthetic_workers }
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_technology = tech_synthetic_workers
+			}
 		}
 	}
 

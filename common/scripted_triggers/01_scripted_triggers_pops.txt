@@ -24,8 +24,10 @@ can_take_grunt_job = {
 
 can_generate_crime = {
 	is_shackled_robot_species_rights = no
-	NOT = { has_trait = trait_nerve_stapled }
-	NOT = { has_trait = trait_memorex_comatos }
+	NOR = {
+		has_trait = trait_nerve_stapled
+		has_trait = trait_memorex_comatos
+	}
 }
 
 ### POP TRIGGERS ###

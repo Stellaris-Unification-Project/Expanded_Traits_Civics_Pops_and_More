@@ -16,10 +16,14 @@ decision_prospect = {
 	
 	potential = {
 		is_artificial = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_relic }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
 		owner = {
 			has_active_tradition = tr_adaptability_finish
 		}
@@ -27,8 +31,10 @@ decision_prospect = {
 	}
 	
 	allow = {
-		NOT = { has_modifier = delicate_ecosystem }
-		NOT = { has_modifier = eco_fragile_ecosystem }
+		NOR = {
+			has_modifier = delicate_ecosystem
+			has_modifier = eco_fragile_ecosystem
+		}
 	}
 	
 	effect = {
@@ -81,8 +87,10 @@ decision_penal_colony = {
 	
 	potential = {
 		is_capital = no
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 		NOT = { has_modifier = eco_trash_colony }
 		owner = { 
 			is_regular_empire = yes 
@@ -97,8 +105,10 @@ decision_penal_colony = {
 	
 	allow = {
 		planet_size >= 15
-		NOT = { has_modifier = delicate_ecosystem }
-		NOT = { has_modifier = eco_fragile_ecosystem }
+		NOR = {
+			has_modifier = delicate_ecosystem
+			has_modifier = eco_fragile_ecosystem
+		}
 	}
 	
 	effect = {
@@ -206,12 +216,18 @@ decision_slave_colony = {
 	
 	potential = {
 		is_capital = no
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_relic }
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = penal_colony }
-		NOT = { has_modifier = slave_colony }
-		NOT = { has_modifier = eco_trash_colony }
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = eco_trash_colony
+		}
 		owner = { 
 			is_regular_empire = yes 
 		}
@@ -324,12 +340,18 @@ decision_resort_colony = {
 	
 	potential = {
 		is_capital = no
-		NOT = { has_modifier = penal_colony }
-		NOT = { has_modifier = slave_colony }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_relic }
-		NOT = { is_planet_class = pc_nuked }
-		NOT = { has_modifier = eco_trash_colony }
+		NOR = {
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
+		NOR = {
+			is_planet_class = pc_nuked
+			has_modifier = eco_trash_colony
+		}
 		owner = { 
 			OR = {
 				is_regular_empire = yes 
@@ -341,8 +363,10 @@ decision_resort_colony = {
 	
 	allow = {
 		planet_size >= 15
-		NOT = { has_modifier = delicate_ecosystem }
-		NOT = { has_modifier = eco_fragile_ecosystem }
+		NOR = {
+			has_modifier = delicate_ecosystem
+			has_modifier = eco_fragile_ecosystem
+		}
 		NOT = { has_deposit = d_exploited_homeworld }
 		custom_tooltip = {
 			fail_text = decision_resort_colony_no_districts
@@ -509,12 +533,18 @@ decision_mastery_of_nature = {
 		if = {
 			limit = {
 				is_artificial = no
-				NOT = { is_planet_class = pc_machine }
-				NOT = { is_planet_class = pc_hive }
-				NOT = { is_planet_class = pc_city }
-				NOT = { is_planet_class = pc_relic }
-				NOT = { has_modifier = delicate_ecosystem }
-				NOT = { has_modifier = eco_fragile_ecosystem }
+				NOR = {
+					is_planet_class = pc_machine
+					is_planet_class = pc_hive
+				}
+				NOR = {
+					is_planet_class = pc_city
+					is_planet_class = pc_relic
+				}
+				NOR = {
+					has_modifier = delicate_ecosystem
+					has_modifier = eco_fragile_ecosystem
+				}
 			}
 			random_list = {
 				2 = {
@@ -565,7 +595,7 @@ decision_consecrated_worlds = {
 	
 	potential = {
 		exists = space_owner
-		space_owner = { is_same_value = from }
+		is_owned_by = from
 		from = {
 			has_ascension_perk = ap_consecrated_worlds
 		}
@@ -648,10 +678,12 @@ decision_consecrated_worlds = {
 			}
 			if = {
 				limit = {
-					NOT = { is_planet_class = pc_shrouded }
-					NOT = { has_modifier = dead_god }
-					NOT = { has_modifier = old_god_shrine }
 					NOR = {
+						is_planet_class = pc_shrouded
+						has_modifier = dead_god
+					}
+					NOR = {
+						has_modifier = old_god_shrine
 						has_modifier = rock_brain
 						has_modifier = life_electric
 						has_modifier = transdimensional_being
@@ -816,10 +848,14 @@ decision_consecrated_worlds = {
 			}
 			else_if = {
 				limit = {
-					NOT = { is_planet_class = pc_gaia }
-					NOT = { is_planet_class = pc_shrouded }
-					NOT = { has_modifier = dead_god }
-					NOT = { has_modifier = old_god_shrine }
+					NOR = {
+						is_planet_class = pc_gaia
+						is_planet_class = pc_shrouded
+					}
+					NOR = {
+						has_modifier = dead_god
+						has_modifier = old_god_shrine
+					}
 					OR = {
 						habitable_planet = yes
 						has_modifier = rock_brain

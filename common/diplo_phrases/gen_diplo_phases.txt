@@ -12,10 +12,8 @@ greetings = {
 		trigger = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 				is_same_species = FROM
 				is_at_war_with = FROM
 				is_megacorp = yes
@@ -32,10 +30,8 @@ greetings = {
 		trigger = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 				is_same_species = FROM
 				is_at_war_with = FROM
 				is_megacorp = yes
@@ -51,15 +47,11 @@ greetings = {
 	03_HOSTILE_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
 					is_megacorp = yes
-				}
-			}
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -73,15 +65,11 @@ greetings = {
 	04_HOSTILE_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
 					is_megacorp = yes
-				}
-			}
+}
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -101,8 +89,7 @@ greetings = {
 				has_ai_personality = closed_machine_intelligence
 			}
 			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
+				is_pacifist = yes
 				has_ai_personality = closed_hive_mind
 				has_ai_personality = closed_machine_intelligence
 			}
@@ -123,8 +110,7 @@ greetings = {
 				is_megacorp = yes
 			}
 			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
+				is_pacifist = yes
 				has_ai_personality = vb_keepers_of_peace
 			}
 			OR = {
@@ -133,10 +119,7 @@ greetings = {
 					has_ai_personality = vb_keepers_of_peace
 				}
 				FROM = {
-					OR = {
-						has_ethic = ethic_militarist
-						has_ethic = ethic_fanatic_militarist
-					}
+					is_militarist = yes
 				}
 			}
 			NOT = { is_same_species = FROM }
@@ -160,8 +143,7 @@ greetings = {
 				is_megacorp = yes
 			}
 			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_militarist = yes
 				NOT = { has_ai_personality = vb_keepers_of_peace }
 			}
 			NOT = { is_same_species = FROM }
@@ -180,15 +162,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -206,10 +182,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -226,15 +199,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
-				}
+				is_materialist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -252,10 +219,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -272,15 +236,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -298,10 +256,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -318,15 +273,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -344,10 +293,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -364,15 +310,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -390,10 +330,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species_class = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -419,8 +356,7 @@ greetings = {
 				has_ai_personality = closed_machine_intelligence
 			}
 			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophobe = yes
 				has_ai_personality = closed_hive_mind
 				has_ai_personality = closed_machine_intelligence
 			}
@@ -440,10 +376,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species_class = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -460,10 +393,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -480,10 +410,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -501,10 +428,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -521,10 +445,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -542,10 +463,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -562,10 +480,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			is_same_species_class = FROM
 			NOT = { is_subspecies = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -583,10 +498,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			is_subspecies = FROM
 			NOT = { is_at_war_with = FROM }
@@ -601,10 +513,7 @@ greetings = {
 	# Hostile Xenophile - Killed Tiyanki
 	27_HOSTILE_GREETING = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_active_resolution = "resolution_tiyanki_pest_control" }
 			OR = {
 				has_opinion_modifier = { 
@@ -643,14 +552,10 @@ greetings = {
 				has_ai_personality = closed_hive_mind
 				has_ai_personality = closed_machine_intelligence
 			}
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
-			}
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -666,14 +571,10 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
-			}
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -689,14 +590,10 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
-			}
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -712,14 +609,10 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
-			}
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+}
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -735,10 +628,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -754,15 +644,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
+				is_militarist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -779,10 +663,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -798,15 +679,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -823,10 +698,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -842,15 +714,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
-				}
+				is_materialist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -869,8 +735,7 @@ greetings = {
 				has_ai_personality = closed_machine_intelligence
 			}
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 				has_authority = auth_machine_intelligence
 			}
 			NOT = { is_same_species = FROM }
@@ -888,15 +753,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -913,10 +772,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -932,15 +788,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -957,10 +807,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -976,15 +823,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1001,10 +842,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1020,10 +858,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1039,10 +874,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1058,10 +890,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1077,10 +906,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1096,10 +922,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1115,10 +938,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1134,10 +954,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1149,10 +966,7 @@ greetings = {
 	# Neutral Xenophile - Killed Tiyanki
 	25_NEUTRAL_GREETING = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_active_resolution = "resolution_tiyanki_pest_control" }
 			OR = {
 				has_opinion_modifier = { 
@@ -1186,15 +1000,11 @@ greetings = {
 	01_FRIENDLY_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
 					is_megacorp = yes
-				}
-			}
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1208,15 +1018,11 @@ greetings = {
 	02_FRIENDLY_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
 					is_megacorp = yes
-				}
-			}
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1230,15 +1036,11 @@ greetings = {
 	03_FRIENDLY_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
 					is_megacorp = yes
-				}
-			}
+}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1252,15 +1054,11 @@ greetings = {
 	04_FRIENDLY_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
 					is_megacorp = yes
-				}
-			}
+}
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1274,10 +1072,7 @@ greetings = {
 	05_FRIENDLY_GREETING = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1294,15 +1089,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
+				is_militarist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1320,10 +1109,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1340,15 +1126,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1366,10 +1146,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1386,15 +1163,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
-				}
+				is_materialist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1412,10 +1183,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1432,15 +1200,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1458,10 +1220,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1478,15 +1237,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1504,10 +1257,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1524,15 +1274,9 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			FROM = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
@@ -1550,10 +1294,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1570,10 +1311,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1590,10 +1328,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1610,10 +1345,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1630,10 +1362,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 				OR = {
@@ -1650,10 +1379,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1670,10 +1396,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1690,10 +1413,7 @@ greetings = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			is_same_species = FROM
 			NOT = { is_at_war_with = FROM }
 			OR = {
@@ -1706,10 +1426,7 @@ greetings = {
 	# Neutral Xenophile - Killed Tiyanki
 	25_FRIENDLY_GREETING = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_active_resolution = "resolution_tiyanki_pest_control" }
 			OR = {
 				has_opinion_modifier = { 
@@ -1743,18 +1460,16 @@ greetings = {
 	# War Generic 1
 	01_WAR_GREETING = {
 		trigger = {
-			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					is_megacorp = yes
-				}
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				is_country_type = fallen_empire
 			}
+			NOT = { is_country_type = awakened_fallen_empire }
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+					is_megacorp = yes
+}
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1762,18 +1477,16 @@ greetings = {
 	# War Generic 2
 	02_WAR_GREETING = {
 		trigger = {
-			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					is_megacorp = yes
-				}
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				is_country_type = fallen_empire
 			}
+			NOT = { is_country_type = awakened_fallen_empire }
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+					is_megacorp = yes
+}
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1781,18 +1494,16 @@ greetings = {
 	# War Generic 3
 	03_WAR_GREETING = {
 		trigger = {
-			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					is_megacorp = yes
-				}
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				is_country_type = fallen_empire
 			}
+			NOT = { is_country_type = awakened_fallen_empire }
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+					is_megacorp = yes
+}
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1800,18 +1511,16 @@ greetings = {
 	# War Generic Same Species
 	04_WAR_GREETING = {
 		trigger = {
-			NOT = { has_ethic = ethic_gestalt_consciousness }
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-			NOT = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					is_megacorp = yes
-				}
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				is_country_type = fallen_empire
 			}
+			NOT = { is_country_type = awakened_fallen_empire }
+			NOR = {
+					is_xenophile = yes
+					is_xenophobe = yes
+					is_megacorp = yes
+}
 			is_same_species = FROM
 			is_at_war_with = FROM
 		}
@@ -1822,13 +1531,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1839,13 +1545,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1856,13 +1559,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1873,13 +1573,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1890,13 +1587,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1907,13 +1601,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1924,13 +1615,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 			FROM = {
@@ -1947,13 +1635,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			is_same_species = FROM
 			is_at_war_with = FROM
 		}
@@ -1964,13 +1649,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOT = { is_same_species = FROM }
 			is_at_war_with = FROM
 		}
@@ -1981,13 +1663,10 @@ greetings = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				is_megacorp = yes
+				is_country_type = fallen_empire
 			}
-			NOT = { is_country_type = fallen_empire }
 			NOT = { is_country_type = awakened_fallen_empire }
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			is_same_species = FROM
 			is_at_war_with = FROM
 		}
@@ -2420,10 +2099,7 @@ greetings = {
 		}
 		trigger = {
 			FROM = { is_megacorp = yes }
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 			OR = {
 				is_megacorp = no
 				has_valid_civic = civic_worker_coop
@@ -2590,10 +2266,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2606,10 +2280,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2622,10 +2294,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2638,10 +2308,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2654,10 +2322,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2670,10 +2336,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2686,10 +2350,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -2705,10 +2367,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -2726,10 +2386,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -2747,10 +2405,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -2768,10 +2424,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -2789,10 +2443,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -2810,10 +2462,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -2833,10 +2483,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -2851,10 +2499,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -2869,10 +2515,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -2887,10 +2531,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -2905,10 +2547,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -2923,10 +2563,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -2944,19 +2582,13 @@ greetings = {
 		
 		trigger = {
 			OR = {
-				has_ethic = "ethic_pacifist"
-				has_ethic = "ethic_fanatic_pacifist"
+				is_pacifist = yes
 				has_ethic = "ethic_fanatic_xenophile"
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			FROM = {
@@ -2976,19 +2608,13 @@ greetings = {
 		
 		trigger = {
 			OR = {
-				has_ethic = "ethic_pacifist"
-				has_ethic = "ethic_fanatic_pacifist"
+				is_pacifist = yes
 				has_ethic = "ethic_fanatic_xenophile"
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			NOR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 			NOT = { is_at_war_with = FROM }
 			FROM = {
@@ -3007,12 +2633,11 @@ greetings = {
 			weight = 3
 		}
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+			is_materialist = yes
+			NOR = {
+				is_same_species = FROM
+				is_at_war_with = FROM
 			}
-			NOT = { is_same_species = FROM }
-			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
@@ -3030,10 +2655,7 @@ greetings = {
 			weight = 3
 		}
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			NOT = { is_at_war_with = FROM }
 			OR = {
 				is_domineering_to = FROM
@@ -3052,10 +2674,7 @@ greetings = {
 			weight = 3
 		}
 		trigger = {
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 			NOT = { has_ai_personality = vb_keepers_of_peace }
 			OR = {
 				has_authority = auth_oligarchic
@@ -3167,17 +2786,11 @@ greetings = {
 		}
 		trigger = {
 			has_valid_civic = civic_shared_burden
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			NOT = { is_at_war_with = FROM }
 			is_neutral_to = FROM
 			FROM = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 		}
 	}
@@ -3242,10 +2855,8 @@ greetings = {
 			FROM = {
 				NOT = { has_valid_civic = civic_shared_burden }
 				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_authoritarian = yes
+					is_xenophobe = yes
 				}
 			}
 		}
@@ -3256,8 +2867,10 @@ greetings = {
 		}
 		trigger = {
 			has_valid_civic = civic_shared_burden
-			NOT = { has_valid_civic = civic_merchant_guilds }
-			NOT = { is_at_war_with = FROM }
+			NOR = {
+				has_valid_civic = civic_merchant_guilds
+				is_at_war_with = FROM
+			}
 			OR = {
 				is_hostile_to = FROM
 				is_unfriendly_to = FROM
@@ -3331,10 +2944,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3348,10 +2959,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3364,10 +2973,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3380,10 +2987,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3397,10 +3002,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3413,10 +3016,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3430,10 +3031,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3446,10 +3045,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3462,10 +3059,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3478,10 +3073,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3494,10 +3087,8 @@ greetings = {
 			weight = 100000
 		}
 		trigger = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			is_overlord_to = FROM
 			FROM = { 
 				has_origin = origin_scion
@@ -3513,10 +3104,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3540,10 +3129,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3567,10 +3154,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3588,10 +3173,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3609,10 +3192,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3630,10 +3211,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3651,10 +3230,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				is_overlord_to = FROM
 				is_overlord_to = ROOT
 			}
@@ -3674,10 +3251,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3692,10 +3267,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3710,10 +3283,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3728,10 +3299,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3750,10 +3319,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3768,10 +3335,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3786,10 +3351,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}
@@ -3808,10 +3371,8 @@ greetings = {
 		}
 		trigger = {
 			any_country = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				NOT = { is_overlord_to = FROM }
 				is_overlord_to = ROOT
 			}

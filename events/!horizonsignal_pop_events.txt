@@ -51,10 +51,7 @@ planet_event = {
 		name = akx.9100.neutral.a
 		trigger = {
 			owner = {
-				NOR = {
-					has_ethic = ethic_fanatic_spiritualist
-					has_ethic = ethic_spiritualist
-				}
+				is_spiritualist = no
 			}
 		}
 	}
@@ -90,10 +87,7 @@ planet_event = {
 		custom_tooltip = akx.9101.a.notspiritual.tooltip
 		trigger = {
 			owner = {
-				NOR = {
-					has_ethic = ethic_fanatic_spiritualist
-					has_ethic = ethic_spiritualist
-				}
+				is_spiritualist = no
 			}
 		}
 		add_modifier = {
@@ -288,10 +282,7 @@ country_event = {
 		name = akx.9211.b
 		custom_tooltip = akx.9211.b.tooltip
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		hidden_effect = {
 			capital_scope = {
@@ -425,10 +416,7 @@ country_event = {
 		name = akx.9221.b
 		custom_tooltip = akx.9221.b.tooltip
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		hidden_effect = {
 			capital_scope = {

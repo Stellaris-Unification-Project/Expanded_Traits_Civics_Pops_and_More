@@ -43,10 +43,7 @@ traditionalist = {
 		NAND = {
 			NOT = { is_same_species = owner_species }
 			owner = {
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -250,10 +247,7 @@ traditionalist = {
 			owner = {
 				num_species > 1
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 		
@@ -307,10 +301,7 @@ traditionalist = {
 			owner = {
 				num_communications > 0
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 		
@@ -334,10 +325,7 @@ traditionalist = {
 			owner = {
 				num_communications > 2
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 		
@@ -376,10 +364,7 @@ traditionalist = {
 					has_valid_civic = civic_slaver_guilds
 					has_valid_civic = civic_indentured_assets
 				}
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 				any_owned_species = {
 					NOR = {
 						is_same_species = root.owner
@@ -413,10 +398,7 @@ traditionalist = {
 		potential = {
 			exists = owner
 			owner = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 			}
 		}
 
@@ -441,16 +423,12 @@ traditionalist = {
 		potential = {
 			exists = owner
 			owner = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 				any_country = {
 					NOT = { has_communications = prev}
 					OR = {
 						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 			}
@@ -475,14 +453,8 @@ traditionalist = {
 			exists = owner
 			owner = {
 				num_communications > 2
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_spiritualist = yes
+				is_pacifist = yes
 			}
 		}
 
@@ -507,15 +479,10 @@ traditionalist = {
 		potential = {
 			exists = owner
 			owner = {
+				is_spiritualist = yes
 				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_militarist = yes
+					is_xenophobe = yes
 					has_valid_civic = civic_crusaders
 				}
 				any_relation = {

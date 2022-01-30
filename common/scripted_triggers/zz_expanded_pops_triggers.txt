@@ -92,8 +92,10 @@ complex_drone_job_check_trigger = {
 	custom_tooltip = DRONE_JOB_TRIGGER
 	hidden_trigger = {
 		has_citizenship_rights = yes
-		NOT = { has_trait = trait_syncretic_proles }
-		NOT = { has_trait = trait_nerve_stapled }
+		NOR = {
+			has_trait = trait_syncretic_proles
+			has_trait = trait_nerve_stapled
+		}
 		NOT = { has_trait = trait_presapient_docile_livestock }	
 	}
 }
@@ -224,9 +226,7 @@ country_uses_consumer_goods = {
 
 is_unfriendly = {
 	OR = {
-		has_valid_civic = civic_fanatic_purifiers
-		has_valid_civic = civic_machine_terminator
-		has_valid_civic = civic_hive_devouring_swarm
+		is_homicidal = yes
 		has_valid_civic = civic_barbaric_despoilers
 		has_valid_civic = civic_living_hosts
 		has_valid_civic = civic_infestation
@@ -239,8 +239,7 @@ has_total_war_cb = {
 		AND = {
 			OR = {
 				is_country_type = default
-				is_country_type = awakened_fallen_empire
-				is_country_type = fallen_empire
+				is_fallen_empire = yes
 			}
 			OR = {
 				is_country_type = awakened_fallen_empire
@@ -250,10 +249,7 @@ has_total_war_cb = {
 				AND = {
 					has_valid_civic = civic_machine_terminator
 					from = {
-						NOR = {
-							has_country_flag = synthetic_empire
-							has_authority = auth_machine_intelligence
-						}
+						is_synthetic_empire = no
 					}
 				}
 				AND = {
@@ -504,8 +500,7 @@ wears_clothes = { # The species uses the portrait that wears clothes
 #Note: empires which cannot do diplomacy are already excluded from Espionage
 has_hostile_espionage_operation_ethics = {
     OR = {
-        has_ethic = ethic_xenophobe
-        has_ethic = ethic_fanatic_xenophobe
+        is_xenophobe = yes
         has_authority = auth_machine_intelligence
         has_authority = auth_hive_mind
     }

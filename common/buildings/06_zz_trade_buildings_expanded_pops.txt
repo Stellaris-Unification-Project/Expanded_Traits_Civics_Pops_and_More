@@ -272,8 +272,10 @@ building_galactic_stock_exchange = {
 		custom_tooltip = {
 			text = EMPIRE_UNIQUE_BUILDING
 			owner = {
-				NOT = { has_country_flag = building_stocks }
-				NOT = { has_country_flag = built_one_stocks }
+				NOR = {
+					has_country_flag = building_stocks
+					has_country_flag = built_one_stocks
+				}
 			}
 		}
 		NOT = { has_modifier = resort_colony }	

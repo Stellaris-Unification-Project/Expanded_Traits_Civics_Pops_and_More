@@ -722,8 +722,10 @@ building_psi_corps = {
 		custom_tooltip = {
 			text = EMPIRE_UNIQUE_BUILDING
 			owner = {
-				NOT = { has_country_flag = building_psi_corps }
-				NOT = { has_country_flag = built_one_psi_corps }
+				NOR = {
+					has_country_flag = building_psi_corps
+					has_country_flag = built_one_psi_corps
+				}
 			}
 		}
 		owner = { has_ascension_perk = ap_mind_over_matter }

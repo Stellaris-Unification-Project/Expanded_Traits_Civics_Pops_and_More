@@ -261,8 +261,7 @@ opinion_kp_threat = {
 				has_civic = civic_hive_devouring_swarm
 				has_civic = civic_machine_terminator
 				has_civic = civic_machine_assimilator
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_militarist = yes
 			}
 		}
 	}
@@ -747,7 +746,7 @@ triggered_opinion_idealistic_foundation = {
 			NOT = { is_same_species = FROM }
 			NOT = { has_ai_personality = evangelising_zealots }
 			NOT = { has_valid_civic = civic_corporate_dominion }
-			NOT = { is_megacorp = yes }
+			is_megacorp = no
 			FROM = { is_pacifist = no }
 		}
 		modifier = {
@@ -957,8 +956,7 @@ triggered_opinion_fe_prosperity = {
 	trigger = {
 		OR = {
 			is_country_type = default
-			is_country_type = awakened_fallen_empire
-			is_country_type = fallen_empire
+			is_fallen_empire = yes
 			is_country_type = ascended_empire
 			is_country_type = lost_empire
 		}
@@ -1213,22 +1211,15 @@ triggered_opinion_harm_collective = {
 				is_ai = no
 				is_country_type = default
 				NOR = {
-					has_ethic = "ethic_xenophobe"
-					has_ethic = "ethic_fanatic_xenophobe"
-					has_ethic = "ethic_militarist"
-					has_ethic = "ethic_fanatic_militarist"
+					is_xenophobe = yes
+					is_militarist = yes
 					is_megacorp = yes
 				}
 				OR = {
-					has_ethic = "ethic_pacifist"
-					has_ethic = "ethic_fanatic_pacifist"
-					has_ethic = "ethic_xenophile"
-					has_ethic = "ethic_fanatic_xenophile"
+					is_pacifist = yes
+					is_xenophile = yes
 				}
-				OR = {
-					has_ethic = "ethic_authoritarian"
-					has_ethic = "ethic_fanatic_authoritarian"
-				}
+				is_authoritarian = yes
 			}
 		}
 		FROM = {
@@ -1261,21 +1252,14 @@ triggered_opinion_is_harm_collective = {
 					is_ai = no
 					is_country_type = default
 					NOR = {
-						has_ethic = "ethic_xenophobe"
-						has_ethic = "ethic_fanatic_xenophobe"
-						has_ethic = "ethic_militarist"
-						has_ethic = "ethic_fanatic_militarist"	
+						is_xenophobe = yes
+						is_militarist = yes	
 					}
 					OR = {
-						has_ethic = "ethic_pacifist"
-						has_ethic = "ethic_fanatic_pacifist"
-						has_ethic = "ethic_xenophile"
-						has_ethic = "ethic_fanatic_xenophile"
+						is_pacifist = yes
+						is_xenophile = yes
 					}
-					OR = {
-						has_ethic = "ethic_authoritarian"
-						has_ethic = "ethic_fanatic_authoritarian"
-					}
+					is_authoritarian = yes
 				}
 			}
 		}
@@ -1393,8 +1377,7 @@ triggered_opinion_environmental_wasteful = {
 	trigger = {
 		OR = {
 			is_country_type = default
-			is_country_type = awakened_fallen_empire
-			is_country_type = fallen_empire
+			is_fallen_empire = yes
 			is_country_type = ascended_empire
 			is_country_type = lost_empire
 		}
@@ -1428,8 +1411,7 @@ triggered_opinion_environmental_conservational = {
 	trigger = {
 		OR = {
 			is_country_type = default
-			is_country_type = awakened_fallen_empire
-			is_country_type = fallen_empire
+			is_fallen_empire = yes
 			is_country_type = ascended_empire
 			is_country_type = lost_empire
 		}
@@ -1524,10 +1506,7 @@ triggered_machine_opinion_materialist = {
 		FROM = {
 			is_mechanical_empire = no
 			is_cyborg_empire = no
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 	}
 	opinion = {
@@ -1550,10 +1529,7 @@ triggered_machine_opinion_spiritualist = {
 		FROM = {
 			is_mechanical_empire = no
 			is_cyborg_empire = no
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 		}
 	}
 	opinion = {

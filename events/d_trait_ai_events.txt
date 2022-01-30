@@ -114,8 +114,10 @@ country_event = {
 						}
 						modifier = {
 							factor = 0.75
-							NOT = { has_trait = trait_decadent }
-							NOT = { has_trait = trait_necrophage }
+							NOR = {
+								has_trait = trait_decadent
+								has_trait = trait_necrophage
+							}
 						}
 						modifier = {
 							factor = 0.25

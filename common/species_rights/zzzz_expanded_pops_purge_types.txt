@@ -13,10 +13,7 @@ purge_matrix = {
 	potential = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
 		from = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 		}
 	}
 
@@ -38,13 +35,11 @@ purge_matrix = {
 					has_policy_flag = purge_allowed
 				}
 				NOR = {
-					OR = {
 						has_valid_civic = civic_machine_servitor 
 						has_valid_civic = civic_harm_hive
 						has_valid_civic = civic_harm_machine
 						is_subject_type = scion_auxiliary
-					}
-				}
+}
 			}
 		}
 	}
@@ -124,12 +119,10 @@ purge_processing = {
 					# }
 				}
 				NOR = {
-					OR = {
 						has_valid_civic = civic_harm_hive
 						has_valid_civic = civic_harm_machine
 						is_subject_type = scion_auxiliary
-					}
-				}
+}
 			}
 		}
 	}
